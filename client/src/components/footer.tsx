@@ -1,0 +1,97 @@
+import { Box, Twitter, Linkedin, Github } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer className="bg-stripe-dark text-white py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-4 gap-8">
+          <div className="col-span-2">
+            <div className="text-2xl font-bold mb-4">
+              <Box className="inline text-stripe-purple mr-2" size={28} />
+              InfraCore
+            </div>
+            <p className="text-gray-400 mb-6 max-w-md">
+              Modern infrastructure platform that scales with your business.
+              Deploy faster, scale smarter, and focus on what matters most.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Linkedin size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Github size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Products</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Cloud Compute
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Managed Database
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Global CDN
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Container Platform
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Support
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm">© 2024 InfraCore. All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
+              Terms of Service
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
