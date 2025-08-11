@@ -11,8 +11,8 @@ export function Footer() {
               InfraCore
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Modern infrastructure platform that scales with your business.
-              Deploy faster, scale smarter, and focus on what matters most.
+              Established civil engineering and infrastructure development company. 
+              ISO certified, 20+ years experience, building India's infrastructure future.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
@@ -28,26 +28,26 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Products</h3>
+            <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Cloud Compute
+                  Transportation Infrastructure
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Managed Database
+                  Water Management
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Global CDN
+                  Building Construction
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Container Platform
+                  Bridge Construction
                 </a>
               </li>
             </ul>
@@ -81,7 +81,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2024 InfraCore. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2024 InfraCore Pvt Ltd. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
               Privacy Policy

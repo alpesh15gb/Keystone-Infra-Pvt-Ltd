@@ -5,25 +5,25 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "CTO, TechStart",
+    name: "Chief Minister's Office",
+    role: "Government of Chhattisgarh",
     content:
-      "InfraCore has transformed how we deploy and scale our applications. The auto-scaling feature alone has saved us thousands in infrastructure costs.",
-    initials: "SC",
+      "The major bridge project facilitated connection to 500 villages and was highly appreciated during the inauguration ceremony.",
+    initials: "CM",
   },
   {
-    name: "Marcus Rodriguez",
-    role: "Lead DevOps, GlobalCorp",
+    name: "District Collector",
+    role: "Bijapur District",
     content:
-      "The security features and compliance certifications gave us confidence to migrate our entire infrastructure to InfraCore. Best decision we've made.",
-    initials: "MR",
+      "Letter of appreciation for outstanding infrastructure development work and timely project completion.",
+    initials: "DC",
   },
   {
-    name: "Emily Watson",
-    role: "Founder, AppVenture",
+    name: "NHIDCL",
+    role: "National Highway Infrastructure",
     content:
-      "From startup to scale, InfraCore has been with us every step of the way. Their support team is incredibly responsive and knowledgeable.",
-    initials: "EW",
+      "Excellent road construction work in Nagaland demonstrating high standards of engineering and project management.",
+    initials: "NH",
   },
 ];
 
@@ -38,9 +38,9 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Trusted by Developers Worldwide</h2>
+          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Awards & Recognition</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See what our customers are saying about InfraCore
+            Recognized for excellence in infrastructure development across multiple states
           </p>
         </motion.div>
 

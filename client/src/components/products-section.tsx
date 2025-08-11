@@ -8,25 +8,25 @@ const products = [
     icon: Cloud,
     iconColor: "text-stripe-purple",
     bgColor: "bg-stripe-purple/10",
-    title: "Cloud Compute",
-    description: "Scalable virtual machines and containers with automatic scaling and load balancing.",
-    features: ["Auto-scaling instances", "Load balancing", "Container orchestration"],
+    title: "Transportation Infrastructure",
+    description: "Complete road construction including national highways, state highways, and bridges.",
+    features: ["National & State Highways", "Bridge Construction", "CC Roads & Major District Roads"],
   },
   {
     icon: Database,
     iconColor: "text-stripe-blue",
     bgColor: "bg-stripe-blue/10",
-    title: "Managed Database",
-    description: "Fully managed database services with automatic backups, scaling, and monitoring.",
-    features: ["Automatic backups", "Multi-region replication", "Performance monitoring"],
+    title: "Water Management",
+    description: "Comprehensive water supply, treatment plants, and irrigation systems.",
+    features: ["Water Treatment Plants (45 MLD)", "Pipeline Distribution (305 KM)", "Sewerage Treatment (16 MLD)"],
   },
   {
     icon: Network,
     iconColor: "text-accent-orange",
     bgColor: "bg-accent-orange-light",
-    title: "Global CDN",
-    description: "Ultra-fast content delivery network with edge caching and DDoS protection.",
-    features: ["Edge caching", "DDoS protection", "SSL/TLS certificates"],
+    title: "Building Construction",
+    description: "Hospitality, commercial, institutional, and medical infrastructure development.",
+    features: ["Commercial Buildings", "Medical Facilities", "Pre-fab Structures"],
   },
 ];
 
@@ -41,9 +41,9 @@ export function ProductsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Our Infrastructure Products</h2>
+          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Our Infrastructure Expertise</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Complete suite of infrastructure services designed for modern applications
+            Diversified excellence across transportation, water management, and construction projects
           </p>
         </motion.div>
 

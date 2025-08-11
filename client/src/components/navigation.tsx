@@ -16,9 +16,9 @@ export function Navigation() {
 
   const navItems = [
     { label: "Home", href: "home" },
-    { label: "Products", href: "products" },
-    { label: "Features", href: "features" },
-    { label: "Pricing", href: "pricing" },
+    { label: "About", href: "about" },
+    { label: "Services", href: "products" },
+    { label: "Projects", href: "projects" },
     { label: "Contact", href: "contact" },
   ];
 
