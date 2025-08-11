@@ -33,26 +33,7 @@ const certifications = [
   },
 ];
 
-const awards = [
-  {
-    title: "Best Contractor Award",
-    location: "Manipur",
-    year: "2023",
-    description: "Recognized for outstanding infrastructure development and project delivery",
-  },
-  {
-    title: "Best Contractor Award", 
-    location: "Chhattisgarh",
-    year: "2017-2018",
-    description: "Excellence in civil engineering and construction projects",
-  },
-  {
-    title: "Letter of Appreciation",
-    location: "Bijapur District",
-    year: "2022",
-    description: "From District Collector for exceptional infrastructure work",
-  },
-];
+
 
 export function CertificationsSection() {
   return (
@@ -97,45 +78,6 @@ export function CertificationsSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Awards Section */}
-        <motion.div
-          className="bg-stripe-light rounded-2xl p-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-stripe-dark mb-4">Awards & Recognition</h3>
-            <p className="text-gray-600">Recognized for excellence across multiple states and projects</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {awards.map((award, index) => (
-              <motion.div
-                key={`${award.title}-${award.year}`}
-                className="bg-white rounded-xl p-6 shadow-md"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="w-10 h-10 bg-accent-orange/10 rounded-lg flex items-center justify-center">
-                    <Award className="text-accent-orange" size={20} />
-                  </div>
-                  <Badge variant="outline" className="text-xs">
-                    {award.year}
-                  </Badge>
-                </div>
-                <h4 className="font-bold text-stripe-dark mb-1">{award.title}</h4>
-                <div className="text-stripe-blue font-medium text-sm mb-2">{award.location}</div>
-                <p className="text-gray-600 text-xs">{award.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
