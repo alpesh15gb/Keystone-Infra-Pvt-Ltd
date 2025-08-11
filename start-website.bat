@@ -19,7 +19,19 @@ echo.
 echo Press Ctrl+C to stop the website
 echo.
 
+:: Check if build exists
+if not exist dist (
+    echo Building website first...
+    npm run build
+    if %errorlevel% neq 0 (
+        echo ERROR: Build failed. Please check for errors above.
+        pause
+        exit /b 1
+    )
+)
+
 :: Start the website
+echo Starting Keystone Infra website...
 npm start
 
 echo.
