@@ -27,7 +27,21 @@ echo.
 echo [2/6] Checking project files...
 if not exist package.json (
     echo ERROR: package.json not found
-    echo Please run this script from your project root directory
+    echo.
+    echo This usually means one of these issues:
+    echo 1. Files weren't extracted properly
+    echo 2. Script is in wrong folder
+    echo 3. ZIP download was incomplete
+    echo.
+    echo SOLUTIONS:
+    echo 1. Make sure you extracted ALL files from the ZIP
+    echo 2. Look for package.json file in your extracted folder
+    echo 3. Run this script from the same folder as package.json
+    echo 4. Try downloading the ZIP again from Replit
+    echo.
+    echo Current folder contents:
+    dir /b
+    echo.
     echo Press any key to exit...
     pause >nul
     exit /b 1
