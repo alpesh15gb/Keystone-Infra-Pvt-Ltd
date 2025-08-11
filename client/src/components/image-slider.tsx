@@ -97,6 +97,12 @@ export function ImageSlider({
                   src={images[currentIndex].src}
                   alt={images[currentIndex].title}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.error("Image failed to load:", images[currentIndex].src);
+                  }}
+                  onLoad={() => {
+                    console.log("Image loaded successfully:", images[currentIndex].src);
+                  }}
                 />
                 
                 {/* Overlay with project info */}
