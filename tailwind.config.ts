@@ -66,6 +66,8 @@ export default {
         "stripe-blue": "var(--stripe-blue)",
         "stripe-gray": "var(--stripe-gray)",
         "stripe-light": "var(--stripe-light)",
+        "accent-orange": "var(--accent-orange)",
+        "accent-orange-light": "var(--accent-orange-light)",
       },
       fontFamily: {
         sans: ["var(--font-sans)"],

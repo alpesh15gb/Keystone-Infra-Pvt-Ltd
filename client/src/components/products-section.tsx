@@ -22,8 +22,8 @@ const products = [
   },
   {
     icon: Network,
-    iconColor: "text-green-500",
-    bgColor: "bg-green-100",
+    iconColor: "text-accent-orange",
+    bgColor: "bg-accent-orange-light",
     title: "Global CDN",
     description: "Ultra-fast content delivery network with edge caching and DDoS protection.",
     features: ["Edge caching", "DDoS protection", "SSL/TLS certificates"],

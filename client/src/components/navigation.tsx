@@ -51,7 +51,7 @@ export function Navigation() {
             <Button variant="ghost" className="text-gray-600 hover:text-stripe-purple">
               Sign in
             </Button>
-            <Button className="gradient-bg text-white hover:opacity-90">
+            <Button className="gradient-bg-orange text-white hover:opacity-90">
               Get Started
             </Button>
           </div>
@@ -78,7 +78,7 @@ export function Navigation() {
                     <Button variant="ghost" className="w-full justify-start">
                       Sign in
                     </Button>
-                    <Button className="w-full gradient-bg text-white">
+                    <Button className="w-full gradient-bg-orange text-white">
                       Get Started
                     </Button>
                   </div>
