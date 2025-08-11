@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Box, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
+import logoPath from "@/assets/logo.png";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +28,9 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-stripe-dark">
-              <Box className="inline text-stripe-purple mr-2" size={28} />
-              InfraCore
+            <div className="flex items-center">
+              <img src={logoPath} alt="Keystone Infra" className="h-10 mr-3" />
+              <span className="text-2xl font-bold text-stripe-dark">KEYSTONE INFRA</span>
             </div>
           </div>
 

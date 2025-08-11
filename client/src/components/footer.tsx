@@ -1,4 +1,5 @@
-import { Box, Twitter, Linkedin, Github } from "lucide-react";
+import { Twitter, Linkedin, Github } from "lucide-react";
+import logoPath from "@/assets/logo.png";
 
 export function Footer() {
   return (
@@ -6,9 +7,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="col-span-2">
-            <div className="text-2xl font-bold mb-4">
-              <Box className="inline text-stripe-purple mr-2" size={28} />
-              InfraCore
+            <div className="flex items-center mb-4">
+              <img src={logoPath} alt="Keystone Infra" className="h-8 mr-3" />
+              <span className="text-2xl font-bold">KEYSTONE INFRA</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               Established civil engineering and infrastructure development company. 
@@ -81,7 +82,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2024 InfraCore Pvt Ltd. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2024 Keystone Infra Pvt. Ltd. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
               Privacy Policy
