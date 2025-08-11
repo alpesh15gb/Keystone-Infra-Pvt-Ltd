@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Star } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Star, Award } from "lucide-react";
 
 const testimonials = [
   {
@@ -27,6 +28,27 @@ const testimonials = [
   },
 ];
 
+const awards = [
+  {
+    title: "Best Contractor Award",
+    location: "Manipur",
+    year: "2023",
+    description: "Recognized for outstanding infrastructure development and project delivery",
+  },
+  {
+    title: "Best Contractor Award", 
+    location: "Chhattisgarh",
+    year: "2017-2018",
+    description: "Excellence in civil engineering and construction projects",
+  },
+  {
+    title: "Letter of Appreciation",
+    location: "Bijapur District",
+    year: "2022",
+    description: "From District Collector for exceptional infrastructure work",
+  },
+];
+
 export function TestimonialsSection() {
   return (
     <section className="py-20">
@@ -44,7 +66,8 @@ export function TestimonialsSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Recognition Letters and Testimonials */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -57,7 +80,7 @@ export function TestimonialsSection() {
                 <CardContent className="p-8">
                   <div className="flex items-center mb-4">
                     <Avatar className="mr-4">
-                      <AvatarFallback className="bg-gray-300 text-gray-600">
+                      <AvatarFallback className="bg-blue-100 text-blue-600">
                         {testimonial.initials}
                       </AvatarFallback>
                     </Avatar>
@@ -77,6 +100,45 @@ export function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Awards Section */}
+        <motion.div
+          className="bg-gradient-to-br from-blue-50 to-orange-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-stripe-dark dark:text-white mb-4">Awards & Accolades</h3>
+            <p className="text-gray-600 dark:text-gray-300">Recognized for excellence across multiple states and projects</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {awards.map((award, index) => (
+              <motion.div
+                key={`${award.title}-${award.year}`}
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-600"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center">
+                    <Award className="text-orange-600 dark:text-orange-400" size={20} />
+                  </div>
+                  <Badge variant="outline" className="text-xs">
+                    {award.year}
+                  </Badge>
+                </div>
+                <h4 className="font-bold text-stripe-dark dark:text-white mb-1">{award.title}</h4>
+                <div className="text-blue-600 dark:text-blue-400 font-medium text-sm mb-2">{award.location}</div>
+                <p className="text-gray-600 dark:text-gray-300 text-xs">{award.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
