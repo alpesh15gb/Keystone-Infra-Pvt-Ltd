@@ -14,10 +14,10 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl lg:text-6xl font-bold text-stripe-dark leading-tight mb-6">
-              Infrastructure that{" "}
               <span className="bg-gradient-to-r from-stripe-purple to-accent-orange bg-clip-text text-transparent">
-                builds your future
-              </span>
+                Turning Vision
+              </span>{" "}
+              into Infrastructure
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Innovative and high-quality infrastructure solutions. Over 20 years of expertise in 
