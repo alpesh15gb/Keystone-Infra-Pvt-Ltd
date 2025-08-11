@@ -5,6 +5,7 @@ import { ProductsSection } from "@/components/products-section";
 import { FeaturesSection } from "@/components/features-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { ProjectSlider } from "@/components/image-slider";
+import { SimpleSlider } from "@/components/simple-slider";
 import { CertificationsSection } from "@/components/certifications-section";
 import { PricingSection } from "@/components/pricing-section";
 import { TestimonialsSection } from "@/components/testimonials-section";

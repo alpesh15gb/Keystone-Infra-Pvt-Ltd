@@ -2,19 +2,19 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Import all slider images from client assets
-import slider1 from "@/assets/slider-1_1754941983527.jpg";
-import slider2 from "@/assets/slider-2_1754941983528.jpg";
-import slider3 from "@/assets/slider-3_1754941983528.jpg";
-import slider4 from "@/assets/slider-4_1754941983528.jpg";
-import slider5 from "@/assets/slider-5_1754941983528.jpg";
-import slider6 from "@/assets/slider-6_1754941983528.jpg";
-import slider7 from "@/assets/slider-7_1754941983528.jpg";
-import slider8 from "@/assets/slider-8_1754941983529.jpg";
-import slider9 from "@/assets/slider-9_1754941983529.jpg";
-import slider10 from "@/assets/slider-10_1754941983529.jpg";
-import slider11 from "@/assets/slider-11_1754941983529.jpg";
-import slider12 from "@/assets/slider-12_1754941983529.jpg";
+// Use public folder URLs for images (more reliable)
+const slider1 = "/images/slider-1_1754941983527.jpg";
+const slider2 = "/images/slider-2_1754941983528.jpg";
+const slider3 = "/images/slider-3_1754941983528.jpg";
+const slider4 = "/images/slider-4_1754941983528.jpg";
+const slider5 = "/images/slider-5_1754941983528.jpg";
+const slider6 = "/images/slider-6_1754941983528.jpg";
+const slider7 = "/images/slider-7_1754941983528.jpg";
+const slider8 = "/images/slider-8_1754941983529.jpg";
+const slider9 = "/images/slider-9_1754941983529.jpg";
+const slider10 = "/images/slider-10_1754941983529.jpg";
+const slider11 = "/images/slider-11_1754941983529.jpg";
+const slider12 = "/images/slider-12_1754941983529.jpg";
 
 interface SliderImage {
   src: string;
