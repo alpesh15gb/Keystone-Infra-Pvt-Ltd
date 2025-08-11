@@ -5,7 +5,7 @@ import { ProductsSection } from "@/components/products-section";
 import { FeaturesSection } from "@/components/features-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { ProjectSlider } from "@/components/image-slider";
-import { ProjectOwlSlider } from "@/components/owl-slider";
+import { ProjectOwlCarousel } from "@/components/working-owl-slider";
 import { CertificationsSection } from "@/components/certifications-section";
 import { PricingSection } from "@/components/pricing-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
@@ -20,7 +20,7 @@ export default function Home() {
       <AboutSection />
       <ProductsSection />
       <FeaturesSection />
-      <ProjectSlider />
+      <ProjectOwlCarousel />
       <ProjectsSection />
       <CertificationsSection />
       <PricingSection />
