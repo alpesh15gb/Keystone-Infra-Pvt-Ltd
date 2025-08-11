@@ -15,12 +15,12 @@ export function HeroSection() {
             <h1 className="text-5xl lg:text-6xl font-bold text-stripe-dark leading-tight mb-6">
               Infrastructure that{" "}
               <span className="bg-gradient-to-r from-stripe-purple to-accent-orange bg-clip-text text-transparent">
-                scales with you
+                builds your future
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Build, deploy, and scale your applications with our modern infrastructure platform.
-              From containers to serverless, we've got you covered.
+              Innovative and high-quality infrastructure solutions. Over 20 years of expertise in 
+              civil engineering and infrastructure development across 14 states.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
@@ -40,15 +40,15 @@ export function HeroSection() {
             <div className="mt-12 flex flex-col sm:flex-row sm:items-center sm:space-x-8 space-y-4 sm:space-y-0 text-sm text-gray-500">
               <div className="flex items-center">
                 <CheckCircle className="text-green-500 mr-2" size={16} />
-                99.9% Uptime SLA
+                ISO 9001:2015 Certified
               </div>
               <div className="flex items-center">
                 <Shield className="text-green-500 mr-2" size={16} />
-                SOC 2 Certified
+                ISO 45001:2018 Safety
               </div>
               <div className="flex items-center">
                 <Globe className="text-accent-orange mr-2" size={16} />
-                Global Edge Network
+                14 States Coverage
               </div>
             </div>
           </motion.div>

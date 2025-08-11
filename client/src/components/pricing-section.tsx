@@ -6,38 +6,38 @@ import { CheckCircle } from "lucide-react";
 
 const plans = [
   {
-    name: "Starter",
-    description: "Perfect for small projects",
-    price: "$29",
-    period: "/month",
-    features: ["2 vCPUs, 4GB RAM", "50GB SSD Storage", "1TB Bandwidth", "Basic Support"],
+    name: "Transportation",
+    description: "Roads, Highways & Bridges",
+    price: "EPC",
+    period: " Model",
+    features: ["National & State Highways", "Bridge Construction", "Major District Roads", "CC Roads"],
     popular: false,
   },
   {
-    name: "Professional",
-    description: "Best for growing businesses",
-    price: "$99",
-    period: "/month",
+    name: "Water Management",
+    description: "Treatment & Distribution",
+    price: "Turnkey",
+    period: " Solutions",
     features: [
-      "8 vCPUs, 16GB RAM",
-      "200GB SSD Storage",
-      "5TB Bandwidth",
-      "Priority Support",
-      "Load Balancing",
+      "Water Treatment Plants",
+      "Pipeline Distribution",
+      "Sewerage Treatment",
+      "Irrigation Systems",
+      "Overhead Tanks",
     ],
     popular: true,
   },
   {
-    name: "Enterprise",
-    description: "For large-scale applications",
+    name: "Building Construction",
+    description: "Commercial & Institutional",
     price: "Custom",
-    period: " pricing",
+    period: " Design",
     features: [
-      "Custom Resources",
-      "Unlimited Storage",
-      "Unlimited Bandwidth",
-      "24/7 Dedicated Support",
-      "SLA Guarantees",
+      "Hospitality Projects",
+      "Medical Facilities",
+      "Commercial Buildings",
+      "Pre-fab Structures",
+      "Institutional Buildings",
     ],
     popular: false,
   },
@@ -54,9 +54,9 @@ export function PricingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Simple, Transparent Pricing</h2>
+          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Our Service Categories</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Pay only for what you use with no hidden fees
+            Engineering, Procurement & Construction (EPC) solutions across multiple domains
           </p>
         </motion.div>
 
@@ -105,7 +105,7 @@ export function PricingSection() {
                     }`}
                     variant={plan.popular ? "default" : "outline"}
                   >
-                    {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}
+                    {plan.name === "Building Construction" ? "Get Quote" : "Learn More"}
                   </Button>
                 </CardContent>
               </Card>
