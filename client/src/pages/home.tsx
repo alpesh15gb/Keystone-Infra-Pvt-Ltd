@@ -20,7 +20,7 @@ export default function Home() {
       <AboutSection />
       <ProductsSection />
       <FeaturesSection />
-      <ProjectOwlSlider />
+      <ProjectSlider />
       <ProjectsSection />
       <CertificationsSection />
       <PricingSection />
