@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 interface SliderImage {
   src: string;
@@ -20,37 +22,62 @@ export function WorkingOwlSlider({ images, title, subtitle }: WorkingOwlSliderPr
   useEffect(() => {
     const initCarousel = async () => {
       try {
-        // Import jQuery and Owl Carousel dynamically
+        // Import jQuery and make it globally available
         const { default: $ } = await import('jquery');
+        (window as any).$ = $;
+        (window as any).jQuery = $;
+        
+        // Import Owl Carousel
         await import('owl.carousel');
         
-        if (carouselRef.current && $) {
-          const $carousel = $(carouselRef.current);
-          
-          // Initialize Owl Carousel
-          $carousel.owlCarousel({
-            items: 1,
-            loop: true,
-            margin: 0,
-            nav: true,
-            dots: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            navText: ['‹', '›'],
-            responsive: {
-              0: { items: 1 },
-              768: { items: 1 },
-              1024: { items: 1 }
+        if (carouselRef.current) {
+          // Small delay to ensure DOM is ready
+          setTimeout(() => {
+            const $carousel = $(carouselRef.current!);
+            
+            // Destroy existing instance if any
+            if ($carousel.hasClass('owl-loaded')) {
+              $carousel.trigger('destroy.owl.carousel');
+              $carousel.removeClass('owl-loaded');
             }
-          });
+            
+            // Initialize Owl Carousel
+            $carousel.owlCarousel({
+              items: 1,
+              loop: true,
+              margin: 0,
+              nav: true,
+              dots: true,
+              autoplay: true,
+              autoplayTimeout: 5000,
+              autoplayHoverPause: true,
+              navText: ['‹', '›'],
+              responsive: {
+                0: { items: 1 },
+                768: { items: 1 },
+                1024: { items: 1 }
+              }
+            });
+            
+            console.log('Owl Carousel initialized successfully');
+          }, 100);
         }
       } catch (error) {
-        console.log('Owl Carousel initialization skipped:', error);
+        console.error('Owl Carousel initialization failed:', error);
       }
     };
 
     initCarousel();
+    
+    // Cleanup function
+    return () => {
+      if (carouselRef.current && (window as any).$) {
+        const $carousel = (window as any).$(carouselRef.current);
+        if ($carousel.hasClass('owl-loaded')) {
+          $carousel.trigger('destroy.owl.carousel');
+        }
+      }
+    };
   }, []);
 
   return (
