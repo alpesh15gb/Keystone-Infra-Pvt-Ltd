@@ -2,14 +2,29 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSubmissionSchema } from "@shared/schema";
+import { sendContactEmail } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactSubmissionSchema.parse(req.body);
+      
+      // Store the submission
       const submission = await storage.createContactSubmission(validatedData);
-      res.json({ success: true, data: submission });
+      
+      // Send email notification
+      const emailSent = await sendContactEmail(validatedData);
+      
+      if (!emailSent) {
+        console.warn("Email notification failed, but submission was stored");
+      }
+      
+      res.json({ 
+        success: true, 
+        data: submission,
+        emailSent 
+      });
     } catch (error) {
       console.error("Contact form submission error:", error);
       res.status(400).json({ 
