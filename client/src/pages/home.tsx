@@ -8,6 +8,7 @@ import { ProjectsSection } from "@/components/projects-section";
 import { ProjectOwlCarousel } from "@/components/working-owl-slider";
 import { TeamSection } from "@/components/team-section";
 import { LocationsSection } from "@/components/locations-section";
+import { EsteemedClientsSection } from "@/components/esteemed-clients-section";
 import { CertificationsSection } from "@/components/certifications-section";
 import { CSRSection } from "@/components/csr-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
@@ -27,6 +28,7 @@ export default function Home() {
       <ProjectsSection />
       <TeamSection />
       <LocationsSection />
+      <EsteemedClientsSection />
       <CertificationsSection />
       <CSRSection />
       <TestimonialsSection />

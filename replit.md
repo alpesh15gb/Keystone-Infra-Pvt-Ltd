@@ -15,6 +15,8 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
   - Updated project statistics to reflect 600+ completed projects
   - Replaced "Sign In" button with "Request Quote" for better lead generation
   - Added Team and Locations navigation links
+  - Replaced logo with new Keystone branding and optimized navigation sizing
+  - Created Esteemed Clients section with auto-scrolling client showcase featuring government agencies across 14 states
 - User confirmed slider functionality is working as expected
 
 # User Preferences
