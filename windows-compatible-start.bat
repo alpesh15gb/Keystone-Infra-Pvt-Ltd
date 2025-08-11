@@ -31,7 +31,21 @@ echo.
 echo Starting now...
 echo ========================================
 
-node dist/index.js
+echo Current directory: %CD%
+echo Looking for dist/index.js...
+if exist dist\index.js (
+    echo ✓ Found dist\index.js
+) else (
+    echo ✗ dist\index.js not found in current directory
+    echo Directory contents:
+    dir /b
+    echo.
+    echo Please make sure you're running this from your project folder
+    pause
+    exit /b 1
+)
+
+node "%CD%\dist\index.js"
 
 echo.
 echo Website stopped.
