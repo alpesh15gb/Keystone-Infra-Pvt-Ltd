@@ -28,10 +28,10 @@ export function Navigation() {
   return (
     <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-18">
           <div className="flex items-center">
             <div className="flex items-center">
-              <img src={logoPath} alt="Keystone Infra" className="h-10" />
+              <img src={logoPath} alt="Keystone Infra" className="h-12 w-auto" />
             </div>
           </div>
 
