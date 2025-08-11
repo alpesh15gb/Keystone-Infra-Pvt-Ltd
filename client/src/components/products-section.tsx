@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Cloud, Database, Network, CheckCircle } from "lucide-react";
+import highwayImage from "@/assets/Highway_construction_site_464b4d08.png";
+import waterImage from "@/assets/Water_treatment_plant_26da84cd.png";
+import buildingImage from "@/assets/Building_construction_site_51639ad3.png";
 
 const products = [
   {
@@ -11,6 +14,7 @@ const products = [
     title: "Transportation Infrastructure",
     description: "Complete road construction including national highways, state highways, and bridges.",
     features: ["National & State Highways", "Bridge Construction", "CC Roads & Major District Roads"],
+    image: highwayImage,
   },
   {
     icon: Database,
@@ -19,6 +23,7 @@ const products = [
     title: "Water Management",
     description: "Comprehensive water supply, treatment plants, and irrigation systems.",
     features: ["Water Treatment Plants (45 MLD)", "Pipeline Distribution (305 KM)", "Sewerage Treatment (16 MLD)"],
+    image: waterImage,
   },
   {
     icon: Network,
@@ -27,6 +32,7 @@ const products = [
     title: "Building Construction",
     description: "Hospitality, commercial, institutional, and medical infrastructure development.",
     features: ["Commercial Buildings", "Medical Facilities", "Pre-fab Structures"],
+    image: buildingImage,
   },
 ];
 
@@ -56,24 +62,35 @@ export function ProductsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="h-full card-hover bg-white shadow-lg border-0">
-                <CardContent className="p-8">
-                  <div className={`w-16 h-16 ${product.bgColor} rounded-xl flex items-center justify-center mb-6`}>
-                    <product.icon className={product.iconColor} size={32} />
+              <Card className="h-full card-hover bg-white shadow-lg border-0 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative h-48">
+                    <img 
+                      src={product.image} 
+                      alt={product.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <div className={`w-12 h-12 ${product.bgColor} rounded-lg flex items-center justify-center backdrop-blur-md`}>
+                        <product.icon className={product.iconColor} size={24} />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-stripe-dark mb-4">{product.title}</h3>
-                  <p className="text-gray-600 mb-6">{product.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {product.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="text-green-500 mr-2" size={16} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button variant="link" className="text-stripe-purple font-semibold p-0 h-auto">
-                    Learn more →
-                  </Button>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-stripe-dark mb-4">{product.title}</h3>
+                    <p className="text-gray-600 mb-6">{product.description}</p>
+                    <ul className="space-y-2 mb-6">
+                      {product.features.map((feature) => (
+                        <li key={feature} className="flex items-center text-sm text-gray-600">
+                          <CheckCircle className="text-green-500 mr-2" size={16} />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <Button variant="link" className="text-stripe-purple font-semibold p-0 h-auto">
+                      Learn more →
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
