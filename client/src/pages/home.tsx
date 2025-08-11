@@ -4,6 +4,7 @@ import { AboutSection } from "@/components/about-section";
 import { ProductsSection } from "@/components/products-section";
 import { FeaturesSection } from "@/components/features-section";
 import { ProjectsSection } from "@/components/projects-section";
+import { ProjectSlider } from "@/components/image-slider";
 import { CertificationsSection } from "@/components/certifications-section";
 import { PricingSection } from "@/components/pricing-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutSection />
       <ProductsSection />
       <FeaturesSection />
+      <ProjectSlider />
       <ProjectsSection />
       <CertificationsSection />
       <PricingSection />
