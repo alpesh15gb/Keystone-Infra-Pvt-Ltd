@@ -63,18 +63,8 @@ app.use((req, res, next) => {
   const port = parseInt(process.env.PORT || '5000', 10);
   const host = process.env.NODE_ENV === 'production' ? 'localhost' : '0.0.0.0';
   
-  // Windows-compatible server listening
-  if (process.platform === 'win32') {
-    server.listen(port, host, () => {
-      log(`serving on port ${port}`);
-    });
-  } else {
-    server.listen({
-      port,
-      host,
-      reusePort: true,
-    }, () => {
-      log(`serving on port ${port}`);
-    });
-  }
+  // Simplified server listening for maximum Windows compatibility
+  server.listen(port, () => {
+    log(`serving on port ${port}`);
+  });
 })();
