@@ -29,8 +29,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex items-center">
-              <img src={logoPath} alt="Keystone Infra" className="h-10 mr-3" />
-              <span className="text-2xl font-bold text-stripe-dark">KEYSTONE INFRA</span>
+              <img src={logoPath} alt="Keystone Infra" className="h-10" />
             </div>
           </div>
 
