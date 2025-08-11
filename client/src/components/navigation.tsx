@@ -20,6 +20,8 @@ export function Navigation() {
     { label: "About", href: "about" },
     { label: "Services", href: "products" },
     { label: "Projects", href: "projects" },
+    { label: "Team", href: "team" },
+    { label: "Locations", href: "locations" },
     { label: "Contact", href: "contact" },
   ];
 
@@ -48,10 +50,17 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-gray-600 hover:text-stripe-purple">
-              Sign in
+            <Button 
+              variant="ghost" 
+              className="text-gray-600 hover:text-stripe-purple"
+              onClick={() => scrollToSection('contact')}
+            >
+              Request Quote
             </Button>
-            <Button className="gradient-bg-orange text-white hover:opacity-90">
+            <Button 
+              className="gradient-bg-orange text-white hover:opacity-90"
+              onClick={() => scrollToSection('contact')}
+            >
               Get Started
             </Button>
           </div>
@@ -75,10 +84,17 @@ export function Navigation() {
                     </button>
                   ))}
                   <div className="pt-4 space-y-2">
-                    <Button variant="ghost" className="w-full justify-start">
-                      Sign in
+                    <Button 
+                      variant="ghost" 
+                      className="w-full justify-start"
+                      onClick={() => scrollToSection('contact')}
+                    >
+                      Request Quote
                     </Button>
-                    <Button className="w-full gradient-bg-orange text-white">
+                    <Button 
+                      className="w-full gradient-bg-orange text-white"
+                      onClick={() => scrollToSection('contact')}
+                    >
                       Get Started
                     </Button>
                   </div>

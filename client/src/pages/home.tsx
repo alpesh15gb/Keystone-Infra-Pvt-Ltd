@@ -1,13 +1,15 @@
 import { Navigation } from "@/components/navigation";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
+import { MissionVisionSection } from "@/components/mission-vision-section";
 import { ProductsSection } from "@/components/products-section";
 import { FeaturesSection } from "@/components/features-section";
 import { ProjectsSection } from "@/components/projects-section";
-import { ProjectSlider } from "@/components/image-slider";
 import { ProjectOwlCarousel } from "@/components/working-owl-slider";
+import { TeamSection } from "@/components/team-section";
+import { LocationsSection } from "@/components/locations-section";
 import { CertificationsSection } from "@/components/certifications-section";
-import { PricingSection } from "@/components/pricing-section";
+import { CSRSection } from "@/components/csr-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
@@ -18,12 +20,15 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <AboutSection />
+      <MissionVisionSection />
       <ProductsSection />
       <FeaturesSection />
       <ProjectOwlCarousel />
       <ProjectsSection />
+      <TeamSection />
+      <LocationsSection />
       <CertificationsSection />
-      <PricingSection />
+      <CSRSection />
       <TestimonialsSection />
       <ContactSection />
       <Footer />
