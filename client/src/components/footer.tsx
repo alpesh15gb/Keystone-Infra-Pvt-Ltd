@@ -7,9 +7,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="col-span-2">
-            <div className="flex items-center mb-4">
-              <img src={logoPath} alt="Keystone Infra" className="h-8 mr-3" />
-              <span className="text-2xl font-bold">KEYSTONE INFRA</span>
+            <div className="mb-4">
+              <img src={logoPath} alt="Keystone Infra" className="h-12" />
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               Established civil engineering and infrastructure development company. 
