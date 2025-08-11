@@ -1,11 +1,13 @@
 import { MailService } from '@sendgrid/mail';
 
-if (!process.env.SENDGRID_API_KEY) {
-  throw new Error("SENDGRID_API_KEY environment variable must be set");
+if (!process.env.SENDGRID_API_KEY || process.env.SENDGRID_API_KEY === 'placeholder_key_for_testing') {
+  console.warn("⚠️  SendGrid API key not configured. Email functionality will be disabled.");
 }
 
 const mailService = new MailService();
-mailService.setApiKey(process.env.SENDGRID_API_KEY);
+if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY !== 'placeholder_key_for_testing') {
+  mailService.setApiKey(process.env.SENDGRID_API_KEY);
+}
 
 interface ContactEmailParams {
   firstName: string;
@@ -17,6 +19,17 @@ interface ContactEmailParams {
 }
 
 export async function sendContactEmail(params: ContactEmailParams): Promise<boolean> {
+  // Check if SendGrid is properly configured
+  if (!process.env.SENDGRID_API_KEY || process.env.SENDGRID_API_KEY === 'placeholder_key_for_testing' || process.env.SENDGRID_API_KEY === 'your_sendgrid_key_here') {
+    console.log('📧 Contact form submitted (email disabled - no SendGrid key):');
+    console.log(`Name: ${params.firstName} ${params.lastName}`);
+    console.log(`Email: ${params.email}`);
+    console.log(`Company: ${params.company}`);
+    console.log(`Help Type: ${params.helpType}`);
+    console.log(`Message: ${params.message}`);
+    return false; // Indicate email wasn't sent but don't crash
+  }
+
   try {
     const emailContent = {
       to: 'your-email@example.com', // TODO: Replace with your actual email address
