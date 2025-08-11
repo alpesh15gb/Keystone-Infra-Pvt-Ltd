@@ -36,12 +36,12 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-6">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-600 hover:text-stripe-purple transition-colors duration-300"
+                  className="text-sm text-gray-600 hover:text-stripe-purple transition-colors duration-300"
                 >
                   {item.label}
                 </button>
@@ -49,16 +49,18 @@ export function Navigation() {
             </div>
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             <Button 
               variant="ghost" 
-              className="text-gray-600 hover:text-stripe-purple"
+              size="sm"
+              className="text-sm text-gray-600 hover:text-stripe-purple"
               onClick={() => scrollToSection('contact')}
             >
               Request Quote
             </Button>
             <Button 
-              className="gradient-bg-orange text-white hover:opacity-90"
+              size="sm"
+              className="text-sm gradient-bg-orange text-white hover:opacity-90"
               onClick={() => scrollToSection('contact')}
             >
               Get Started
