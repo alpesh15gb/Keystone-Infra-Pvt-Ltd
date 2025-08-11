@@ -72,7 +72,7 @@ export function PricingSection() {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <Badge className="bg-stripe-purple text-white px-4 py-1">Most Popular</Badge>
+                  <Badge className="gradient-bg-orange text-white px-4 py-1">Most Popular</Badge>
                 </div>
               )}
               <Card
@@ -100,7 +100,7 @@ export function PricingSection() {
                   <Button
                     className={`w-full py-3 font-semibold transition-all duration-300 ${
                       plan.popular
-                        ? "gradient-bg text-white hover:shadow-lg"
+                        ? "gradient-bg-orange text-white hover:shadow-lg"
                         : "border-2 border-stripe-purple text-stripe-purple hover:bg-stripe-purple hover:text-white"
                     }`}
                     variant={plan.popular ? "default" : "outline"}

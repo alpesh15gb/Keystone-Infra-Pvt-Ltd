@@ -14,7 +14,7 @@ export function HeroSection() {
           >
             <h1 className="text-5xl lg:text-6xl font-bold text-stripe-dark leading-tight mb-6">
               Infrastructure that{" "}
-              <span className="bg-gradient-to-r from-stripe-purple to-stripe-blue bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-stripe-purple to-accent-orange bg-clip-text text-transparent">
                 scales with you
               </span>
             </h1>
@@ -25,7 +25,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="gradient-bg text-white px-8 py-4 font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                className="gradient-bg-orange text-white px-8 py-4 font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               >
                 Start Building
               </Button>
@@ -47,7 +47,7 @@ export function HeroSection() {
                 SOC 2 Certified
               </div>
               <div className="flex items-center">
-                <Globe className="text-green-500 mr-2" size={16} />
+                <Globe className="text-accent-orange mr-2" size={16} />
                 Global Edge Network
               </div>
             </div>
@@ -78,11 +78,11 @@ export function HeroSection() {
                     <div className="text-sm font-medium">Storage</div>
                   </motion.div>
                   <motion.div
-                    className="bg-green-100 rounded-lg p-4 text-center"
+                    className="bg-accent-orange-light rounded-lg p-4 text-center"
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   >
-                    <Network className="text-green-500 mx-auto mb-2" size={32} />
+                    <Network className="text-accent-orange mx-auto mb-2" size={32} />
                     <div className="text-sm font-medium">Network</div>
                   </motion.div>
                 </div>
