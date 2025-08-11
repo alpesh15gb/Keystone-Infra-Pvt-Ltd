@@ -64,8 +64,10 @@ echo.
 echo Press Ctrl+C to stop the website
 echo.
 
-:: Start using node directly instead of npm
+:: Set environment variable for Windows and start
 echo Starting server...
+set NODE_ENV=production
+set PORT=3000
 node dist/index.js
 
 echo.
