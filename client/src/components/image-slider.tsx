@@ -2,19 +2,19 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Import all slider images
-import slider1 from "@assets/slider-1_1754941983527.jpg";
-import slider2 from "@assets/slider-2_1754941983528.jpg";
-import slider3 from "@assets/slider-3_1754941983528.jpg";
-import slider4 from "@assets/slider-4_1754941983528.jpg";
-import slider5 from "@assets/slider-5_1754941983528.jpg";
-import slider6 from "@assets/slider-6_1754941983528.jpg";
-import slider7 from "@assets/slider-7_1754941983528.jpg";
-import slider8 from "@assets/slider-8_1754941983529.jpg";
-import slider9 from "@assets/slider-9_1754941983529.jpg";
-import slider10 from "@assets/slider-10_1754941983529.jpg";
-import slider11 from "@assets/slider-11_1754941983529.jpg";
-import slider12 from "@assets/slider-12_1754941983529.jpg";
+// Import all slider images from client assets
+import slider1 from "@/assets/slider-1_1754941983527.jpg";
+import slider2 from "@/assets/slider-2_1754941983528.jpg";
+import slider3 from "@/assets/slider-3_1754941983528.jpg";
+import slider4 from "@/assets/slider-4_1754941983528.jpg";
+import slider5 from "@/assets/slider-5_1754941983528.jpg";
+import slider6 from "@/assets/slider-6_1754941983528.jpg";
+import slider7 from "@/assets/slider-7_1754941983528.jpg";
+import slider8 from "@/assets/slider-8_1754941983529.jpg";
+import slider9 from "@/assets/slider-9_1754941983529.jpg";
+import slider10 from "@/assets/slider-10_1754941983529.jpg";
+import slider11 from "@/assets/slider-11_1754941983529.jpg";
+import slider12 from "@/assets/slider-12_1754941983529.jpg";
 
 interface SliderImage {
   src: string;
