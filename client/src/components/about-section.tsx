@@ -48,9 +48,9 @@ export function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">About InfraCore</h2>
+          <h2 className="text-4xl font-bold text-stripe-dark mb-4">About Keystone Infra</h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            InfraCore Pvt Ltd, founded by D.M. Ramesh in 2005, is an established civil engineering 
+            Keystone Infra Pvt Ltd, founded by D.M. Ramesh in 2005, is an established civil engineering 
             and infrastructure development company. An ISO 9001:2015 certified infrastructure company 
             focusing on improving efficiency, promoting economic growth and reducing environmental impact.
           </p>

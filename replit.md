@@ -1,6 +1,6 @@
 # Overview
 
-This is a full-stack web application for InfraCore, a modern infrastructure platform company. The application features a marketing landing page with contact form functionality, built using React on the frontend and Express.js on the backend. The project showcases a professional cloud infrastructure service provider with sections for products, features, pricing, testimonials, and contact information.
+This is a full-stack web application for Keystone Infra Pvt. Ltd., a professional infrastructure development company. The application features a comprehensive marketing website with company information, services, projects portfolio, certifications, and contact functionality. Built using React on the frontend and Express.js on the backend, the project showcases a civil engineering and infrastructure development company with 20+ years of experience across 14 states in India.
 
 # User Preferences
 
