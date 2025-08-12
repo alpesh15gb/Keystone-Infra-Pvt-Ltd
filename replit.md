@@ -46,6 +46,7 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
+Brand colors: Orange for headers, brown/amber tones for paragraphs and body text.
 
 # System Architecture
 
