@@ -30,7 +30,7 @@ const iconicProjects = [
     description: "Major bridge facilitating connection to 500 villages, appreciated by Hon'ble Chief Minister",
     client: "PWD",
     status: "Completed",
-    image: slider1,
+    image: slider7,
     year: "2023",
     category: "Infrastructure",
     impact: "500+ Villages Connected"
@@ -45,7 +45,7 @@ const iconicProjects = [
     description: "Comprehensive water supply system providing clean water to all rural households",
     client: "Government of Manipur",
     status: "Operational",
-    image: slider2,
+    image: slider12,
     year: "2022",
     category: "Water Management",
     impact: "1M+ People Served"
@@ -60,7 +60,7 @@ const iconicProjects = [
     description: "Advanced sewerage treatment facility supplying clean water to all city households",
     client: "Urban Development",
     status: "Operational",
-    image: slider3,
+    image: slider11,
     year: "2022",
     category: "Environmental",
     impact: "Clean City Initiative"
@@ -75,7 +75,7 @@ const iconicProjects = [
     description: "Multi-state highway development connecting rural areas to urban centers",
     client: "MORTH",
     status: "Ongoing",
-    image: slider4,
+    image: slider1,
     year: "2024",
     category: "Transportation",
     impact: "Enhanced Connectivity"
@@ -90,7 +90,7 @@ const iconicProjects = [
     description: "Sustainable residential development with modern infrastructure and green spaces",
     client: "HMDA",
     status: "Completed",
-    image: slider5,
+    image: slider6,
     year: "2023",
     category: "Residential",
     impact: "2000+ Residents"
@@ -105,7 +105,7 @@ const iconicProjects = [
     description: "Large-scale water storage and irrigation infrastructure for agricultural development",
     client: "State Irrigation Dept",
     status: "Completed",
-    image: slider6,
+    image: slider3,
     year: "2021",
     category: "Irrigation",
     impact: "Agricultural Growth"
