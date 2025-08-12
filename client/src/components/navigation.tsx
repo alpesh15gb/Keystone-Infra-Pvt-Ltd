@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-const logoPath = "/images/keystone-logo-new.png";
+import logoImage from "@assets/logo_1755020445511.png";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-24">
           <div className="flex items-center">
             <div className="flex items-center">
-              <img src={logoPath} alt="Keystone Infra" className="h-20 w-auto" />
+              <img src={logoImage} alt="Keystone Infra Pvt. Ltd." className="h-16 w-auto" />
             </div>
           </div>
 
