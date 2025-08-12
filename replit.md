@@ -40,6 +40,8 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Applied transparent background logo for cleaner header appearance
 - Enhanced hero section with multiple professional construction images
 - Implemented automatic slideshow with manual navigation controls
+- Completely redesigned locations section with interactive dark theme and dynamic elements
+- Added India infrastructure map visualization with clickable state details
 
 # User Preferences
 
