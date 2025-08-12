@@ -1,18 +1,65 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Shield, Globe, Play, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 import constructionVideo from "@assets/generated_images/construction_site_video_background_4fd97d5a.png";
+import bridgeConstruction from "@assets/generated_images/highway_bridge_construction_8ffb9076.png";
+import urbanConstruction from "@assets/generated_images/urban_construction_skyline_f76f4600.png";
+import industrialConstruction from "@assets/generated_images/industrial_construction_site_707415e2.png";
 
 export function HeroSection() {
+  const backgroundImages = [
+    constructionVideo,
+    bridgeConstruction,
+    urbanConstruction,
+    industrialConstruction
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % backgroundImages.length
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
+
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden">
-      {/* Video Background */}
+      {/* Multiple Background Images with Transitions */}
       <div className="absolute inset-0 w-full h-full">
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat video-background"
-          style={{ backgroundImage: `url(${constructionVideo})` }}
-        />
+        {backgroundImages.map((image, index) => (
+          <motion.div
+            key={index}
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat video-background"
+            style={{ backgroundImage: `url(${image})` }}
+            initial={{ opacity: 0 }}
+            animate={{ 
+              opacity: index === currentImageIndex ? 1 : 0,
+              scale: index === currentImageIndex ? 1.05 : 1
+            }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+        
+        {/* Image Navigation Dots */}
+        <div className="absolute bottom-20 right-8 z-10 flex space-x-2">
+          {backgroundImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-white scale-125' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Content */}
