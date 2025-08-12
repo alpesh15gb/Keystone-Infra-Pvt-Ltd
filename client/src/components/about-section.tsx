@@ -53,23 +53,20 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
         >
           <motion.h2 
-            className="text-5xl font-bold mb-6"
+            className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-              About
-            </span>{" "}
-            <span className="text-gray-900">Keystone Infra</span>
+            About Keystone Infra
           </motion.h2>
           <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              Keystone Infra Pvt Ltd, founded by <span className="font-semibold text-orange-700">D.M. Ramesh in 2005</span>, is an established civil engineering 
-              and infrastructure development company with over <span className="font-semibold text-orange-700">20 years of experience</span>.
+            <p className="text-xl text-amber-900 leading-relaxed mb-6">
+              Keystone Infra Pvt Ltd, founded by <span className="font-semibold text-orange-600">D.M. Ramesh in 2005</span>, is an established civil engineering 
+              and infrastructure development company with over <span className="font-semibold text-orange-600">20 years of experience</span>.
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              An <span className="font-semibold text-amber-700">ISO 9001:2015 certified</span> infrastructure company focusing on improving efficiency, promoting economic growth and reducing 
+            <p className="text-lg text-amber-800 leading-relaxed">
+              An <span className="font-semibold text-orange-600">ISO 9001:2015 certified</span> infrastructure company focusing on improving efficiency, promoting economic growth and reducing 
               environmental impact. We strive to provide exceptional service and build long-term relationships 
               with our clients, partners and communities.
             </p>
@@ -91,9 +88,9 @@ export function AboutSection() {
                   <div className={`w-16 h-16 ${stat.bgColor} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <stat.icon className={`${stat.iconColor} group-hover:text-orange-700 transition-colors duration-300`} size={32} />
                   </div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-2">{stat.number}</div>
-                  <div className="text-lg font-semibold text-gray-800 mb-1">{stat.label}</div>
-                  <div className="text-sm text-gray-600">{stat.description}</div>
+                  <div className="text-3xl font-bold text-orange-600 mb-2">{stat.number}</div>
+                  <div className="text-lg font-semibold text-orange-700 mb-1">{stat.label}</div>
+                  <div className="text-sm text-amber-700">{stat.description}</div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -109,10 +106,8 @@ export function AboutSection() {
         >
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <h3 className="text-3xl font-bold mb-8">
-                <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                  Our Leadership
-                </span>
+              <h3 className="text-3xl font-bold text-orange-600 mb-8">
+                Our Leadership
               </h3>
               <div className="space-y-6">
                 <motion.div 
@@ -123,9 +118,9 @@ export function AboutSection() {
                     <Users className="text-white" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">D.M. Ramesh</h4>
+                    <h4 className="font-bold text-orange-600">D.M. Ramesh</h4>
                     <p className="text-orange-700 font-semibold text-sm">Managing Director & Founder</p>
-                    <p className="text-sm text-gray-600 mt-1">30+ years experience in infrastructure and civil construction</p>
+                    <p className="text-sm text-amber-800 mt-1">30+ years experience in infrastructure and civil construction</p>
                   </div>
                 </motion.div>
                 <motion.div 
@@ -136,9 +131,9 @@ export function AboutSection() {
                     <Users className="text-white" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">D. Karthik Amar</h4>
-                    <p className="text-amber-700 font-semibold text-sm">Director</p>
-                    <p className="text-sm text-gray-600 mt-1">Leading housing projects across 4 states</p>
+                    <h4 className="font-bold text-orange-600">D. Karthik Amar</h4>
+                    <p className="text-orange-700 font-semibold text-sm">Director</p>
+                    <p className="text-sm text-amber-800 mt-1">Leading housing projects across 4 states</p>
                   </div>
                 </motion.div>
                 <motion.div 
@@ -149,18 +144,16 @@ export function AboutSection() {
                     <Users className="text-white" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">D. Lakshmi Chowdary</h4>
+                    <h4 className="font-bold text-orange-600">D. Lakshmi Chowdary</h4>
                     <p className="text-orange-700 font-semibold text-sm">Director</p>
-                    <p className="text-sm text-gray-600 mt-1">15+ years with the organization</p>
+                    <p className="text-sm text-amber-800 mt-1">15+ years with the organization</p>
                   </div>
                 </motion.div>
               </div>
             </div>
             <div>
-              <h3 className="text-3xl font-bold mb-8">
-                <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                  Our Mission
-                </span>
+              <h3 className="text-3xl font-bold text-orange-600 mb-8">
+                Our Mission
               </h3>
               <ul className="space-y-4">
                 <motion.li 
@@ -168,28 +161,28 @@ export function AboutSection() {
                   whileHover={{ x: 5 }}
                 >
                   <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <span className="text-gray-700 font-medium">Innovative and high Quality infrastructure solutions</span>
+                  <span className="text-amber-800 font-medium">Innovative and high Quality infrastructure solutions</span>
                 </motion.li>
                 <motion.li 
                   className="flex items-start p-3 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
                   whileHover={{ x: 5 }}
                 >
                   <div className="w-3 h-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <span className="text-gray-700 font-medium">Investing in people & technology</span>
+                  <span className="text-amber-800 font-medium">Investing in people & technology</span>
                 </motion.li>
                 <motion.li 
                   className="flex items-start p-3 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
                   whileHover={{ x: 5 }}
                 >
                   <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <span className="text-gray-700 font-medium">Sustainable development & expansion</span>
+                  <span className="text-amber-800 font-medium">Sustainable development & expansion</span>
                 </motion.li>
                 <motion.li 
                   className="flex items-start p-3 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
                   whileHover={{ x: 5 }}
                 >
                   <div className="w-3 h-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <span className="text-gray-700 font-medium">Make clients happy with exceptional service</span>
+                  <span className="text-amber-800 font-medium">Make clients happy with exceptional service</span>
                 </motion.li>
               </ul>
             </div>
