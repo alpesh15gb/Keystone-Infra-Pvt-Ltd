@@ -42,6 +42,9 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Implemented automatic slideshow with manual navigation controls
 - Completely redesigned locations section with interactive dark theme and dynamic elements
 - Added India infrastructure map visualization with clickable state details
+- Applied consistent orange headers and brown paragraph color scheme across entire website
+- Updated all section headings, titles, and text elements to use orange and amber/brown color palette
+- Maintained visual hierarchy while ensuring brand-aligned color consistency throughout all components
 
 # User Preferences
 

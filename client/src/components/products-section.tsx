@@ -47,8 +47,8 @@ export function ProductsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Our Infrastructure Expertise</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-orange-600 mb-4">Our Infrastructure Expertise</h2>
+          <p className="text-xl text-amber-800 max-w-3xl mx-auto">
             Diversified excellence across transportation, water management, and construction projects
           </p>
         </motion.div>
@@ -77,11 +77,11 @@ export function ProductsSection() {
                     </div>
                   </div>
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-stripe-dark mb-4">{product.title}</h3>
-                    <p className="text-gray-600 mb-6">{product.description}</p>
+                    <h3 className="text-2xl font-bold text-orange-600 mb-4">{product.title}</h3>
+                    <p className="text-amber-800 mb-6">{product.description}</p>
                     <ul className="space-y-2 mb-6">
                       {product.features.map((feature) => (
-                        <li key={feature} className="flex items-center text-sm text-gray-600">
+                        <li key={feature} className="flex items-center text-sm text-amber-800">
                           <CheckCircle className="text-green-500 mr-2" size={16} />
                           {feature}
                         </li>

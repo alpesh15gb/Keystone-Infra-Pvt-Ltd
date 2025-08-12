@@ -60,8 +60,8 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Awards & Recognition</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-orange-600 mb-4">Awards & Recognition</h2>
+          <p className="text-xl text-amber-800 max-w-3xl mx-auto">
             Recognized for excellence in infrastructure development across multiple states
           </p>
         </motion.div>
@@ -85,11 +85,11 @@ export function TestimonialsSection() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <div className="font-semibold text-stripe-dark">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.role}</div>
+                      <div className="font-semibold text-orange-600">{testimonial.name}</div>
+                      <div className="text-sm text-amber-700">{testimonial.role}</div>
                     </div>
                   </div>
-                  <p className="text-gray-600 mb-4">{testimonial.content}</p>
+                  <p className="text-amber-800 mb-4">{testimonial.content}</p>
                   <div className="flex text-yellow-400">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star key={star} className="fill-current" size={16} />
@@ -110,8 +110,8 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-stripe-dark dark:text-white mb-4">Awards & Accolades</h3>
-            <p className="text-gray-600 dark:text-gray-300">Recognized for excellence across multiple states and projects</p>
+            <h3 className="text-3xl font-bold text-orange-600 mb-4">Awards & Accolades</h3>
+            <p className="text-amber-800">Recognized for excellence across multiple states and projects</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -132,9 +132,9 @@ export function TestimonialsSection() {
                     {award.year}
                   </Badge>
                 </div>
-                <h4 className="font-bold text-stripe-dark dark:text-white mb-1">{award.title}</h4>
-                <div className="text-blue-600 dark:text-blue-400 font-medium text-sm mb-2">{award.location}</div>
-                <p className="text-gray-600 dark:text-gray-300 text-xs">{award.description}</p>
+                <h4 className="font-bold text-orange-600 mb-1">{award.title}</h4>
+                <div className="text-orange-700 font-medium text-sm mb-2">{award.location}</div>
+                <p className="text-amber-800 text-xs">{award.description}</p>
               </motion.div>
             ))}
           </div>

@@ -43,8 +43,8 @@ export function FeaturesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Our Mission & Values</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-orange-600 mb-4">Our Mission & Values</h2>
+          <p className="text-xl text-amber-800 max-w-3xl mx-auto">
             Be a global leader in infrastructure with optimisation and micro-level planning
           </p>
         </motion.div>
@@ -62,8 +62,8 @@ export function FeaturesSection() {
               <div className={`w-20 h-20 ${feature.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                 <feature.icon className={feature.iconColor} size={36} />
               </div>
-              <h3 className="text-xl font-bold text-stripe-dark mb-3">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <h3 className="text-xl font-bold text-orange-600 mb-3">{feature.title}</h3>
+              <p className="text-amber-800">{feature.description}</p>
             </motion.div>
           ))}
         </div>

@@ -54,8 +54,8 @@ export function PricingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Our Service Categories</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-orange-600 mb-4">Our Service Categories</h2>
+          <p className="text-xl text-amber-800 max-w-3xl mx-auto">
             Engineering, Procurement & Construction (EPC) solutions across multiple domains
           </p>
         </motion.div>
@@ -82,11 +82,11 @@ export function PricingSection() {
               >
                 <CardContent className="p-8">
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-stripe-dark mb-2">{plan.name}</h3>
-                    <p className="text-gray-600 mb-4">{plan.description}</p>
-                    <div className="text-4xl font-bold text-stripe-dark">
+                    <h3 className="text-2xl font-bold text-orange-600 mb-2">{plan.name}</h3>
+                    <p className="text-amber-800 mb-4">{plan.description}</p>
+                    <div className="text-4xl font-bold text-orange-700">
                       {plan.price}
-                      <span className="text-lg font-normal text-gray-600">{plan.period}</span>
+                      <span className="text-lg font-normal text-amber-700">{plan.period}</span>
                     </div>
                   </div>
                   <ul className="space-y-4 mb-8">
