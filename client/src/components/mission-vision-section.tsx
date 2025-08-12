@@ -63,10 +63,10 @@ export function MissionVisionSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-5xl font-bold text-orange-600 mb-6">
             What Drives Us
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-amber-800 max-w-4xl mx-auto">
             Our mission, vision, and values are more than words – they're the foundation of every project we deliver and every relationship we build.
           </p>
         </motion.div>
@@ -107,11 +107,11 @@ export function MissionVisionSection() {
                   </span>
                 </div>
                 
-                <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                <h3 className="text-4xl font-bold text-orange-600 mb-6">
                   {section.title}
                 </h3>
                 
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                <p className="text-lg text-amber-800 mb-8 leading-relaxed">
                   {section.description}
                 </p>
 
@@ -125,7 +125,7 @@ export function MissionVisionSection() {
                       className="flex items-start space-x-3"
                     >
                       <ArrowRight className={`w-5 h-5 mt-1 text-orange-500 flex-shrink-0`} />
-                      <span className="text-gray-700 dark:text-gray-300 text-sm font-medium leading-relaxed">
+                      <span className="text-amber-800 text-sm font-medium leading-relaxed">
                         {item}
                       </span>
                     </motion.div>
@@ -147,7 +147,7 @@ export function MissionVisionSection() {
             <h3 className="text-3xl font-bold text-white mb-4">
               Ready to Build Something Amazing?
             </h3>
-            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
               Let's transform your infrastructure vision into reality with our proven expertise and unwavering commitment to excellence.
             </p>
             <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">

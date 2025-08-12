@@ -46,8 +46,8 @@ export function CertificationsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Certifications & Standards</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-orange-600 mb-4">Certifications & Standards</h2>
+          <p className="text-xl text-amber-800 max-w-3xl mx-auto">
             Committed to international quality, safety, and environmental standards
           </p>
         </motion.div>
@@ -70,9 +70,9 @@ export function CertificationsSection() {
                   <Badge variant="secondary" className="mb-3 text-xs">
                     Since {cert.year}
                   </Badge>
-                  <h3 className="text-xl font-bold text-stripe-dark mb-2">{cert.title}</h3>
-                  <div className="text-lg font-semibold text-accent-orange mb-3">{cert.standard}</div>
-                  <p className="text-gray-600 text-sm">{cert.description}</p>
+                  <h3 className="text-xl font-bold text-orange-600 mb-2">{cert.title}</h3>
+                  <div className="text-lg font-semibold text-orange-700 mb-3">{cert.standard}</div>
+                  <p className="text-amber-800 text-sm">{cert.description}</p>
                 </CardContent>
               </Card>
             </motion.div>

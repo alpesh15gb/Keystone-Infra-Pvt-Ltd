@@ -85,8 +85,8 @@ export function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Get in Touch</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-4xl font-bold text-orange-600 mb-4">Get in Touch</h2>
+          <p className="text-xl text-amber-800">
             Ready to transform your infrastructure? Let's talk.
           </p>
         </motion.div>
@@ -107,7 +107,7 @@ export function ContactSection() {
                       name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">First Name</FormLabel>
+                          <FormLabel className="text-sm font-medium text-orange-600">First Name</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="John"
@@ -124,7 +124,7 @@ export function ContactSection() {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">Last Name</FormLabel>
+                          <FormLabel className="text-sm font-medium text-orange-600">Last Name</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="Doe"
@@ -143,7 +143,7 @@ export function ContactSection() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-gray-700">Email</FormLabel>
+                        <FormLabel className="text-sm font-medium text-orange-600">Email</FormLabel>
                         <FormControl>
                           <Input
                             type="email"
@@ -162,7 +162,7 @@ export function ContactSection() {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-gray-700">Company</FormLabel>
+                        <FormLabel className="text-sm font-medium text-orange-600">Company</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your Company"
@@ -180,7 +180,7 @@ export function ContactSection() {
                     name="helpType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-gray-700">How can we help?</FormLabel>
+                        <FormLabel className="text-sm font-medium text-orange-600">How can we help?</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="border-gray-300 focus:ring-2 focus:ring-stripe-purple focus:border-transparent transition-all duration-300">
@@ -205,7 +205,7 @@ export function ContactSection() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-gray-700">Message</FormLabel>
+                        <FormLabel className="text-sm font-medium text-orange-600">Message</FormLabel>
                         <FormControl>
                           <Textarea
                             rows={4}

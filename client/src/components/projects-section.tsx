@@ -77,8 +77,8 @@ export function ProjectsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-stripe-dark mb-4">Our Iconic Projects</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-orange-600 mb-4">Our Iconic Projects</h2>
+          <p className="text-xl text-amber-800 max-w-3xl mx-auto">
             Pioneering infrastructure development across transportation, water management, and urban development
           </p>
         </motion.div>
@@ -99,7 +99,7 @@ export function ProjectsSection() {
                   {stat.number}
                   <span className="text-lg ml-1">{stat.unit}</span>
                 </div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
+                <div className="text-sm text-amber-800">{stat.label}</div>
               </div>
             </motion.div>
           ))}
@@ -126,20 +126,20 @@ export function ProjectsSection() {
                     </Badge>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-stripe-dark mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-orange-600 mb-2">{project.title}</h3>
                   
-                  <div className="flex items-center text-gray-500 text-sm mb-3">
+                  <div className="flex items-center text-amber-700 text-sm mb-3">
                     <MapPin size={14} className="mr-1" />
                     {project.location}
                   </div>
                   
-                  <div className="text-stripe-blue text-sm font-medium mb-3">
+                  <div className="text-orange-700 text-sm font-medium mb-3">
                     {project.details}
                   </div>
                   
-                  <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                  <p className="text-amber-800 text-sm mb-4">{project.description}</p>
                   
-                  <div className="text-xs text-gray-500">
+                  <div className="text-xs text-amber-700">
                     <strong>Client:</strong> {project.client}
                   </div>
                 </CardContent>
@@ -157,8 +157,8 @@ export function ProjectsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-stripe-dark mb-4">Project Locations</h3>
-            <p className="text-gray-600">Expanding over horizons - Operating across 14 states in India</p>
+            <h3 className="text-3xl font-bold text-orange-600 mb-4">Project Locations</h3>
+            <p className="text-amber-800">Expanding over horizons - Operating across 14 states in India</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
