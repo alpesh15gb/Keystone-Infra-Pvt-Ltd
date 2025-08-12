@@ -37,6 +37,7 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Transformed hero section into full-width cinematic design with video-style background
 - Added animated construction imagery with zoom and parallax effects for premium look
 - Updated navigation logo with new professional Keystone Infra branding
+- Applied transparent background logo for cleaner header appearance
 
 # User Preferences
 
