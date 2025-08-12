@@ -4,8 +4,6 @@ import { AboutSection } from "@/components/about-section";
 import { MissionVisionSection } from "@/components/mission-vision-section";
 import { ProductsSection } from "@/components/products-section";
 import { FeaturesSection } from "@/components/features-section";
-import { ProjectsSection } from "@/components/projects-section";
-import { ProjectOwlCarousel } from "@/components/working-owl-slider";
 import { TeamSection } from "@/components/team-section";
 import { LocationsSection } from "@/components/locations-section";
 import { EsteemedClientsSection } from "@/components/esteemed-clients-section";
@@ -24,8 +22,6 @@ export default function Home() {
       <MissionVisionSection />
       <ProductsSection />
       <FeaturesSection />
-      <ProjectOwlCarousel />
-      <ProjectsSection />
       <TeamSection />
       <LocationsSection />
       <EsteemedClientsSection />
