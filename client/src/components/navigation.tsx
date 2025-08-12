@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import logoImage from "@assets/logo_1755020445511.png";
+import logoImage from "@assets/generated_images/transparent_Keystone_logo_6b09a315.png";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
