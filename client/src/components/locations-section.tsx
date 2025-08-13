@@ -229,59 +229,7 @@ export function LocationsSection() {
           </div>
         </motion.div>
 
-        {/* Regional Highlights */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
-        >
-          {[
-            { region: "Northern India", highlight: "Highway Development", icon: "🛣️", color: "from-red-500/20 to-pink-600/20 border-red-500/30" },
-            { region: "Southern India", highlight: "Urban Infrastructure", icon: "🏙️", color: "from-blue-500/20 to-cyan-600/20 border-blue-500/30" },
-            { region: "Eastern India", highlight: "Bridge Construction", icon: "🌉", color: "from-green-500/20 to-emerald-600/20 border-green-500/30" },
-            { region: "Central India", highlight: "Water Management", icon: "💧", color: "from-purple-500/20 to-violet-600/20 border-purple-500/30" }
-          ].map((area, index) => (
-            <motion.div
-              key={area.region}
-              whileHover={{ scale: 1.05 }}
-              className={`bg-gradient-to-br ${area.color} rounded-2xl p-6 border backdrop-blur-sm text-center`}
-            >
-              <div className="text-3xl mb-3">{area.icon}</div>
-              <h4 className="text-white font-bold mb-2">{area.region}</h4>
-              <p className="text-amber-200 text-sm">{area.highlight}</p>
-            </motion.div>
-          ))}
-        </motion.div>
 
-        {/* Flagship Projects Showcase */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-orange-600 to-amber-600 rounded-3xl p-8 md:p-12 shadow-2xl mb-16"
-        >
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">Flagship Projects</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
-              <Building2 className="w-12 h-12 mx-auto mb-4 text-orange-200" />
-              <h4 className="font-bold text-xl text-white mb-2">Singda Dam</h4>
-              <p className="text-orange-100">Manipur • Water Infrastructure</p>
-            </div>
-            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
-              <Building2 className="w-12 h-12 mx-auto mb-4 text-orange-200" />
-              <h4 className="font-bold text-xl text-white mb-2">Indrawathi Bridge</h4>
-              <p className="text-orange-100">Chhattisgarh • 712m • 500 Villages Connected</p>
-            </div>
-            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
-              <Building2 className="w-12 h-12 mx-auto mb-4 text-orange-200" />
-              <h4 className="font-bold text-xl text-white mb-2">Police Headquarters</h4>
-              <p className="text-orange-100">Manipur • Government Infrastructure</p>
-            </div>
-          </div>
-        </motion.div>
 
 
       </div>
