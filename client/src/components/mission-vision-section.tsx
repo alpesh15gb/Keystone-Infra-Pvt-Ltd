@@ -136,25 +136,7 @@ export function MissionVisionSection() {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-20"
-        >
-          <div className="bg-gradient-to-r from-blue-600 to-orange-600 rounded-3xl p-12 shadow-2xl">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Ready to Build Something Amazing?
-            </h3>
-            <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
-              Let's transform your infrastructure vision into reality with our proven expertise and unwavering commitment to excellence.
-            </p>
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">
-              Start Your Project Today
-            </button>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
