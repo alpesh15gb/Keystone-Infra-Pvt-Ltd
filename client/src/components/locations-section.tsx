@@ -36,69 +36,7 @@ export function LocationsSection() {
           </p>
         </motion.div>
 
-        {/* Coverage Overview */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
-        >
-          <div className="bg-gradient-to-br from-orange-500/20 to-amber-600/20 rounded-2xl p-8 border border-orange-500/30 backdrop-blur-sm text-center">
-            <Globe className="w-12 h-12 text-orange-400 mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-white mb-2">14 States</h3>
-            <p className="text-amber-200">Active Operations Nationwide</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-blue-500/20 to-cyan-600/20 rounded-2xl p-8 border border-blue-500/30 backdrop-blur-sm text-center">
-            <Building2 className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-white mb-2">600+</h3>
-            <p className="text-amber-200">Completed Projects</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-green-500/20 to-emerald-600/20 rounded-2xl p-8 border border-green-500/30 backdrop-blur-sm text-center">
-            <Trophy className="w-12 h-12 text-green-400 mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-white mb-2">20+ Years</h3>
-            <p className="text-amber-200">Infrastructure Excellence</p>
-          </div>
-        </motion.div>
 
-        {/* States Coverage */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-br from-slate-800/80 to-blue-900/60 rounded-3xl p-8 md:p-12 backdrop-blur-sm border border-slate-700/50 shadow-2xl mb-16"
-        >
-          <div className="text-center mb-10">
-            <h3 className="text-3xl font-bold text-orange-500 mb-4 flex items-center justify-center">
-              <MapPin className="w-8 h-8 mr-3" />
-              Our Operational States
-            </h3>
-            <p className="text-amber-200 text-lg">
-              From North to South, East to West - Building India's Infrastructure Future
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {states.map((state, index) => (
-              <motion.div
-                key={state}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(249, 115, 22, 0.1)" }}
-                className="bg-slate-700/50 rounded-xl p-4 border border-slate-600/50 hover:border-orange-500/50 transition-all duration-300 cursor-pointer"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-orange-400 rounded-full flex-shrink-0"></div>
-                  <span className="text-white font-medium text-sm">{state}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Regional Highlights */}
         <motion.div
