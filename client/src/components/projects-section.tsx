@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MapPin, Ruler, Droplets, Building2, ChevronRight, Calendar, Users, Trophy, Eye, ArrowUpRight, Play } from "lucide-react";
+import { MapPin, Ruler, Droplets, Building2, ChevronRight, Users, Eye, ArrowUpRight, Play } from "lucide-react";
 import { useState } from "react";
 
 // Import project images
@@ -112,40 +112,7 @@ const iconicProjects = [
   }
 ];
 
-const projectStats = [
-  {
-    number: "629",
-    unit: "+",
-    label: "Projects Completed",
-    color: "text-orange-600",
-    icon: Trophy,
-    gradient: "from-orange-500 to-amber-600"
-  },
-  {
-    number: "14",
-    unit: "",
-    label: "States Coverage", 
-    color: "text-orange-600",
-    icon: MapPin,
-    gradient: "from-amber-500 to-orange-600"
-  },
-  {
-    number: "20",
-    unit: "+",
-    label: "Years Experience",
-    color: "text-orange-600",
-    icon: Calendar,
-    gradient: "from-orange-600 to-amber-500"
-  },
-  {
-    number: "500",
-    unit: "+",
-    label: "Villages Connected",
-    color: "text-orange-600", 
-    icon: Users,
-    gradient: "from-amber-600 to-orange-500"
-  },
-];
+
 
 const projectCategories = [
   "All Projects",
@@ -199,40 +166,7 @@ export function ProjectsSection() {
           </p>
         </motion.div>
 
-        {/* Enhanced Statistics Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
-        >
-          {projectStats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r opacity-75 rounded-2xl blur group-hover:blur-sm transition-all duration-300"
-                   style={{background: `linear-gradient(135deg, #f97316, #fbbf24)`}}></div>
-              <div className="relative bg-white backdrop-blur-sm border border-gray-200 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="flex items-center justify-center mb-6">
-                  <div className={`p-4 bg-gradient-to-r ${stat.gradient} rounded-xl shadow-lg`}>
-                    <stat.icon className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className={`text-4xl font-bold ${stat.color} mb-2`}>
-                    {stat.number}
-                    <span className="text-2xl ml-1">{stat.unit}</span>
-                  </div>
-                  <p className="text-amber-800 font-medium">{stat.label}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+
 
         {/* Project Categories Filter */}
         <motion.div
