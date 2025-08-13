@@ -73,29 +73,7 @@ export function AboutSection() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
-            >
-              <Card className={`h-full bg-white shadow-xl border-2 ${stat.borderColor} text-center hover:shadow-2xl hover:scale-105 transition-all duration-300`}>
-                <CardContent className="p-6">
-                  <div className={`w-16 h-16 ${stat.bgColor} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <stat.icon className={`${stat.iconColor} group-hover:text-orange-700 transition-colors duration-300`} size={32} />
-                  </div>
-                  <div className="text-3xl font-bold text-orange-600 mb-2">{stat.number}</div>
-                  <div className="text-lg font-semibold text-orange-700 mb-1">{stat.label}</div>
-                  <div className="text-sm text-amber-700">{stat.description}</div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+
 
         <motion.div
           className="bg-gradient-to-br from-white to-orange-50/50 rounded-3xl p-8 md:p-12 shadow-xl border border-orange-100"
