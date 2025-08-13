@@ -72,7 +72,7 @@ export function TeamSection() {
                 </p>
               </div>
 
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 text-center">
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 text-justify">
                 {member.description}
               </p>
 
