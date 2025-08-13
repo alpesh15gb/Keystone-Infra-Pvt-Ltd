@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Building2, Users, Calendar, Zap, Award, Globe } from "lucide-react";
+import { MapPin, Users, Calendar, Zap } from "lucide-react";
 import { useState } from "react";
 import indiaMap from "@assets/generated_images/India_infrastructure_map_0e73f079.png";
 import governmentBuilding from "@assets/generated_images/state_government_building_fa9560c7.png";
@@ -110,36 +110,7 @@ export function LocationsSection() {
 
   const totalProjects = stateProjects.reduce((sum, state) => sum + state.projects, 0);
 
-  const achievements = [
-    {
-      icon: Building2,
-      title: `${totalProjects}+ Projects`,
-      subtitle: "Completed Successfully",
-      value: totalProjects,
-      color: "from-blue-600 to-purple-600"
-    },
-    {
-      icon: Globe,
-      title: "14 States",
-      subtitle: "All India Presence",
-      value: 14,
-      color: "from-green-600 to-teal-600"
-    },
-    {
-      icon: Users,
-      title: "500+ Villages",
-      subtitle: "Communities Connected",
-      value: 500,
-      color: "from-orange-600 to-red-600"
-    },
-    {
-      icon: Award,
-      title: "20 Years",
-      subtitle: "Of Excellence",
-      value: 20,
-      color: "from-purple-600 to-pink-600"
-    }
-  ];
+
 
   return (
     <section id="locations" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
@@ -173,37 +144,7 @@ export function LocationsSection() {
           </p>
         </motion.div>
 
-        {/* Interactive Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
-        >
-          {achievements.map((achievement, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r opacity-75 rounded-2xl blur group-hover:blur-sm transition-all duration-300"
-                   style={{backgroundImage: `linear-gradient(135deg, ${achievement.color.split(' ')[1]}, ${achievement.color.split(' ')[3]})`}}></div>
-              <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300">
-                <div className="flex items-center justify-center mb-4">
-                  <div className={`p-4 bg-gradient-to-r ${achievement.color} rounded-xl`}>
-                    <achievement.icon className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-white mb-1">{achievement.title}</h3>
-                  <p className="text-blue-200 text-sm">{achievement.subtitle}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+
 
         {/* Interactive Map and States */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
