@@ -100,29 +100,7 @@ export function HeroSection() {
                 across 14 states, delivering innovative solutions for complex construction challenges.
               </motion.p>
 
-              {/* Action Buttons */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 mb-12"
-              >
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2" size={20} />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-white/30 text-white bg-white/10 backdrop-blur-sm px-10 py-6 text-lg font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300"
-                >
-                  <Play className="mr-2" size={20} />
-                  Watch Our Story
-                </Button>
-              </motion.div>
+
 
               {/* Stats/Features */}
               <motion.div 
