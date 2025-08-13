@@ -111,7 +111,7 @@ export function HeroSection() {
                   size="lg"
                   className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105"
                 >
-                  Start Your Project
+                  Get Started
                   <ArrowRight className="ml-2" size={20} />
                 </Button>
                 <Button
