@@ -19,8 +19,7 @@ export function Navigation() {
     { label: "Home", href: "home" },
     { label: "About", href: "about" },
     { label: "Services", href: "products" },
-    { label: "Projects", href: "projects" },
-    { label: "Team", href: "team" },
+    { label: "Management", href: "team" },
     { label: "Locations", href: "locations" },
     { label: "Contact", href: "contact" },
   ];
