@@ -283,27 +283,7 @@ export function LocationsSection() {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-slate-800/80 to-blue-900/60 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-700/50 backdrop-blur-sm">
-            <h3 className="text-3xl font-bold text-orange-500 mb-4">
-              Ready to Build Nationwide?
-            </h3>
-            <p className="text-amber-200 text-lg mb-8 max-w-2xl mx-auto">
-              Partner with India's trusted infrastructure leader. From concept to completion, 
-              we deliver excellence across all states.
-            </p>
-            <button className="bg-gradient-to-r from-orange-600 to-amber-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-orange-700 hover:to-amber-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
-              Start Your Project Today
-            </button>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
