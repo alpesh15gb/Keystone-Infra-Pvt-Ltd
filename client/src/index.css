@@ -52,11 +52,11 @@
   --spacing: 0.25rem;
   
   /* InfraCore custom colors - Keystone inspired */
-  --stripe-purple: hsl(210 100% 40%); /* Professional blue */
-  --stripe-dark: hsl(210 30% 15%); /* Dark blue-gray */
-  --stripe-blue: hsl(210 100% 50%); /* Bright blue */
-  --stripe-gray: hsl(210 15% 55%); /* Professional gray */
-  --stripe-light: hsl(210 20% 98%); /* Light blue-gray */
+  --stripe-purple: hsl(30 25% 35%); /* Professional brown */
+  --stripe-dark: hsl(25 20% 15%); /* Dark brown */
+  --stripe-blue: hsl(35 40% 45%); /* Medium brown */
+  --stripe-gray: hsl(30 15% 55%); /* Brown-gray */
+  --stripe-light: hsl(35 20% 98%); /* Light brown-cream */
   --accent-orange: hsl(25 95% 55%); /* Professional orange accent */
   --accent-orange-light: hsl(25 95% 95%); /* Light orange background */
 }
@@ -67,7 +67,7 @@
 }
 
 .gradient-bg-orange {
-  background: linear-gradient(135deg, var(--accent-orange) 0%, hsl(35 95% 60%) 100%);
+  background: linear-gradient(135deg, var(--accent-orange) 0%, hsl(30 70% 50%) 100%);
 }
 
 /* Video background animation */
@@ -158,11 +158,11 @@
   --shadow-2xl: 0px 2px 0px 0px hsl(246 91% 68% / 0.00);
   
   /* InfraCore custom colors for dark mode */
-  --stripe-purple: hsl(246 87% 63%);
-  --stripe-dark: hsl(215 28% 17%);
-  --stripe-blue: hsl(191 100% 50%);
-  --stripe-gray: hsl(214 21% 57%);
-  --stripe-light: hsl(215 28% 6%);
+  --stripe-purple: hsl(30 40% 50%); /* Lighter brown for dark mode */
+  --stripe-dark: hsl(25 25% 20%); /* Dark brown */
+  --stripe-blue: hsl(35 50% 60%); /* Medium brown */
+  --stripe-gray: hsl(30 20% 60%); /* Brown-gray */
+  --stripe-light: hsl(25 15% 8%); /* Very dark brown */
 }
 
 @keyframes scroll {
@@ -198,7 +198,7 @@
   }
   
   .gradient-bg-orange {
-    background: linear-gradient(135deg, var(--accent-orange) 0%, hsl(35 95% 60%) 100%);
+    background: linear-gradient(135deg, var(--accent-orange) 0%, hsl(30 70% 50%) 100%);
   }
   
   .glass-effect {
