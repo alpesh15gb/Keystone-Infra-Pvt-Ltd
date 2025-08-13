@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Calendar, Users, Zap, Award, ArrowRight, Star, Trophy, Gauge, Play } from "lucide-react";
 import slider1 from "@assets/slider-1_1754941983527.jpg";
+import bridgeVideo from "@assets/AQO2YnGpFZRhVj6bvJYhbquIPNUA8ePRrKSDva6lc2YNCU_-BriLjAbhDQqaAN2rAeIi_y7UQtyzsUAsASXl-p5VTAXwthdC5a5gXbDdDziKMw_1755065168445.mp4";
 
 export function IconicProjectSection() {
+  const [showVideo, setShowVideo] = useState(false);
+
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -75,29 +79,40 @@ export function IconicProjectSection() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="aspect-[4/3] relative">
-                  <img
-                    src={slider1}
-                    alt="Construction of Bridge at Tarud River"
-                    className="w-full h-full object-cover"
-                  />
-                  
-                  {/* Image Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  
-                  {/* Video Play Button Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.button
-                      className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => {
-                        // Video play functionality can be added here
-                        alert('Video functionality coming soon!');
-                      }}
+                  {!showVideo ? (
+                    <>
+                      <img
+                        src={slider1}
+                        alt="Construction of Bridge at Tarud River"
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* Image Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                      
+                      {/* Video Play Button Overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <motion.button
+                          className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() => setShowVideo(true)}
+                        >
+                          <Play className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform duration-300" />
+                        </motion.button>
+                      </div>
+                    </>
+                  ) : (
+                    <video
+                      src={bridgeVideo}
+                      controls
+                      className="w-full h-full object-cover"
+                      autoPlay
+                      onEnded={() => setShowVideo(false)}
                     >
-                      <Play className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform duration-300" />
-                    </motion.button>
-                  </div>
+                      Your browser does not support the video tag.
+                    </video>
+                  )}
                   
                   {/* Floating Stats */}
                   <div className="absolute bottom-6 left-6 right-6">
