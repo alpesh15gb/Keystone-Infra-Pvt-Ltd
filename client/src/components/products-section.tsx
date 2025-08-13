@@ -9,8 +9,8 @@ import buildingImage from "@/assets/Building_construction_site_51639ad3.png";
 const products = [
   {
     icon: Cloud,
-    iconColor: "text-stripe-purple",
-    bgColor: "bg-stripe-purple/10",
+    iconColor: "text-amber-700",
+    bgColor: "bg-amber-700/10",
     title: "Transportation Infrastructure",
     description: "Complete road construction including national highways, state highways, and bridges.",
     features: ["National & State Highways", "Bridge Construction", "CC Roads & Major District Roads"],
@@ -18,8 +18,8 @@ const products = [
   },
   {
     icon: Database,
-    iconColor: "text-stripe-blue",
-    bgColor: "bg-stripe-blue/10",
+    iconColor: "text-amber-600",
+    bgColor: "bg-amber-600/10",
     title: "Water Management",
     description: "Comprehensive water supply, treatment plants, and irrigation systems.",
     features: ["Water Treatment Plants", "Pipeline Distribution", "Sewerage Treatment"],
@@ -27,8 +27,8 @@ const products = [
   },
   {
     icon: Network,
-    iconColor: "text-accent-orange",
-    bgColor: "bg-accent-orange-light",
+    iconColor: "text-amber-800",
+    bgColor: "bg-amber-800/10",
     title: "Building Construction",
     description: "Hospitality, commercial, institutional, and medical infrastructure development.",
     features: ["Commercial Buildings", "Medical Facilities", "Pre-fab Structures", "Residential Buildings"],

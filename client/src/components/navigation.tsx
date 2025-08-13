@@ -25,7 +25,7 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-amber-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           <div className="flex items-center">
@@ -47,7 +47,7 @@ export function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-sm text-gray-600 hover:text-stripe-purple transition-colors duration-300"
+                  className="text-sm text-amber-800 hover:text-amber-600 transition-colors duration-300"
                 >
                   {item.label}
                 </button>
@@ -74,7 +74,7 @@ export function Navigation() {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6 text-amber-800" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
@@ -83,7 +83,7 @@ export function Navigation() {
                     <button
                       key={item.href}
                       onClick={() => scrollToSection(item.href)}
-                      className="text-left text-lg text-gray-600 hover:text-stripe-purple transition-colors duration-300"
+                      className="text-left text-lg text-amber-800 hover:text-amber-600 transition-colors duration-300"
                     >
                       {item.label}
                     </button>

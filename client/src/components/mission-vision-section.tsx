@@ -18,8 +18,8 @@ export function MissionVisionSection() {
         "Make clients happy with us"
       ],
       image: missionImage,
-      color: "from-blue-500 to-blue-600",
-      bgColor: "from-blue-50 to-blue-100"
+      color: "from-amber-700 to-amber-800",
+      bgColor: "from-amber-50 to-amber-100"
     },
     {
       icon: Eye,
@@ -49,8 +49,8 @@ export function MissionVisionSection() {
         "Team work & creativity"
       ],
       image: valuesImage,
-      color: "from-green-500 to-green-600",
-      bgColor: "from-green-50 to-green-100"
+      color: "from-amber-600 to-amber-700",
+      bgColor: "from-amber-50 to-amber-100"
     }
   ];
 
