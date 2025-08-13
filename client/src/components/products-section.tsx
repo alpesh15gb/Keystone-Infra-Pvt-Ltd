@@ -22,7 +22,7 @@ const products = [
     bgColor: "bg-stripe-blue/10",
     title: "Water Management",
     description: "Comprehensive water supply, treatment plants, and irrigation systems.",
-    features: ["Water Treatment Plants (45 MLD)", "Pipeline Distribution (305 KM)", "Sewerage Treatment (16 MLD)"],
+    features: ["Water Treatment Plants", "Pipeline Distribution", "Sewerage Treatment"],
     image: waterImage,
   },
   {
