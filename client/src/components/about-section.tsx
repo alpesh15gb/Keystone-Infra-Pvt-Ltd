@@ -19,7 +19,7 @@ const stats = [
     borderColor: "border-amber-200",
     number: "14",
     label: "States Coverage",
-    description: "Pan-India presence",
+    description: "All India presence",
   },
   {
     icon: Award,

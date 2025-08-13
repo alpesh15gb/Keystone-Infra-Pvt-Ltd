@@ -121,7 +121,7 @@ export function LocationsSection() {
     {
       icon: Globe,
       title: "14 States",
-      subtitle: "Pan-India Presence",
+      subtitle: "All India Presence",
       value: 14,
       color: "from-green-600 to-teal-600"
     },
@@ -164,7 +164,7 @@ export function LocationsSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="bg-gradient-to-r from-orange-400 to-blue-400 bg-clip-text text-transparent">
-              Pan-India
+              All India
             </span>{" "}
             Presence
           </motion.h2>
