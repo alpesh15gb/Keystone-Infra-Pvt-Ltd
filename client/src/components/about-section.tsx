@@ -98,7 +98,7 @@ export function AboutSection() {
                   <div>
                     <h4 className="font-bold text-orange-600">D.M. Ramesh</h4>
                     <p className="text-orange-700 font-semibold text-sm">Managing Director & Founder</p>
-                    <p className="text-sm text-amber-800 mt-1">30+ years experience in infrastructure and civil construction</p>
+                    <p className="text-sm text-amber-800 mt-1">Extensive experience in infrastructure and civil construction</p>
                   </div>
                 </motion.div>
                 <motion.div 
@@ -111,7 +111,7 @@ export function AboutSection() {
                   <div>
                     <h4 className="font-bold text-orange-600">D. Karthik Amar</h4>
                     <p className="text-orange-700 font-semibold text-sm">Director</p>
-                    <p className="text-sm text-amber-800 mt-1">Leading housing projects across 4 states</p>
+                    <p className="text-sm text-amber-800 mt-1">Leading housing projects across multiple states</p>
                   </div>
                 </motion.div>
                 <motion.div 
@@ -124,7 +124,7 @@ export function AboutSection() {
                   <div>
                     <h4 className="font-bold text-orange-600">D. Lakshmi Chowdary</h4>
                     <p className="text-orange-700 font-semibold text-sm">Director</p>
-                    <p className="text-sm text-amber-800 mt-1">15+ years with the organization</p>
+                    <p className="text-sm text-amber-800 mt-1">Dedicated leadership with the organization</p>
                   </div>
                 </motion.div>
               </div>
