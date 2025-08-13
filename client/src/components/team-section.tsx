@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { User, Award, Building, Users } from "lucide-react";
+import { User, Award } from "lucide-react";
 
 export function TeamSection() {
   const teamMembers = [
@@ -26,12 +26,7 @@ export function TeamSection() {
     }
   ];
 
-  const stats = [
-    { label: "Years of Experience", value: "20+", icon: Award },
-    { label: "States Coverage", value: "14", icon: Building },
-    { label: "Completed Projects", value: "600+", icon: Building },
-    { label: "Team Members", value: "50+", icon: Users }
-  ];
+
 
   return (
     <section id="team" className="py-16 bg-white dark:bg-gray-900">
@@ -50,29 +45,7 @@ export function TeamSection() {
           </p>
         </motion.div>
 
-        {/* Company Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
-        >
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
-                  <stat.icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                </div>
-              </div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                {stat.value}
-              </div>
-              <div className="text-gray-600 dark:text-gray-300">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+
 
         {/* Team Members */}
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
