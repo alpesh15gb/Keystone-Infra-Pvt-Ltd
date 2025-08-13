@@ -34,7 +34,7 @@ export function LocationsSection() {
             All India Presence
           </h2>
           <p className="text-xl text-amber-100 max-w-3xl mx-auto leading-relaxed">
-            Spanning across 14 states with 20+ years of infrastructure excellence, 
+            Spanning across India with 20+ years of infrastructure excellence, 
             delivering transformational projects that connect communities and drive progress.
           </p>
         </motion.div>

@@ -97,7 +97,7 @@ export function HeroSection() {
                 className="text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl"
               >
                 Building tomorrow's infrastructure today. Over 20 years of engineering excellence 
-                across 14 states, delivering innovative solutions for complex construction challenges.
+                across India, delivering innovative solutions for complex construction challenges.
               </motion.p>
 
 
@@ -119,7 +119,7 @@ export function HeroSection() {
                 </div>
                 <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
                   <Globe className="text-orange-400 mr-2" size={18} />
-                  <span className="font-medium">14 States Coverage</span>
+                  <span className="font-medium">India Coverage</span>
                 </div>
               </motion.div>
             </motion.div>

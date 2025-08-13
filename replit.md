@@ -1,6 +1,6 @@
 # Overview
 
-This is a full-stack web application for Keystone Infra Pvt. Ltd., a professional infrastructure development company. The application features a comprehensive marketing website with company information, services, projects portfolio, certifications, and contact functionality. Built using React on the frontend and Express.js on the backend, the project showcases a civil engineering and infrastructure development company with 20+ years of experience across 14 states in India.
+This is a full-stack web application for Keystone Infra Pvt. Ltd., a professional infrastructure development company. The application features a comprehensive marketing website with company information, services, projects portfolio, certifications, and contact functionality. Built using React on the frontend and Express.js on the backend, the project showcases a civil engineering and infrastructure development company with 20+ years of experience across India.
 
 ## Recent Changes (August 11, 2025)
 - Successfully integrated 12 authentic project images into Owl Carousel slider
@@ -16,7 +16,7 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
   - Replaced "Sign In" button with "Request Quote" for better lead generation
   - Added Team and Locations navigation links
   - Replaced logo with new Keystone branding and optimized navigation sizing
-  - Created Esteemed Clients section with auto-scrolling client showcase featuring government agencies across 14 states
+  - Created Esteemed Clients section with auto-scrolling client showcase featuring government agencies across India
 - Enhanced Esteemed Clients section with 16+ authentic client logos including ADB, World Bank, ONGC, HUDCO, state governments
 - Combined Awards and Recognition into single cohesive section with testimonials and formal awards
 - Completely revamped Mission Vision Values section with engaging AI-generated images and modern layout:

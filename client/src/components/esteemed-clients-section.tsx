@@ -92,7 +92,7 @@ export function EsteemedClientsSection() {
             Our Esteemed Clients
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Trusted by government agencies and institutions across 14 states for infrastructure development
+            Trusted by government agencies and institutions across India for infrastructure development
           </p>
         </motion.div>
 
