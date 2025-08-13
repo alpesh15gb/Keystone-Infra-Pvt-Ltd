@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Phone } from "lucide-react";
+import { Twitter, Linkedin, Phone, Facebook } from "lucide-react";
 import logoPath from "@/assets/logo.png";
 
 export function Footer() {
@@ -22,6 +22,14 @@ export function Footer() {
                 className="text-gray-400 hover:text-white transition-colors duration-300"
               >
                 <Linkedin size={20} />
+              </a>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <Facebook size={20} />
               </a>
               <a 
                 href="tel:+918886610001" 
