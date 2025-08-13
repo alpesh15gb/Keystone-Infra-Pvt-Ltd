@@ -87,9 +87,7 @@ export function ProductsSection() {
                         </li>
                       ))}
                     </ul>
-                    <Button variant="link" className="text-stripe-purple font-semibold p-0 h-auto">
-                      Learn more →
-                    </Button>
+
                   </div>
                 </CardContent>
               </Card>
