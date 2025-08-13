@@ -102,19 +102,6 @@ export function AboutSection() {
                   </div>
                 </motion.div>
                 <motion.div 
-                  className="flex items-start space-x-4 p-4 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 hover:shadow-md transition-all duration-300"
-                  whileHover={{ x: 5 }}
-                >
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Users className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-orange-600">D. Karthik Amar</h4>
-                    <p className="text-orange-700 font-semibold text-sm">Director</p>
-                    <p className="text-sm text-amber-800 mt-1">Leading housing projects across multiple states</p>
-                  </div>
-                </motion.div>
-                <motion.div 
                   className="flex items-start space-x-4 p-4 rounded-xl bg-gradient-to-r from-orange-50 to-amber-50 hover:shadow-md transition-all duration-300"
                   whileHover={{ x: 5 }}
                 >
@@ -125,6 +112,19 @@ export function AboutSection() {
                     <h4 className="font-bold text-orange-600">D. Lakshmi Chowdary</h4>
                     <p className="text-orange-700 font-semibold text-sm">Director</p>
                     <p className="text-sm text-amber-800 mt-1">Dedicated leadership with the organization</p>
+                  </div>
+                </motion.div>
+                <motion.div 
+                  className="flex items-start space-x-4 p-4 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 hover:shadow-md transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Users className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-orange-600">D. Karthik Amar</h4>
+                    <p className="text-orange-700 font-semibold text-sm">Director</p>
+                    <p className="text-sm text-amber-800 mt-1">Leading housing projects across multiple states</p>
                   </div>
                 </motion.div>
               </div>
