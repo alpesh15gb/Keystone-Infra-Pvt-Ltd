@@ -6,9 +6,17 @@ import constructionVideo from "@assets/generated_images/construction_site_video_
 import bridgeConstruction from "@assets/generated_images/highway_bridge_construction_8ffb9076.png";
 import urbanConstruction from "@assets/generated_images/urban_construction_skyline_f76f4600.png";
 import industrialConstruction from "@assets/generated_images/industrial_construction_site_707415e2.png";
+import highwayConstruction from "@assets/generated_images/Highway_construction_infrastructure_scene_4a33cfd9.png";
+import damConstruction from "@assets/generated_images/Dam_construction_engineering_project_5220be38.png";
+import bridgeProject from "@assets/generated_images/Bridge_construction_infrastructure_project_67b0e816.png";
+import tunnelConstruction from "@assets/generated_images/Tunnel_construction_engineering_work_1f1e4fa5.png";
 
 export function HeroSection() {
   const backgroundImages = [
+    highwayConstruction,
+    damConstruction,
+    bridgeProject,
+    tunnelConstruction,
     constructionVideo,
     bridgeConstruction,
     urbanConstruction,
@@ -22,7 +30,7 @@ export function HeroSection() {
       setCurrentImageIndex((prevIndex) => 
         (prevIndex + 1) % backgroundImages.length
       );
-    }, 5000); // Change image every 5 seconds
+    }, 6000); // Change image every 6 seconds
 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
