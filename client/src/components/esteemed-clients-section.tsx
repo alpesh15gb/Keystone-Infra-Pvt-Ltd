@@ -162,30 +162,7 @@ export function EsteemedClientsSection() {
           </div>
         </motion.div>
 
-        {/* Client statistics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 grid md:grid-cols-4 gap-8"
-        >
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">16+</div>
-            <div className="text-gray-600 dark:text-gray-300">Esteemed Clients</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">14</div>
-            <div className="text-gray-600 dark:text-gray-300">States Served</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">600+</div>
-            <div className="text-gray-600 dark:text-gray-300">Projects Completed</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">20+</div>
-            <div className="text-gray-600 dark:text-gray-300">Years Experience</div>
-          </div>
-        </motion.div>
+
       </div>
 
 
