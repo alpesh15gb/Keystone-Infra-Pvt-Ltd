@@ -145,23 +145,14 @@ const projectImages = [
 
 export function ProjectShowcaseSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const categories = ["All", "Highway Development", "Bridge Engineering", "Urban Development", "Rural Infrastructure", "Industrial Development"];
-
-  const filteredProjects = selectedCategory === "All" 
-    ? projectImages 
-    : projectImages.filter(project => project.category === selectedCategory);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % Math.ceil(filteredProjects.length / 3));
+    setCurrentIndex((prev) => (prev + 1) % projectImages.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + Math.ceil(filteredProjects.length / 3)) % Math.ceil(filteredProjects.length / 3));
+    setCurrentIndex((prev) => (prev - 1 + projectImages.length) % projectImages.length);
   };
-
-  const visibleProjects = filteredProjects.slice(currentIndex * 3, (currentIndex + 1) * 3);
 
   return (
     <section id="projects" className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
@@ -187,146 +178,65 @@ export function ProjectShowcaseSection() {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => {
-                setSelectedCategory(category);
-                setCurrentIndex(0);
-              }}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === category
-                  ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg transform scale-105"
-                  : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Project Gallery */}
-        <div className="relative">
+        {/* Image Slider */}
+        <div className="relative max-w-5xl mx-auto">
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            disabled={filteredProjects.length <= 3}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-3 rounded-full transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button
             onClick={nextSlide}
-            disabled={filteredProjects.length <= 3}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-3 rounded-full transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Project Cards */}
+          {/* Single Image Display */}
           <motion.div
+            key={currentIndex}
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid md:grid-cols-3 gap-8 px-12"
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative rounded-2xl overflow-hidden shadow-2xl"
           >
-            {visibleProjects.map((project, index) => (
-              <motion.div
-                key={`${currentIndex}-${index}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative bg-gray-800 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
-              >
-                {/* Project Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={project.src}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-                  
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Project Details */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4 text-justify">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex items-center text-gray-400 text-sm">
-                    <MapPin className="w-4 h-4 mr-2 text-orange-500" />
-                    <span>{project.location}</span>
-                  </div>
-                </div>
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-orange-900 via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
-              </motion.div>
-            ))}
+            <img
+              src={projectImages[currentIndex].src}
+              alt={projectImages[currentIndex].title}
+              className="w-full h-96 object-cover"
+            />
+            
+            {/* Image Overlay with Info */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-8">
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {projectImages[currentIndex].title}
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {projectImages[currentIndex].description}
+              </p>
+            </div>
           </motion.div>
 
           {/* Pagination Dots */}
-          {filteredProjects.length > 3 && (
-            <div className="flex justify-center mt-8 space-x-2">
-              {Array.from({ length: Math.ceil(filteredProjects.length / 3) }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentIndex === index
-                      ? "bg-orange-500 scale-125"
-                      : "bg-gray-600 hover:bg-gray-400"
-                  }`}
-                />
-              ))}
-            </div>
-          )}
+          <div className="flex justify-center mt-8 space-x-2">
+            {projectImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentIndex === index
+                    ? "bg-orange-500 scale-125"
+                    : "bg-gray-600 hover:bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Project Statistics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="grid md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-gray-700"
-        >
-          <div className="text-center">
-            <div className="text-4xl font-bold text-orange-500 mb-2">17+</div>
-            <div className="text-gray-300">Featured Projects</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-orange-500 mb-2">6</div>
-            <div className="text-gray-300">Project Categories</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-orange-500 mb-2">100%</div>
-            <div className="text-gray-300">Quality Standards</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-orange-500 mb-2">24/7</div>
-            <div className="text-gray-300">Project Support</div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
