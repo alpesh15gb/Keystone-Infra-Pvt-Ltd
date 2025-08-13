@@ -24,7 +24,7 @@ export function Footer() {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="#" 
+                href="https://www.facebook.com/p/Keystone-Infra-Pvt-Ltd-100091361364694/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
