@@ -61,11 +61,11 @@ export function AboutSection() {
             About Keystone Infra
           </motion.h2>
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl text-amber-900 leading-relaxed mb-6 text-justify">
+            <p className="text-xl text-amber-900 leading-relaxed mb-6">
               Keystone Infra Pvt Ltd, founded by <span className="font-semibold text-orange-600">D.M. Ramesh in 2005</span>, is an established civil engineering 
               and infrastructure development company with over <span className="font-semibold text-orange-600">20 years of experience</span>.
             </p>
-            <p className="text-lg text-amber-800 leading-relaxed text-justify">
+            <p className="text-lg text-amber-800 leading-relaxed">
               An <span className="font-semibold text-orange-600">ISO 9001:2015 certified</span> infrastructure company focusing on improving efficiency, promoting economic growth and reducing 
               environmental impact. We strive to provide exceptional service and build long-term relationships 
               with our clients, partners and communities.

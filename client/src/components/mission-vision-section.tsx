@@ -100,7 +100,7 @@ export function MissionVisionSection() {
               </div>
 
               {/* Content Section */}
-              <div className="lg:w-1/2 text-center lg:text-left">
+              <div className="lg:w-1/2 text-center">
                 <div className={`inline-block px-4 py-2 bg-gradient-to-r ${section.bgColor} rounded-full mb-4`}>
                   <span className={`text-sm font-medium bg-gradient-to-r ${section.color} bg-clip-text text-transparent`}>
                     {section.subtitle}
@@ -122,7 +122,7 @@ export function MissionVisionSection() {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: i * 0.1 }}
-                      className="flex items-start space-x-3"
+                      className="flex items-start justify-center space-x-3"
                     >
                       <ArrowRight className={`w-5 h-5 mt-1 text-orange-500 flex-shrink-0`} />
                       <span className="text-amber-800 text-sm font-medium leading-relaxed">
