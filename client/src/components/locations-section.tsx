@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Users, Calendar, Zap } from "lucide-react";
+import { MapPin, Users, Calendar, Zap, Building2 } from "lucide-react";
 import { useState } from "react";
 import indiaMap from "@assets/generated_images/India_infrastructure_map_0e73f079.png";
 import governmentBuilding from "@assets/generated_images/state_government_building_fa9560c7.png";
