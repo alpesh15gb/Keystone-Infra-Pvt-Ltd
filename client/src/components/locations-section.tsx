@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Users, Calendar, Zap, Building2 } from "lucide-react";
 
-import indiaMap from "@assets/generated_images/India_infrastructure_coverage_map_4a79af8b.png";
+import indiaMap from "@assets/generated_images/Premium_India_infrastructure_map_590d0ab7.png";
 import governmentBuilding from "@assets/generated_images/state_government_building_fa9560c7.png";
 
 export function LocationsSection() {
