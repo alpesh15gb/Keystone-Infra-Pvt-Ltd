@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Github } from "lucide-react";
+import { Twitter, Linkedin, Phone } from "lucide-react";
 import logoPath from "@/assets/logo.png";
 
 export function Footer() {
@@ -15,14 +15,19 @@ export function Footer() {
               ISO certified, 20+ years experience, building India's infrastructure future.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <a 
+                href="https://in.linkedin.com/company/keystone-infra-private-limited" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                <Github size={20} />
+              <a 
+                href="tel:+918886610001" 
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <Phone size={20} />
               </a>
             </div>
           </div>
