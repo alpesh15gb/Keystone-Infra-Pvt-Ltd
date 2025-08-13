@@ -83,7 +83,7 @@ export function HeroSection() {
               {/* Main Heading */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-6">
                 <span className="block">Turning</span>
-                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-orange-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-red-500 bg-clip-text text-transparent">
                   Vision
                 </span>{" "}
                 <span className="block">into Infrastructure</span>
@@ -114,7 +114,7 @@ export function HeroSection() {
                   <span className="font-medium text-sm md:text-base">ISO 9001:2015 Certified</span>
                 </div>
                 <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3">
-                  <Shield className="text-blue-400 mr-2" size={16} />
+                  <Shield className="text-amber-400 mr-2" size={16} />
                   <span className="font-medium text-sm md:text-base">ISO 45001:2018 Safety</span>
                 </div>
                 <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3">
