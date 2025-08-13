@@ -31,7 +31,7 @@ const products = [
     bgColor: "bg-accent-orange-light",
     title: "Building Construction",
     description: "Hospitality, commercial, institutional, and medical infrastructure development.",
-    features: ["Commercial Buildings", "Medical Facilities", "Pre-fab Structures"],
+    features: ["Commercial Buildings", "Medical Facilities", "Pre-fab Structures", "Residential Buildings"],
     image: buildingImage,
   },
 ];
