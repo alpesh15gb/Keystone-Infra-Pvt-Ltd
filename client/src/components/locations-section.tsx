@@ -52,7 +52,7 @@ export function LocationsSection() {
               Our Nationwide Coverage
             </h3>
             <p className="text-amber-200 text-lg">
-              Strategic presence across 14 states delivering infrastructure excellence
+              Strategic presence across India delivering infrastructure excellence
             </p>
           </div>
           
