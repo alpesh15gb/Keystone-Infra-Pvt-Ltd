@@ -91,29 +91,7 @@ export function TeamSection() {
           ))}
         </div>
 
-        {/* Awards Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            Awards & Recognition
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl p-6">
-              <Award className="w-12 h-12 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold mb-2">Best Contractor - Manipur</h4>
-              <p className="text-blue-100">Awarded in 2023</p>
-            </div>
-            <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl p-6">
-              <Award className="w-12 h-12 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold mb-2">Best Contractor - Chhattisgarh</h4>
-              <p className="text-orange-100">Awarded in 2017-2018</p>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
