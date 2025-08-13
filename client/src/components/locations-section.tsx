@@ -1,114 +1,10 @@
 import { motion } from "framer-motion";
 import { MapPin, Users, Calendar, Zap, Building2 } from "lucide-react";
-import { useState } from "react";
+
 import indiaMap from "@assets/generated_images/India_infrastructure_map_0e73f079.png";
 import governmentBuilding from "@assets/generated_images/state_government_building_fa9560c7.png";
 
 export function LocationsSection() {
-  const [selectedState, setSelectedState] = useState(0);
-
-  const stateProjects = [
-    {
-      state: "Delhi NCR",
-      projects: 45,
-      highlight: "Metro Infrastructure",
-      description: "Advanced urban infrastructure development",
-      color: "from-red-500 to-pink-500"
-    },
-    {
-      state: "Haryana",
-      projects: 38,
-      highlight: "Highway Networks",
-      description: "Connecting rural and urban areas",
-      color: "from-green-500 to-teal-500"
-    },
-    {
-      state: "Assam",
-      projects: 42,
-      highlight: "Bridge Construction",
-      description: "Connecting communities across rivers",
-      color: "from-blue-500 to-indigo-500"
-    },
-    {
-      state: "Nagaland",
-      projects: 28,
-      highlight: "Rural Infrastructure",
-      description: "Development of remote areas",
-      color: "from-purple-500 to-violet-500"
-    },
-    {
-      state: "Bihar",
-      projects: 52,
-      highlight: "Educational Facilities",
-      description: "Schools and institutional buildings",
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      state: "Manipur",
-      projects: 67,
-      highlight: "Singda Dam Project",
-      description: "Major water infrastructure development",
-      color: "from-cyan-500 to-blue-500"
-    },
-    {
-      state: "Mizoram",
-      projects: 31,
-      highlight: "Mountain Roads",
-      description: "Challenging terrain infrastructure",
-      color: "from-emerald-500 to-green-500"
-    },
-    {
-      state: "Madhya Pradesh",
-      projects: 44,
-      highlight: "Industrial Projects",
-      description: "Supporting industrial growth",
-      color: "from-amber-500 to-orange-500"
-    },
-    {
-      state: "Jharkhand",
-      projects: 39,
-      highlight: "Mining Infrastructure",
-      description: "Supporting mining operations",
-      color: "from-slate-500 to-gray-600"
-    },
-    {
-      state: "Chhattisgarh",
-      projects: 58,
-      highlight: "Indrawathi Bridge",
-      description: "712m bridge connecting 500 villages",
-      color: "from-rose-500 to-pink-500"
-    },
-    {
-      state: "Telangana",
-      projects: 41,
-      highlight: "Smart City Projects",
-      description: "Modern urban development",
-      color: "from-violet-500 to-purple-500"
-    },
-    {
-      state: "Andhra Pradesh",
-      projects: 47,
-      highlight: "Coastal Infrastructure",
-      description: "Ports and coastal development",
-      color: "from-teal-500 to-cyan-500"
-    },
-    {
-      state: "Goa",
-      projects: 23,
-      highlight: "Tourism Infrastructure",
-      description: "Supporting tourism industry",
-      color: "from-yellow-500 to-amber-500"
-    },
-    {
-      state: "Karnataka",
-      projects: 49,
-      highlight: "Tech Corridors",
-      description: "IT infrastructure development",
-      color: "from-indigo-500 to-blue-500"
-    }
-  ];
-
-  const totalProjects = stateProjects.reduce((sum, state) => sum + state.projects, 0);
 
 
 
@@ -146,84 +42,25 @@ export function LocationsSection() {
 
 
 
-        {/* Interactive Map and States */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Map Visualization */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Interactive Coverage Map</h3>
-              <div className="relative">
-                <img 
-                  src={indiaMap} 
-                  alt="India Infrastructure Map" 
-                  className="w-full h-auto rounded-2xl shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent rounded-2xl"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/95 backdrop-blur-md rounded-xl p-4">
-                    <p className="text-gray-800 font-semibold text-center">
-                      🏗️ Active in {stateProjects.length} States • {totalProjects}+ Projects Delivered
-                    </p>
-                  </div>
-                </div>
-              </div>
+        {/* Interactive Map - Full Width */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">Interactive Coverage Map</h3>
+            <div className="relative">
+              <img 
+                src={indiaMap} 
+                alt="India Infrastructure Map" 
+                className="w-full h-auto rounded-2xl shadow-2xl max-h-[600px] object-contain mx-auto"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent rounded-2xl"></div>
             </div>
-          </motion.div>
-
-          {/* Interactive States List */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-4"
-          >
-            <h3 className="text-2xl font-bold text-white mb-6">State-wise Projects</h3>
-            <div className="max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-white/10">
-              {stateProjects.map((state, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  onClick={() => setSelectedState(index)}
-                  className={`cursor-pointer p-4 rounded-xl transition-all duration-300 ${
-                    selectedState === index 
-                      ? 'bg-white/20 border-2 border-orange-400' 
-                      : 'bg-white/10 border border-white/20 hover:bg-white/15'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${state.color}`}></div>
-                      <div>
-                        <h4 className="font-semibold text-white">{state.state}</h4>
-                        <p className="text-blue-200 text-sm">{state.highlight}</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-white font-bold text-lg">{state.projects}</div>
-                      <div className="text-blue-200 text-xs">Projects</div>
-                    </div>
-                  </div>
-                  {selectedState === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      className="mt-3 pt-3 border-t border-white/20"
-                    >
-                      <p className="text-blue-100 text-sm">{state.description}</p>
-                    </motion.div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* Flagship Projects Showcase */}
         <motion.div
