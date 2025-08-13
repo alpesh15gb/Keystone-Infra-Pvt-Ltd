@@ -30,7 +30,14 @@ export function Navigation() {
         <div className="flex justify-between items-center h-24">
           <div className="flex items-center">
             <div className="flex items-center">
-              <img src={logoImage} alt="Keystone Infra Pvt. Ltd." className="h-16 w-auto" />
+              <a 
+                href="https://in.linkedin.com/company/keystone-infra-private-limited" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <img src={logoImage} alt="Keystone Infra Pvt. Ltd." className="h-16 w-auto" />
+              </a>
             </div>
           </div>
 
