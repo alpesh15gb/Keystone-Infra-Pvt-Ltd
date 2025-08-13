@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Calendar, Users, Zap, Award, ArrowRight, Star, Trophy, Gauge } from "lucide-react";
+import { MapPin, Calendar, Users, Zap, Award, ArrowRight, Star, Trophy, Gauge, Play } from "lucide-react";
 import slider1 from "@assets/slider-1_1754941983527.jpg";
 
 export function IconicProjectSection() {
@@ -77,23 +77,42 @@ export function IconicProjectSection() {
                 <div className="aspect-[4/3] relative">
                   <img
                     src={slider1}
-                    alt="Major Highway Infrastructure Project"
+                    alt="Construction of Bridge at Tarud River"
                     className="w-full h-full object-cover"
                   />
                   
                   {/* Image Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   
+                  {/* Video Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.button
+                      className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => {
+                        // Video play functionality can be added here
+                        alert('Video functionality coming soon!');
+                      }}
+                    >
+                      <Play className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform duration-300" />
+                    </motion.button>
+                  </div>
+                  
                   {/* Floating Stats */}
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="flex flex-wrap gap-3">
                       <Badge className="bg-orange-500/90 text-white border-0 backdrop-blur-sm">
                         <Award className="w-3 h-3 mr-1" />
-                        Award Winning
+                        Engineering Excellence
                       </Badge>
                       <Badge className="bg-green-500/90 text-white border-0 backdrop-blur-sm">
                         <Zap className="w-3 h-3 mr-1" />
                         Completed
+                      </Badge>
+                      <Badge className="bg-blue-500/90 text-white border-0 backdrop-blur-sm">
+                        <Play className="w-3 h-3 mr-1" />
+                        Video Available
                       </Badge>
                     </div>
                   </div>
@@ -111,11 +130,11 @@ export function IconicProjectSection() {
                   </div>
                   
                   <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                    National Highway Development Project
+                    Construction of Bridge at Tarud River in Km.22/2 Chhatisgarh
                   </h3>
                   
                   <p className="text-amber-800 text-lg leading-relaxed mb-8">
-                    A transformative 85-kilometer highway connecting remote northeastern regions, featuring advanced engineering solutions, eco-friendly construction practices, and community-centric design that has become a model for sustainable infrastructure development.
+                    A critical infrastructure project featuring advanced bridge construction techniques over the Tarud River. This engineering marvel showcases our expertise in water crossing infrastructure, connecting communities while ensuring environmental sustainability and resilient design standards.
                   </p>
                 </div>
 
@@ -126,8 +145,8 @@ export function IconicProjectSection() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-3xl font-bold text-orange-600 mb-2">85</div>
-                    <div className="text-amber-800 text-sm">Kilometers</div>
+                    <div className="text-3xl font-bold text-orange-600 mb-2">125</div>
+                    <div className="text-amber-800 text-sm">Meters Length</div>
                   </motion.div>
                   
                   <motion.div 
@@ -135,7 +154,7 @@ export function IconicProjectSection() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-3xl font-bold text-orange-600 mb-2">₹450</div>
+                    <div className="text-3xl font-bold text-orange-600 mb-2">₹25</div>
                     <div className="text-amber-800 text-sm">Crores Value</div>
                   </motion.div>
                   
@@ -144,7 +163,7 @@ export function IconicProjectSection() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-3xl font-bold text-orange-600 mb-2">24</div>
+                    <div className="text-3xl font-bold text-orange-600 mb-2">18</div>
                     <div className="text-amber-800 text-sm">Months</div>
                   </motion.div>
                   
@@ -153,7 +172,7 @@ export function IconicProjectSection() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-3xl font-bold text-orange-600 mb-2">50K+</div>
+                    <div className="text-3xl font-bold text-orange-600 mb-2">15K+</div>
                     <div className="text-amber-800 text-sm">Lives Impacted</div>
                   </motion.div>
                 </div>
@@ -162,22 +181,22 @@ export function IconicProjectSection() {
                 <div className="space-y-4">
                   <div className="flex items-center text-amber-800">
                     <MapPin className="w-5 h-5 text-orange-600 mr-3" />
-                    <span>Manipur to Nagaland Connectivity</span>
+                    <span>Tarud River, Km.22/2 Chhatisgarh</span>
                   </div>
                   
                   <div className="flex items-center text-amber-800">
                     <Calendar className="w-5 h-5 text-orange-600 mr-3" />
-                    <span>Completed 6 months ahead of schedule</span>
+                    <span>Completed on schedule with quality standards</span>
                   </div>
                   
                   <div className="flex items-center text-amber-800">
                     <Users className="w-5 h-5 text-orange-600 mr-3" />
-                    <span>Created 2000+ employment opportunities</span>
+                    <span>Created 500+ employment opportunities</span>
                   </div>
                   
                   <div className="flex items-center text-amber-800">
                     <Gauge className="w-5 h-5 text-orange-600 mr-3" />
-                    <span>Zero environmental violations</span>
+                    <span>Advanced concrete bridge construction</span>
                   </div>
                 </div>
 
@@ -209,17 +228,17 @@ export function IconicProjectSection() {
         >
           <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-full px-6 py-3">
             <Star className="w-5 h-5 text-yellow-600" />
-            <span className="text-amber-800 font-medium">Best Engineering Award 2023</span>
+            <span className="text-amber-800 font-medium">Bridge Engineering Excellence</span>
           </div>
           
           <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-full px-6 py-3">
             <Trophy className="w-5 h-5 text-orange-600" />
-            <span className="text-amber-800 font-medium">Infrastructure Excellence</span>
+            <span className="text-amber-800 font-medium">Quality Construction Award</span>
           </div>
           
           <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-full px-6 py-3">
             <Zap className="w-5 h-5 text-green-600" />
-            <span className="text-amber-800 font-medium">Sustainable Development</span>
+            <span className="text-amber-800 font-medium">Environmental Compliance</span>
           </div>
         </motion.div>
       </div>
