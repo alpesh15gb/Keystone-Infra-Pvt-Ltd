@@ -119,7 +119,7 @@ export function HeroSection() {
                 </div>
                 <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3">
                   <Globe className="text-orange-400 mr-2" size={16} />
-                  <span className="font-medium text-sm md:text-base">India Coverage</span>
+                  <span className="font-medium text-sm md:text-base">All India Coverage</span>
                 </div>
               </motion.div>
             </motion.div>
