@@ -81,7 +81,7 @@ export function HeroSection() {
               className="text-center"
             >
               {/* Main Heading */}
-              <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-6">
                 <span className="block">Turning</span>
                 <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-orange-400 bg-clip-text text-transparent">
                   Vision
@@ -94,7 +94,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto px-4"
               >
                 Building tomorrow's infrastructure today. Over 20 years of engineering excellence 
                 across India, delivering innovative solutions for complex construction challenges.
@@ -107,19 +107,19 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-wrap gap-6 text-white/90"
+                className="flex flex-wrap justify-center gap-3 md:gap-6 text-white/90 px-4"
               >
-                <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-                  <CheckCircle className="text-green-400 mr-2" size={18} />
-                  <span className="font-medium">ISO 9001:2015 Certified</span>
+                <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3">
+                  <CheckCircle className="text-green-400 mr-2" size={16} />
+                  <span className="font-medium text-sm md:text-base">ISO 9001:2015 Certified</span>
                 </div>
-                <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-                  <Shield className="text-blue-400 mr-2" size={18} />
-                  <span className="font-medium">ISO 45001:2018 Safety</span>
+                <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3">
+                  <Shield className="text-blue-400 mr-2" size={16} />
+                  <span className="font-medium text-sm md:text-base">ISO 45001:2018 Safety</span>
                 </div>
-                <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-                  <Globe className="text-orange-400 mr-2" size={18} />
-                  <span className="font-medium">India Coverage</span>
+                <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3">
+                  <Globe className="text-orange-400 mr-2" size={16} />
+                  <span className="font-medium text-sm md:text-base">India Coverage</span>
                 </div>
               </motion.div>
             </motion.div>
