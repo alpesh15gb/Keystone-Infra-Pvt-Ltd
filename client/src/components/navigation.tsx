@@ -56,14 +56,6 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center space-x-3">
-            <Button 
-              variant="ghost" 
-              size="sm"
-              className="text-sm text-gray-600 hover:text-stripe-purple"
-              onClick={() => scrollToSection('contact')}
-            >
-              Request Quote
-            </Button>
             <a 
               href="https://mail.google.com" 
               target="_blank" 
@@ -97,13 +89,6 @@ export function Navigation() {
                     </button>
                   ))}
                   <div className="pt-4 space-y-2">
-                    <Button 
-                      variant="ghost" 
-                      className="w-full justify-start"
-                      onClick={() => scrollToSection('contact')}
-                    >
-                      Request Quote
-                    </Button>
                     <a 
                       href="https://mail.google.com" 
                       target="_blank" 
