@@ -64,13 +64,18 @@ export function Navigation() {
             >
               Request Quote
             </Button>
-            <Button 
-              size="sm"
-              className="text-sm gradient-bg-orange text-white hover:opacity-90"
-              onClick={() => scrollToSection('contact')}
+            <a 
+              href="https://mail.google.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              Get Started
-            </Button>
+              <Button 
+                size="sm"
+                className="text-sm gradient-bg-orange text-white hover:opacity-90"
+              >
+                Log in
+              </Button>
+            </a>
           </div>
 
           <div className="md:hidden">
@@ -99,12 +104,17 @@ export function Navigation() {
                     >
                       Request Quote
                     </Button>
-                    <Button 
-                      className="w-full gradient-bg-orange text-white"
-                      onClick={() => scrollToSection('contact')}
+                    <a 
+                      href="https://mail.google.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
                     >
-                      Get Started
-                    </Button>
+                      <Button 
+                        className="w-full gradient-bg-orange text-white"
+                      >
+                        Log in
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </SheetContent>
