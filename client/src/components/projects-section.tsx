@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MapPin, Ruler, Droplets, Building2, ChevronRight, Users, Eye, ArrowUpRight, Play } from "lucide-react";
+import { MapPin, Ruler, Droplets, Building2, ChevronRight, Users, Eye, ArrowUpRight, Play, Trophy } from "lucide-react";
 import { useState } from "react";
 
 // Import project images
@@ -162,7 +162,7 @@ export function ProjectsSection() {
             <span className="text-gray-900">Gallery</span>
           </motion.h2>
           <p className="text-xl text-amber-800 max-w-4xl mx-auto leading-relaxed">
-            Discover our portfolio of groundbreaking infrastructure projects that have transformed communities across 14 states in India
+            Discover our portfolio of groundbreaking infrastructure projects that have transformed communities across India
           </p>
         </motion.div>
 
