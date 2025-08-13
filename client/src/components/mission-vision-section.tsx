@@ -111,18 +111,18 @@ export function MissionVisionSection() {
                   {section.title}
                 </h3>
                 
-                <p className="text-lg text-amber-800 mb-8 leading-relaxed">
+                <p className="text-lg text-amber-800 mb-8 leading-relaxed text-justify">
                   {section.description}
                 </p>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-1 gap-4 max-w-lg mx-auto">
                   {section.items.map((item, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: i * 0.1 }}
-                      className="flex items-start justify-center space-x-3"
+                      className="flex items-start justify-start space-x-3 text-left"
                     >
                       <ArrowRight className={`w-5 h-5 mt-1 text-orange-500 flex-shrink-0`} />
                       <span className="text-amber-800 text-sm font-medium leading-relaxed">
