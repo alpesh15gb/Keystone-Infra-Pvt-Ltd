@@ -66,7 +66,7 @@ export function CSRSection() {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Corporate Social Responsibility
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto text-justify">
             As an infrastructure company, we prioritize giving back to society and making a positive impact in the communities we serve. Building lasting relationships with stakeholders for a sustainable future.
           </p>
         </motion.div>
@@ -116,7 +116,7 @@ export function CSRSection() {
                   {highlight.title}
                 </h3>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
                 {highlight.description}
               </p>
             </div>
