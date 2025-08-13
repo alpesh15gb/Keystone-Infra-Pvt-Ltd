@@ -72,18 +72,18 @@ export function TeamSection() {
                 </p>
               </div>
 
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 text-center">
                 {member.description}
               </p>
 
               <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900 dark:text-white text-sm mb-3">
+                <h4 className="font-semibold text-gray-900 dark:text-white text-sm mb-3 text-center">
                   Key Achievements:
                 </h4>
                 {member.achievements.map((achievement, i) => (
-                  <div key={i} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div>
-                    {achievement}
+                  <div key={i} className="flex items-start justify-center text-sm text-gray-600 dark:text-gray-300">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0 mt-1"></div>
+                    <span className="text-center">{achievement}</span>
                   </div>
                 ))}
               </div>

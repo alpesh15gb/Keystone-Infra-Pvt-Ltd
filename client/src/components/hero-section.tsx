@@ -78,7 +78,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
+              className="text-center"
             >
               {/* Main Heading */}
               <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-6">

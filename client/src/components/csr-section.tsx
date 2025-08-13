@@ -91,7 +91,7 @@ export function CSRSection() {
                   {initiative.title}
                 </h3>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed text-center">
                 {initiative.description}
               </p>
             </div>
