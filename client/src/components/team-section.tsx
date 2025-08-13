@@ -11,18 +11,18 @@ export function TeamSection() {
       achievements: ["Founded company in 2005", "Led numerous prestigious projects", "Industry leader in innovation"]
     },
     {
-      name: "D. KARTHIK AMAR",
-      position: "Director",
-      experience: "3+ years",
-      description: "Young entrepreneur bringing fresh perspective to decision making. Passionate about company mission and dedicated to advancing organizational goals. Currently leading housing projects across 4 states.",
-      achievements: ["Leading housing projects", "Multi-state operations", "Fresh industry perspective"]
-    },
-    {
       name: "D. LAKSHMI CHOWDARY",
       position: "Director",
       experience: "15+ years",
       description: "Important asset performing full-time director role. With rationale and leadership skills, has brought significant profit and ambitious projects to Keystone Infra Pvt Ltd.",
       achievements: ["15+ years with company", "Strategic leadership", "Business growth expert"]
+    },
+    {
+      name: "D. KARTHIK AMAR",
+      position: "Director",
+      experience: "3+ years",
+      description: "Young entrepreneur bringing fresh perspective to decision making. Passionate about company mission and dedicated to advancing organizational goals. Currently leading housing projects across 4 states.",
+      achievements: ["Leading housing projects", "Multi-state operations", "Fresh industry perspective"]
     }
   ];
 
