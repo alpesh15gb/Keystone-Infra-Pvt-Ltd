@@ -7,7 +7,7 @@ import slider1 from "@assets/slider-1_1754941983527.jpg";
 
 export function IconicProjectSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-orange-900/20 to-amber-900/20 relative overflow-hidden">
+    <section className="py-20 bg-white relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -30,8 +30,8 @@ export function IconicProjectSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Trophy className="w-5 h-5 text-orange-400" />
-            <span className="text-orange-300 font-medium">Flagship Achievement</span>
+            <Trophy className="w-5 h-5 text-orange-600" />
+            <span className="text-orange-700 font-medium">Flagship Achievement</span>
           </motion.div>
           
           <motion.h2 
@@ -49,7 +49,7 @@ export function IconicProjectSection() {
           </motion.h2>
           
           <motion.p
-            className="text-xl text-amber-200 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-amber-800 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -66,7 +66,7 @@ export function IconicProjectSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="relative"
         >
-          <Card className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden shadow-2xl group hover:shadow-orange-500/20 transition-all duration-700">
+          <Card className="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-2xl group hover:shadow-orange-500/20 transition-all duration-700">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Project Image */}
               <motion.div 
@@ -104,17 +104,17 @@ export function IconicProjectSection() {
               <CardContent className="p-12 flex flex-col justify-center space-y-8">
                 <div>
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-                    <span className="text-orange-300 text-sm font-medium uppercase tracking-wider">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                    <span className="text-orange-600 text-sm font-medium uppercase tracking-wider">
                       Signature Project
                     </span>
                   </div>
                   
-                  <h3 className="text-4xl font-bold text-white mb-6 leading-tight">
+                  <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
                     National Highway Development Project
                   </h3>
                   
-                  <p className="text-amber-200 text-lg leading-relaxed mb-8">
+                  <p className="text-amber-800 text-lg leading-relaxed mb-8">
                     A transformative 85-kilometer highway connecting remote northeastern regions, featuring advanced engineering solutions, eco-friendly construction practices, and community-centric design that has become a model for sustainable infrastructure development.
                   </p>
                 </div>
@@ -126,8 +126,8 @@ export function IconicProjectSection() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-3xl font-bold text-orange-400 mb-2">85</div>
-                    <div className="text-amber-200 text-sm">Kilometers</div>
+                    <div className="text-3xl font-bold text-orange-600 mb-2">85</div>
+                    <div className="text-amber-800 text-sm">Kilometers</div>
                   </motion.div>
                   
                   <motion.div 
@@ -135,8 +135,8 @@ export function IconicProjectSection() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-3xl font-bold text-orange-400 mb-2">₹450</div>
-                    <div className="text-amber-200 text-sm">Crores Value</div>
+                    <div className="text-3xl font-bold text-orange-600 mb-2">₹450</div>
+                    <div className="text-amber-800 text-sm">Crores Value</div>
                   </motion.div>
                   
                   <motion.div 
@@ -144,8 +144,8 @@ export function IconicProjectSection() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-3xl font-bold text-orange-400 mb-2">24</div>
-                    <div className="text-amber-200 text-sm">Months</div>
+                    <div className="text-3xl font-bold text-orange-600 mb-2">24</div>
+                    <div className="text-amber-800 text-sm">Months</div>
                   </motion.div>
                   
                   <motion.div 
@@ -153,30 +153,30 @@ export function IconicProjectSection() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-3xl font-bold text-orange-400 mb-2">50K+</div>
-                    <div className="text-amber-200 text-sm">Lives Impacted</div>
+                    <div className="text-3xl font-bold text-orange-600 mb-2">50K+</div>
+                    <div className="text-amber-800 text-sm">Lives Impacted</div>
                   </motion.div>
                 </div>
 
                 {/* Project Highlights */}
                 <div className="space-y-4">
-                  <div className="flex items-center text-amber-200">
-                    <MapPin className="w-5 h-5 text-orange-400 mr-3" />
+                  <div className="flex items-center text-amber-800">
+                    <MapPin className="w-5 h-5 text-orange-600 mr-3" />
                     <span>Manipur to Nagaland Connectivity</span>
                   </div>
                   
-                  <div className="flex items-center text-amber-200">
-                    <Calendar className="w-5 h-5 text-orange-400 mr-3" />
+                  <div className="flex items-center text-amber-800">
+                    <Calendar className="w-5 h-5 text-orange-600 mr-3" />
                     <span>Completed 6 months ahead of schedule</span>
                   </div>
                   
-                  <div className="flex items-center text-amber-200">
-                    <Users className="w-5 h-5 text-orange-400 mr-3" />
+                  <div className="flex items-center text-amber-800">
+                    <Users className="w-5 h-5 text-orange-600 mr-3" />
                     <span>Created 2000+ employment opportunities</span>
                   </div>
                   
-                  <div className="flex items-center text-amber-200">
-                    <Gauge className="w-5 h-5 text-orange-400 mr-3" />
+                  <div className="flex items-center text-amber-800">
+                    <Gauge className="w-5 h-5 text-orange-600 mr-3" />
                     <span>Zero environmental violations</span>
                   </div>
                 </div>
@@ -207,19 +207,19 @@ export function IconicProjectSection() {
           transition={{ duration: 0.8, delay: 1.0 }}
           className="flex flex-wrap justify-center gap-6 mt-16"
         >
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-            <Star className="w-5 h-5 text-yellow-400" />
-            <span className="text-amber-200 font-medium">Best Engineering Award 2023</span>
+          <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-full px-6 py-3">
+            <Star className="w-5 h-5 text-yellow-600" />
+            <span className="text-amber-800 font-medium">Best Engineering Award 2023</span>
           </div>
           
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-            <Trophy className="w-5 h-5 text-orange-400" />
-            <span className="text-amber-200 font-medium">Infrastructure Excellence</span>
+          <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-full px-6 py-3">
+            <Trophy className="w-5 h-5 text-orange-600" />
+            <span className="text-amber-800 font-medium">Infrastructure Excellence</span>
           </div>
           
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-            <Zap className="w-5 h-5 text-green-400" />
-            <span className="text-amber-200 font-medium">Sustainable Development</span>
+          <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-full px-6 py-3">
+            <Zap className="w-5 h-5 text-green-600" />
+            <span className="text-amber-800 font-medium">Sustainable Development</span>
           </div>
         </motion.div>
       </div>
