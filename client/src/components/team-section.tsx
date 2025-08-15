@@ -29,7 +29,7 @@ export function TeamSection() {
 
 
   return (
-    <section id="team" className="py-16 bg-white dark:bg-gray-900">
+    <section id="team" className="py-16 bg-gradient-to-br from-orange-50 via-amber-50 to-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,10 +37,10 @@ export function TeamSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl font-bold text-orange-600 mb-4">
             Our Leadership Team
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-amber-800 max-w-3xl mx-auto">
             Experienced professionals driving excellence in infrastructure development across India
           </p>
         </motion.div>
@@ -55,33 +55,33 @@ export function TeamSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-blue-50 to-orange-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-br from-orange-50 to-amber-100 border border-orange-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <User className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-xl font-bold text-orange-700 mb-2">
                   {member.name}
                 </h3>
-                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-1">
+                <p className="text-orange-600 font-semibold mb-1">
                   {member.position}
                 </p>
-                <p className="text-orange-600 dark:text-orange-400 text-sm">
+                <p className="text-amber-700 text-sm">
                   {member.experience} Experience
                 </p>
               </div>
 
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 text-justify">
+              <p className="text-amber-800 text-sm leading-relaxed mb-6 text-justify">
                 {member.description}
               </p>
 
               <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900 dark:text-white text-sm mb-3 text-center">
+                <h4 className="font-semibold text-orange-700 text-sm mb-3 text-center">
                   Key Achievements:
                 </h4>
                 {member.achievements.map((achievement, i) => (
-                  <div key={i} className="flex items-start justify-center text-sm text-gray-600 dark:text-gray-300">
+                  <div key={i} className="flex items-start justify-center text-sm text-amber-700">
                     <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0 mt-1"></div>
                     <span className="text-center">{achievement}</span>
                   </div>
