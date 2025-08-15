@@ -65,7 +65,7 @@ export function LocationsSection() {
             {/* Logo markers positioned over operational states */}
             <div className="absolute inset-0">
               {/* Delhi */}
-              <div className="absolute" style={{ top: '26%', left: '28.5%' }}>
+              <div className="absolute" style={{ top: '26%', left: '36%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
