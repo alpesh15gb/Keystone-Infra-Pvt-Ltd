@@ -63,6 +63,7 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Removed statistics cards from Pan-India Infrastructure Excellence section (states covered, projects completed, years of excellence, project value)
 - Removed regional highlights boxes (Northern India, Eastern India, Southern India) from locations section
 - Updated leadership team section colors to match site's orange and brown color scheme (section background, headers, text, card styling)
+- Updated India map logo markers to show only 12 specified states: Delhi, MP, CG, TG, Manipur, Nagaland, Mizoram, Rajasthan, Goa, Andhra Pradesh, Karnataka, Bihar (one logo per state)
 
 # User Preferences
 
