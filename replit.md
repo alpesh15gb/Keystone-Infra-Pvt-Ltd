@@ -66,6 +66,7 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Updated India map logo markers to show only 12 specified states: Delhi, MP, CG, TG, Manipur, Nagaland, Mizoram, Rajasthan, Goa, Andhra Pradesh, Karnataka, Bihar (one logo per state)
 - Updated CSR section colors to fully align with website's orange and brown color scheme - changed section background, headings, initiative card gradients, and commitment section styling
 - Revamped project portfolio section with YouTube video support and updated background theme to match website's orange and brown color scheme
+- Updated Esteemed Clients section colors to align with website's orange and brown color theme - changed section background, client card styling, and text colors
 
 # User Preferences
 
