@@ -98,7 +98,7 @@ export function LocationsSection() {
               </div>
               
               {/* Telangana */}
-              <div className="absolute" style={{ top: '56%', left: '36%' }}>
+              <div className="absolute" style={{ top: '54%', left: '38%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
