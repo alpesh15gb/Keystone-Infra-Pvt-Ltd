@@ -239,20 +239,12 @@ export function ProjectShowcaseSection() {
               </div>
             )}
             
-            {/* Overlay with Info */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-8">
-              {projectItems[currentIndex].type === "video" && (
-                <div className="absolute top-4 right-4">
-                  <Play className="w-8 h-8 text-white opacity-75" />
-                </div>
-              )}
-              <h3 className="text-2xl font-bold text-white mb-2">
-                {projectItems[currentIndex].title}
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {projectItems[currentIndex].description}
-              </p>
-            </div>
+            {/* Play icon for videos only */}
+            {projectItems[currentIndex].type === "video" && (
+              <div className="absolute top-4 right-4">
+                <Play className="w-8 h-8 text-white opacity-75" />
+              </div>
+            )}
           </motion.div>
 
           {/* Pagination Dots */}
