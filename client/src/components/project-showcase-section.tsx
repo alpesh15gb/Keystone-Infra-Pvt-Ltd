@@ -227,14 +227,16 @@ export function ProjectShowcaseSection() {
                 className="w-full h-96 object-cover"
               />
             ) : (
-              <div className="relative w-full h-96">
+              <div className="relative w-full h-96 bg-gray-100">
                 <iframe
-                  src={`https://www.youtube.com/embed/${(projectItems[currentIndex] as any).videoId}?rel=0&modestbranding=1`}
+                  src={`https://www.youtube.com/embed/${(projectItems[currentIndex] as any).videoId}?rel=0&modestbranding=1&enablejsapi=1`}
                   title={projectItems[currentIndex].title}
                   className="w-full h-full"
                   frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
                 />
               </div>
             )}
