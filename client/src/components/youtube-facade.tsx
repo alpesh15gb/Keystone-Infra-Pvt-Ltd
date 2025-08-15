@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Play } from 'lucide-react';
 
 interface YouTubeFacadeProps {
@@ -7,11 +7,11 @@ interface YouTubeFacadeProps {
   className?: string;
 }
 
-export const YouTubeFacade: React.FC<YouTubeFacadeProps> = ({
+export const YouTubeFacade = ({
   videoId,
   title,
   className = "w-full h-full"
-}) => {
+}: YouTubeFacadeProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const handleLoad = () => {
