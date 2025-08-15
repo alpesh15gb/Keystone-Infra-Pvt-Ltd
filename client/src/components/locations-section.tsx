@@ -12,13 +12,13 @@ export function LocationsSection() {
   ];
 
   return (
-    <section id="locations" className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
+    <section id="locations" className="py-24 bg-gradient-to-br from-orange-50 via-amber-50 to-white relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-orange-500 rounded-full animate-pulse opacity-70"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-blue-400 rounded-full animate-pulse opacity-60 delay-1000"></div>
-        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-pulse opacity-80 delay-2000"></div>
-        <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-blue-300 rounded-full animate-pulse opacity-50 delay-3000"></div>
+        <div className="absolute top-20 left-10 w-2 h-2 bg-orange-500 rounded-full animate-pulse opacity-30"></div>
+        <div className="absolute top-40 right-20 w-3 h-3 bg-amber-500 rounded-full animate-pulse opacity-20 delay-1000"></div>
+        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-pulse opacity-25 delay-2000"></div>
+        <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-amber-400 rounded-full animate-pulse opacity-30 delay-3000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -30,10 +30,10 @@ export function LocationsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-orange-600 mb-6">
             Pan-India Infrastructure Excellence
           </h2>
-          <p className="text-xl text-amber-100 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-amber-800 max-w-4xl mx-auto leading-relaxed">
             With <span className="font-bold text-orange-400">20+ years of proven expertise</span> across <span className="font-bold text-orange-400">14 states</span>, 
             Keystone Infra has established itself as a trusted infrastructure partner, delivering 
             <span className="font-bold text-orange-400">600+ successful projects</span> that connect communities and drive economic progress nationwide.
@@ -46,13 +46,13 @@ export function LocationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-slate-800/80 to-blue-900/60 rounded-3xl p-8 md:p-12 backdrop-blur-sm border border-slate-700/50 shadow-2xl mb-16"
+          className="bg-gradient-to-br from-white to-orange-50/50 rounded-3xl p-8 md:p-12 shadow-2xl border border-orange-100 mb-16"
         >
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-orange-500 mb-4">
+            <h3 className="text-3xl font-bold text-orange-600 mb-4">
               Strategic Nationwide Operations
             </h3>
-            <p className="text-amber-200 text-lg">
+            <p className="text-amber-800 text-lg">
               From highways to hospitals, bridges to buildings - transforming India's infrastructure landscape
             </p>
           </div>
@@ -223,7 +223,7 @@ export function LocationsSection() {
           </div>
           
           <div className="text-center mt-8">
-            <p className="text-amber-200 text-sm flex items-center justify-center">
+            <p className="text-amber-700 text-sm flex items-center justify-center">
               <img src={keystoneLogo} alt="Keystone Logo" className="w-4 h-4 mr-2" />
               Keystone Infra operational states across India
             </p>
@@ -238,36 +238,36 @@ export function LocationsSection() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
         >
-          <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/20 backdrop-blur-sm rounded-2xl p-6 border border-orange-500/30 text-center">
+          <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200 text-center shadow-lg">
             <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Globe className="text-white" size={28} />
             </div>
-            <h4 className="text-3xl font-bold text-orange-400 mb-2">14+</h4>
-            <p className="text-amber-200 font-medium">States Covered</p>
+            <h4 className="text-3xl font-bold text-orange-600 mb-2">14+</h4>
+            <p className="text-amber-800 font-medium">States Covered</p>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30 text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-6 border border-amber-200 text-center shadow-lg">
+            <div className="w-16 h-16 bg-gradient-to-br from-amber-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Building2 className="text-white" size={28} />
             </div>
-            <h4 className="text-3xl font-bold text-blue-400 mb-2">600+</h4>
-            <p className="text-amber-200 font-medium">Projects Completed</p>
+            <h4 className="text-3xl font-bold text-amber-700 mb-2">600+</h4>
+            <p className="text-amber-800 font-medium">Projects Completed</p>
           </div>
           
-          <div className="bg-gradient-to-br from-amber-500/20 to-amber-600/20 backdrop-blur-sm rounded-2xl p-6 border border-amber-500/30 text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 border border-orange-200 text-center shadow-lg">
+            <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <Trophy className="text-white" size={28} />
             </div>
-            <h4 className="text-3xl font-bold text-amber-400 mb-2">20+</h4>
-            <p className="text-amber-200 font-medium">Years of Excellence</p>
+            <h4 className="text-3xl font-bold text-orange-700 mb-2">20+</h4>
+            <p className="text-amber-800 font-medium">Years of Excellence</p>
           </div>
           
-          <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 backdrop-blur-sm rounded-2xl p-6 border border-green-500/30 text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200 text-center shadow-lg">
+            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <Zap className="text-white" size={28} />
             </div>
-            <h4 className="text-3xl font-bold text-green-400 mb-2">₹1000+</h4>
-            <p className="text-amber-200 font-medium">Crores Project Value</p>
+            <h4 className="text-3xl font-bold text-amber-700 mb-2">₹1000+</h4>
+            <p className="text-amber-800 font-medium">Crores Project Value</p>
           </div>
         </motion.div>
 
@@ -279,38 +279,38 @@ export function LocationsSection() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-600/50">
-            <MapPin className="text-orange-500 mb-4" size={32} />
-            <h4 className="text-xl font-bold text-orange-400 mb-3">Northern India</h4>
-            <p className="text-amber-200 text-sm leading-relaxed">
+          <div className="bg-gradient-to-br from-white to-orange-50 rounded-2xl p-6 border border-orange-200 shadow-lg">
+            <MapPin className="text-orange-600 mb-4" size={32} />
+            <h4 className="text-xl font-bold text-orange-600 mb-3">Northern India</h4>
+            <p className="text-amber-800 text-sm leading-relaxed">
               Major highway projects in Delhi, Punjab, Haryana, and Uttar Pradesh connecting key economic corridors
             </p>
-            <div className="flex items-center mt-3 text-xs text-amber-300">
+            <div className="flex items-center mt-3 text-xs text-amber-700">
               <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
               Highway Construction • Government Buildings
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-600/50">
-            <MapPin className="text-blue-500 mb-4" size={32} />
-            <h4 className="text-xl font-bold text-blue-400 mb-3">Eastern India</h4>
-            <p className="text-amber-200 text-sm leading-relaxed">
+          <div className="bg-gradient-to-br from-white to-amber-50 rounded-2xl p-6 border border-amber-200 shadow-lg">
+            <MapPin className="text-amber-600 mb-4" size={32} />
+            <h4 className="text-xl font-bold text-amber-600 mb-3">Eastern India</h4>
+            <p className="text-amber-800 text-sm leading-relaxed">
               Infrastructure development in West Bengal, Bihar, and Jharkhand focusing on connectivity and urban development
             </p>
-            <div className="flex items-center mt-3 text-xs text-amber-300">
-              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+            <div className="flex items-center mt-3 text-xs text-amber-700">
+              <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
               Roads • Water Management • Medical Facilities
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-600/50">
-            <MapPin className="text-green-500 mb-4" size={32} />
-            <h4 className="text-xl font-bold text-green-400 mb-3">Southern India</h4>
-            <p className="text-amber-200 text-sm leading-relaxed">
+          <div className="bg-gradient-to-br from-white to-orange-50 rounded-2xl p-6 border border-orange-200 shadow-lg">
+            <MapPin className="text-orange-700 mb-4" size={32} />
+            <h4 className="text-xl font-bold text-orange-700 mb-3">Southern India</h4>
+            <p className="text-amber-800 text-sm leading-relaxed">
               Comprehensive projects in Andhra Pradesh, Telangana, and Karnataka including educational institutions and hospitals
             </p>
-            <div className="flex items-center mt-3 text-xs text-amber-300">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+            <div className="flex items-center mt-3 text-xs text-amber-700">
+              <div className="w-2 h-2 bg-orange-600 rounded-full mr-2"></div>
               Educational • Healthcare • Commercial Buildings
             </div>
           </div>
