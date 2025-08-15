@@ -56,6 +56,7 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Updated Building Construction expertise to focus on government projects: "Govt Commercial Buildings, Govt Medical Facilities, Educational Institutions, Non Residential Buildings"
 - Added "Rigid & Flexible Major District Road" to Transportation Infrastructure features
 - Simplified "Rigid & Flexible Major District Road" to just "Roads" in Transportation Infrastructure
+- Changed back to "Rigid & Flexible Major District Roads" in Transportation Infrastructure
 
 # User Preferences
 
