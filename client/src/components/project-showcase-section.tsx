@@ -23,76 +23,76 @@ import project17 from "@assets/WhatsApp Image 2025-08-13 at 18.22.09 (1)_1755123
 
 const projectItems = [
   {
-    type: "image",
-    src: project1,
-    title: "Highway Infrastructure Development",
-    description: "Advanced highway construction with modern engineering solutions",
+    type: "video",
+    videoId: "wvoxdF185yo",
+    title: "Highway Construction Progress",
+    description: "Time-lapse documentation of major highway construction project showcasing our engineering excellence",
     location: "National Highway Project",
     category: "Highway Development"
   },
   {
-    type: "image",
-    src: project2,
-    title: "Bridge Construction Excellence",
-    description: "Major bridge infrastructure connecting communities across regions",
+    type: "video",
+    videoId: "US6l4c8uSLE",
+    title: "Bridge Engineering Excellence",
+    description: "Advanced bridge construction techniques and structural engineering solutions in action",
     location: "Interstate Connection",
     category: "Bridge Engineering"
   },
   {
-    type: "image",
-    src: project3,
-    title: "Urban Infrastructure Development",
-    description: "Comprehensive urban development projects enhancing city connectivity",
-    location: "Metropolitan Area",
-    category: "Urban Development"
+    type: "video",
+    videoId: "dPn3aRBkfrA",
+    title: "Infrastructure Development Overview",
+    description: "Comprehensive overview of our infrastructure development projects and construction methodologies",
+    location: "Multi-State Projects",
+    category: "Infrastructure Overview"
   },
   {
-    type: "image",
-    src: project4,
-    title: "Rural Connectivity Project",
-    description: "Essential infrastructure bringing connectivity to rural communities",
-    location: "Rural Development Zone",
-    category: "Rural Infrastructure"
-  },
-  {
-    type: "image",
-    src: project5,
-    title: "Industrial Infrastructure",
-    description: "Heavy-duty industrial infrastructure supporting economic growth",
-    location: "Industrial Corridor",
-    category: "Industrial Development"
-  },
-  {
-    type: "image",
-    src: project6,
-    title: "Transportation Hub Development",
-    description: "Multi-modal transportation infrastructure for enhanced connectivity",
-    location: "Regional Transport Hub",
-    category: "Transportation"
-  },
-  {
-    type: "image",
-    src: project7,
-    title: "Structural Engineering Excellence",
-    description: "Advanced structural engineering solutions for complex projects",
-    location: "Infrastructure Complex",
-    category: "Structural Engineering"
-  },
-  {
-    type: "image",
-    src: project8,
-    title: "Foundation Engineering",
-    description: "Deep foundation solutions for critical infrastructure projects",
-    location: "Major Development Site",
-    category: "Foundation Work"
-  },
-  {
-    type: "image",
-    src: project9,
-    title: "Road Network Expansion",
-    description: "Comprehensive road network development improving regional connectivity",
+    type: "video",
+    videoId: "p62cJAu31_M",
+    title: "Road Construction Technology",
+    description: "Modern road construction techniques and equipment deployment for superior infrastructure",
     location: "Regional Road Network",
     category: "Road Development"
+  },
+  {
+    type: "video",
+    videoId: "5XUwqNICWTA",
+    title: "Heavy Construction Equipment",
+    description: "Advanced construction equipment and machinery in operation for large-scale infrastructure projects",
+    location: "Construction Sites",
+    category: "Construction Technology"
+  },
+  {
+    type: "video",
+    videoId: "ALZtqkYNqg4",
+    title: "Foundation Engineering Solutions",
+    description: "Deep foundation construction and engineering solutions for critical infrastructure development",
+    location: "Foundation Projects",
+    category: "Foundation Engineering"
+  },
+  {
+    type: "video",
+    videoId: "oO1yDu8tuH0",
+    title: "Project Execution Excellence",
+    description: "Complete project lifecycle from planning to execution showcasing our project management expertise",
+    location: "Multiple Locations",
+    category: "Project Management"
+  },
+  {
+    type: "video",
+    videoId: "PddAAZX3aTM",
+    title: "Construction Quality Standards",
+    description: "Quality control and construction standards implementation across infrastructure projects",
+    location: "Quality Assurance Sites",
+    category: "Quality Control"
+  },
+  {
+    type: "video",
+    videoId: "2NpgvLuMN5M",
+    title: "Infrastructure Innovation Hub",
+    description: "Innovative construction methods and technological advancement in infrastructure development",
+    location: "Innovation Projects",
+    category: "Construction Innovation"
   },
   {
     type: "image",
@@ -157,16 +157,7 @@ const projectItems = [
     description: "Innovative engineering solutions pushing boundaries of infrastructure development",
     location: "Innovation Center",
     category: "Engineering Innovation"
-  },
-  // Example of how to add YouTube videos - you can replace any of the above with videos like this:
-  // {
-  //   type: "video",
-  //   videoId: "YOUR_YOUTUBE_VIDEO_ID_HERE",
-  //   title: "Highway Construction Time-lapse",
-  //   description: "Watch our 85km National Highway project construction from start to finish",
-  //   location: "National Highway NH-37",
-  //   category: "Highway Development"
-  // }
+  }
 ];
 
 export function ProjectShowcaseSection() {
