@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
 
 import indiaMap from "@assets/India-State-and-Capital-Union-Territories_1755108680983.png";
 import keystoneLogo from "@assets/Screenshot_2025-08-13_234234-removebg-preview_1755108853673.png";
@@ -226,51 +225,6 @@ export function LocationsSection() {
               <img src={keystoneLogo} alt="Keystone Logo" className="w-4 h-4 mr-2" />
               Keystone Infra operational states across India
             </p>
-          </div>
-        </motion.div>
-
-        {/* Regional Highlights */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <div className="bg-gradient-to-br from-white to-orange-50 rounded-2xl p-6 border border-orange-200 shadow-lg">
-            <MapPin className="text-orange-600 mb-4" size={32} />
-            <h4 className="text-xl font-bold text-orange-600 mb-3">Northern India</h4>
-            <p className="text-amber-800 text-sm leading-relaxed">
-              Major highway projects in Delhi, Punjab, Haryana, and Uttar Pradesh connecting key economic corridors
-            </p>
-            <div className="flex items-center mt-3 text-xs text-amber-700">
-              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-              Highway Construction • Government Buildings
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-white to-amber-50 rounded-2xl p-6 border border-amber-200 shadow-lg">
-            <MapPin className="text-amber-600 mb-4" size={32} />
-            <h4 className="text-xl font-bold text-amber-600 mb-3">Eastern India</h4>
-            <p className="text-amber-800 text-sm leading-relaxed">
-              Infrastructure development in West Bengal, Bihar, and Jharkhand focusing on connectivity and urban development
-            </p>
-            <div className="flex items-center mt-3 text-xs text-amber-700">
-              <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
-              Roads • Water Management • Medical Facilities
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-white to-orange-50 rounded-2xl p-6 border border-orange-200 shadow-lg">
-            <MapPin className="text-orange-700 mb-4" size={32} />
-            <h4 className="text-xl font-bold text-orange-700 mb-3">Southern India</h4>
-            <p className="text-amber-800 text-sm leading-relaxed">
-              Comprehensive projects in Andhra Pradesh, Telangana, and Karnataka including educational institutions and hospitals
-            </p>
-            <div className="flex items-center mt-3 text-xs text-amber-700">
-              <div className="w-2 h-2 bg-orange-600 rounded-full mr-2"></div>
-              Educational • Healthcare • Commercial Buildings
-            </div>
           </div>
         </motion.div>
 
