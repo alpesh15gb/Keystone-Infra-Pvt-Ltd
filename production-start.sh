@@ -12,6 +12,13 @@ export PORT=${PORT:-3000}
 echo "Building project..."
 npm run build
 
-# Start the server
-echo "Starting server on ${HOST}:${PORT}..."
-node server/index.js
+# Check if build was successful
+if [ ! -d "dist/public" ]; then
+    echo "Build failed - dist/public directory not found"
+    exit 1
+fi
+
+# Start the production server
+echo "Starting production server on ${HOST}:${PORT}..."
+echo "Access from external: http://YOUR_SERVER_IP:${PORT}"
+node production-server.js
