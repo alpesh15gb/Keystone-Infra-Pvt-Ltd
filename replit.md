@@ -67,6 +67,9 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Updated CSR section colors to fully align with website's orange and brown color scheme - changed section background, headings, initiative card gradients, and commitment section styling
 - Revamped project portfolio section with YouTube video support and updated background theme to match website's orange and brown color scheme
 - Updated Esteemed Clients section colors to align with website's orange and brown color theme - changed section background, client card styling, and text colors
+- Fixed external server access by changing production server binding from localhost to 0.0.0.0
+- Implemented performance optimizations including lazy loading, YouTube facade loading, and resource preconnects
+- Created production deployment scripts with proper HOST and PORT configuration for external access
 
 # User Preferences
 
