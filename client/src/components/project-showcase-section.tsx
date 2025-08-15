@@ -181,10 +181,10 @@ export function ProjectShowcaseSection() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
+    <section id="projects" className="py-20 bg-gradient-to-br from-orange-50 via-amber-50 to-white relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ea580c%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -195,10 +195,10 @@ export function ProjectShowcaseSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-white mb-6">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Project Portfolio</span>
+          <h2 className="text-5xl font-bold text-orange-600 mb-6">
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">Project Portfolio</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto text-justify leading-relaxed">
+          <p className="text-xl text-amber-800 max-w-4xl mx-auto text-justify leading-relaxed">
             Showcasing our expertise in infrastructure development across diverse sectors. From highway construction to bridge engineering, 
             our projects demonstrate commitment to excellence, innovation, and sustainable development practices that benefit communities nationwide.
           </p>
@@ -209,14 +209,14 @@ export function ProjectShowcaseSection() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-orange-600 bg-opacity-80 hover:bg-opacity-100 text-white p-4 rounded-full transition-all duration-300 shadow-lg"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-orange-600 bg-opacity-80 hover:bg-opacity-100 text-white p-4 rounded-full transition-all duration-300 shadow-lg"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -249,16 +249,16 @@ export function ProjectShowcaseSection() {
             )}
             
             {/* Overlay with Info */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-8">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-orange-900 via-orange-800/80 to-transparent p-8">
               {projectItems[currentIndex].type === "video" && (
                 <div className="absolute top-4 right-4">
-                  <Play className="w-8 h-8 text-white opacity-75" />
+                  <Play className="w-8 h-8 text-orange-200 opacity-90" />
                 </div>
               )}
               <h3 className="text-2xl font-bold text-white mb-2">
                 {projectItems[currentIndex].title}
               </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-orange-100 text-sm leading-relaxed">
                 {projectItems[currentIndex].description}
               </p>
             </div>
@@ -272,8 +272,8 @@ export function ProjectShowcaseSection() {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentIndex === index
-                    ? "bg-orange-500 scale-125"
-                    : "bg-gray-600 hover:bg-gray-400"
+                    ? "bg-orange-600 scale-125"
+                    : "bg-amber-300 hover:bg-amber-400"
                 }`}
               />
             ))}
