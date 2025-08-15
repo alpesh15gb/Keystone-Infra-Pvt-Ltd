@@ -33,10 +33,16 @@ node server/index.js
 
 ## How to Deploy on Your Server
 
-### Method 1: Using the Production Script
+### Method 1: Using the Production Script (RECOMMENDED)
 ```bash
 chmod +x production-start.sh
 ./production-start.sh
+```
+
+### Method 0: Test External Access First
+```bash
+chmod +x test-external.sh
+./test-external.sh
 ```
 
 ### Method 2: Manual Commands
@@ -81,5 +87,32 @@ netstat -tlnp | grep :3000
 curl http://YOUR_SERVER_IP:3000
 ```
 
-## Status: ✅ FIXED
-The server configuration has been updated and should now accept external connections.
+## Troubleshooting Steps
+
+### Step 1: Test with Debug Server
+```bash
+./test-external.sh
+```
+
+### Step 2: Check Port is Open  
+```bash
+# Test from external machine
+telnet YOUR_SERVER_IP 3000
+```
+
+### Step 3: Check Firewall
+```bash
+sudo ufw status
+sudo ufw allow 3000
+```
+
+### Step 4: Use Production Server
+The new `production-server.js` is specifically designed for external access:
+```bash
+HOST=0.0.0.0 PORT=3000 node production-server.js
+```
+
+## Status: ✅ MULTIPLE SOLUTIONS PROVIDED
+- Fixed original server binding issue
+- Created dedicated production server 
+- Added debug tools for testing external access
