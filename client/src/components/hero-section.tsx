@@ -88,8 +88,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto px-4"
               >
-                Building tomorrow's infrastructure today. Over 20 years of engineering excellence 
-                across India with 600+ completed projects spanning 14 states, delivering innovative solutions for complex construction challenges.
+                Building tomorrow's infrastructure today. Over 20 years of engineering excellence across India, delivering innovative solutions for complex construction challenges
               </motion.p>
 
 
