@@ -121,6 +121,8 @@ export function EsteemedClientsSection() {
                     src={client.logo} 
                     alt={client.name}
                     className="w-16 h-16 object-contain"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <h3 className="font-bold text-orange-700 text-sm mb-2">
@@ -146,6 +148,8 @@ export function EsteemedClientsSection() {
                     src={client.logo} 
                     alt={client.name}
                     className="w-16 h-16 object-contain"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <h3 className="font-bold text-orange-700 text-sm mb-2">

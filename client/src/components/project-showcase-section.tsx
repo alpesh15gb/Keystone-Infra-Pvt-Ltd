@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, MapPin, Calendar, Users, Award, Play } from "lucide-react";
+import { YouTubeFacade } from './youtube-facade';
 
 // Import all project images
 import project1 from "@assets/WhatsApp Image 2025-08-13 at 18.22.04_1755123730376.jpeg";
@@ -225,18 +226,15 @@ export function ProjectShowcaseSection() {
                 src={projectItems[currentIndex].src}
                 alt={projectItems[currentIndex].title}
                 className="w-full h-96 object-cover"
+                loading="lazy"
+                decoding="async"
               />
             ) : (
-              <div className="relative w-full h-96 bg-gray-100">
-                <iframe
-                  src={`https://www.youtube.com/embed/${(projectItems[currentIndex] as any).videoId}?rel=0&modestbranding=1&enablejsapi=1`}
+              <div className="relative w-full h-96">
+                <YouTubeFacade
+                  videoId={(projectItems[currentIndex] as any).videoId}
                   title={projectItems[currentIndex].title}
                   className="w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
                 />
               </div>
             )}
