@@ -6,17 +6,11 @@ import { MapPin, Ruler, Droplets, Building2, ChevronRight, Users, Eye, ArrowUpRi
 import { useState } from "react";
 
 // Import project images
+// Load only essential images for performance
 import slider1 from "@assets/slider-1_1754941983527.jpg";
-import slider2 from "@assets/slider-2_1754941983528.jpg";
 import slider3 from "@assets/slider-3_1754941983528.jpg";
-import slider4 from "@assets/slider-4_1754941983528.jpg";
-import slider5 from "@assets/slider-5_1754941983528.jpg";
 import slider6 from "@assets/slider-6_1754941983528.jpg";
-import slider7 from "@assets/slider-7_1754941983528.jpg";
-import slider8 from "@assets/slider-8_1754941983529.jpg";
 import slider9 from "@assets/slider-9_1754941983529.jpg";
-import slider10 from "@assets/slider-10_1754941983529.jpg";
-import slider11 from "@assets/slider-11_1754941983529.jpg";
 import slider12 from "@assets/slider-12_1754941983529.jpg";
 
 const iconicProjects = [
@@ -30,7 +24,7 @@ const iconicProjects = [
     description: "Major bridge facilitating connection to 500 villages, appreciated by Hon'ble Chief Minister",
     client: "PWD",
     status: "Completed",
-    image: slider7,
+    image: slider1,
     year: "2023",
     category: "Infrastructure",
     impact: "500+ Villages Connected"
@@ -60,7 +54,7 @@ const iconicProjects = [
     description: "Advanced sewerage treatment facility supplying clean water to all city households",
     client: "Urban Development",
     status: "Operational",
-    image: slider11,
+    image: slider9,
     year: "2022",
     category: "Environmental",
     impact: "Clean City Initiative"
