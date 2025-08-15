@@ -31,11 +31,12 @@ export function LocationsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-6">
-            All India Presence
+            Pan-India Infrastructure Excellence
           </h2>
-          <p className="text-xl text-amber-100 max-w-3xl mx-auto leading-relaxed">
-            Spanning across India with 20+ years of infrastructure excellence, 
-            delivering transformational projects that connect communities and drive progress.
+          <p className="text-xl text-amber-100 max-w-4xl mx-auto leading-relaxed">
+            With <span className="font-bold text-orange-400">20+ years of proven expertise</span> across <span className="font-bold text-orange-400">14 states</span>, 
+            Keystone Infra has established itself as a trusted infrastructure partner, delivering 
+            <span className="font-bold text-orange-400">600+ successful projects</span> that connect communities and drive economic progress nationwide.
           </p>
         </motion.div>
 
@@ -49,10 +50,10 @@ export function LocationsSection() {
         >
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-orange-500 mb-4">
-              Our Nationwide Coverage
+              Strategic Nationwide Operations
             </h3>
             <p className="text-amber-200 text-lg">
-              Strategic presence across India delivering infrastructure excellence
+              From highways to hospitals, bridges to buildings - transforming India's infrastructure landscape
             </p>
           </div>
           
@@ -229,8 +230,91 @@ export function LocationsSection() {
           </div>
         </motion.div>
 
+        {/* All-India Impact Statistics */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
+        >
+          <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/20 backdrop-blur-sm rounded-2xl p-6 border border-orange-500/30 text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Globe className="text-white" size={28} />
+            </div>
+            <h4 className="text-3xl font-bold text-orange-400 mb-2">14+</h4>
+            <p className="text-amber-200 font-medium">States Covered</p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30 text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Building2 className="text-white" size={28} />
+            </div>
+            <h4 className="text-3xl font-bold text-blue-400 mb-2">600+</h4>
+            <p className="text-amber-200 font-medium">Projects Completed</p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-amber-500/20 to-amber-600/20 backdrop-blur-sm rounded-2xl p-6 border border-amber-500/30 text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Trophy className="text-white" size={28} />
+            </div>
+            <h4 className="text-3xl font-bold text-amber-400 mb-2">20+</h4>
+            <p className="text-amber-200 font-medium">Years of Excellence</p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 backdrop-blur-sm rounded-2xl p-6 border border-green-500/30 text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Zap className="text-white" size={28} />
+            </div>
+            <h4 className="text-3xl font-bold text-green-400 mb-2">₹1000+</h4>
+            <p className="text-amber-200 font-medium">Crores Project Value</p>
+          </div>
+        </motion.div>
 
+        {/* Regional Highlights */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-600/50">
+            <MapPin className="text-orange-500 mb-4" size={32} />
+            <h4 className="text-xl font-bold text-orange-400 mb-3">Northern India</h4>
+            <p className="text-amber-200 text-sm leading-relaxed">
+              Major highway projects in Delhi, Punjab, Haryana, and Uttar Pradesh connecting key economic corridors
+            </p>
+            <div className="flex items-center mt-3 text-xs text-amber-300">
+              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+              Highway Construction • Government Buildings
+            </div>
+          </div>
 
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-600/50">
+            <MapPin className="text-blue-500 mb-4" size={32} />
+            <h4 className="text-xl font-bold text-blue-400 mb-3">Eastern India</h4>
+            <p className="text-amber-200 text-sm leading-relaxed">
+              Infrastructure development in West Bengal, Bihar, and Jharkhand focusing on connectivity and urban development
+            </p>
+            <div className="flex items-center mt-3 text-xs text-amber-300">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              Roads • Water Management • Medical Facilities
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-600/50">
+            <MapPin className="text-green-500 mb-4" size={32} />
+            <h4 className="text-xl font-bold text-green-400 mb-3">Southern India</h4>
+            <p className="text-amber-200 text-sm leading-relaxed">
+              Comprehensive projects in Andhra Pradesh, Telangana, and Karnataka including educational institutions and hospitals
+            </p>
+            <div className="flex items-center mt-3 text-xs text-amber-300">
+              <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+              Educational • Healthcare • Commercial Buildings
+            </div>
+          </div>
+        </motion.div>
 
       </div>
     </section>
