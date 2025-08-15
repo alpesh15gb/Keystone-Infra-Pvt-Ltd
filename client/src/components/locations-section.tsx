@@ -65,7 +65,7 @@ export function LocationsSection() {
             {/* Logo markers positioned over operational states */}
             <div className="absolute inset-0">
               {/* Delhi */}
-              <div className="absolute" style={{ top: '28%', left: '29%' }}>
+              <div className="absolute" style={{ top: '26%', left: '28.5%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -76,7 +76,7 @@ export function LocationsSection() {
               </div>
               
               {/* Madhya Pradesh */}
-              <div className="absolute" style={{ top: '42%', left: '33%' }}>
+              <div className="absolute" style={{ top: '40%', left: '32%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -87,7 +87,7 @@ export function LocationsSection() {
               </div>
               
               {/* Chhattisgarh */}
-              <div className="absolute" style={{ top: '45%', left: '38%' }}>
+              <div className="absolute" style={{ top: '43%', left: '38%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -98,7 +98,7 @@ export function LocationsSection() {
               </div>
               
               {/* Telangana */}
-              <div className="absolute" style={{ top: '58%', left: '33%' }}>
+              <div className="absolute" style={{ top: '56%', left: '33%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -109,7 +109,7 @@ export function LocationsSection() {
               </div>
               
               {/* Manipur */}
-              <div className="absolute" style={{ top: '38%', left: '64%' }}>
+              <div className="absolute" style={{ top: '36%', left: '63%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -120,7 +120,7 @@ export function LocationsSection() {
               </div>
               
               {/* Nagaland */}
-              <div className="absolute" style={{ top: '34%', left: '66%' }}>
+              <div className="absolute" style={{ top: '32%', left: '64.5%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -131,7 +131,7 @@ export function LocationsSection() {
               </div>
               
               {/* Mizoram */}
-              <div className="absolute" style={{ top: '44%', left: '65%' }}>
+              <div className="absolute" style={{ top: '42%', left: '62%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -142,7 +142,7 @@ export function LocationsSection() {
               </div>
               
               {/* Rajasthan */}
-              <div className="absolute" style={{ top: '32%', left: '22%' }}>
+              <div className="absolute" style={{ top: '30%', left: '23%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -153,7 +153,7 @@ export function LocationsSection() {
               </div>
               
               {/* Goa */}
-              <div className="absolute" style={{ top: '68%', left: '26%' }}>
+              <div className="absolute" style={{ top: '66%', left: '25.5%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -164,7 +164,7 @@ export function LocationsSection() {
               </div>
               
               {/* Andhra Pradesh */}
-              <div className="absolute" style={{ top: '65%', left: '34%' }}>
+              <div className="absolute" style={{ top: '62%', left: '35%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -175,7 +175,7 @@ export function LocationsSection() {
               </div>
               
               {/* Karnataka */}
-              <div className="absolute" style={{ top: '72%', left: '30%' }}>
+              <div className="absolute" style={{ top: '68%', left: '29%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
@@ -186,7 +186,7 @@ export function LocationsSection() {
               </div>
               
               {/* Bihar */}
-              <div className="absolute" style={{ top: '35%', left: '42%' }}>
+              <div className="absolute" style={{ top: '33%', left: '41%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
