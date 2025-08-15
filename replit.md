@@ -60,6 +60,7 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Enhanced locations section with comprehensive all-India presence showcase including pan-India statistics, regional highlights, and improved visual design
 - Updated hero section subtitle to better emphasize 600+ projects across 14 states nationwide presence
 - Updated Pan-India Infrastructure Excellence section background to match website's light orange/brown theme instead of dark blue theme
+- Removed statistics cards from Pan-India Infrastructure Excellence section (states covered, projects completed, years of excellence, project value)
 
 # User Preferences
 

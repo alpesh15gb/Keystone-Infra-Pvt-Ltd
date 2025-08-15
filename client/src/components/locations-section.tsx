@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Building2, Globe, Trophy, Zap } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 import indiaMap from "@assets/India-State-and-Capital-Union-Territories_1755108680983.png";
 import keystoneLogo from "@assets/Screenshot_2025-08-13_234234-removebg-preview_1755108853673.png";
@@ -34,9 +34,8 @@ export function LocationsSection() {
             Pan-India Infrastructure Excellence
           </h2>
           <p className="text-xl text-amber-800 max-w-4xl mx-auto leading-relaxed">
-            With <span className="font-bold text-orange-400">20+ years of proven expertise</span> across <span className="font-bold text-orange-400">14 states</span>, 
-            Keystone Infra has established itself as a trusted infrastructure partner, delivering 
-            <span className="font-bold text-orange-400">600+ successful projects</span> that connect communities and drive economic progress nationwide.
+            Keystone Infra has established itself as a trusted infrastructure partner across multiple states, 
+            delivering projects that connect communities and drive economic progress nationwide.
           </p>
         </motion.div>
 
@@ -227,47 +226,6 @@ export function LocationsSection() {
               <img src={keystoneLogo} alt="Keystone Logo" className="w-4 h-4 mr-2" />
               Keystone Infra operational states across India
             </p>
-          </div>
-        </motion.div>
-
-        {/* All-India Impact Statistics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
-        >
-          <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200 text-center shadow-lg">
-            <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Globe className="text-white" size={28} />
-            </div>
-            <h4 className="text-3xl font-bold text-orange-600 mb-2">14+</h4>
-            <p className="text-amber-800 font-medium">States Covered</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-6 border border-amber-200 text-center shadow-lg">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building2 className="text-white" size={28} />
-            </div>
-            <h4 className="text-3xl font-bold text-amber-700 mb-2">600+</h4>
-            <p className="text-amber-800 font-medium">Projects Completed</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 border border-orange-200 text-center shadow-lg">
-            <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Trophy className="text-white" size={28} />
-            </div>
-            <h4 className="text-3xl font-bold text-orange-700 mb-2">20+</h4>
-            <p className="text-amber-800 font-medium">Years of Excellence</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200 text-center shadow-lg">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Zap className="text-white" size={28} />
-            </div>
-            <h4 className="text-3xl font-bold text-amber-700 mb-2">₹1000+</h4>
-            <p className="text-amber-800 font-medium">Crores Project Value</p>
           </div>
         </motion.div>
 
