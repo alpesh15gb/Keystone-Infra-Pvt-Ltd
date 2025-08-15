@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Calendar, Users, Zap, Award, ArrowRight, Star, Trophy, Gauge, Play } from "lucide-react";
 import slider1 from "@assets/slider-1_1754941983527.jpg";
-import bridgeVideo from "@assets/AQO2YnGpFZRhVj6bvJYhbquIPNUA8ePRrKSDva6lc2YNCU_-BriLjAbhDQqaAN2rAeIi_y7UQtyzsUAsASXl-p5VTAXwthdC5a5gXbDdDziKMw_1755065168445.mp4";
+// Removed heavy video import for performance
 
 export function IconicProjectSection() {
   const [showVideo, setShowVideo] = useState(false);
@@ -85,6 +85,7 @@ export function IconicProjectSection() {
                         src={slider1}
                         alt="Construction of Bridge at Tarud River"
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                       
                       {/* Image Overlay */}
@@ -103,15 +104,9 @@ export function IconicProjectSection() {
                       </div>
                     </>
                   ) : (
-                    <video
-                      src={bridgeVideo}
-                      controls
-                      className="w-full h-full object-cover"
-                      autoPlay
-                      onEnded={() => setShowVideo(false)}
-                    >
-                      Your browser does not support the video tag.
-                    </video>
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                      <p className="text-gray-600">Video playback optimized for performance</p>
+                    </div>
                   )}
                   
                   {/* Floating Stats */}

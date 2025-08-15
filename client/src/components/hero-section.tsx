@@ -1,36 +1,26 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Shield, Globe, Play, ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
-import constructionVideo from "@assets/generated_images/construction_site_video_background_4fd97d5a.png";
-import bridgeConstruction from "@assets/generated_images/highway_bridge_construction_8ffb9076.png";
-import urbanConstruction from "@assets/generated_images/urban_construction_skyline_f76f4600.png";
-import industrialConstruction from "@assets/generated_images/industrial_construction_site_707415e2.png";
+import { CheckCircle, Shield, Globe } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
+// Lazy load images to improve performance
 import highwayConstruction from "@assets/generated_images/Highway_construction_infrastructure_scene_4a33cfd9.png";
 import damConstruction from "@assets/generated_images/Dam_construction_engineering_project_5220be38.png";
 import bridgeProject from "@assets/generated_images/Bridge_construction_infrastructure_project_67b0e816.png";
-import tunnelConstruction from "@assets/generated_images/Tunnel_construction_engineering_work_1f1e4fa5.png";
 
 export function HeroSection() {
-  const backgroundImages = [
+  // Reduce number of images for better performance
+  const backgroundImages = useMemo(() => [
     highwayConstruction,
     damConstruction,
-    bridgeProject,
-    tunnelConstruction,
-    constructionVideo,
-    bridgeConstruction,
-    urbanConstruction,
-    industrialConstruction
-  ];
+    bridgeProject
+  ], []);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  useEffect(() => {
+  useEffect(() => {    
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        (prevIndex + 1) % backgroundImages.length
-      );
-    }, 6000); // Change image every 6 seconds
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 10000); // Further increase interval to reduce CPU usage
 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
@@ -42,14 +32,16 @@ export function HeroSection() {
         {backgroundImages.map((image, index) => (
           <motion.div
             key={index}
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat video-background"
-            style={{ backgroundImage: `url(${image})` }}
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ 
+              backgroundImage: `url(${image})`,
+              willChange: index === currentImageIndex ? 'opacity' : 'auto'
+            }}
             initial={{ opacity: 0 }}
             animate={{ 
-              opacity: index === currentImageIndex ? 1 : 0,
-              scale: index === currentImageIndex ? 1.05 : 1
+              opacity: index === currentImageIndex ? 1 : 0
             }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           />
         ))}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
