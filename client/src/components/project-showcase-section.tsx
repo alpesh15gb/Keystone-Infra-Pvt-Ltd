@@ -249,16 +249,16 @@ export function ProjectShowcaseSection() {
             )}
             
             {/* Overlay with Info */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-orange-900 via-orange-800/80 to-transparent p-8">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-8">
               {projectItems[currentIndex].type === "video" && (
                 <div className="absolute top-4 right-4">
-                  <Play className="w-8 h-8 text-orange-200 opacity-90" />
+                  <Play className="w-8 h-8 text-white opacity-75" />
                 </div>
               )}
               <h3 className="text-2xl font-bold text-white mb-2">
                 {projectItems[currentIndex].title}
               </h3>
-              <p className="text-orange-100 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed">
                 {projectItems[currentIndex].description}
               </p>
             </div>
