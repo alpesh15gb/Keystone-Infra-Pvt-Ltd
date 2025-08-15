@@ -30,7 +30,7 @@ export function LocationsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-orange-600 mb-6">
-            Pan-India Infrastructure Excellence
+            All India Infrastructure Excellence
           </h2>
           <p className="text-xl text-amber-800 max-w-4xl mx-auto leading-relaxed">
             Keystone Infra has established itself as a trusted infrastructure partner across multiple states, 
