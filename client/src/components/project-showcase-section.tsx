@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, MapPin, Calendar, Users, Award } from "lucide-react";
+import { ChevronLeft, ChevronRight, MapPin, Calendar, Users, Award, Play } from "lucide-react";
 
 // Import all project images
 import project1 from "@assets/WhatsApp Image 2025-08-13 at 18.22.04_1755123730376.jpeg";
@@ -21,8 +21,9 @@ import project15 from "@assets/WhatsApp Image 2025-08-13 at 18.22.08 (2)_1755123
 import project16 from "@assets/WhatsApp Image 2025-08-13 at 18.22.09_1755123730374.jpeg";
 import project17 from "@assets/WhatsApp Image 2025-08-13 at 18.22.09 (1)_1755123730373.jpeg";
 
-const projectImages = [
+const projectItems = [
   {
+    type: "image",
     src: project1,
     title: "Highway Infrastructure Development",
     description: "Advanced highway construction with modern engineering solutions",
@@ -30,6 +31,7 @@ const projectImages = [
     category: "Highway Development"
   },
   {
+    type: "image",
     src: project2,
     title: "Bridge Construction Excellence",
     description: "Major bridge infrastructure connecting communities across regions",
@@ -37,6 +39,7 @@ const projectImages = [
     category: "Bridge Engineering"
   },
   {
+    type: "image",
     src: project3,
     title: "Urban Infrastructure Development",
     description: "Comprehensive urban development projects enhancing city connectivity",
@@ -44,6 +47,7 @@ const projectImages = [
     category: "Urban Development"
   },
   {
+    type: "image",
     src: project4,
     title: "Rural Connectivity Project",
     description: "Essential infrastructure bringing connectivity to rural communities",
@@ -51,6 +55,7 @@ const projectImages = [
     category: "Rural Infrastructure"
   },
   {
+    type: "image",
     src: project5,
     title: "Industrial Infrastructure",
     description: "Heavy-duty industrial infrastructure supporting economic growth",
@@ -58,6 +63,7 @@ const projectImages = [
     category: "Industrial Development"
   },
   {
+    type: "image",
     src: project6,
     title: "Transportation Hub Development",
     description: "Multi-modal transportation infrastructure for enhanced connectivity",
@@ -65,6 +71,7 @@ const projectImages = [
     category: "Transportation"
   },
   {
+    type: "image",
     src: project7,
     title: "Structural Engineering Excellence",
     description: "Advanced structural engineering solutions for complex projects",
@@ -72,6 +79,7 @@ const projectImages = [
     category: "Structural Engineering"
   },
   {
+    type: "image",
     src: project8,
     title: "Foundation Engineering",
     description: "Deep foundation solutions for critical infrastructure projects",
@@ -79,6 +87,7 @@ const projectImages = [
     category: "Foundation Work"
   },
   {
+    type: "image",
     src: project9,
     title: "Road Network Expansion",
     description: "Comprehensive road network development improving regional connectivity",
@@ -86,6 +95,7 @@ const projectImages = [
     category: "Road Development"
   },
   {
+    type: "image",
     src: project10,
     title: "Infrastructure Modernization",
     description: "Upgrading existing infrastructure with modern engineering standards",
@@ -93,6 +103,7 @@ const projectImages = [
     category: "Infrastructure Upgrade"
   },
   {
+    type: "image",
     src: project11,
     title: "Environmental Engineering",
     description: "Sustainable infrastructure solutions with environmental considerations",
@@ -100,6 +111,7 @@ const projectImages = [
     category: "Environmental Engineering"
   },
   {
+    type: "image",
     src: project12,
     title: "Construction Technology Innovation",
     description: "Implementation of advanced construction technologies and methods",
@@ -107,6 +119,7 @@ const projectImages = [
     category: "Construction Technology"
   },
   {
+    type: "image",
     src: project13,
     title: "Infrastructure Quality Control",
     description: "Rigorous quality control ensuring infrastructure excellence and durability",
@@ -114,6 +127,7 @@ const projectImages = [
     category: "Quality Control"
   },
   {
+    type: "image",
     src: project14,
     title: "Project Management Excellence",
     description: "Comprehensive project management delivering infrastructure on schedule",
@@ -121,6 +135,7 @@ const projectImages = [
     category: "Project Management"
   },
   {
+    type: "image",
     src: project15,
     title: "Safety Engineering Standards",
     description: "Implementation of highest safety standards in infrastructure development",
@@ -128,6 +143,7 @@ const projectImages = [
     category: "Safety Engineering"
   },
   {
+    type: "image",
     src: project16,
     title: "Community Infrastructure Development",
     description: "Infrastructure projects enhancing community development and growth",
@@ -135,23 +151,33 @@ const projectImages = [
     category: "Community Infrastructure"
   },
   {
+    type: "image",
     src: project17,
     title: "Engineering Innovation Hub",
     description: "Innovative engineering solutions pushing boundaries of infrastructure development",
     location: "Innovation Center",
     category: "Engineering Innovation"
-  }
+  },
+  // Example of how to add YouTube videos - you can replace any of the above with videos like this:
+  // {
+  //   type: "video",
+  //   videoId: "YOUR_YOUTUBE_VIDEO_ID_HERE",
+  //   title: "Highway Construction Time-lapse",
+  //   description: "Watch our 85km National Highway project construction from start to finish",
+  //   location: "National Highway NH-37",
+  //   category: "Highway Development"
+  // }
 ];
 
 export function ProjectShowcaseSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % projectImages.length);
+    setCurrentIndex((prev) => (prev + 1) % projectItems.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + projectImages.length) % projectImages.length);
+    setCurrentIndex((prev) => (prev - 1 + projectItems.length) % projectItems.length);
   };
 
   return (
@@ -195,7 +221,7 @@ export function ProjectShowcaseSection() {
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Single Image Display */}
+          {/* Single Item Display */}
           <motion.div
             key={currentIndex}
             initial={{ opacity: 0 }}
@@ -203,26 +229,44 @@ export function ProjectShowcaseSection() {
             transition={{ duration: 0.5 }}
             className="relative rounded-2xl overflow-hidden shadow-2xl"
           >
-            <img
-              src={projectImages[currentIndex].src}
-              alt={projectImages[currentIndex].title}
-              className="w-full h-96 object-cover"
-            />
+            {projectItems[currentIndex].type === "image" ? (
+              <img
+                src={projectItems[currentIndex].src}
+                alt={projectItems[currentIndex].title}
+                className="w-full h-96 object-cover"
+              />
+            ) : (
+              <div className="relative w-full h-96">
+                <iframe
+                  src={`https://www.youtube.com/embed/${(projectItems[currentIndex] as any).videoId}?rel=0&modestbranding=1`}
+                  title={projectItems[currentIndex].title}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            )}
             
-            {/* Image Overlay with Info */}
+            {/* Overlay with Info */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-8">
+              {projectItems[currentIndex].type === "video" && (
+                <div className="absolute top-4 right-4">
+                  <Play className="w-8 h-8 text-white opacity-75" />
+                </div>
+              )}
               <h3 className="text-2xl font-bold text-white mb-2">
-                {projectImages[currentIndex].title}
+                {projectItems[currentIndex].title}
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                {projectImages[currentIndex].description}
+                {projectItems[currentIndex].description}
               </p>
             </div>
           </motion.div>
 
           {/* Pagination Dots */}
           <div className="flex justify-center mt-8 space-x-2">
-            {projectImages.map((_, index) => (
+            {projectItems.map((_, index: number) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
