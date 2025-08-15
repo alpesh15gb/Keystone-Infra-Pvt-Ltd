@@ -209,14 +209,14 @@ export function ProjectShowcaseSection() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-orange-600 bg-opacity-80 hover:bg-opacity-100 text-white p-4 rounded-full transition-all duration-300 shadow-lg"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300 shadow-lg"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-orange-600 bg-opacity-80 hover:bg-opacity-100 text-white p-4 rounded-full transition-all duration-300 shadow-lg"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300 shadow-lg"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -272,8 +272,8 @@ export function ProjectShowcaseSection() {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentIndex === index
-                    ? "bg-orange-600 scale-125"
-                    : "bg-amber-300 hover:bg-amber-400"
+                    ? "bg-gray-700 scale-125"
+                    : "bg-gray-400 hover:bg-gray-500"
                 }`}
               />
             ))}
