@@ -57,6 +57,8 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Added "Rigid & Flexible Major District Road" to Transportation Infrastructure features
 - Simplified "Rigid & Flexible Major District Road" to just "Roads" in Transportation Infrastructure
 - Changed back to "Rigid & Flexible Major District Roads" in Transportation Infrastructure
+- Enhanced locations section with comprehensive all-India presence showcase including pan-India statistics, regional highlights, and improved visual design
+- Updated hero section subtitle to better emphasize 600+ projects across 14 states nationwide presence
 
 # User Preferences
 
