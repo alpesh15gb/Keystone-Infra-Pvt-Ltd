@@ -109,7 +109,7 @@ export function LocationsSection() {
               </div>
               
               {/* Manipur */}
-              <div className="absolute" style={{ top: '36%', left: '78%' }}>
+              <div className="absolute" style={{ top: '41.4%', left: '81%' }}>
                 <motion.img 
                   src={keystoneLogo} 
                   alt="Keystone Infra" 
