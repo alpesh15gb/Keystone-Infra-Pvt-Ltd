@@ -1,31 +1,27 @@
 @echo off
-title Keystone Infra Website - Simple Start
-color 0B
-
-echo Starting Keystone Infra Website...
+echo ============================================
+echo KEYSTONE INFRA WEBSITE - PRODUCTION SERVER
+echo ============================================
 echo.
+echo Building website for production...
+call npm run build
 
-:: Set Windows environment variables
-set NODE_ENV=production
-set PORT=3000
-
-:: Check if dist folder exists
-if not exist dist (
-    echo Project needs to be built first.
-    echo Building now...
-    npm run build
-    if %errorlevel% neq 0 (
-        echo Build failed. Please check for errors.
-        pause
-        exit /b 1
-    )
+if not exist "dist\public" (
+    echo ERROR: Build failed - no dist\public folder
+    echo Please check for build errors above
+    pause
+    exit /b 1
 )
 
-echo Website will be available at: http://localhost:3000
-echo Press Ctrl+C to stop
+echo.
+echo SUCCESS: Website built successfully!
+echo.
+echo Starting production server on port 9000...
+echo.
+echo *** YOUR WEBSITE WILL BE AVAILABLE AT: ***
+echo     http://YOUR_SERVER_IP:9000
+echo.
+echo Press Ctrl+C to stop the server
 echo.
 
-:: Start the server directly
-node dist/index.js
-
-pause
+node simple-windows-server.js

@@ -5,7 +5,7 @@ const server = http.createServer((req, res) => {
   res.end('SERVER WORKING - External access confirmed!');
 });
 
-const port = 8080;
+const port = 9000;
 server.listen(port, '0.0.0.0', () => {
   console.log('Simple test server running on 0.0.0.0:' + port);
   console.log('Test externally: http://YOUR_SERVER_IP:' + port);
