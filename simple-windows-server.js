@@ -19,6 +19,6 @@ app.get('*', (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Production server running on 0.0.0.0:${PORT}`);
-  console.log(`Access from: http://YOUR_SERVER_IP:${PORT}`);
+  console.log('Production server running on 0.0.0.0:' + PORT);
+  console.log('Access from: http://YOUR_SERVER_IP:' + PORT);
 });
