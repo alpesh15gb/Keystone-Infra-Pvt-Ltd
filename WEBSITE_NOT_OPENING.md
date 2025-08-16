@@ -5,13 +5,12 @@ Development server configuration doesn't work for external access on production 
 
 ## GUARANTEED SOLUTION
 
-### Step 1: Build the Website
+### For Windows Users:
+Double-click: `windows-compatible-start.bat`
+
+### For Linux/Mac Users:
 ```bash
 npm run build
-```
-
-### Step 2: Use Simple Production Server
-```bash
 node simple-windows-server.js
 ```
 
@@ -19,10 +18,16 @@ node simple-windows-server.js
 The website will be available at: `http://YOUR_SERVER_IP:8080`
 
 ## Alternative: Test Basic Connectivity First
+
+### Windows: 
+Double-click: `test-basic-server.bat`
+
+### Linux/Mac:
 ```bash
 node simple-server-test.js
-# Visit http://YOUR_SERVER_IP:8080 - you should see "SERVER WORKING"
 ```
+
+Visit http://YOUR_SERVER_IP:8080 - you should see "SERVER WORKING"
 
 ## WHY THIS WORKS
 - Uses port 8080 (commonly open)

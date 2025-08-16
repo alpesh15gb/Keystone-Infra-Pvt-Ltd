@@ -7,6 +7,6 @@ const server = http.createServer((req, res) => {
 
 const port = 8080;
 server.listen(port, '0.0.0.0', () => {
-  console.log(`Simple test server running on 0.0.0.0:${port}`);
-  console.log(`Test externally: http://YOUR_SERVER_IP:${port}`);
+  console.log('Simple test server running on 0.0.0.0:' + port);
+  console.log('Test externally: http://YOUR_SERVER_IP:' + port);
 });
