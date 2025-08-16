@@ -14,8 +14,8 @@ npm run build
 node simple-windows-server.js
 ```
 
-### Step 3: Test with Port 8080
-The website will be available at: `http://YOUR_SERVER_IP:8080`
+### Step 3: Test with Port 9000
+The website will be available at: `http://YOUR_SERVER_IP:9000`
 
 ## Alternative: Test Basic Connectivity First
 
