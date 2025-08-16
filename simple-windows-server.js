@@ -1,44 +1,24 @@
-// Ultra-simple Windows-compatible server
+// Ultra-simple production server that works on any platform
 const express = require('express');
 const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
-// Basic middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// Serve built files
+app.use(express.static(path.join(__dirname, 'dist/public')));
 
-// Serve static files
-app.use(express.static(path.join(__dirname, 'dist/client')));
-
-// Basic contact form endpoint (logs to console)
-app.post('/api/contact', (req, res) => {
-  console.log('Contact form submission:');
-  console.log(`Name: ${req.body.firstName} ${req.body.lastName}`);
-  console.log(`Email: ${req.body.email}`);
-  console.log(`Company: ${req.body.company}`);
-  console.log(`Message: ${req.body.message}`);
-  res.json({ success: true, message: 'Message logged to console' });
+// API endpoints (if any)
+app.use('/api/*', (req, res) => {
+  res.json({ message: 'API not configured for production' });
 });
 
-// Serve the main page
+// Serve React app for all other routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/client/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/public/index.html'));
 });
 
-// Simple server start
-app.listen(port, (err) => {
-  if (err) {
-    console.error('Server error:', err);
-    return;
-  }
-  console.log(`✓ Keystone Infra website running at http://localhost:${port}`);
-  console.log('Contact form submissions will appear in this console');
-});
-
-// Handle errors
-process.on('uncaughtException', (err) => {
-  console.error('Server error:', err.message);
-  process.exit(1);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Production server running on 0.0.0.0:${PORT}`);
+  console.log(`Access from: http://YOUR_SERVER_IP:${PORT}`);
 });
