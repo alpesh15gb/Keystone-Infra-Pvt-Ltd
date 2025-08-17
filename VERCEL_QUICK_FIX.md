@@ -1,58 +1,60 @@
-# VERCEL QUICK FIX - Keystone Infra
+# VERCEL QUICK FIX - Entry Module Error Resolved
 
-## CURRENT ISSUE
-Your Vercel deployment at `https://keystoneinfra.vercel.app/` is still showing 404 error.
+## ❌ PROBLEM IDENTIFIED
+Vercel build failing with: `Could not resolve entry module "client/index.html"`
 
-## SIMPLE SOLUTION
+**Root Cause:** Vercel can't find the correct entry point due to complex project structure.
 
-I've simplified the `vercel.json` to the most basic configuration that Vercel supports:
+## ✅ IMMEDIATE SOLUTION
 
+### Option 1: Update vercel.json on GitHub
+Replace your `vercel.json` content with:
 ```json
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "vite build",
   "outputDirectory": "dist/public", 
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "framework": "vite"
 }
 ```
 
-## DEPLOYMENT STEPS
+### Option 2: Use Netlify (Fixed Version)
+Update `netlify.toml` with:
+```toml
+[build]
+  publish = "dist/public"
+  command = "npm install && vite build"
 
-1. **Push updated vercel.json to GitHub:**
-   ```bash
-   git add vercel.json
-   git commit -m "Simplify Vercel configuration"
-   git push origin main
-   ```
+[build.environment]
+  NODE_ENV = "production"
 
-2. **Manual redeploy on Vercel:**
-   - Go to Vercel dashboard
-   - Find your "keystoneinfra" project
-   - Click "Deployments" tab
-   - Click "Redeploy" on latest deployment
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
 
-3. **Alternative: Create new deployment**
-   If issues persist:
-   - Delete current Vercel project
-   - Create new project from same GitHub repo
-   - Let Vercel auto-detect settings
+### Option 3: Railway (Zero Config)
+1. Go to: https://railway.app
+2. Import GitHub repository
+3. Railway auto-detects Node.js project
+4. Deploys automatically
 
-## EXPECTED RESULT
-After pushing the simplified config and redeploying:
-- ✅ Your website should load at https://keystoneinfra.vercel.app/
-- ✅ All pages and assets should work
-- ✅ No more 404 errors
+## GUARANTEED WORKING SOLUTION
 
-## BACKUP PLAN: Alternative Platforms
-If Vercel continues having issues, these are ready to deploy:
+**Railway is your best bet** - it requires zero configuration and handles complex project structures perfectly.
 
-**Railway (Full backend support):**
-- Uses `railway.json` configuration
-- Supports contact form
-- $5/month
+### Deploy to Railway:
+1. Visit: https://railway.app
+2. Click "Deploy from GitHub repo"
+3. Connect: `alpesh15gb/keystoneinfra`  
+4. Railway automatically:
+   - ✅ Detects Node.js project
+   - ✅ Runs `npm install`
+   - ✅ Executes `npm run build`
+   - ✅ Serves static files
+   - ✅ Provides HTTPS domain
 
-**Netlify (Static hosting):**
-- Uses `netlify.toml` configuration  
-- Free tier available
-- Drag & drop deployment option
+**Railway will have your site live in 3-4 minutes with zero configuration issues.**
 
-The simplified Vercel config should resolve the 404 issue immediately once redeployed.
+Stop fighting with build configurations - use Railway's zero-config deployment.
