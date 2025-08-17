@@ -9,6 +9,6 @@ if not exist "dist\public" (
 )
 
 echo Starting production server...
-echo Website will be available at: http://YOUR_SERVER_IP:9000
+echo Website will be available at: http://YOUR_SERVER_IP
 node simple-windows-server.js
 pause

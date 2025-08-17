@@ -16,10 +16,10 @@ if not exist "dist\public" (
 echo.
 echo SUCCESS: Website built successfully!
 echo.
-echo Starting production server on port 9000...
+echo Starting production server on port 80...
 echo.
 echo *** YOUR WEBSITE WILL BE AVAILABLE AT: ***
-echo     http://YOUR_SERVER_IP:9000
+echo     http://YOUR_SERVER_IP
 echo.
 echo Press Ctrl+C to stop the server
 echo.

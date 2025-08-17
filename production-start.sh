@@ -6,7 +6,7 @@
 # Set environment variables
 export NODE_ENV=production
 export HOST=0.0.0.0
-export PORT=${PORT:-3000}
+export PORT=${PORT:-80}
 
 # Build the project
 echo "Building project..."
