@@ -98,8 +98,25 @@ Most platforms will automatically detect:
 
 ## Troubleshooting
 
-### Build Fails
-- Check Node.js version compatibility
+### Build Fails - "Could not resolve entry module"
+This error occurs when the build system can't find the entry point. Solutions:
+
+**For Vercel:**
+- Use the included `vercel.json` configuration
+- Build command: `npm run build`
+- Output directory: `dist/public`
+
+**For Railway:**
+- Use the included `railway.json` configuration  
+- Build and start commands auto-detected
+
+**For Render:**
+- Build command: `npm run build`
+- Start command: `node simple-windows-server.js`
+- Publish directory: `dist/public`
+
+**General Build Issues:**
+- Check Node.js version compatibility (use Node 18+)
 - Ensure all dependencies in package.json
 - Review build logs for specific errors
 

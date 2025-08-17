@@ -62,24 +62,26 @@ Access: http://localhost:9000
 
 ## 📦 Deployment Options
 
-### 1. GitHub Pages (Static)
-```bash
-npm run build
-# Deploy dist/public folder to GitHub Pages
-```
-
-### 2. Vercel (Recommended)
+### 1. Vercel (Recommended - Includes vercel.json)
 - Connect GitHub repository
-- Auto-deploy on push
-- Built-in Node.js support
+- Uses included `vercel.json` configuration
+- Auto-deploy on push with Node.js support
 
-### 3. Railway
-```bash
-# Connect GitHub repo to Railway
-# Auto-deployment with Node.js runtime
-```
+### 2. Railway (Includes railway.json)
+- Connect GitHub repo to Railway
+- Uses included `railway.json` configuration
+- Auto-deployment with Node.js runtime
 
-### 4. DigitalOcean/VPS
+### 3. Render (Manual Setup)
+- Build: `npm run build`
+- Start: `node simple-windows-server.js`
+- Publish: `dist/public`
+
+### 4. Netlify (Includes netlify.toml)
+- Uses included `netlify.toml` configuration
+- Static site with serverless functions
+
+### 5. DigitalOcean/VPS
 ```bash
 # Upload files via SSH
 npm install
