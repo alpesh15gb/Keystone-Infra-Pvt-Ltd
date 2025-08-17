@@ -18,14 +18,16 @@ git push -u origin main
 
 ## Deployment Options
 
-### Option 1: Vercel (RECOMMENDED - FREE)
+### Option 1: Vercel (STATIC HOSTING - RECOMMENDED)
 1. Visit [vercel.com](https://vercel.com)
 2. Sign up with GitHub account
 3. Import your repository
-4. Deploy automatically
-5. Get instant HTTPS URL
+4. Build command: `npm run build`
+5. Output directory: `dist/public`
+6. Deploy as static site
 
-**Pros**: Free, automatic deployments, fast CDN, Node.js support
+**Pros**: Free, automatic deployments, fast CDN, no serverless function issues
+**Note**: Contact form will need external service (Formspree, Netlify Forms, etc.)
 
 ### Option 2: Railway (Node.js Optimized)
 1. Visit [railway.app](https://railway.app)
@@ -101,10 +103,15 @@ Most platforms will automatically detect:
 ### Build Fails - "Could not resolve entry module"
 This error occurs when the build system can't find the entry point. Solutions:
 
-**For Vercel:**
-- Use the included `vercel.json` configuration
+**For Vercel (Static Site):**
+- Updated `vercel.json` now configures static hosting
 - Build command: `npm run build`
 - Output directory: `dist/public`
+- No serverless function crashes
+
+**For Vercel (If you need full backend):**
+- Consider Railway or Render instead
+- Vercel serverless functions have limitations for Express apps
 
 **For Railway:**
 - Use the included `railway.json` configuration  
