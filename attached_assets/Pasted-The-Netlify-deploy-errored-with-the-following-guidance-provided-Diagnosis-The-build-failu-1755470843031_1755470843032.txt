@@ -1,0 +1,49 @@
+The Netlify deploy errored, with the following guidance provided:
+
+**Diagnosis:**
+The build failure occurred during the 'building site' stage with the error message "Build script returned non-zero exit code: 2".
+
+**Solution:**
+1. Check the build script to identify the specific issue causing the non-zero exit code.
+2. Ensure all necessary configurations and dependencies are correctly set up for the build script to execute successfully.
+3. Verify that the required packages are present in the `package.json` file and have been committed to the repository.
+
+If the issue persists, further debugging of the build script may be necessary to identify the root cause of the failure.
+
+The relevant error logs are:
+
+Line 0: build-image version: e5074bde24e53715f94c72a3902b7868fbfe84e1 (noble)
+Line 1: buildbot version: e2595138a7c5ab9f292ccfa2932733582fe0dc65
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/alpesh15gb/keystoneinfra
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Custom publish path detected. Proceeding with the specified path: 'dist/public'
+Line 9: Custom build command detected. Proceeding with the specified command: 'npm install && npx vite build'
+Line 10: Starting to install dependencies
+Line 11: Downloading and installing node v18.20.8...
+Line 12: Downloading https://nodejs.org/dist/v18.20.8/node-v18.20.8-linux-x64.tar.xz...
+Line 13: Computing checksum with sha256sum
+Line 23: Started restoring cached node modules
+Line 24: Finished restoring cached node modules
+Line 25: Installing npm packages using npm version 10.8.2
+Line 26: added 398 packages in 8s
+Line 27: npm packages installed
+Line 28: Successfully installed dependencies
+Line 29: Starting build script
+Line 30: Detected 1 framework(s)
+Line 31: "vite" at version "5.4.19"
+Line 32: Section completed: initializing
+Line 33: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 34: [96m[1m​[22m[39m
+Line 35: [96m[1mNetlify Build                                                 [22m[39m
+Line 36: [96m[1m────────────────────────────────────────────────────────────────[22m[39m
+Line 37: [36m[1m​[22m[39m
+Line 38: [36m[1m❯ Version[22m[39m
+Line 39:   @netlify/build 35.1.0
+Line 40: [36m[1m​[22m[39m
+Line 41: [36m[1m❯ Flags[22m[39m
+Line 42:   accountId: 68a2564e1d3acf03fcf7b959
+Line 43:   baseRelDir: true
