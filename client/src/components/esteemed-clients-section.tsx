@@ -80,7 +80,7 @@ export function EsteemedClientsSection() {
   }, []);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-orange-50 via-amber-50 to-white">
+    <section className="py-16 bg-gradient-to-br from-blue-50 to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -88,10 +88,10 @@ export function EsteemedClientsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-orange-600 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Our Esteemed Clients
           </h2>
-          <p className="text-xl text-amber-800 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Trusted by government agencies and institutions across India for infrastructure development
           </p>
         </motion.div>
@@ -101,7 +101,7 @@ export function EsteemedClientsSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative overflow-hidden bg-white rounded-2xl shadow-lg p-8 border border-orange-100"
+          className="relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8"
         >
           <div 
             ref={scrollRef}
@@ -114,24 +114,22 @@ export function EsteemedClientsSection() {
             {clients.map((client, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 w-72 bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-orange-200"
+                className="flex-shrink-0 w-72 bg-white dark:bg-gray-700 rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-gray-200 dark:border-gray-600"
               >
-                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-orange-50 rounded-lg overflow-hidden">
+                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
                   <img 
                     src={client.logo} 
                     alt={client.name}
                     className="w-16 h-16 object-contain"
-                    loading="lazy"
-                    decoding="async"
                   />
                 </div>
-                <h3 className="font-bold text-orange-700 text-sm mb-2">
+                <h3 className="font-bold text-gray-900 dark:text-white text-sm mb-2">
                   {client.name}
                 </h3>
-                <p className="text-xs text-amber-800 mb-3 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">
                   {client.fullName}
                 </p>
-                <span className="inline-block px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">
+                <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">
                   {client.sector}
                 </span>
               </div>
@@ -141,24 +139,22 @@ export function EsteemedClientsSection() {
             {clients.map((client, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 w-72 bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-orange-200"
+                className="flex-shrink-0 w-72 bg-white dark:bg-gray-700 rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-gray-200 dark:border-gray-600"
               >
-                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-orange-50 rounded-lg overflow-hidden">
+                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
                   <img 
                     src={client.logo} 
                     alt={client.name}
                     className="w-16 h-16 object-contain"
-                    loading="lazy"
-                    decoding="async"
                   />
                 </div>
-                <h3 className="font-bold text-orange-700 text-sm mb-2">
+                <h3 className="font-bold text-gray-900 dark:text-white text-sm mb-2">
                   {client.name}
                 </h3>
-                <p className="text-xs text-amber-800 mb-3 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">
                   {client.fullName}
                 </p>
-                <span className="inline-block px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">
+                <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">
                   {client.sector}
                 </span>
               </div>

@@ -1,147 +1,238 @@
-# Deployment Guide - Keystone Infra Website
+# Keystone Infra Website - Deployment Guide
 
-## GitHub Repository Setup
+## Prerequisites
 
-### 1. Initialize Git Repository
+1. **Node.js 18+** installed on your server
+2. **PM2** for process management (optional but recommended)
+3. **SendGrid API Key** for contact form emails
+4. **Domain** pointing to your server
+5. **SSL Certificate** (Let's Encrypt recommended)
+
+## Quick Deployment Steps
+
+### 1. Upload Files to Your Server
+
+Upload all project files to your server directory (e.g., `/var/www/keystone-infra/`)
+
+### 2. Install Dependencies
+
 ```bash
-git init
-git add .
-git commit -m "Initial commit - Keystone Infra website"
+npm install --production
 ```
 
-### 2. Connect to GitHub
+### 3. Configure Environment Variables
+
 ```bash
-git remote add origin https://github.com/yourusername/keystone-infra-website.git
-git branch -M main
-git push -u origin main
+# Copy and edit environment file
+cp .env.example .env
+
+# Edit with your values
+nano .env
 ```
 
-## Deployment Options
+Required environment variables:
+- `SENDGRID_API_KEY`: Your SendGrid API key
+- `NODE_ENV=production`
+- `PORT=3000` (or your preferred port)
 
-### Option 1: Vercel (STATIC HOSTING - RECOMMENDED)
-1. Visit [vercel.com](https://vercel.com)
-2. Sign up with GitHub account
-3. Import your repository
-4. Build command: `npm run build`
-5. Output directory: `dist/public`
-6. Deploy as static site
+### 4. Update Email Configuration
 
-**Pros**: Free, automatic deployments, fast CDN, no serverless function issues
-**Note**: Contact form will need external service (Formspree, Netlify Forms, etc.)
-
-### Option 2: Railway (Node.js Optimized)
-1. Visit [railway.app](https://railway.app)
-2. Connect GitHub repository
-3. Auto-deploy with Node.js runtime
-4. Pay-as-you-use pricing (~$5/month)
-
-**Pros**: Excellent Node.js support, database options, automatic scaling
-
-### Option 3: Render (Free Tier Available)
-1. Visit [render.com](https://render.com)
-2. Connect GitHub repository
-3. Choose "Web Service"
-4. Build: `npm run build`
-5. Start: `node simple-windows-server.js`
-
-**Pros**: Free tier, easy setup, automatic SSL
-
-### Option 4: DigitalOcean App Platform
-1. Visit [digitalocean.com](https://digitalocean.com)
-2. Create new app from GitHub
-3. Select Node.js environment
-4. Auto-deploy on git push
-
-**Pros**: Reliable infrastructure, predictable pricing
-
-## Environment Variables Setup
-
-For any deployment platform, add these environment variables:
-
-```
-NODE_ENV=production
-HOST=0.0.0.0
-PORT=3000
-SENDGRID_API_KEY=your_sendgrid_api_key_here
+Edit `server/email.ts` and update:
+```javascript
+to: 'your-email@example.com',        // Your email address
+from: 'verified-sender@yourdomain.com', // Your verified SendGrid sender
 ```
 
-## Custom Domain Setup
+### 5. Build the Application
 
-After deployment, you can add your custom domain:
-1. Purchase domain from registrar
-2. Add domain in hosting platform settings
-3. Update DNS records as instructed
-4. SSL certificate automatically provided
+```bash
+npm run build
+```
 
-## File Structure for Deployment
+### 6. Start the Application
 
-Your repository includes:
-- ✅ **Source code** (client/, server/, shared/)
-- ✅ **Built files** (dist/public/)
-- ✅ **Production server** (simple-windows-server.js)
-- ✅ **Package.json** with build scripts
-- ✅ **Documentation** (README.md, this file)
+#### Option A: Direct Node.js
+```bash
+npm start
+```
 
-## Build Commands
+#### Option B: PM2 (Recommended)
+```bash
+# Install PM2 globally
+npm install -g pm2
 
-Most platforms will automatically detect:
-- **Build Command**: `npm run build`
-- **Start Command**: `npm start` or `node simple-windows-server.js`
-- **Install Command**: `npm install`
+# Start with PM2
+pm2 start ecosystem.config.js
 
-## Post-Deployment Checklist
+# Save PM2 configuration
+pm2 save
+pm2 startup
+```
 
-- [ ] Website loads correctly
-- [ ] All images display properly
-- [ ] Contact form works (if SendGrid configured)
-- [ ] Responsive design works on mobile
-- [ ] All navigation links function
-- [ ] Performance metrics are good
+## Server Configuration
+
+### Nginx Configuration (Recommended)
+
+Create `/etc/nginx/sites-available/keystone-infra`:
+
+```nginx
+server {
+    listen 80;
+    server_name yourdomain.com www.yourdomain.com;
+    
+    # Redirect HTTP to HTTPS
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name yourdomain.com www.yourdomain.com;
+    
+    # SSL Configuration
+    ssl_certificate /path/to/your/certificate.crt;
+    ssl_certificate_key /path/to/your/private.key;
+    
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    
+    # Gzip compression
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+    
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+    
+    # Static files caching
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+        proxy_pass http://localhost:3000;
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}
+```
+
+### Enable Nginx Site
+```bash
+sudo ln -s /etc/nginx/sites-available/keystone-infra /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+## SSL Certificate (Let's Encrypt)
+
+```bash
+# Install Certbot
+sudo apt install certbot python3-certbot-nginx
+
+# Get certificate
+sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+
+# Auto-renewal test
+sudo certbot renew --dry-run
+```
+
+## Firewall Configuration
+
+```bash
+# Allow HTTP and HTTPS
+sudo ufw allow 'Nginx Full'
+
+# Allow SSH (if not already allowed)
+sudo ufw allow OpenSSH
+
+# Enable firewall
+sudo ufw enable
+```
+
+## Monitoring & Maintenance
+
+### PM2 Commands
+```bash
+# View status
+pm2 status
+
+# View logs
+pm2 logs keystone-infra
+
+# Restart application
+pm2 restart keystone-infra
+
+# Stop application
+pm2 stop keystone-infra
+
+# Monitor with web interface
+pm2 monit
+```
+
+### Application Health Check
+Your application will be available at:
+- **Development**: http://localhost:3000
+- **Production**: https://yourdomain.com
+
+### Contact Form Testing
+1. Visit your website
+2. Fill out the contact form
+3. Check that you receive an email
+4. Check PM2 logs for any errors: `pm2 logs keystone-infra`
 
 ## Troubleshooting
 
-### Build Fails - "Could not resolve entry module"
-This error occurs when the build system can't find the entry point. Solutions:
+### Common Issues
 
-**For Vercel (Static Site):**
-- Updated `vercel.json` now configures static hosting
-- Build command: `npm run build`
-- Output directory: `dist/public`
-- No serverless function crashes
+1. **Port already in use**
+   ```bash
+   sudo lsof -i :3000
+   sudo kill -9 <PID>
+   ```
 
-**For Vercel (If you need full backend):**
-- Consider Railway or Render instead
-- Vercel serverless functions have limitations for Express apps
+2. **Email not sending**
+   - Verify SendGrid API key in `.env`
+   - Check email addresses in `server/email.ts`
+   - Verify sender email is verified in SendGrid
 
-**For Railway:**
-- Use the included `railway.json` configuration  
-- Build and start commands auto-detected
+3. **Build fails**
+   ```bash
+   # Clear cache and rebuild
+   rm -rf node_modules dist
+   npm install
+   npm run build
+   ```
 
-**For Render:**
-- Build command: `npm run build`
-- Start command: `node simple-windows-server.js`
-- Publish directory: `dist/public`
+4. **Permission issues**
+   ```bash
+   # Fix file permissions
+   sudo chown -R $USER:$USER /var/www/keystone-infra/
+   chmod -R 755 /var/www/keystone-infra/
+   ```
 
-**General Build Issues:**
-- Check Node.js version compatibility (use Node 18+)
-- Ensure all dependencies in package.json
-- Review build logs for specific errors
-
-### White Page Issue
-- Verify static files are served correctly
-- Check browser console for JavaScript errors
-- Ensure production server serves from correct path
-
-### Email Form Not Working
-- Add SENDGRID_API_KEY environment variable
-- Verify sender email is authenticated in SendGrid
-- Check server logs for email sending errors
+## File Structure
+```
+keystone-infra/
+├── dist/                 # Built application (generated)
+├── client/              # React frontend source
+├── server/              # Express backend source
+├── shared/              # Shared types and schemas
+├── attached_assets/     # Images and static assets
+├── .env                 # Environment variables
+├── ecosystem.config.js  # PM2 configuration
+└── package.json         # Dependencies and scripts
+```
 
 ## Support
 
-For deployment issues, refer to:
-- Platform-specific documentation
-- GitHub Issues in your repository
-- Community forums for each platform
-
-Your website is production-ready and optimized for deployment!
+For deployment issues:
+1. Check PM2 logs: `pm2 logs keystone-infra`
+2. Check Nginx logs: `sudo tail -f /var/log/nginx/error.log`
+3. Verify all environment variables are set correctly
+4. Test SendGrid integration separately if emails aren't working
