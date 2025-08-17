@@ -73,6 +73,9 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Built comprehensive deployment package with multiple server options (simple-windows-server.js, production-server.js)
 - Created hosting compatibility documentation - website requires Node.js hosting, not PHP/MySQL
 - Prepared all deployment files and scripts for production hosting with Node.js support
+- Fixed Vercel serverless function crashes by updating to static site deployment configuration
+- Configured all servers and deployment scripts for port 80 (standard HTTP port) deployment
+- Created comprehensive port 80 setup documentation with security and firewall requirements
 
 # User Preferences
 

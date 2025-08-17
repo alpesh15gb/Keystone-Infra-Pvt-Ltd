@@ -34,7 +34,7 @@ app.get('*', (req, res) => {
   res.sendFile(indexPath);
 });
 
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 80;
 app.listen(PORT, '0.0.0.0', () => {
   console.log('Production server running on 0.0.0.0:' + PORT);
   console.log('Access from: http://YOUR_SERVER_IP:' + PORT);
