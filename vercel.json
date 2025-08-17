@@ -1,5 +1,14 @@
 {
-  "buildCommand": "vite build --config vite.config.simple.ts",
-  "outputDirectory": "dist/public",
-  "installCommand": "npm install"
+  "builds": [
+    {
+      "src": "dist/public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
