@@ -2,11 +2,18 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Reduce images for better performance - load only essential ones
+// Use public folder URLs for images (more reliable)
 const slider1 = "/images/slider-1_1754941983527.jpg";
+const slider2 = "/images/slider-2_1754941983528.jpg";
 const slider3 = "/images/slider-3_1754941983528.jpg";
+const slider4 = "/images/slider-4_1754941983528.jpg";
+const slider5 = "/images/slider-5_1754941983528.jpg";
 const slider6 = "/images/slider-6_1754941983528.jpg";
+const slider7 = "/images/slider-7_1754941983528.jpg";
+const slider8 = "/images/slider-8_1754941983529.jpg";
 const slider9 = "/images/slider-9_1754941983529.jpg";
+const slider10 = "/images/slider-10_1754941983529.jpg";
+const slider11 = "/images/slider-11_1754941983529.jpg";
 const slider12 = "/images/slider-12_1754941983529.jpg";
 
 interface SliderImage {
@@ -40,7 +47,7 @@ export function ImageSlider({
       setCurrentIndex((prevIndex) => 
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, interval + 2000); // Increase interval for better performance
+    }, interval);
 
     return () => clearInterval(timer);
   }, [autoPlay, interval, images.length]);
@@ -90,7 +97,12 @@ export function ImageSlider({
                   src={images[currentIndex].src}
                   alt={images[currentIndex].title}
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  onError={(e) => {
+                    console.error("Image failed to load:", images[currentIndex].src);
+                  }}
+                  onLoad={() => {
+                    console.log("Image loaded successfully:", images[currentIndex].src);
+                  }}
                 />
                 
                 {/* Overlay with project info */}
@@ -163,7 +175,6 @@ export function ImageSlider({
                   src={image.src}
                   alt={image.title}
                   className="w-full h-full object-cover"
-                  loading="lazy"
                 />
               </button>
             ))}
@@ -174,7 +185,7 @@ export function ImageSlider({
   );
 }
 
-// Project slider with optimized image loading
+// Project slider with actual project images
 export function ProjectSlider() {
   const projectImages: SliderImage[] = [
     {
@@ -184,10 +195,28 @@ export function ProjectSlider() {
       location: "Chhattisgarh"
     },
     {
+      src: slider2,
+      title: "Institutional Building Complex",
+      description: "Modern institutional building with blue and white facade",
+      location: "Multi-storey institutional project"
+    },
+    {
       src: slider3,
       title: "Water Tank Infrastructure",
       description: "Overhead water tanks with modern design and safety features",
       location: "Water supply project"
+    },
+    {
+      src: slider4,
+      title: "Airport Development",
+      description: "Airport infrastructure and runway development project",
+      location: "Aviation infrastructure"
+    },
+    {
+      src: slider5,
+      title: "Highway Construction",
+      description: "Curved highway construction through forested terrain",
+      location: "State highway project"
     },
     {
       src: slider6,
@@ -196,10 +225,34 @@ export function ProjectSlider() {
       location: "Manipur"
     },
     {
+      src: slider7,
+      title: "Commercial Building",
+      description: "Multi-storey commercial building in urban setting",
+      location: "Commercial infrastructure"
+    },
+    {
+      src: slider8,
+      title: "Pipeline Bridge",
+      description: "Water pipeline bridge infrastructure with blue pipelines",
+      location: "Water distribution system"
+    },
+    {
       src: slider9,
       title: "Modern Bridge Design",
       description: "Contemporary bridge architecture over natural waterway",
       location: "Bridge infrastructure"
+    },
+    {
+      src: slider10,
+      title: "Arch Bridge Construction",
+      description: "Modern arch bridge spanning natural water body",
+      location: "Transportation infrastructure"
+    },
+    {
+      src: slider11,
+      title: "Major Bridge Project",
+      description: "Long span bridge construction over river with multiple supports",
+      location: "Major transportation corridor"
     },
     {
       src: slider12,

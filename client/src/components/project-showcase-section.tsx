@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, MapPin, Calendar, Users, Award, Play } from "lucide-react";
-import { YouTubeFacade } from './youtube-facade';
+import { ChevronLeft, ChevronRight, MapPin, Calendar, Users, Award } from "lucide-react";
 
 // Import all project images
 import project1 from "@assets/WhatsApp Image 2025-08-13 at 18.22.04_1755123730376.jpeg";
@@ -22,81 +21,71 @@ import project15 from "@assets/WhatsApp Image 2025-08-13 at 18.22.08 (2)_1755123
 import project16 from "@assets/WhatsApp Image 2025-08-13 at 18.22.09_1755123730374.jpeg";
 import project17 from "@assets/WhatsApp Image 2025-08-13 at 18.22.09 (1)_1755123730373.jpeg";
 
-const projectItems = [
+const projectImages = [
   {
-    type: "video",
-    videoId: "wvoxdF185yo",
-    title: "Highway Construction Progress",
-    description: "Time-lapse documentation of major highway construction project showcasing our engineering excellence",
+    src: project1,
+    title: "Highway Infrastructure Development",
+    description: "Advanced highway construction with modern engineering solutions",
     location: "National Highway Project",
     category: "Highway Development"
   },
   {
-    type: "video",
-    videoId: "US6l4c8uSLE",
-    title: "Bridge Engineering Excellence",
-    description: "Advanced bridge construction techniques and structural engineering solutions in action",
+    src: project2,
+    title: "Bridge Construction Excellence",
+    description: "Major bridge infrastructure connecting communities across regions",
     location: "Interstate Connection",
     category: "Bridge Engineering"
   },
   {
-    type: "video",
-    videoId: "dPn3aRBkfrA",
-    title: "Infrastructure Development Overview",
-    description: "Comprehensive overview of our infrastructure development projects and construction methodologies",
-    location: "Multi-State Projects",
-    category: "Infrastructure Overview"
+    src: project3,
+    title: "Urban Infrastructure Development",
+    description: "Comprehensive urban development projects enhancing city connectivity",
+    location: "Metropolitan Area",
+    category: "Urban Development"
   },
   {
-    type: "video",
-    videoId: "p62cJAu31_M",
-    title: "Road Construction Technology",
-    description: "Modern road construction techniques and equipment deployment for superior infrastructure",
+    src: project4,
+    title: "Rural Connectivity Project",
+    description: "Essential infrastructure bringing connectivity to rural communities",
+    location: "Rural Development Zone",
+    category: "Rural Infrastructure"
+  },
+  {
+    src: project5,
+    title: "Industrial Infrastructure",
+    description: "Heavy-duty industrial infrastructure supporting economic growth",
+    location: "Industrial Corridor",
+    category: "Industrial Development"
+  },
+  {
+    src: project6,
+    title: "Transportation Hub Development",
+    description: "Multi-modal transportation infrastructure for enhanced connectivity",
+    location: "Regional Transport Hub",
+    category: "Transportation"
+  },
+  {
+    src: project7,
+    title: "Structural Engineering Excellence",
+    description: "Advanced structural engineering solutions for complex projects",
+    location: "Infrastructure Complex",
+    category: "Structural Engineering"
+  },
+  {
+    src: project8,
+    title: "Foundation Engineering",
+    description: "Deep foundation solutions for critical infrastructure projects",
+    location: "Major Development Site",
+    category: "Foundation Work"
+  },
+  {
+    src: project9,
+    title: "Road Network Expansion",
+    description: "Comprehensive road network development improving regional connectivity",
     location: "Regional Road Network",
     category: "Road Development"
   },
   {
-    type: "video",
-    videoId: "5XUwqNICWTA",
-    title: "Heavy Construction Equipment",
-    description: "Advanced construction equipment and machinery in operation for large-scale infrastructure projects",
-    location: "Construction Sites",
-    category: "Construction Technology"
-  },
-  {
-    type: "video",
-    videoId: "ALZtqkYNqg4",
-    title: "Foundation Engineering Solutions",
-    description: "Deep foundation construction and engineering solutions for critical infrastructure development",
-    location: "Foundation Projects",
-    category: "Foundation Engineering"
-  },
-  {
-    type: "video",
-    videoId: "oO1yDu8tuH0",
-    title: "Project Execution Excellence",
-    description: "Complete project lifecycle from planning to execution showcasing our project management expertise",
-    location: "Multiple Locations",
-    category: "Project Management"
-  },
-  {
-    type: "video",
-    videoId: "PddAAZX3aTM",
-    title: "Construction Quality Standards",
-    description: "Quality control and construction standards implementation across infrastructure projects",
-    location: "Quality Assurance Sites",
-    category: "Quality Control"
-  },
-  {
-    type: "video",
-    videoId: "2NpgvLuMN5M",
-    title: "Infrastructure Innovation Hub",
-    description: "Innovative construction methods and technological advancement in infrastructure development",
-    location: "Innovation Projects",
-    category: "Construction Innovation"
-  },
-  {
-    type: "image",
     src: project10,
     title: "Infrastructure Modernization",
     description: "Upgrading existing infrastructure with modern engineering standards",
@@ -104,7 +93,6 @@ const projectItems = [
     category: "Infrastructure Upgrade"
   },
   {
-    type: "image",
     src: project11,
     title: "Environmental Engineering",
     description: "Sustainable infrastructure solutions with environmental considerations",
@@ -112,7 +100,6 @@ const projectItems = [
     category: "Environmental Engineering"
   },
   {
-    type: "image",
     src: project12,
     title: "Construction Technology Innovation",
     description: "Implementation of advanced construction technologies and methods",
@@ -120,7 +107,6 @@ const projectItems = [
     category: "Construction Technology"
   },
   {
-    type: "image",
     src: project13,
     title: "Infrastructure Quality Control",
     description: "Rigorous quality control ensuring infrastructure excellence and durability",
@@ -128,7 +114,6 @@ const projectItems = [
     category: "Quality Control"
   },
   {
-    type: "image",
     src: project14,
     title: "Project Management Excellence",
     description: "Comprehensive project management delivering infrastructure on schedule",
@@ -136,7 +121,6 @@ const projectItems = [
     category: "Project Management"
   },
   {
-    type: "image",
     src: project15,
     title: "Safety Engineering Standards",
     description: "Implementation of highest safety standards in infrastructure development",
@@ -144,7 +128,6 @@ const projectItems = [
     category: "Safety Engineering"
   },
   {
-    type: "image",
     src: project16,
     title: "Community Infrastructure Development",
     description: "Infrastructure projects enhancing community development and growth",
@@ -152,7 +135,6 @@ const projectItems = [
     category: "Community Infrastructure"
   },
   {
-    type: "image",
     src: project17,
     title: "Engineering Innovation Hub",
     description: "Innovative engineering solutions pushing boundaries of infrastructure development",
@@ -165,18 +147,18 @@ export function ProjectShowcaseSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % projectItems.length);
+    setCurrentIndex((prev) => (prev + 1) % projectImages.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + projectItems.length) % projectItems.length);
+    setCurrentIndex((prev) => (prev - 1 + projectImages.length) % projectImages.length);
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-orange-50 via-amber-50 to-white relative overflow-hidden">
+    <section id="projects" className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ea580c%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -187,10 +169,10 @@ export function ProjectShowcaseSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-orange-600 mb-6">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">Project Portfolio</span>
+          <h2 className="text-5xl font-bold text-white mb-6">
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Project Portfolio</span>
           </h2>
-          <p className="text-xl text-amber-800 max-w-4xl mx-auto text-justify leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto text-justify leading-relaxed">
             Showcasing our expertise in infrastructure development across diverse sectors. From highway construction to bridge engineering, 
             our projects demonstrate commitment to excellence, innovation, and sustainable development practices that benefit communities nationwide.
           </p>
@@ -201,19 +183,19 @@ export function ProjectShowcaseSection() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300 shadow-lg"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300 shadow-lg"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-4 rounded-full transition-all duration-300"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Single Item Display */}
+          {/* Single Image Display */}
           <motion.div
             key={currentIndex}
             initial={{ opacity: 0 }}
@@ -221,42 +203,33 @@ export function ProjectShowcaseSection() {
             transition={{ duration: 0.5 }}
             className="relative rounded-2xl overflow-hidden shadow-2xl"
           >
-            {projectItems[currentIndex].type === "image" ? (
-              <img
-                src={projectItems[currentIndex].src}
-                alt={projectItems[currentIndex].title}
-                className="w-full h-96 object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            ) : (
-              <div className="relative w-full h-96">
-                <YouTubeFacade
-                  videoId={(projectItems[currentIndex] as any).videoId}
-                  title={projectItems[currentIndex].title}
-                  className="w-full h-full"
-                />
-              </div>
-            )}
+            <img
+              src={projectImages[currentIndex].src}
+              alt={projectImages[currentIndex].title}
+              className="w-full h-96 object-cover"
+            />
             
-            {/* Play icon for videos only */}
-            {projectItems[currentIndex].type === "video" && (
-              <div className="absolute top-4 right-4">
-                <Play className="w-8 h-8 text-white opacity-75" />
-              </div>
-            )}
+            {/* Image Overlay with Info */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-8">
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {projectImages[currentIndex].title}
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {projectImages[currentIndex].description}
+              </p>
+            </div>
           </motion.div>
 
           {/* Pagination Dots */}
           <div className="flex justify-center mt-8 space-x-2">
-            {projectItems.map((_, index: number) => (
+            {projectImages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentIndex === index
-                    ? "bg-gray-700 scale-125"
-                    : "bg-gray-400 hover:bg-gray-500"
+                    ? "bg-orange-500 scale-125"
+                    : "bg-gray-600 hover:bg-gray-400"
                 }`}
               />
             ))}

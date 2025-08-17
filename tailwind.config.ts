@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 
-// Performance optimizations for CSS purging
-
 export default {
   darkMode: ["class"],
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],

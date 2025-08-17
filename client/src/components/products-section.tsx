@@ -13,7 +13,7 @@ const products = [
     bgColor: "bg-amber-700/10",
     title: "Transportation Infrastructure",
     description: "Complete road construction including national highways, state highways, and bridges.",
-    features: ["National & State Highways", "Bridge Construction", "CC Roads & Major District Roads", "Rigid & Flexible Major District Roads"],
+    features: ["National & State Highways", "Bridge Construction", "CC Roads & Major District Roads"],
     image: highwayImage,
   },
   {
@@ -30,8 +30,8 @@ const products = [
     iconColor: "text-amber-800",
     bgColor: "bg-amber-800/10",
     title: "Building Construction",
-    description: "Government commercial buildings, medical facilities, educational institutions, and non-residential buildings.",
-    features: ["Govt Commercial Buildings", "Govt Medical Facilities", "Educational Institutions", "Non Residential Buildings"],
+    description: "Hospitality, commercial, institutional, and medical infrastructure development.",
+    features: ["Commercial Buildings", "Medical Facilities", "Pre-fab Structures", "Residential Buildings"],
     image: buildingImage,
   },
 ];

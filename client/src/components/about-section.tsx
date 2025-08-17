@@ -58,7 +58,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Keystone Infra
+            About Keystone Infra
           </motion.h2>
           <div className="max-w-4xl mx-auto">
             <p className="text-xl text-amber-900 leading-relaxed mb-6 text-justify">
@@ -82,40 +82,88 @@ export function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-orange-600 mb-8 text-center">
-              Our Mission
-            </h3>
-            <ul className="grid md:grid-cols-2 gap-6">
-              <motion.li 
-                className="flex items-start p-4 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
-                whileHover={{ x: 5 }}
-              >
-                <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-amber-800 font-medium">Innovative and high Quality infrastructure solutions</span>
-              </motion.li>
-              <motion.li 
-                className="flex items-start p-4 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
-                whileHover={{ x: 5 }}
-              >
-                <div className="w-3 h-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-amber-800 font-medium">Investing in people & technology</span>
-              </motion.li>
-              <motion.li 
-                className="flex items-start p-4 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
-                whileHover={{ x: 5 }}
-              >
-                <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-amber-800 font-medium">Sustainable development & expansion</span>
-              </motion.li>
-              <motion.li 
-                className="flex items-start p-4 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
-                whileHover={{ x: 5 }}
-              >
-                <div className="w-3 h-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-amber-800 font-medium">Make clients happy with exceptional service</span>
-              </motion.li>
-            </ul>
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <h3 className="text-3xl font-bold text-orange-600 mb-8">
+                Our Leadership
+              </h3>
+              <div className="space-y-6">
+                <motion.div 
+                  className="flex items-start space-x-4 p-4 rounded-xl bg-gradient-to-r from-orange-50 to-amber-50 hover:shadow-md transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Users className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-orange-600">D.M. Ramesh</h4>
+                    <p className="text-orange-700 font-semibold text-sm">Managing Director & Founder</p>
+                    <p className="text-sm text-amber-800 mt-1">Extensive experience in infrastructure and civil construction</p>
+                  </div>
+                </motion.div>
+                <motion.div 
+                  className="flex items-start space-x-4 p-4 rounded-xl bg-gradient-to-r from-orange-50 to-amber-50 hover:shadow-md transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Users className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-orange-600">D. Lakshmi Chowdary</h4>
+                    <p className="text-orange-700 font-semibold text-sm">Director</p>
+                    <p className="text-sm text-amber-800 mt-1">Dedicated leadership with the organization</p>
+                  </div>
+                </motion.div>
+                <motion.div 
+                  className="flex items-start space-x-4 p-4 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 hover:shadow-md transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Users className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-orange-600">D. Karthik Amar</h4>
+                    <p className="text-orange-700 font-semibold text-sm">Director</p>
+                    <p className="text-sm text-amber-800 mt-1">Leading housing projects across multiple states</p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-orange-600 mb-8">
+                Our Mission
+              </h3>
+              <ul className="space-y-4">
+                <motion.li 
+                  className="flex items-start p-3 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-amber-800 font-medium">Innovative and high Quality infrastructure solutions</span>
+                </motion.li>
+                <motion.li 
+                  className="flex items-start p-3 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <div className="w-3 h-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-amber-800 font-medium">Investing in people & technology</span>
+                </motion.li>
+                <motion.li 
+                  className="flex items-start p-3 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-amber-800 font-medium">Sustainable development & expansion</span>
+                </motion.li>
+                <motion.li 
+                  className="flex items-start p-3 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <div className="w-3 h-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-amber-800 font-medium">Make clients happy with exceptional service</span>
+                </motion.li>
+              </ul>
+            </div>
           </div>
         </motion.div>
       </div>
