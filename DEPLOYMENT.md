@@ -1,238 +1,123 @@
-# Keystone Infra Website - Deployment Guide
+# Deployment Guide - Keystone Infra Website
 
-## Prerequisites
+## GitHub Repository Setup
 
-1. **Node.js 18+** installed on your server
-2. **PM2** for process management (optional but recommended)
-3. **SendGrid API Key** for contact form emails
-4. **Domain** pointing to your server
-5. **SSL Certificate** (Let's Encrypt recommended)
-
-## Quick Deployment Steps
-
-### 1. Upload Files to Your Server
-
-Upload all project files to your server directory (e.g., `/var/www/keystone-infra/`)
-
-### 2. Install Dependencies
-
+### 1. Initialize Git Repository
 ```bash
-npm install --production
+git init
+git add .
+git commit -m "Initial commit - Keystone Infra website"
 ```
 
-### 3. Configure Environment Variables
-
+### 2. Connect to GitHub
 ```bash
-# Copy and edit environment file
-cp .env.example .env
-
-# Edit with your values
-nano .env
+git remote add origin https://github.com/yourusername/keystone-infra-website.git
+git branch -M main
+git push -u origin main
 ```
 
-Required environment variables:
-- `SENDGRID_API_KEY`: Your SendGrid API key
-- `NODE_ENV=production`
-- `PORT=3000` (or your preferred port)
+## Deployment Options
 
-### 4. Update Email Configuration
+### Option 1: Vercel (RECOMMENDED - FREE)
+1. Visit [vercel.com](https://vercel.com)
+2. Sign up with GitHub account
+3. Import your repository
+4. Deploy automatically
+5. Get instant HTTPS URL
 
-Edit `server/email.ts` and update:
-```javascript
-to: 'your-email@example.com',        // Your email address
-from: 'verified-sender@yourdomain.com', // Your verified SendGrid sender
+**Pros**: Free, automatic deployments, fast CDN, Node.js support
+
+### Option 2: Railway (Node.js Optimized)
+1. Visit [railway.app](https://railway.app)
+2. Connect GitHub repository
+3. Auto-deploy with Node.js runtime
+4. Pay-as-you-use pricing (~$5/month)
+
+**Pros**: Excellent Node.js support, database options, automatic scaling
+
+### Option 3: Render (Free Tier Available)
+1. Visit [render.com](https://render.com)
+2. Connect GitHub repository
+3. Choose "Web Service"
+4. Build: `npm run build`
+5. Start: `node simple-windows-server.js`
+
+**Pros**: Free tier, easy setup, automatic SSL
+
+### Option 4: DigitalOcean App Platform
+1. Visit [digitalocean.com](https://digitalocean.com)
+2. Create new app from GitHub
+3. Select Node.js environment
+4. Auto-deploy on git push
+
+**Pros**: Reliable infrastructure, predictable pricing
+
+## Environment Variables Setup
+
+For any deployment platform, add these environment variables:
+
+```
+NODE_ENV=production
+HOST=0.0.0.0
+PORT=3000
+SENDGRID_API_KEY=your_sendgrid_api_key_here
 ```
 
-### 5. Build the Application
+## Custom Domain Setup
 
-```bash
-npm run build
-```
+After deployment, you can add your custom domain:
+1. Purchase domain from registrar
+2. Add domain in hosting platform settings
+3. Update DNS records as instructed
+4. SSL certificate automatically provided
 
-### 6. Start the Application
+## File Structure for Deployment
 
-#### Option A: Direct Node.js
-```bash
-npm start
-```
+Your repository includes:
+- ✅ **Source code** (client/, server/, shared/)
+- ✅ **Built files** (dist/public/)
+- ✅ **Production server** (simple-windows-server.js)
+- ✅ **Package.json** with build scripts
+- ✅ **Documentation** (README.md, this file)
 
-#### Option B: PM2 (Recommended)
-```bash
-# Install PM2 globally
-npm install -g pm2
+## Build Commands
 
-# Start with PM2
-pm2 start ecosystem.config.js
+Most platforms will automatically detect:
+- **Build Command**: `npm run build`
+- **Start Command**: `npm start` or `node simple-windows-server.js`
+- **Install Command**: `npm install`
 
-# Save PM2 configuration
-pm2 save
-pm2 startup
-```
+## Post-Deployment Checklist
 
-## Server Configuration
-
-### Nginx Configuration (Recommended)
-
-Create `/etc/nginx/sites-available/keystone-infra`:
-
-```nginx
-server {
-    listen 80;
-    server_name yourdomain.com www.yourdomain.com;
-    
-    # Redirect HTTP to HTTPS
-    return 301 https://$server_name$request_uri;
-}
-
-server {
-    listen 443 ssl http2;
-    server_name yourdomain.com www.yourdomain.com;
-    
-    # SSL Configuration
-    ssl_certificate /path/to/your/certificate.crt;
-    ssl_certificate_key /path/to/your/private.key;
-    
-    # Security headers
-    add_header X-Frame-Options "SAMEORIGIN" always;
-    add_header X-Content-Type-Options "nosniff" always;
-    add_header X-XSS-Protection "1; mode=block" always;
-    
-    # Gzip compression
-    gzip on;
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
-    
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_cache_bypass $http_upgrade;
-    }
-    
-    # Static files caching
-    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
-        proxy_pass http://localhost:3000;
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-    }
-}
-```
-
-### Enable Nginx Site
-```bash
-sudo ln -s /etc/nginx/sites-available/keystone-infra /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl reload nginx
-```
-
-## SSL Certificate (Let's Encrypt)
-
-```bash
-# Install Certbot
-sudo apt install certbot python3-certbot-nginx
-
-# Get certificate
-sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
-
-# Auto-renewal test
-sudo certbot renew --dry-run
-```
-
-## Firewall Configuration
-
-```bash
-# Allow HTTP and HTTPS
-sudo ufw allow 'Nginx Full'
-
-# Allow SSH (if not already allowed)
-sudo ufw allow OpenSSH
-
-# Enable firewall
-sudo ufw enable
-```
-
-## Monitoring & Maintenance
-
-### PM2 Commands
-```bash
-# View status
-pm2 status
-
-# View logs
-pm2 logs keystone-infra
-
-# Restart application
-pm2 restart keystone-infra
-
-# Stop application
-pm2 stop keystone-infra
-
-# Monitor with web interface
-pm2 monit
-```
-
-### Application Health Check
-Your application will be available at:
-- **Development**: http://localhost:3000
-- **Production**: https://yourdomain.com
-
-### Contact Form Testing
-1. Visit your website
-2. Fill out the contact form
-3. Check that you receive an email
-4. Check PM2 logs for any errors: `pm2 logs keystone-infra`
+- [ ] Website loads correctly
+- [ ] All images display properly
+- [ ] Contact form works (if SendGrid configured)
+- [ ] Responsive design works on mobile
+- [ ] All navigation links function
+- [ ] Performance metrics are good
 
 ## Troubleshooting
 
-### Common Issues
+### Build Fails
+- Check Node.js version compatibility
+- Ensure all dependencies in package.json
+- Review build logs for specific errors
 
-1. **Port already in use**
-   ```bash
-   sudo lsof -i :3000
-   sudo kill -9 <PID>
-   ```
+### White Page Issue
+- Verify static files are served correctly
+- Check browser console for JavaScript errors
+- Ensure production server serves from correct path
 
-2. **Email not sending**
-   - Verify SendGrid API key in `.env`
-   - Check email addresses in `server/email.ts`
-   - Verify sender email is verified in SendGrid
-
-3. **Build fails**
-   ```bash
-   # Clear cache and rebuild
-   rm -rf node_modules dist
-   npm install
-   npm run build
-   ```
-
-4. **Permission issues**
-   ```bash
-   # Fix file permissions
-   sudo chown -R $USER:$USER /var/www/keystone-infra/
-   chmod -R 755 /var/www/keystone-infra/
-   ```
-
-## File Structure
-```
-keystone-infra/
-├── dist/                 # Built application (generated)
-├── client/              # React frontend source
-├── server/              # Express backend source
-├── shared/              # Shared types and schemas
-├── attached_assets/     # Images and static assets
-├── .env                 # Environment variables
-├── ecosystem.config.js  # PM2 configuration
-└── package.json         # Dependencies and scripts
-```
+### Email Form Not Working
+- Add SENDGRID_API_KEY environment variable
+- Verify sender email is authenticated in SendGrid
+- Check server logs for email sending errors
 
 ## Support
 
-For deployment issues:
-1. Check PM2 logs: `pm2 logs keystone-infra`
-2. Check Nginx logs: `sudo tail -f /var/log/nginx/error.log`
-3. Verify all environment variables are set correctly
-4. Test SendGrid integration separately if emails aren't working
+For deployment issues, refer to:
+- Platform-specific documentation
+- GitHub Issues in your repository
+- Community forums for each platform
+
+Your website is production-ready and optimized for deployment!
