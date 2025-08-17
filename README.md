@@ -62,10 +62,11 @@ Access: http://localhost:9000
 
 ## 📦 Deployment Options
 
-### 1. Vercel (Recommended - Includes vercel.json)
-- Connect GitHub repository
-- Uses included `vercel.json` configuration
-- Auto-deploy on push with Node.js support
+### 1. Vercel (Static Site - Fixed serverless issues)
+- Connect GitHub repository  
+- Updated `vercel.json` for static hosting
+- No more serverless function crashes
+- Contact form needs external service
 
 ### 2. Railway (Includes railway.json)
 - Connect GitHub repo to Railway
