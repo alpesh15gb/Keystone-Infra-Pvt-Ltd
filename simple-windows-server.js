@@ -1,20 +1,37 @@
 // Ultra-simple production server that works on any platform
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 
-// Serve built files
-app.use(express.static(path.join(__dirname, 'dist/public')));
+// Check if files exist
+const distPath = path.join(__dirname, 'dist/public');
+const indexPath = path.join(distPath, 'index.html');
 
-// API endpoints (if any)
-app.use('/api/*', (req, res) => {
-  res.json({ message: 'API not configured for production' });
-});
+console.log('Checking files...');
+console.log('Dist path:', distPath);
+console.log('Index exists:', fs.existsSync(indexPath));
 
-// Serve React app for all other routes
+if (!fs.existsSync(indexPath)) {
+  console.log('ERROR: index.html not found! Run npm run build first');
+  process.exit(1);
+}
+
+// Serve static files with proper headers
+app.use(express.static(distPath, {
+  index: 'index.html',
+  setHeaders: (res, path) => {
+    if (path.endsWith('.html')) {
+      res.setHeader('Content-Type', 'text/html');
+    }
+  }
+}));
+
+// Handle all routes by serving React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/public/index.html'));
+  console.log('Serving:', req.url);
+  res.sendFile(indexPath);
 });
 
 const PORT = process.env.PORT || 9000;
