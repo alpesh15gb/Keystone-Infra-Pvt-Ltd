@@ -35,6 +35,9 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Fixed PowerShell execution policy conflicts with alternative Command Prompt scripts
 - Successfully resolved Windows ENOTSUP socket errors with simplified server configuration
 - User confirmed Windows deployment solutions are working properly
+- Created comprehensive video showcase section with 9 YouTube videos featuring in-app modal playback
+- Updated video titles with authentic YouTube project names: bridge projects (Tarud River, Paspul Vaghu, Mingachal, Giligicha, Chintavaghu, Chhindanar 1&2), NH63R highway project, and Bijapur School Building
+- Implemented embedded video player with modal overlay for seamless in-app video viewing
 - Transformed hero section into full-width cinematic design with video-style background
 - Added animated construction imagery with zoom and parallax effects for premium look
 - Updated navigation logo with new professional Keystone Infra branding
