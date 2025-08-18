@@ -15,15 +15,15 @@ export function VideoShowcaseSection() {
     },
     {
       id: "dPn3aRBkfrA",
-      title: "Bridge Construction Project"
+      title: "Video Title 3"
     },
     {
       id: "p62cJAu31_M",
-      title: "Infrastructure Development"
+      title: "Video Title 4"
     },
     {
       id: "5XUwqNICWTA",
-      title: "Civil Engineering Project"
+      title: "Video Title 5"
     },
     {
       id: "ALZtqkYNqg4",
@@ -39,7 +39,7 @@ export function VideoShowcaseSection() {
     },
     {
       id: "2NpgvLuMN5M",
-      title: "Bridge Engineering Project"
+      title: "Video Title 9"
     }
   ];
 
