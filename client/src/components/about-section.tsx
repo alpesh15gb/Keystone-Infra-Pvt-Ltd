@@ -84,9 +84,7 @@ export function AboutSection() {
         >
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <h3 className="text-3xl font-bold text-orange-600 mb-8">
-                Our Leadership
-              </h3>
+              
               <div className="space-y-6">
                 <motion.div 
                   className="flex items-start space-x-4 p-4 rounded-xl bg-gradient-to-r from-orange-50 to-amber-50 hover:shadow-md transition-all duration-300"
