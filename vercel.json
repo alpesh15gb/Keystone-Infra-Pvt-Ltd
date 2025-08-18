@@ -1,8 +1,13 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "vite build --config vite.config.ts",
   "outputDirectory": "dist/public",
   "framework": null,
   "installCommand": "npm install",
+  "functions": {
+    "server/index.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
