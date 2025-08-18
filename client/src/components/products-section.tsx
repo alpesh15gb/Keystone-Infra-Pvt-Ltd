@@ -30,8 +30,8 @@ const products = [
     iconColor: "text-amber-800",
     bgColor: "bg-amber-800/10",
     title: "Building Construction",
-    description: "Hospitality, commercial, institutional, and medical infrastructure development.",
-    features: ["Commercial Buildings", "Medical Facilities", "Pre-fab Structures", "Residential Buildings"],
+    description: "Government commercial buildings, medical facilities, educational institutions, and specialized infrastructure development.",
+    features: ["Govt Commercial Buildings", "Govt Medical Facilities", "Educational Institutions", "Non Residential Buildings"],
     image: buildingImage,
   },
 ];
