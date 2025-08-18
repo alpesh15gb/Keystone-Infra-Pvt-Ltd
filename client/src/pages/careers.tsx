@@ -1,8 +1,25 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { JobApplicationModal } from "@/components/job-application-modal";
 import { MapPin, Clock, Users, Calendar, ChevronRight, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Careers() {
+  const [selectedJobId, setSelectedJobId] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const handleApplyNow = (jobId: number) => {
+    setSelectedJobId(jobId);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedJobId(null);
+  };
+
   const jobOpenings = [
     {
       id: 1,
@@ -89,8 +106,11 @@ export function Careers() {
     });
   };
 
+  const selectedJob = selectedJobId ? jobOpenings.find(job => job.id === selectedJobId) : null;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50/30 to-orange-50/20">
+      <Navigation />
       {/* Header Section */}
       <section className="py-20 bg-gradient-to-r from-orange-600 to-amber-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -215,7 +235,9 @@ export function Careers() {
 
                     <div className="lg:w-64 flex flex-col gap-4">
                       <Button 
+                        onClick={() => handleApplyNow(job.id)}
                         className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                        data-testid={`button-apply-${job.id}`}
                       >
                         Apply Now
                       </Button>
@@ -308,6 +330,18 @@ export function Careers() {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
+
+      {/* Job Application Modal */}
+      {selectedJob && (
+        <JobApplicationModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          jobTitle={selectedJob.title}
+          jobId={selectedJob.id}
+        />
+      )}
     </div>
   );
 }
