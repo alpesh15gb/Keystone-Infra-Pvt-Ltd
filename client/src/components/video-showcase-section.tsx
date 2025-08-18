@@ -15,15 +15,15 @@ export function VideoShowcaseSection() {
     },
     {
       id: "dPn3aRBkfrA",
-      title: "Video Title 3"
+      title: "NH63R"
     },
     {
       id: "p62cJAu31_M",
-      title: "Video Title 4"
+      title: "Mingachal Bridge"
     },
     {
       id: "5XUwqNICWTA",
-      title: "Video Title 5"
+      title: "Giligicha Bridge"
     },
     {
       id: "ALZtqkYNqg4",
@@ -39,7 +39,7 @@ export function VideoShowcaseSection() {
     },
     {
       id: "2NpgvLuMN5M",
-      title: "Video Title 9"
+      title: "Bijapur School Building"
     }
   ];
 
