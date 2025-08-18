@@ -6,90 +6,68 @@ export function Careers() {
   const jobOpenings = [
     {
       id: 1,
-      title: "Site Engineer - Bridge Construction",
-      department: "Engineering",
-      location: "Manipur, India",
+      title: "Senior Architect",
+      department: "UX/Design & Architecture",
+      location: "Delhi/Manipur",
       type: "Full-time",
-      experience: "2-4 years",
+      experience: "10-12 Years",
       postedDate: "2025-01-15",
-      description: "Lead on-site construction activities for bridge projects, ensuring quality standards and safety protocols.",
+      description: "Lead architectural design and construction projects with expertise in working drawings and construction detailing.",
       requirements: [
-        "Bachelor's degree in Civil Engineering",
-        "2-4 years experience in bridge construction",
-        "Knowledge of construction safety protocols",
-        "Strong leadership and communication skills"
+        "UG in B.Arch in any specialization",
+        "Experience of Working Drawings/Construction Drawings And Detailing Required For Site",
+        "Awareness of Plot Plan, Buildings In Plant [ Substation, Control Room, Warehouses]",
+        "Knowledge of Civil Drawings Reading Formwork Drawings",
+        "Knowledge About Architectural Elements And Materials E.G. Walls/Floors/Ceiling/Roof/Waterproofing/Blast Door/Fire Doors/Fire Walls",
+        "Awareness About Model Reviews Management/Clash Check",
+        "Awareness About Revit/3-D Bim Platforms",
+        "Knowledge Of Local/Indian Standards/International Standards",
+        "Awareness About Architectural Mto",
+        "Awareness Of Software like AutoCAD",
+        "Coordination with Clients and HO team"
       ],
       responsibilities: [
-        "Supervise daily construction activities",
-        "Ensure quality control and safety compliance",
-        "Coordinate with project teams and stakeholders",
-        "Monitor project progress and timelines"
+        "Taking instructions and comments from client and sharing the same with design team",
+        "Preparation of architecture design and drawings",
+        "Plan and conduct modifications in working drawings",
+        "Monitor design process from conception to construction administration to ensure consistency of design idea",
+        "Coordination with structural, survey, MEP etc. consultants, checking and doing necessary modifications in drawings",
+        "Attend field reviews, on-site meetings and project meetings and coordinate schedule reviews",
+        "Coordination of drawings as well as for instructions or changes for site",
+        "Comfortable in travelling to other cities for Projects and Site visits"
       ]
     },
     {
       id: 2,
-      title: "Project Manager - Highway Infrastructure",
-      department: "Project Management",
-      location: "Bihar, India",
+      title: "Architect",
+      department: "UX/Design & Architecture",
+      location: "Delhi/Manipur",
       type: "Full-time",
-      experience: "5-8 years",
+      experience: "6-8 Years",
       postedDate: "2025-01-10",
-      description: "Manage large-scale highway infrastructure projects from planning to completion.",
+      description: "Design and coordinate architectural projects with focus on construction drawings and site coordination.",
       requirements: [
-        "Bachelor's/Master's degree in Civil Engineering",
-        "5-8 years experience in highway projects",
-        "PMP certification preferred",
-        "Excellent project management skills"
+        "UG in B.Arch in any specialization",
+        "Experience of Working Drawings/Construction Drawings And Detailing Required For Site",
+        "Awareness of Plot Plan, Buildings In Plant [ Substation, Control Room, Warehouses]",
+        "Knowledge of Civil Drawings Reading Formwork Drawings",
+        "Knowledge About Architectural Elements And Materials E.G. Walls/Floors/Ceiling/Roof/Waterproofing/Blast Door/Fire Doors/Fire Walls",
+        "Awareness About Model Reviews Management/Clash Check",
+        "Awareness About Revit/3-D Bim Platforms",
+        "Knowledge Of Local/Indian Standards/International Standards",
+        "Awareness About Architectural Mto",
+        "Awareness Of Software like AutoCAD",
+        "Coordination with Clients and HO team"
       ],
       responsibilities: [
-        "Plan and execute highway construction projects",
-        "Manage project budgets and timelines",
-        "Lead cross-functional teams",
-        "Ensure regulatory compliance"
-      ]
-    },
-    {
-      id: 3,
-      title: "Quality Control Engineer",
-      department: "Quality Assurance",
-      location: "Chhattisgarh, India",
-      type: "Full-time",
-      experience: "1-3 years",
-      postedDate: "2025-01-08",
-      description: "Ensure construction quality standards and compliance across all project phases.",
-      requirements: [
-        "Bachelor's degree in Civil Engineering",
-        "1-3 years experience in quality control",
-        "Knowledge of IS codes and standards",
-        "Attention to detail and analytical skills"
-      ],
-      responsibilities: [
-        "Conduct quality inspections and testing",
-        "Prepare quality reports and documentation",
-        "Implement quality assurance protocols",
-        "Coordinate with contractors and suppliers"
-      ]
-    },
-    {
-      id: 4,
-      title: "Civil Engineer - Building Construction",
-      department: "Engineering",
-      location: "Multiple Locations",
-      type: "Full-time",
-      experience: "1-3 years",
-      postedDate: "2025-01-05",
-      description: "Design and oversee construction of government and institutional buildings.",
-      requirements: [
-        "Bachelor's degree in Civil Engineering",
-        "1-3 years experience in building construction",
-        "Proficiency in AutoCAD and design software",
-        "Strong technical and problem-solving skills"
-      ],
-      responsibilities: [
-        "Create detailed construction drawings",
-        "Supervise building construction activities",
-        "Ensure structural integrity and safety",
-        "Collaborate with architects and contractors"
+        "Taking instructions and comments from client and sharing the same with design team",
+        "Preparation of architecture design and drawings",
+        "Plan and conduct modifications in working drawings",
+        "Monitor design process from conception to construction administration to ensure consistency of design idea",
+        "Coordination with structural, survey, MEP etc. consultants, checking and doing necessary modifications in drawings",
+        "Attend field reviews, on-site meetings and project meetings and coordinate schedule reviews",
+        "Coordination of drawings as well as for instructions or changes for site",
+        "Comfortable in travelling to other cities for Projects and Site visits"
       ]
     }
   ];
