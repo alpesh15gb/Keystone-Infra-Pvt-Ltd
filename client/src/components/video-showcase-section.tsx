@@ -7,39 +7,39 @@ export function VideoShowcaseSection() {
   const videos = [
     {
       id: "wvoxdF185yo",
-      title: "Infrastructure Development Project"
+      title: "Tarud River Bridge"
     },
     {
       id: "US6l4c8uSLE", 
-      title: "Construction Excellence"
+      title: "Paspul Vaghu Bridge"
     },
     {
       id: "dPn3aRBkfrA",
-      title: "Transportation Infrastructure"
+      title: "Bridge Construction Project"
     },
     {
       id: "p62cJAu31_M",
-      title: "Engineering Innovation"
+      title: "Infrastructure Development"
     },
     {
       id: "5XUwqNICWTA",
-      title: "Project Management"
+      title: "Civil Engineering Project"
     },
     {
       id: "ALZtqkYNqg4",
-      title: "Quality Assurance"
+      title: "Chintavaghu Bridge"
     },
     {
       id: "oO1yDu8tuH0",
-      title: "Sustainability Focus"
+      title: "Chhindanar Bridge 2"
     },
     {
       id: "PddAAZX3aTM",
-      title: "Team Excellence"
+      title: "Chhindanar Bridge 1"
     },
     {
       id: "2NpgvLuMN5M",
-      title: "Future Vision"
+      title: "Bridge Engineering Project"
     }
   ];
 
