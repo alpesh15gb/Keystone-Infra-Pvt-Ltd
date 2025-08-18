@@ -28,7 +28,7 @@ export function HeroSection() {
   }, [backgroundImages.length]);
 
   return (
-    <section id="home" className="hero-section relative w-full h-screen overflow-hidden">
+    <section id="home" className="relative w-full h-screen overflow-hidden">
       {/* Multiple Background Images with Transitions */}
       <div className="absolute inset-0 w-full h-full">
         {backgroundImages.map((image, index) => (

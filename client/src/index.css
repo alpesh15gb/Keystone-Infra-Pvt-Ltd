@@ -75,27 +75,11 @@
   transform-origin: center center;
 }
 
-/* Performance optimizations */
-* {
-  box-sizing: border-box;
-}
-
-img {
-  content-visibility: auto;
-  contain-intrinsic-size: 300px 200px;
-}
-
-/* Reduce animations for better performance */
+/* Remove complex animations for better performance */
 @media (prefers-reduced-motion: no-preference) {
   .video-background {
     animation: none;
   }
-}
-
-/* Critical CSS for above-the-fold content */
-.hero-section {
-  will-change: auto;
-  contain: layout style paint;
 }
 
 .dark {
