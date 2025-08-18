@@ -13,7 +13,7 @@ const products = [
     bgColor: "bg-amber-700/10",
     title: "Transportation Infrastructure",
     description: "Complete road construction including national highways, state highways, and bridges.",
-    features: ["National & State Highways", "Bridge Construction", "CC Roads & Major District Roads"],
+    features: ["National & State Highways", "Bridge Construction", "CC Roads & Major District Roads", "Rigid and Flexible Major District Roads"],
     image: highwayImage,
   },
   {
