@@ -2,25 +2,17 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Shield, Globe, Play, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import constructionVideo from "@assets/generated_images/construction_site_video_background_4fd97d5a.png";
-import bridgeConstruction from "@assets/generated_images/highway_bridge_construction_8ffb9076.png";
-import urbanConstruction from "@assets/generated_images/urban_construction_skyline_f76f4600.png";
-import industrialConstruction from "@assets/generated_images/industrial_construction_site_707415e2.png";
+// Lazy load images for better performance
 import highwayConstruction from "@assets/generated_images/Highway_construction_infrastructure_scene_4a33cfd9.png";
 import damConstruction from "@assets/generated_images/Dam_construction_engineering_project_5220be38.png";
 import bridgeProject from "@assets/generated_images/Bridge_construction_infrastructure_project_67b0e816.png";
-import tunnelConstruction from "@assets/generated_images/Tunnel_construction_engineering_work_1f1e4fa5.png";
 
 export function HeroSection() {
+  // Reduced to 3 images for better performance
   const backgroundImages = [
     highwayConstruction,
     damConstruction,
-    bridgeProject,
-    tunnelConstruction,
-    constructionVideo,
-    bridgeConstruction,
-    urbanConstruction,
-    industrialConstruction
+    bridgeProject
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -30,7 +22,7 @@ export function HeroSection() {
       setCurrentImageIndex((prevIndex) => 
         (prevIndex + 1) % backgroundImages.length
       );
-    }, 6000); // Change image every 6 seconds
+    }, 8000); // Change image every 8 seconds
 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
@@ -47,9 +39,9 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ 
               opacity: index === currentImageIndex ? 1 : 0,
-              scale: index === currentImageIndex ? 1.05 : 1
+              scale: 1
             }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           />
         ))}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
