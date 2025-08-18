@@ -58,7 +58,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            About Keystone Infra
+            KeystoneInfra
           </motion.h2>
           <div className="max-w-4xl mx-auto">
             <p className="text-xl text-amber-900 leading-relaxed mb-6 text-justify">

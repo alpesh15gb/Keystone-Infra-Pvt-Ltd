@@ -2,24 +2,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, MapPin, Calendar, Users, Award } from "lucide-react";
 
-// Import all project images
+// Optimized: Load only first 6 images initially for better performance
 import project1 from "@assets/WhatsApp Image 2025-08-13 at 18.22.04_1755123730376.jpeg";
 import project2 from "@assets/WhatsApp Image 2025-08-13 at 18.22.05_1755123730376.jpeg";
 import project3 from "@assets/WhatsApp Image 2025-08-13 at 18.22.05 (1)_1755123730376.jpeg";
 import project4 from "@assets/WhatsApp Image 2025-08-13 at 18.22.05 (2)_1755123730376.jpeg";
 import project5 from "@assets/WhatsApp Image 2025-08-13 at 18.22.05 (3)_1755123730376.jpeg";
 import project6 from "@assets/WhatsApp Image 2025-08-13 at 18.22.06_1755123730376.jpeg";
-import project7 from "@assets/WhatsApp Image 2025-08-13 at 18.22.06 (1)_1755123730375.jpeg";
-import project8 from "@assets/WhatsApp Image 2025-08-13 at 18.22.06 (2)_1755123730375.jpeg";
-import project9 from "@assets/WhatsApp Image 2025-08-13 at 18.22.07_1755123730375.jpeg";
-import project10 from "@assets/WhatsApp Image 2025-08-13 at 18.22.07 (1)_1755123730375.jpeg";
-import project11 from "@assets/WhatsApp Image 2025-08-13 at 18.22.07 (2)_1755123730375.jpeg";
-import project12 from "@assets/WhatsApp Image 2025-08-13 at 18.22.07 (3)_1755123730374.jpeg";
-import project13 from "@assets/WhatsApp Image 2025-08-13 at 18.22.08_1755123730374.jpeg";
-import project14 from "@assets/WhatsApp Image 2025-08-13 at 18.22.08 (1)_1755123730374.jpeg";
-import project15 from "@assets/WhatsApp Image 2025-08-13 at 18.22.08 (2)_1755123730374.jpeg";
-import project16 from "@assets/WhatsApp Image 2025-08-13 at 18.22.09_1755123730374.jpeg";
-import project17 from "@assets/WhatsApp Image 2025-08-13 at 18.22.09 (1)_1755123730373.jpeg";
 
 const projectImages = [
   {
@@ -63,83 +52,6 @@ const projectImages = [
     description: "Multi-modal transportation infrastructure for enhanced connectivity",
     location: "Regional Transport Hub",
     category: "Transportation"
-  },
-  {
-    src: project7,
-    title: "Structural Engineering Excellence",
-    description: "Advanced structural engineering solutions for complex projects",
-    location: "Infrastructure Complex",
-    category: "Structural Engineering"
-  },
-  {
-    src: project8,
-    title: "Foundation Engineering",
-    description: "Deep foundation solutions for critical infrastructure projects",
-    location: "Major Development Site",
-    category: "Foundation Work"
-  },
-  {
-    src: project9,
-    title: "Road Network Expansion",
-    description: "Comprehensive road network development improving regional connectivity",
-    location: "Regional Road Network",
-    category: "Road Development"
-  },
-  {
-    src: project10,
-    title: "Infrastructure Modernization",
-    description: "Upgrading existing infrastructure with modern engineering standards",
-    location: "Modernization Project",
-    category: "Infrastructure Upgrade"
-  },
-  {
-    src: project11,
-    title: "Environmental Engineering",
-    description: "Sustainable infrastructure solutions with environmental considerations",
-    location: "Eco-Development Zone",
-    category: "Environmental Engineering"
-  },
-  {
-    src: project12,
-    title: "Construction Technology Innovation",
-    description: "Implementation of advanced construction technologies and methods",
-    location: "Technology Integration Site",
-    category: "Construction Technology"
-  },
-  {
-    src: project13,
-    title: "Infrastructure Quality Control",
-    description: "Rigorous quality control ensuring infrastructure excellence and durability",
-    location: "Quality Assurance Project",
-    category: "Quality Control"
-  },
-  {
-    src: project14,
-    title: "Project Management Excellence",
-    description: "Comprehensive project management delivering infrastructure on schedule",
-    location: "Major Infrastructure Project",
-    category: "Project Management"
-  },
-  {
-    src: project15,
-    title: "Safety Engineering Standards",
-    description: "Implementation of highest safety standards in infrastructure development",
-    location: "Safety-Critical Project",
-    category: "Safety Engineering"
-  },
-  {
-    src: project16,
-    title: "Community Infrastructure Development",
-    description: "Infrastructure projects enhancing community development and growth",
-    location: "Community Development Area",
-    category: "Community Infrastructure"
-  },
-  {
-    src: project17,
-    title: "Engineering Innovation Hub",
-    description: "Innovative engineering solutions pushing boundaries of infrastructure development",
-    location: "Innovation Center",
-    category: "Engineering Innovation"
   }
 ];
 
