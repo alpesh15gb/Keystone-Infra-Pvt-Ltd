@@ -10,6 +10,7 @@ import { LocationsSection } from "@/components/locations-section";
 import { EsteemedClientsSection } from "@/components/esteemed-clients-section";
 import { CertificationsSection } from "@/components/certifications-section";
 import { CSRSection } from "@/components/csr-section";
+import { VideoShowcaseSection } from "@/components/video-showcase-section";
 
 
 
@@ -31,6 +32,7 @@ export default function Home() {
       <EsteemedClientsSection />
       <CertificationsSection />
       <CSRSection />
+      <VideoShowcaseSection />
 
       <ContactSection />
       <Footer />
