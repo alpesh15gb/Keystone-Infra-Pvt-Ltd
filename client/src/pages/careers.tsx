@@ -297,11 +297,11 @@ export function Careers() {
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a 
-                  href="mailto:careers@keystoneinfra.com" 
+                  href="mailto:careers@keystone-infra.com" 
                   className="flex items-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   <Mail className="w-5 h-5" />
-                  careers@keystoneinfra.com
+                  careers@keystone-infra.com
                 </a>
                 
                 <a 
