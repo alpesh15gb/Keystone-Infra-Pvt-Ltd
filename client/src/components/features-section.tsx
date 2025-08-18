@@ -45,7 +45,7 @@ export function FeaturesSection() {
         >
           <h2 className="text-4xl font-bold text-orange-600 mb-4">Our Mission & Values</h2>
           <p className="text-xl text-amber-800 max-w-3xl mx-auto">
-            Be a global leader in infrastructure with optimisation and micro-level planning
+            Where Quality Meets Integrity Vision Builds Sustainablility
           </p>
         </motion.div>
 

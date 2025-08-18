@@ -25,12 +25,12 @@ export function MissionVisionSection() {
       icon: Eye,
       title: "Our Vision",
       subtitle: "Shaping Tomorrow's Infrastructure",
-      description: "To be a global leader in infrastructure development, creating sustainable solutions that connect communities and enable prosperity.",
+      description: "Where Quality Meets Integrity Vision Builds Sustainablility - creating innovative infrastructure solutions that connect communities and enable prosperity.",
       items: [
-        "Be global leader in infrastructure",
-        "Use optimization techniques",
-        "Micro level planning approach",
-        "Create meaningful cooperation"
+        "Quality-driven infrastructure solutions",
+        "Integrity in every project delivery",
+        "Sustainable development practices",
+        "Vision-based strategic planning"
       ],
       image: visionImage,
       color: "from-orange-500 to-orange-600",
