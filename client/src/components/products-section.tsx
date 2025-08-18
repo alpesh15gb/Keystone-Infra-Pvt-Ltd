@@ -48,7 +48,7 @@ export function ProductsSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold text-orange-600 mb-4">Our Infrastructure Expertise</h2>
-          <p className="text-xl text-amber-800 max-w-3xl mx-auto">
+          <p className="text-xl text-amber-800 max-w-4xl mx-auto text-center">
             Diversified excellence across transportation, water management, and construction projects
           </p>
         </motion.div>
@@ -78,12 +78,12 @@ export function ProductsSection() {
                   </div>
                   <div className="p-8">
                     <h3 className="text-2xl font-bold text-orange-600 mb-4">{product.title}</h3>
-                    <p className="text-amber-800 mb-6">{product.description}</p>
+                    <p className="text-amber-800 mb-6 text-left leading-relaxed">{product.description}</p>
                     <ul className="space-y-2 mb-6">
                       {product.features.map((feature) => (
-                        <li key={feature} className="flex items-center text-sm text-amber-800">
-                          <CheckCircle className="text-green-500 mr-2" size={16} />
-                          {feature}
+                        <li key={feature} className="flex items-start text-sm text-amber-800">
+                          <CheckCircle className="text-green-500 mr-2 mt-0.5 flex-shrink-0" size={16} />
+                          <span className="leading-relaxed">{feature}</span>
                         </li>
                       ))}
                     </ul>
