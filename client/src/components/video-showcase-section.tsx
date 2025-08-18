@@ -7,48 +7,39 @@ export function VideoShowcaseSection() {
   const videos = [
     {
       id: "wvoxdF185yo",
-      title: "Infrastructure Development Project",
-      description: "Showcasing our latest infrastructure development initiatives"
+      title: "Infrastructure Development Project"
     },
     {
       id: "US6l4c8uSLE", 
-      title: "Construction Excellence",
-      description: "Demonstrating our construction capabilities and quality standards"
+      title: "Construction Excellence"
     },
     {
       id: "dPn3aRBkfrA",
-      title: "Transportation Infrastructure",
-      description: "Highway and road construction project highlights"
+      title: "Transportation Infrastructure"
     },
     {
       id: "p62cJAu31_M",
-      title: "Engineering Innovation",
-      description: "Advanced engineering solutions and methodologies"
+      title: "Engineering Innovation"
     },
     {
       id: "5XUwqNICWTA",
-      title: "Project Management",
-      description: "Efficient project execution and management practices"
+      title: "Project Management"
     },
     {
       id: "ALZtqkYNqg4",
-      title: "Quality Assurance",
-      description: "Our commitment to quality and safety standards"
+      title: "Quality Assurance"
     },
     {
       id: "oO1yDu8tuH0",
-      title: "Sustainability Focus",
-      description: "Environmental responsibility in infrastructure development"
+      title: "Sustainability Focus"
     },
     {
       id: "PddAAZX3aTM",
-      title: "Team Excellence",
-      description: "Our skilled workforce and collaborative approach"
+      title: "Team Excellence"
     },
     {
       id: "2NpgvLuMN5M",
-      title: "Future Vision",
-      description: "Vision for sustainable infrastructure development"
+      title: "Future Vision"
     }
   ];
 
@@ -108,12 +99,9 @@ export function VideoShowcaseSection() {
                   </button>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-orange-600 mb-2 group-hover:text-orange-700 transition-colors">
+                  <h3 className="text-lg font-bold text-orange-600 mb-4 group-hover:text-orange-700 transition-colors">
                     {video.title}
                   </h3>
-                  <p className="text-amber-800 text-sm mb-4 leading-relaxed">
-                    {video.description}
-                  </p>
                   <button
                     onClick={() => openVideo(video.id)}
                     className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium text-sm transition-colors"
