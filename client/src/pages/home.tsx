@@ -10,7 +10,7 @@ import { LocationsSection } from "@/components/locations-section";
 import { EsteemedClientsSection } from "@/components/esteemed-clients-section";
 import { CertificationsSection } from "@/components/certifications-section";
 import { CSRSection } from "@/components/csr-section";
-import { ProjectShowcaseSection } from "@/components/project-showcase-section";
+
 
 
 import { ContactSection } from "@/components/contact-section";
@@ -22,7 +22,6 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <AboutSection />
-      <ProjectShowcaseSection />
       <MissionVisionSection />
       <ProductsSection />
       <FeaturesSection />
