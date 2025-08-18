@@ -29,7 +29,7 @@ export function TeamSection() {
 
 
   return (
-    <section id="team" className="py-16 bg-white dark:bg-gray-900">
+    <section id="team" className="py-20 bg-gradient-to-br from-amber-50/30 to-orange-50/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,10 +37,10 @@ export function TeamSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
             Our Leadership Team
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-amber-900 max-w-3xl mx-auto leading-relaxed">
             Experienced professionals driving excellence in infrastructure development across India
           </p>
         </motion.div>
@@ -55,35 +55,36 @@ export function TeamSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-blue-50 to-orange-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-orange-100 group hover:-translate-y-2"
             >
               <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <User className="w-10 h-10 text-white" />
+                <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <User className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-2xl font-bold text-orange-600 mb-2">
                   {member.name}
                 </h3>
-                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-1">
+                <p className="text-orange-700 font-semibold mb-1 text-lg">
                   {member.position}
                 </p>
-                <p className="text-orange-600 dark:text-orange-400 text-sm">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 text-sm font-medium">
+                  <Award className="w-4 h-4 mr-1" />
                   {member.experience} Experience
-                </p>
+                </div>
               </div>
 
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 text-justify">
+              <p className="text-amber-800 leading-relaxed mb-6 text-justify">
                 {member.description}
               </p>
 
-              <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900 dark:text-white text-sm mb-3 text-center">
-                  Key Achievements:
+              <div className="space-y-3">
+                <h4 className="font-bold text-orange-600 text-center mb-4 text-lg">
+                  Key Achievements
                 </h4>
                 {member.achievements.map((achievement, i) => (
-                  <div key={i} className="flex items-start justify-center text-sm text-gray-600 dark:text-gray-300">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0 mt-1"></div>
-                    <span className="text-center">{achievement}</span>
+                  <div key={i} className="flex items-start text-amber-800">
+                    <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mr-3 flex-shrink-0 mt-2"></div>
+                    <span className="font-medium">{achievement}</span>
                   </div>
                 ))}
               </div>
