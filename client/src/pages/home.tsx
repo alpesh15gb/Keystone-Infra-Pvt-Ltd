@@ -11,6 +11,8 @@ import { EsteemedClientsSection } from "@/components/esteemed-clients-section";
 import { CertificationsSection } from "@/components/certifications-section";
 import { CSRSection } from "@/components/csr-section";
 import { ProjectShowcaseSection } from "@/components/project-showcase-section";
+import { ProjectPortfolioSection } from "@/components/project-portfolio-section";
+import { projectVideos } from "@/data/project-videos";
 
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
@@ -22,6 +24,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ProjectShowcaseSection />
+      <ProjectPortfolioSection projects={projectVideos} />
       <MissionVisionSection />
       <ProductsSection />
       <FeaturesSection />
