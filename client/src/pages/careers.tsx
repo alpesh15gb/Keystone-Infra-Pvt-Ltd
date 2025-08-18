@@ -127,20 +127,6 @@ export function Careers() {
               Build your career with Keystone Infra and be part of India's infrastructure transformation. 
               We offer exciting opportunities for growth and professional development.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-8 text-orange-100">
-              <div className="flex items-center gap-2">
-                <Users className="w-6 h-6" />
-                <span>20+ Years Experience</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-6 h-6" />
-                <span>12+ States Coverage</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-6 h-6" />
-                <span>600+ Projects Completed</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
