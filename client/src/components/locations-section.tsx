@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { MapPin, Building2, Globe, Trophy, Zap } from "lucide-react";
 
-import indiaMap from "@assets/India-State-and-Capital-Union-Territories_1755108680983.png";
-import keystoneLogo from "@assets/Screenshot_2025-08-13_234234-removebg-preview_1755108853673.png";
+import indiaMap from "@assets/MAP EDITED_1755555415200.jpg";
+
 
 export function LocationsSection() {
   const states = [
@@ -56,175 +56,17 @@ export function LocationsSection() {
             </p>
           </div>
           
-          <div className="relative max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <img 
               src={indiaMap} 
-              alt="India Map with Keystone Infra Presence" 
-              className="w-full h-auto rounded-2xl"
+              alt="India Map with Keystone Infra Project Locations" 
+              className="w-full h-auto rounded-2xl shadow-lg"
             />
-            
-            {/* Logo markers positioned over operational states */}
-            <div className="absolute inset-0">
-              {/* Delhi */}
-              <div className="absolute" style={{ top: '28%', left: '29%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Delhi"
-                />
-              </div>
-              
-              {/* Punjab */}
-              <div className="absolute" style={{ top: '22%', left: '26%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Punjab"
-                />
-              </div>
-              
-              {/* Haryana */}
-              <div className="absolute" style={{ top: '26%', left: '27%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Haryana"
-                />
-              </div>
-              
-              {/* Uttar Pradesh */}
-              <div className="absolute" style={{ top: '32%', left: '35%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Uttar Pradesh"
-                />
-              </div>
-              
-              {/* Bihar */}
-              <div className="absolute" style={{ top: '35%', left: '42%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Bihar"
-                />
-              </div>
-              
-              {/* Jharkhand */}
-              <div className="absolute" style={{ top: '42%', left: '43%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Jharkhand"
-                />
-              </div>
-              
-              {/* West Bengal */}
-              <div className="absolute" style={{ top: '42%', left: '48%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="West Bengal"
-                />
-              </div>
-              
-              {/* Odisha */}
-              <div className="absolute" style={{ top: '50%', left: '44%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Odisha"
-                />
-              </div>
-              
-              {/* Chhattisgarh */}
-              <div className="absolute" style={{ top: '45%', left: '38%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Chhattisgarh"
-                />
-              </div>
-              
-              {/* Madhya Pradesh */}
-              <div className="absolute" style={{ top: '42%', left: '33%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Madhya Pradesh"
-                />
-              </div>
-              
-              {/* Telangana */}
-              <div className="absolute" style={{ top: '58%', left: '33%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Telangana"
-                />
-              </div>
-              
-              {/* Andhra Pradesh */}
-              <div className="absolute" style={{ top: '65%', left: '34%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Andhra Pradesh"
-                />
-              </div>
-              
-              {/* Karnataka */}
-              <div className="absolute" style={{ top: '72%', left: '30%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Karnataka"
-                />
-              </div>
-              
-              {/* Manipur */}
-              <div className="absolute" style={{ top: '38%', left: '64%' }}>
-                <motion.img 
-                  src={keystoneLogo} 
-                  alt="Keystone Infra" 
-                  className="w-6 h-6 md:w-8 md:h-8"
-                  whileHover={{ scale: 1.3 }}
-                  title="Manipur"
-                />
-              </div>
-            </div>
           </div>
           
           <div className="text-center mt-8">
-            <p className="text-amber-800 text-sm flex items-center justify-center font-medium">
-              <img src={keystoneLogo} alt="Keystone Logo" className="w-4 h-4 mr-2" />
-              Keystone Infra operational states across India
+            <p className="text-amber-800 text-lg font-medium">
+              Keystone Infra project locations across India marked with our logo
             </p>
           </div>
         </motion.div>
