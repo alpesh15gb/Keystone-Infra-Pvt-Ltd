@@ -49,19 +49,25 @@ export function ContactSection() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
-      return apiRequest("POST", "/api/contact", data);
+      const response = await apiRequest("POST", "/api/contact", data);
+      return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (responseData: any) => {
+      const emailStatus = responseData.emailSent ? 
+        "Message sent and email notification delivered successfully!" :
+        "Message received successfully! (Email notification pending)";
+      
       toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you soon.",
+        title: "Thank you for contacting us!",
+        description: emailStatus,
       });
       form.reset();
     },
-    onError: (error) => {
+    onError: (error: any) => {
+      const errorMessage = error?.response?.data?.message || error.message || "Please try again later.";
       toast({
         title: "Failed to send message",
-        description: error.message || "Please try again later.",
+        description: errorMessage,
         variant: "destructive",
       });
     },

@@ -9,9 +9,9 @@ export function SimpleSlider() {
   
   // Test with URLs that should work
   const testImages = [
-    "/src/assets/slider-1_1754941983527.jpg",
-    "/src/assets/slider-2_1754941983528.jpg",
-    "/src/assets/slider-3_1754941983528.jpg"
+    "/images/slider-1_1754941983527.jpg",
+    "/images/slider-2_1754941983528.jpg",
+    "/images/slider-3_1754941983528.jpg"
   ];
 
   const goToNext = () => {
