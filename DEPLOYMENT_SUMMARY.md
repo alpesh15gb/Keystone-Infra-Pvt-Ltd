@@ -19,6 +19,10 @@ Your Keystone Infrastructure website is now fully prepared for Vercel deployment
    - Sign up/in with GitHub
    - Click "New Project" 
    - Import your repository
+   - Configure build settings:
+     - Build Command: `vite build`
+     - Output Directory: `dist/public`
+     - Install Command: `npm install`
    - Click "Deploy"
 
 3. **Add Environment Variables** (in Vercel dashboard):

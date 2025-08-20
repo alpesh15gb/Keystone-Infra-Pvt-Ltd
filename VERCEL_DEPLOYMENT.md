@@ -29,8 +29,11 @@ npm i -g vercel
 # Login to Vercel
 vercel login
 
+# Build the project first
+npm run build
+
 # Deploy from your project directory
-vercel
+vercel --prod
 
 # Follow the prompts:
 # - Link to existing project? No
