@@ -32,8 +32,8 @@ export async function sendContactEmail(params: ContactEmailParams): Promise<bool
 
   try {
     const emailContent = {
-      to: 'your-email@example.com', // TODO: Replace with your actual email address
-      from: 'verified-sender@yourdomain.com', // TODO: Replace with your verified SendGrid sender email
+      to: 'info@keystoneinfrapvt.com', // Company email for receiving inquiries
+      from: 'noreply@keystoneinfrapvt.com', // Verified SendGrid sender email
       subject: `New Contact Form Submission - ${params.helpType}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
