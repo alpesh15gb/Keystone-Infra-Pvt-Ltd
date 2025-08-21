@@ -216,26 +216,7 @@ export function VideoShowcaseSection() {
                 cutting-edge engineering solutions across India.
               </motion.p>
               
-              {/* Stats or highlights */}
-              <motion.div 
-                className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-300 mb-2">9</div>
-                  <div className="text-orange-200 font-medium">Featured Projects</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-300 mb-2">12+</div>
-                  <div className="text-orange-200 font-medium">States Covered</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-300 mb-2">20+</div>
-                  <div className="text-orange-200 font-medium">Years Experience</div>
-                </div>
-              </motion.div>
+
             </div>
           </div>
         </motion.div>
