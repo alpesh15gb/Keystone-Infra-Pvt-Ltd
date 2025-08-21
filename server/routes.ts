@@ -1,47 +1,12 @@
-import type { Express } from "express";
+import type { Express, Request } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSubmissionSchema } from "@shared/schema";
 import { sendContactEmail } from "./email";
-import multer from "multer";
-import path from "path";
-import fs from "fs";
-
-// Configure multer for file uploads
-const storage_multer = multer.diskStorage({
-  destination: (req, file, cb) => {
-    const uploadDir = path.join(process.cwd(), 'uploads');
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true });
-    }
-    cb(null, uploadDir);
-  },
-  filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({ 
-  storage: storage_multer,
-  limits: {
-    fileSize: 5 * 1024 * 1024, // 5MB limit
-  },
-  fileFilter: (req, file, cb) => {
-    const allowedTypes = ['.pdf', '.doc', '.docx'];
-    const fileExt = path.extname(file.originalname).toLowerCase();
-    
-    if (allowedTypes.includes(fileExt)) {
-      cb(null, true);
-    } else {
-      cb(new Error('Invalid file type. Only PDF, DOC, and DOCX files are allowed.'));
-    }
-  }
-});
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Job application submission endpoint
-  app.post('/api/job-applications', upload.single('resume'), async (req, res) => {
+  // Job application submission endpoint (simplified - no file upload for now)
+  app.post('/api/job-applications', async (req, res) => {
     try {
       const {
         fullName,
@@ -73,15 +38,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         coverLetter,
         jobTitle,
         jobId,
-        appliedAt: new Date().toISOString(),
-        resumeFile: req.file ? req.file.filename : null
+        appliedAt: new Date().toISOString()
       };
 
       // Log the application (in a real app, save to database)
-      console.log('New job application received:', {
-        ...applicationData,
-        resumeFile: req.file ? `${req.file.filename} (${req.file.size} bytes)` : 'No resume uploaded'
-      });
+      console.log('New job application received:', applicationData);
 
       // In a real application, you would:
       // 1. Save to database
