@@ -3,8 +3,10 @@
 ## Quick Start
 
 1. **Extract** all files to your desired directory (e.g., `C:\keystone-infrastructure\`)
-2. **Double-click** `start.bat` to start the server
-3. **Open browser** and go to `http://localhost:3000`
+2. **Right-click** `start.bat` and select "Run as Administrator" (required for port 80)
+3. **Open browser** and go to `http://localhost`
+
+**Important**: Port 80 requires Administrator privileges on Windows.
 
 ## Files Included
 
@@ -37,7 +39,8 @@
 
 ## Support
 
-- Default Port: **3000** (configurable in server.js)
+- Default Port: **80** (configurable in server.js)
+- Administrator Rights: Required for port 80
 - Logs: Console output or PM2 logs
 - Status: Check `/api/health` endpoint
 - Backup: Run `backup.bat` anytime

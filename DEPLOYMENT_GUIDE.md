@@ -9,9 +9,9 @@ This guide will help you deploy your Keystone Infrastructure website on your Win
    - Choose the LTS version for Windows
    - Make sure to check "Add to PATH" during installation
 
-2. **Port Access**
-   - Ensure port 3000 is available (or change in configuration)
-   - Configure Windows Firewall if needed
+2. **Port Access and Administrator Rights**
+   - Port 80 requires Administrator privileges on Windows
+   - Configure Windows Firewall to allow port 80 (HTTP)
    - For external access, configure your router/network firewall
 
 ## Deployment Steps
@@ -37,8 +37,8 @@ This guide will help you deploy your Keystone Infrastructure website on your Win
    - Run in command prompt: `node server.js`
 
 5. **Access your website**
-   - Local: http://localhost:3000
-   - Network: http://[YOUR-SERVER-IP]:3000
+   - Local: http://localhost
+   - Network: http://[YOUR-SERVER-IP]
 
 ### Option 2: Production Deployment with PM2 (Recommended for production)
 
@@ -76,8 +76,9 @@ This guide will help you deploy your Keystone Infrastructure website on your Win
 ### Change Port
 Edit `server.js` and modify:
 ```javascript
-const PORT = process.env.PORT || 3000; // Change 3000 to your desired port
+const PORT = process.env.PORT || 80; // Change 80 to your desired port
 ```
+**Note**: Port 80 requires Administrator privileges. For non-privileged ports, use 3000 or higher.
 
 ### Enable HTTPS (Optional)
 For production, consider using a reverse proxy like:
@@ -88,7 +89,7 @@ For production, consider using a reverse proxy like:
 ### Environment Variables
 Create a `.env` file for configuration:
 ```
-PORT=3000
+PORT=80
 NODE_ENV=production
 ```
 

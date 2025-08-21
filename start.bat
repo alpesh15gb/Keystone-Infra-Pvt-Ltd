@@ -1,6 +1,9 @@
 @echo off
 echo Starting Keystone Infrastructure Server...
 echo.
+echo IMPORTANT: This script requires Administrator privileges to use port 80
+echo If you get permission errors, right-click this file and select "Run as Administrator"
+echo.
 
 REM Check if Node.js is installed
 node --version >nul 2>&1
@@ -31,11 +34,11 @@ if not exist "node_modules" (
 )
 
 REM Start the server
-echo Starting server on port 3000...
+echo Starting server on port 80...
 echo.
 echo Server will be available at:
-echo   Local:   http://localhost:3000
-echo   Network: http://YOUR-SERVER-IP:3000
+echo   Local:   http://localhost
+echo   Network: http://YOUR-SERVER-IP
 echo.
 echo Press Ctrl+C to stop the server
 echo.
