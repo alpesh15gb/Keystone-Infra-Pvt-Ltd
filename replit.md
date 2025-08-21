@@ -15,11 +15,7 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Created integrated homepage with working contact form and company showcase
 - Simplified package.json to only essential dependencies to fix npm install timeouts
 
-### Local Hosting Setup
-- Created Express.js server for local hosting on port 80 or custom ports
-- Added automated setup scripts for Windows (start-server.bat) and Linux/Mac (start-server.sh)
-- Integrated contact form and job application APIs for local development
-- Created comprehensive local hosting guide with troubleshooting and production tips
+
 
 ## Previous Changes (August 20, 2025)
 
