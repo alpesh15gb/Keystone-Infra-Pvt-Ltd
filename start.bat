@@ -14,23 +14,20 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-REM Check if package.json exists
-if not exist "package.json" (
-    echo Error: package.json not found
+REM Check if server.js exists
+if not exist "server.js" (
+    echo Error: server.js not found
     echo Please make sure you're in the correct directory
     pause
     exit /b 1
 )
 
-REM Install dependencies if node_modules doesn't exist
-if not exist "node_modules" (
-    echo Installing dependencies...
-    npm install
-    if %errorlevel% neq 0 (
-        echo Error: Failed to install dependencies
-        pause
-        exit /b 1
-    )
+REM Check if dist/public directory exists (more important than node_modules for this server)
+if not exist "dist\public" (
+    echo Error: dist/public directory not found
+    echo Please make sure the application has been built and deployed correctly
+    pause
+    exit /b 1
 )
 
 REM Start the server
