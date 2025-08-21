@@ -22,7 +22,7 @@
 ### Option 1: Drag & Drop (Fastest)
 1. Run: `vite build` (if not already built)
 2. Go to [netlify.com/drop](https://netlify.com/drop)
-3. Drag your entire project folder
+3. Drag the `dist/public` folder to Netlify
 4. Live in seconds!
 
 ### Option 2: GitHub Integration (Professional)
@@ -34,7 +34,7 @@
 ```bash
 npm install -g netlify-cli
 vite build
-netlify deploy --prod --dir=dist
+netlify deploy --prod --dir=dist/public
 ```
 
 ## 🔑 Required Environment Variable
