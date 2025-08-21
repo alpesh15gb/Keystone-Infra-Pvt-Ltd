@@ -9,12 +9,12 @@
 - ✅ Complex package dependencies (70+ packages reduced to 15 essential ones)
 
 ### Added for Vercel
-- ✅ `vercel.json` - Fixed deployment configuration with proper rewrites
+- ✅ `vercel.json` - Fixed deployment configuration with build command that installs Replit plugins
 - ✅ `api/contact.js` - Contact form serverless function (Node.js runtime)
 - ✅ `api/apply.js` - Job application serverless function (Node.js runtime)  
 - ✅ Minimal `package.json` - Only essential dependencies for faster installs
 - ✅ Working contact form integrated into homepage
-- ✅ Optimized production build (227KB JS, 16KB CSS)
+- ✅ Optimized production build (228KB JS, 16KB CSS)
 
 ## 🌐 Deploy to Vercel Now
 
@@ -23,6 +23,7 @@
 npm install -g vercel
 vercel --prod
 ```
+*Note: Vercel will automatically install all required dependencies including Replit plugins during build*
 
 ### Option 2: GitHub Integration
 1. Push this cleaned code to GitHub
