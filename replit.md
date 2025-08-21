@@ -2,35 +2,7 @@
 
 This is a full-stack web application for Keystone Infra Pvt. Ltd., a professional infrastructure development company. The application features a comprehensive marketing website with company information, services, projects portfolio, certifications, and contact functionality. Built using React on the frontend and Express.js on the backend, the project showcases a civil engineering and infrastructure development company with 20+ years of experience across India.
 
-## Recent Changes (August 21, 2025)
-
-### Vercel Deployment Ready
-- Successfully cleaned up all server-side files and Express.js backend components
-- Removed all unused files including Netlify configurations and deployment docs
-- Created working Vercel serverless functions for contact form and job applications
-- Converted full-stack application to frontend-only with Vercel Functions
-- Fixed build configuration and created optimized production bundle (228KB JS, 16KB CSS)
-- Updated contact and job application forms to use Vercel API endpoints
-- Prepared project for professional Vercel hosting with proper `vercel.json` configuration
-- Created integrated homepage with working contact form and company showcase
-- Simplified package.json to only essential dependencies to fix npm install timeouts
-
-### Local Hosting Setup
-- Created Express.js server for local hosting on port 80 or custom ports
-- Added automated setup scripts for Windows (start-server.bat) and Linux/Mac (start-server.sh)
-- Integrated contact form and job application APIs for local development
-- Created comprehensive local hosting guide with troubleshooting and production tips
-
-## Previous Changes (August 20, 2025)
-
-### Vercel Deployment Setup
-- Created complete Vercel deployment configuration with `vercel.json` and serverless API setup
-- Built optimized production bundle (593KB main, 54KB CSS, all gzipped)
-- Comprehensive cleanup removing 70+ unused files (batch scripts, unused components, extra assets)
-- Verified all core functionality: contact forms, job applications, image galleries
-- Created detailed deployment guides and documentation
-
-## Previous Changes (August 11, 2025)
+## Recent Changes (August 11, 2025)
 - Successfully integrated 12 authentic project images into Owl Carousel slider
 - Implemented proper image serving from /images/ directory in client/public
 - Created working Owl Carousel component with auto-play, navigation, and dots
@@ -101,11 +73,12 @@ Brand colors: Orange for headers, brown/amber tones for paragraphs and body text
 - **Build Tool**: Vite for fast development and optimized production builds
 
 ## Backend Architecture
-- **Serverless Functions**: Netlify Functions for contact forms and job applications
-- **Email Service**: SendGrid integration for form submissions and job applications
-- **API Design**: Serverless functions with JSON request/response format
-- **Deployment**: Frontend-only deployment with serverless backend functions
-- **Development**: Vite development server for frontend with local testing capabilities
+- **Runtime**: Node.js with Express.js framework for REST API endpoints
+- **Language**: TypeScript for type safety across the full stack
+- **API Design**: RESTful endpoints with JSON request/response format
+- **Storage Strategy**: In-memory storage implementation with interface abstraction for future database migration
+- **Middleware**: Custom request logging, JSON parsing, and error handling
+- **Development**: Hot reload with Vite integration for seamless full-stack development
 
 ## Data Storage Solutions
 - **Current Implementation**: In-memory storage using Map data structures for rapid development
