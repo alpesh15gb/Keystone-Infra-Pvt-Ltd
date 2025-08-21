@@ -2,47 +2,26 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { Link, useLocation } from "wouter";
 import logoImage from "@assets/logo-removebg-preview_1755020619725.png";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [location, setLocation] = useLocation();
 
-  const handleNavigation = (item: { href: string; isSection: boolean }) => {
-    if (item.isSection) {
-      // If we're not on the home page, navigate to home first
-      if (location !== "/") {
-        setLocation("/");
-        // Wait a bit for navigation to complete, then scroll
-        setTimeout(() => {
-          const element = document.getElementById(item.href);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 100);
-      } else {
-        // Already on home page, just scroll
-        const element = document.getElementById(item.href);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    } else {
-      // Navigate to the page
-      setLocation(item.href);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
 
   const navItems = [
-    { label: "Home", href: "home", isSection: true },
-    { label: "About", href: "about", isSection: true },
-    { label: "Services", href: "products", isSection: true },
-    { label: "Management", href: "team", isSection: true },
-    { label: "Locations", href: "locations", isSection: true },
-    { label: "Careers", href: "/careers", isSection: false },
-    { label: "Contact", href: "contact", isSection: true },
+    { label: "Home", href: "home" },
+    { label: "About", href: "about" },
+    { label: "Services", href: "products" },
+    { label: "Management", href: "team" },
+    { label: "Locations", href: "locations" },
+    { label: "Contact", href: "contact" },
   ];
 
   return (
@@ -67,7 +46,7 @@ export function Navigation() {
               {navItems.map((item) => (
                 <button
                   key={item.href}
-                  onClick={() => handleNavigation(item)}
+                  onClick={() => scrollToSection(item.href)}
                   className="text-sm text-amber-800 hover:text-amber-600 transition-colors duration-300"
                 >
                   {item.label}
@@ -103,7 +82,7 @@ export function Navigation() {
                   {navItems.map((item) => (
                     <button
                       key={item.href}
-                      onClick={() => handleNavigation(item)}
+                      onClick={() => scrollToSection(item.href)}
                       className="text-left text-lg text-amber-800 hover:text-amber-600 transition-colors duration-300"
                     >
                       {item.label}
