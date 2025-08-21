@@ -32,7 +32,7 @@ export function Footer() {
                 <Facebook size={20} />
               </a>
               <a 
-                href="tel:+919393645644" 
+                href="tel:+918886610001" 
                 className="text-gray-400 hover:text-white transition-colors duration-300"
               >
                 <Phone size={20} />
@@ -84,7 +84,11 @@ export function Footer() {
                   Blog
                 </a>
               </li>
-
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Support
+                </a>
+              </li>
             </ul>
           </div>
         </div>
