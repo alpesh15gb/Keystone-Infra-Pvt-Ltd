@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "buildCommand": "vite build",
+  "outputDirectory": "dist/public",
+  "routes": [
+    {
+      "src": "/api/contact",
+      "dest": "/api/contact.js"
+    },
+    {
+      "src": "/api/apply", 
+      "dest": "/api/apply.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "functions": {
+    "api/contact.js": {
+      "runtime": "nodejs18.x"
+    },
+    "api/apply.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
