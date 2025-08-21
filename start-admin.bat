@@ -28,10 +28,18 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
+REM Check if server.js exists
+if not exist "server.js" (
+    echo Error: server.js not found
+    echo Please make sure you're in the correct deployment directory
+    pause
+    exit /b 1
+)
+
 REM Check if dist/public directory exists
 if not exist "dist\public" (
     echo Error: dist/public directory not found
-    echo Please make sure the application has been built
+    echo Please make sure the application has been built and deployed correctly
     pause
     exit /b 1
 )

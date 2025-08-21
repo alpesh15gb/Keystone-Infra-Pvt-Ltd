@@ -30,6 +30,18 @@ copy "ecosystem.config.js" "%deploydir%\"
 copy "package-production.json" "%deploydir%\package.json"
 copy "web.config" "%deploydir%\"
 
+REM Create a simple package.json for the deployment (server doesn't need it but scripts check for it)
+echo Creating deployment-ready package.json...
+echo { > "%deploydir%\package.json"
+echo   "name": "keystone-infrastructure-production", >> "%deploydir%\package.json"
+echo   "version": "1.0.0", >> "%deploydir%\package.json"
+echo   "type": "module", >> "%deploydir%\package.json"
+echo   "main": "server.js", >> "%deploydir%\package.json"
+echo   "scripts": { >> "%deploydir%\package.json"
+echo     "start": "node server.js" >> "%deploydir%\package.json"
+echo   } >> "%deploydir%\package.json"
+echo } >> "%deploydir%\package.json"
+
 REM Copy deployment scripts
 copy "start.bat" "%deploydir%\"
 copy "install-pm2.bat" "%deploydir%\"
