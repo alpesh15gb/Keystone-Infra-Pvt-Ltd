@@ -4,19 +4,7 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 
 ## Recent Changes (August 21, 2025)
 
-### Windows Server Deployment Package
-- Created comprehensive Windows server deployment solution using Node.js HTTP server
-- Built zero-dependency production server eliminating Express.js compatibility issues
-- Implemented custom HTTP server with static file serving and API endpoint support
-- Created complete deployment package with Windows batch scripts for easy setup
-- Added PM2 process management configuration for production deployment
-- Included IIS web.config for optional reverse proxy integration
-- Built automated backup system and deployment package creation tools
-- Verified server functionality with health check endpoints and CORS support
-- Created detailed deployment documentation for Windows Server hosting
-- Optimized production build (228KB JS, 2KB CSS) ready for self-hosting
-
-### Previous: Vercel Deployment Ready
+### Vercel Deployment Ready
 - Successfully cleaned up all server-side files and Express.js backend components
 - Removed all unused files including Netlify configurations and deployment docs
 - Created working Vercel serverless functions for contact form and job applications
@@ -27,7 +15,11 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Created integrated homepage with working contact form and company showcase
 - Simplified package.json to only essential dependencies to fix npm install timeouts
 
-
+### Local Hosting Setup
+- Created Express.js server for local hosting on port 80 or custom ports
+- Added automated setup scripts for Windows (start-server.bat) and Linux/Mac (start-server.sh)
+- Integrated contact form and job application APIs for local development
+- Created comprehensive local hosting guide with troubleshooting and production tips
 
 ## Previous Changes (August 20, 2025)
 
@@ -109,13 +101,10 @@ Brand colors: Orange for headers, brown/amber tones for paragraphs and body text
 - **Build Tool**: Vite for fast development and optimized production builds
 
 ## Backend Architecture
-- **Production Server**: Custom Node.js HTTP server with zero external dependencies
-- **Static File Serving**: Built-in static file serving with proper MIME type handling
-- **API Endpoints**: Contact form and job application endpoints with JSON response format
-- **Health Monitoring**: Built-in health check endpoint for server monitoring
-- **CORS Support**: Cross-origin resource sharing enabled for external API calls
-- **Windows Compatibility**: Optimized for Windows Server hosting with batch script automation
-- **Process Management**: PM2 configuration for production process management and auto-restart
+- **Serverless Functions**: Netlify Functions for contact forms and job applications
+- **Email Service**: SendGrid integration for form submissions and job applications
+- **API Design**: Serverless functions with JSON request/response format
+- **Deployment**: Frontend-only deployment with serverless backend functions
 - **Development**: Vite development server for frontend with local testing capabilities
 
 ## Data Storage Solutions

@@ -1,131 +1,125 @@
-import http from 'http';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const express = require('express');
+const path = require('path');
+const sgMail = require('@sendgrid/mail');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+const app = express();
 const PORT = process.env.PORT || 80;
-const PUBLIC_DIR = path.join(__dirname, 'dist/public');
 
-// MIME types for static file serving
-const MIME_TYPES = {
-  '.html': 'text/html',
-  '.js': 'application/javascript',
-  '.css': 'text/css',
-  '.json': 'application/json',
-  '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg',
-  '.gif': 'image/gif',
-  '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon',
-  '.woff': 'font/woff',
-  '.woff2': 'font/woff2',
-  '.ttf': 'font/ttf',
-  '.eot': 'application/vnd.ms-fontobject'
-};
-
-function parseBody(req) {
-  return new Promise((resolve) => {
-    let body = '';
-    req.on('data', chunk => {
-      body += chunk.toString();
-    });
-    req.on('end', () => {
-      try {
-        resolve(body ? JSON.parse(body) : {});
-      } catch (e) {
-        resolve({});
-      }
-    });
-  });
+// Set SendGrid API key if available
+if (process.env.SENDGRID_API_KEY) {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 }
 
-function serveFile(filePath, res) {
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(404, { 'Content-Type': 'text/plain' });
-      res.end('File not found');
-      return;
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from dist/public directory
+app.use(express.static(path.join(__dirname, 'dist/public')));
+
+// Contact form API endpoint
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { name, email, phone, message } = req.body;
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: 'Missing required fields' });
     }
-    
-    const ext = path.extname(filePath);
-    const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-    
-    res.writeHead(200, { 'Content-Type': contentType });
-    res.end(data);
-  });
-}
 
-const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url, `http://${req.headers.host}`);
-  const pathname = url.pathname;
-
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
-  // Handle OPTIONS requests
-  if (req.method === 'OPTIONS') {
-    res.writeHead(200);
-    res.end();
-    return;
-  }
-
-  // API Routes
-  if (pathname.startsWith('/api/')) {
-    res.setHeader('Content-Type', 'application/json');
-    
-    if (pathname === '/api/health' && req.method === 'GET') {
-      res.writeHead(200);
-      res.end(JSON.stringify({ status: 'OK', timestamp: new Date().toISOString() }));
-      return;
+    if (!process.env.SENDGRID_API_KEY) {
+      console.log('Contact form submission received:', { name, email, phone, message });
+      return res.status(200).json({ 
+        success: true, 
+        message: 'Contact form received (SendGrid not configured)' 
+      });
     }
-    
-    if (pathname === '/api/contact' && req.method === 'POST') {
-      const body = await parseBody(req);
-      console.log('Contact form submission:', body);
-      res.writeHead(200);
-      res.end(JSON.stringify({ success: true, message: 'Message received' }));
-      return;
-    }
-    
-    if (pathname === '/api/apply' && req.method === 'POST') {
-      const body = await parseBody(req);
-      console.log('Job application submission:', body);
-      res.writeHead(200);
-      res.end(JSON.stringify({ success: true, message: 'Application received' }));
-      return;
-    }
-    
-    // API route not found
-    res.writeHead(404);
-    res.end(JSON.stringify({ error: 'API endpoint not found' }));
-    return;
-  }
 
-  // Static file serving
-  let filePath = path.join(PUBLIC_DIR, pathname);
-  
-  // Check if it's a directory, serve index.html
-  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-    filePath = path.join(filePath, 'index.html');
+    const msg = {
+      to: 'contact@keystoneinfra.com', // Replace with your email
+      from: 'noreply@keystoneinfra.com', // Replace with verified sender
+      subject: `New Contact Form Submission from ${name}`,
+      html: `
+        <h3>New Contact Form Submission</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    };
+
+    await sgMail.send(msg);
+    res.status(200).json({ success: true, message: 'Email sent successfully' });
+  } catch (error) {
+    console.error('Contact form error:', error);
+    res.status(500).json({ error: 'Failed to send message' });
   }
-  
-  // If file doesn't exist, serve index.html (for client-side routing)
-  if (!fs.existsSync(filePath)) {
-    filePath = path.join(PUBLIC_DIR, 'index.html');
-  }
-  
-  serveFile(filePath, res);
 });
 
-server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running on http://0.0.0.0:${PORT}`);
-  console.log(`Local access: http://localhost:${PORT}`);
-  console.log(`Network access: http://[your-server-ip]:${PORT}`);
-  console.log(`Serving files from: ${PUBLIC_DIR}`);
+// Job application API endpoint
+app.post('/api/apply', async (req, res) => {
+  try {
+    const { name, email, phone, position, experience, resume } = req.body;
+
+    if (!name || !email || !position) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    if (!process.env.SENDGRID_API_KEY) {
+      console.log('Job application received:', { name, email, phone, position, experience });
+      return res.status(200).json({ 
+        success: true, 
+        message: 'Job application received (SendGrid not configured)' 
+      });
+    }
+
+    const msg = {
+      to: 'hr@keystoneinfra.com', // Replace with your HR email
+      from: 'noreply@keystoneinfra.com', // Replace with verified sender
+      subject: `New Job Application: ${position} - ${name}`,
+      html: `
+        <h3>New Job Application</h3>
+        <p><strong>Position:</strong> ${position}</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+        <p><strong>Experience:</strong> ${experience || 'Not provided'}</p>
+        ${resume ? `<p><strong>Resume:</strong> Attached</p>` : ''}
+      `,
+    };
+
+    await sgMail.send(msg);
+    res.status(200).json({ success: true, message: 'Application sent successfully' });
+  } catch (error) {
+    console.error('Job application error:', error);
+    res.status(500).json({ error: 'Failed to send application' });
+  }
+});
+
+// Serve React app for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/public', 'index.html'));
+});
+
+// Start server
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Keystone Infrastructure website running on http://localhost:${PORT}`);
+  console.log(`Access your website at: http://localhost:${PORT}`);
+  console.log('Contact form and job applications are working!');
+  
+  if (!process.env.SENDGRID_API_KEY) {
+    console.log('\nNote: Set SENDGRID_API_KEY environment variable to enable email sending');
+    console.log('For now, form submissions will be logged to console');
+  }
+});
+
+// Handle graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('Shutting down server...');
+  process.exit(0);
+});
+
+process.on('SIGINT', () => {
+  console.log('Shutting down server...');
+  process.exit(0);
 });
