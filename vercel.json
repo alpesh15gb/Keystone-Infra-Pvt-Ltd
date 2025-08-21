@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "vite build",
+  "buildCommand": "npm install @replit/vite-plugin-runtime-error-modal @replit/vite-plugin-cartographer @tanstack/react-query tailwindcss-animate @tailwindcss/typography --save-dev && vite build",
   "outputDirectory": "dist/public",
   "rewrites": [
     {
