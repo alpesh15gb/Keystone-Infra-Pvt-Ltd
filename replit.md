@@ -2,7 +2,17 @@
 
 This is a full-stack web application for Keystone Infra Pvt. Ltd., a professional infrastructure development company. The application features a comprehensive marketing website with company information, services, projects portfolio, certifications, and contact functionality. Built using React on the frontend and Express.js on the backend, the project showcases a civil engineering and infrastructure development company with 20+ years of experience across India.
 
-## Recent Changes (August 20, 2025)
+## Recent Changes (August 21, 2025)
+
+### Netlify Deployment Preparation
+- Cleaned up all server-side files and Express.js backend components
+- Removed deployment documentation files and Replit-specific configurations  
+- Created Netlify serverless functions for contact form and job applications
+- Converted full-stack application to frontend-only with Netlify Functions
+- Updated contact and job application forms to use Netlify endpoints
+- Prepared project for professional Netlify hosting with SendGrid integration
+
+## Previous Changes (August 20, 2025)
 
 ### Vercel Deployment Setup
 - Created complete Vercel deployment configuration with `vercel.json` and serverless API setup
@@ -82,12 +92,11 @@ Brand colors: Orange for headers, brown/amber tones for paragraphs and body text
 - **Build Tool**: Vite for fast development and optimized production builds
 
 ## Backend Architecture
-- **Runtime**: Node.js with Express.js framework for REST API endpoints
-- **Language**: TypeScript for type safety across the full stack
-- **API Design**: RESTful endpoints with JSON request/response format
-- **Storage Strategy**: In-memory storage implementation with interface abstraction for future database migration
-- **Middleware**: Custom request logging, JSON parsing, and error handling
-- **Development**: Hot reload with Vite integration for seamless full-stack development
+- **Serverless Functions**: Netlify Functions for contact forms and job applications
+- **Email Service**: SendGrid integration for form submissions and job applications
+- **API Design**: Serverless functions with JSON request/response format
+- **Deployment**: Frontend-only deployment with serverless backend functions
+- **Development**: Vite development server for frontend with local testing capabilities
 
 ## Data Storage Solutions
 - **Current Implementation**: In-memory storage using Map data structures for rapid development
