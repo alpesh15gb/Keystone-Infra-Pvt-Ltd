@@ -9,10 +9,11 @@ This is a full-stack web application for Keystone Infra Pvt. Ltd., a professiona
 - Removed all unused files including Netlify configurations and deployment docs
 - Created working Vercel serverless functions for contact form and job applications
 - Converted full-stack application to frontend-only with Vercel Functions
-- Fixed build configuration and created optimized production bundle (225KB JS, 15KB CSS)
+- Fixed build configuration and created optimized production bundle (227KB JS, 16KB CSS)
 - Updated contact and job application forms to use Vercel API endpoints
 - Prepared project for professional Vercel hosting with proper `vercel.json` configuration
 - Created integrated homepage with working contact form and company showcase
+- Simplified package.json to only essential dependencies to fix npm install timeouts
 
 ## Previous Changes (August 20, 2025)
 

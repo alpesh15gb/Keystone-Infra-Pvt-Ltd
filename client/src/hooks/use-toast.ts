@@ -1,16 +1,15 @@
 import * as React from "react"
-import type {
-  ToastActionElement,
-  ToastProps,
-} from "../components/ui/toast"
 
-const TOAST_LIMIT = 1
-const TOAST_REMOVE_DELAY = 1000000
+type ToastProps = {
+  title?: string
+  description?: string
+  variant?: "default" | "destructive"
+}
 
-type ToasterToast = ToastProps & {
+type ToastActionElement = React.ReactElement
+
+type Toast = ToastProps & {
   id: string
-  title?: React.ReactNode
-  description?: React.ReactNode
   action?: ToastActionElement
 }
 
@@ -33,23 +32,23 @@ type ActionType = typeof actionTypes
 type Action =
   | {
       type: ActionType["ADD_TOAST"]
-      toast: ToasterToast
+      toast: Toast
     }
   | {
       type: ActionType["UPDATE_TOAST"]
-      toast: Partial<ToasterToast>
+      toast: Partial<Toast>
     }
   | {
       type: ActionType["DISMISS_TOAST"]
-      toastId?: ToasterToast["id"]
+      toastId?: Toast["id"]
     }
   | {
       type: ActionType["REMOVE_TOAST"]
-      toastId?: ToasterToast["id"]
+      toastId?: Toast["id"]
     }
 
 interface State {
-  toasts: ToasterToast[]
+  toasts: Toast[]
 }
 
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>()
@@ -65,7 +64,7 @@ const addToRemoveQueue = (toastId: string) => {
       type: "REMOVE_TOAST",
       toastId: toastId,
     })
-  }, TOAST_REMOVE_DELAY)
+  }, 1000000)
 
   toastTimeouts.set(toastId, timeout)
 }
@@ -75,7 +74,7 @@ export const reducer = (state: State, action: Action): State => {
     case "ADD_TOAST":
       return {
         ...state,
-        toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT),
+        toasts: [action.toast, ...state.toasts].slice(0, 1),
       }
 
     case "UPDATE_TOAST":
@@ -134,12 +133,12 @@ function dispatch(action: Action) {
   })
 }
 
-type Toast = Omit<ToasterToast, "id">
+type ToastInput = Omit<ToastProps, "id">
 
-function toast({ ...props }: Toast) {
+function toast({ ...props }: ToastInput) {
   const id = genId()
 
-  const update = (props: ToasterToast) =>
+  const update = (props: ToastProps) =>
     dispatch({
       type: "UPDATE_TOAST",
       toast: { ...props, id },
