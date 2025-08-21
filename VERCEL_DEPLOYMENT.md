@@ -9,11 +9,11 @@
 - ✅ Temporary files and caches (kept only essential Replit files)
 
 ### Added for Vercel
-- ✅ `vercel.json` - Professional deployment configuration
-- ✅ `api/contact.js` - Contact form serverless function
-- ✅ `api/apply.js` - Job application serverless function
+- ✅ `vercel.json` - Fixed deployment configuration with proper rewrites
+- ✅ `api/contact.js` - Contact form serverless function (Node.js runtime)
+- ✅ `api/apply.js` - Job application serverless function (Node.js runtime)
 - ✅ Working contact form integrated into homepage
-- ✅ Optimized production build (225KB JS, 15KB CSS)
+- ✅ Optimized production build (227KB JS, 16KB CSS)
 
 ## 🌐 Deploy to Vercel Now
 
