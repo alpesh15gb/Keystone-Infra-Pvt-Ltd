@@ -1,30 +1,31 @@
-import { Router } from "wouter";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ThemeProvider } from "./components/theme-provider";
-import { Toaster } from "./components/ui/toaster";
-import Home from "./pages/home";
+import { Switch, Route } from "wouter";
+import { queryClient } from "./lib/queryClient";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import Home from "@/pages/home";
+import { Careers } from "@/pages/careers";
+import NotFound from "@/pages/not-found";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 60 * 1000, // 1 minute
-      retry: (failureCount, error: any) => {
-        if (error?.status === 404) return false;
-        return failureCount < 3;
-      },
-    },
-  },
-});
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/careers" component={Careers} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
 
-export default function App() {
+function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-        <Router>
-          <Home />
-        </Router>
+      <TooltipProvider>
         <Toaster />
-      </ThemeProvider>
+        <Router />
+      </TooltipProvider>
     </QueryClientProvider>
   );
 }
+
+export default App;
