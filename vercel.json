@@ -1,16 +1,4 @@
 {
-  "version": 2,
   "buildCommand": "vite build",
-  "outputDirectory": "dist/public",
-  "installCommand": "npm install",
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  "outputDirectory": "dist/public"
 }

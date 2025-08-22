@@ -1,4 +1,13 @@
-import { insertContactSubmissionSchema } from "./shared/schema.js";
+const { z } = require('zod');
+
+const insertContactSubmissionSchema = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  email: z.string().email("Valid email is required"),
+  company: z.string().min(1, "Company is required"),
+  helpType: z.string().min(1, "Help type is required"),
+  message: z.string().min(1, "Message is required")
+});
 
 // Simple in-memory storage for Vercel deployment
 let contactSubmissions = [];
@@ -12,8 +21,8 @@ async function sendContactEmail(formData) {
       return false;
     }
 
-    const sgMail = await import('@sendgrid/mail');
-    sgMail.default.setApiKey(process.env.SENDGRID_API_KEY);
+    const sgMail = require('@sendgrid/mail');
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     const emailContent = `
       New Contact Form Submission:
@@ -35,7 +44,7 @@ async function sendContactEmail(formData) {
       html: emailContent.replace(/\n/g, '<br>')
     };
 
-    await sgMail.default.send(msg);
+    await sgMail.send(msg);
     return true;
   } catch (error) {
     console.error('Email sending failed:', error);
@@ -43,7 +52,7 @@ async function sendContactEmail(formData) {
   }
 }
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -92,4 +101,4 @@ export default async function handler(req, res) {
       message: "Invalid form data. Please check all fields and try again." 
     });
   }
-}
+};
