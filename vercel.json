@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "vite build",
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
-  "framework": null,
   "functions": {
-    "api/contact.js": {
-      "runtime": "nodejs18.x"
+    "api/**/*.js": {
+      "runtime": "@vercel/node@3.0.7"
     }
   },
   "routes": [
@@ -18,8 +17,5 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
