@@ -2,12 +2,17 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Shield, Globe, Play, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import EditableText from "@/components/editable-text";
 // Lazy load images for better performance
 import highwayConstruction from "@assets/generated_images/Highway_construction_infrastructure_scene_4a33cfd9.png";
 import damConstruction from "@assets/generated_images/Dam_construction_engineering_project_5220be38.png";
 import bridgeProject from "@assets/generated_images/Bridge_construction_infrastructure_project_67b0e816.png";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  isEditMode?: boolean;
+}
+
+export function HeroSection({ isEditMode = false }: HeroSectionProps) {
   // Reduced to 3 images for better performance
   const backgroundImages = [
     highwayConstruction,
@@ -73,24 +78,36 @@ export function HeroSection() {
               className="text-center"
             >
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-6">
+              <EditableText
+                id="hero-title"
+                isEditMode={isEditMode}
+                element="h1"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-6"
+              >
                 <span className="block">Turning</span>
                 <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-red-500 bg-clip-text text-transparent">
                   Vision
                 </span>{" "}
                 <span className="block">into Infrastructure</span>
-              </h1>
+              </EditableText>
 
               {/* Subtitle */}
-              <motion.p 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto px-4"
               >
-                Building tomorrow's infrastructure today. Over 20 years of engineering excellence 
-                across India, delivering innovative solutions for complex construction challenges.
-              </motion.p>
+                <EditableText
+                  id="hero-subtitle"
+                  isEditMode={isEditMode}
+                  element="p"
+                  multiline={true}
+                  className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto px-4"
+                >
+                  Building tomorrow's infrastructure today. Over 20 years of engineering excellence 
+                  across India, delivering innovative solutions for complex construction challenges.
+                </EditableText>
+              </motion.div>
 
 
 
