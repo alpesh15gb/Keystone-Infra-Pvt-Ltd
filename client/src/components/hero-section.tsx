@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, Shield, Globe, Play, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import EditableText from "@/components/editable-text";
+import EditableImage from "@/components/editable-image";
 // Lazy load images for better performance
 import highwayConstruction from "@assets/generated_images/Highway_construction_infrastructure_scene_4a33cfd9.png";
 import damConstruction from "@assets/generated_images/Dam_construction_engineering_project_5220be38.png";
@@ -13,14 +14,23 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ isEditMode = false }: HeroSectionProps) {
-  // Reduced to 3 images for better performance
-  const backgroundImages = [
+  // State for background images (can be updated via visual editor)
+  const [backgroundImages, setBackgroundImages] = useState([
     highwayConstruction,
     damConstruction,
     bridgeProject
-  ];
+  ]);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleImageChange = (id: string, newSrc: string) => {
+    const imageIndex = parseInt(id.split('-')[2]) - 1; // Extract index from id like 'hero-background-1'
+    if (imageIndex >= 0 && imageIndex < backgroundImages.length) {
+      const newImages = [...backgroundImages];
+      newImages[imageIndex] = newSrc;
+      setBackgroundImages(newImages);
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {

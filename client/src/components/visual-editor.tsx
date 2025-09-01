@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Edit3, Save, Palette, Type, Image, Settings, Eye, Code, Download, Lock } from 'lucide-react';
 import AdminLogin from '@/components/admin-login';
+import ImageUploader from '@/components/image-uploader';
 
 interface VisualEditorProps {
   isEditMode: boolean;
@@ -19,6 +20,7 @@ interface EditableContent {
   type: 'text' | 'heading' | 'color' | 'image';
   value: string;
   label: string;
+  currentImage?: string;
 }
 
 export function VisualEditor({ isEditMode, setIsEditMode }: VisualEditorProps) {
@@ -33,7 +35,11 @@ export function VisualEditor({ isEditMode, setIsEditMode }: VisualEditorProps) {
     { id: 'secondary-color', type: 'color', value: '#92400e', label: 'Secondary Brown Color' },
     { id: 'about-title', type: 'heading', value: 'About Keystone Infra', label: 'About Section Title' },
     { id: 'contact-email', type: 'text', value: 'contact@keystoneinfra.in', label: 'Contact Email' },
-    { id: 'contact-phone', type: 'text', value: '+919393645644', label: 'Contact Phone' }
+    { id: 'contact-phone', type: 'text', value: '+919393645644', label: 'Contact Phone' },
+    { id: 'hero-background-1', type: 'image', value: '/images/slider-1.jpg', label: 'Hero Background Image 1', currentImage: '/images/slider-1.jpg' },
+    { id: 'hero-background-2', type: 'image', value: '/images/slider-2.jpg', label: 'Hero Background Image 2', currentImage: '/images/slider-2.jpg' },
+    { id: 'hero-background-3', type: 'image', value: '/images/slider-3.jpg', label: 'Hero Background Image 3', currentImage: '/images/slider-3.jpg' },
+    { id: 'company-logo', type: 'image', value: '/images/keystone-logo-new.png', label: 'Company Logo', currentImage: '/images/keystone-logo-new.png' }
   ]);
 
   const [selectedContent, setSelectedContent] = useState<EditableContent | null>(null);
@@ -258,15 +264,24 @@ export function VisualEditor({ isEditMode, setIsEditMode }: VisualEditorProps) {
             <TabsContent value="images" className="space-y-4">
               <div className="grid gap-4">
                 <h3 className="text-lg font-semibold">Image Management</h3>
+                {editableContent.filter(item => item.type === 'image').map((item) => (
+                  <ImageUploader
+                    key={item.id}
+                    currentImage={item.currentImage}
+                    onImageChange={(imageUrl) => handleContentEdit(item.id, imageUrl)}
+                    label={item.label}
+                  />
+                ))}
+                
                 <Card>
                   <CardContent className="p-4">
-                    <p className="text-gray-600 mb-4">
-                      Image editing will be available in the next update. Currently, you can:
-                    </p>
+                    <h4 className="font-medium mb-3">Image Guidelines</h4>
                     <ul className="list-disc list-inside space-y-2 text-sm text-gray-600">
-                      <li>Replace images by uploading new files to the /client/public/images/ folder</li>
-                      <li>Update image references in the code</li>
-                      <li>Use the existing slider images that are already optimized</li>
+                      <li>Upload high-quality images (recommended: 1920x1080 for backgrounds)</li>
+                      <li>Keep file sizes under 10MB for better performance</li>
+                      <li>Use JPG for photos, PNG for logos with transparency</li>
+                      <li>Hero background images work best with dark or muted colors</li>
+                      <li>Images are automatically optimized for web display</li>
                     </ul>
                   </CardContent>
                 </Card>
