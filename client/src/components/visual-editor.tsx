@@ -6,7 +6,8 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Edit3, Save, Palette, Type, Image, Settings, Eye, Code, Download } from 'lucide-react';
+import { Edit3, Save, Palette, Type, Image, Settings, Eye, Code, Download, Lock } from 'lucide-react';
+import AdminLogin from '@/components/admin-login';
 
 interface VisualEditorProps {
   isEditMode: boolean;
@@ -21,6 +22,8 @@ interface EditableContent {
 }
 
 export function VisualEditor({ isEditMode, setIsEditMode }: VisualEditorProps) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showLoginDialog, setShowLoginDialog] = useState(false);
   const [editableContent, setEditableContent] = useState<EditableContent[]>([
     { id: 'hero-title', type: 'heading', value: 'Turning Vision into Infrastructure', label: 'Hero Title' },
     { id: 'hero-subtitle', type: 'text', value: 'Where Quality Meets Integrity Vision Builds Sustainablility', label: 'Hero Subtitle' },
@@ -86,14 +89,42 @@ export function VisualEditor({ isEditMode, setIsEditMode }: VisualEditorProps) {
     URL.revokeObjectURL(url);
   };
 
+  const handleEditorClick = () => {
+    if (!isAuthenticated) {
+      setShowLoginDialog(true);
+    } else {
+      setIsEditMode(!isEditMode);
+    }
+  };
+
+  const handleLogin = (password: string) => {
+    setIsAuthenticated(true);
+    // Store auth state in session storage (will be cleared when browser closes)
+    sessionStorage.setItem('admin-authenticated', 'true');
+  };
+
+  // Check for existing authentication on component mount
+  useEffect(() => {
+    const authState = sessionStorage.getItem('admin-authenticated');
+    if (authState === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   return (
     <div className="fixed top-4 right-4 z-50">
+      <AdminLogin 
+        isOpen={showLoginDialog}
+        onClose={() => setShowLoginDialog(false)}
+        onLogin={handleLogin}
+      />
+      
       <Dialog>
         <DialogTrigger asChild>
           <Button
             variant={isEditMode ? "destructive" : "default"}
             className="mb-2 shadow-lg"
-            onClick={() => setIsEditMode(!isEditMode)}
+            onClick={handleEditorClick}
           >
             {isEditMode ? (
               <>
@@ -102,8 +133,8 @@ export function VisualEditor({ isEditMode, setIsEditMode }: VisualEditorProps) {
               </>
             ) : (
               <>
-                <Edit3 className="w-4 h-4 mr-2" />
-                Visual Editor
+                {isAuthenticated ? <Edit3 className="w-4 h-4 mr-2" /> : <Lock className="w-4 h-4 mr-2" />}
+                {isAuthenticated ? 'Visual Editor' : 'Admin Login'}
               </>
             )}
           </Button>
