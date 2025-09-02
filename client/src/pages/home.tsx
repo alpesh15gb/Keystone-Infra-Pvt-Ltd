@@ -12,6 +12,7 @@ import { CertificationsSection } from "@/components/certifications-section";
 import { CSRSection } from "@/components/csr-section";
 import { VideoShowcaseSection } from "@/components/video-showcase-section";
 import { BridgeProjectsGallery } from "@/components/bridge-projects-gallery";
+import { BuildingProjectsGallery } from "@/components/building-projects-gallery";
 
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
@@ -37,6 +38,7 @@ export default function Home({ isEditMode }: HomeProps) {
       <CSRSection />
       <VideoShowcaseSection />
       <BridgeProjectsGallery isEditMode={isEditMode} />
+      <BuildingProjectsGallery isEditMode={isEditMode} />
 
       <ContactSection />
       <Footer />
