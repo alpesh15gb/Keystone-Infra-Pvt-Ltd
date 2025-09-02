@@ -192,29 +192,32 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
     <section className="py-20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-orange-600 mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-600 mb-3 md:mb-4 px-4">
             Our Project Portfolio
           </h2>
-          <p className="text-xl text-amber-800 mb-6">
+          <p className="text-lg md:text-xl text-amber-800 mb-4 md:mb-6 px-4">
             Excellence in Infrastructure Development
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-600 mx-auto"></div>
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-600 mx-auto"></div>
         </div>
 
         {/* Category Navigation */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 px-4">
           {categories.map((category, index) => (
             <button
               key={category.id}
               onClick={() => setActiveCategory(index)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+              className={`px-3 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold transition-all duration-300 ${
                 activeCategory === index
                   ? 'bg-orange-600 text-white shadow-lg transform scale-105'
                   : 'bg-white text-amber-800 hover:bg-orange-50 shadow-md border-2 border-orange-200'
               }`}
             >
-              {category.title}
+              <span className="hidden sm:inline">{category.title}</span>
+              <span className="sm:hidden">
+                {category.title.split(' ')[0]}
+              </span>
             </button>
           ))}
         </div>
@@ -227,42 +230,42 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className={`bg-gradient-to-br ${currentCategory.bgColor} rounded-3xl p-8 md:p-12`}
+            className={`bg-gradient-to-br ${currentCategory.bgColor} rounded-2xl md:rounded-3xl p-4 md:p-8 lg:p-12 mx-2 md:mx-0`}
           >
             {/* Category Header */}
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-orange-600 mb-3">
+            <div className="text-center mb-6 md:mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-orange-600 mb-2 md:mb-3 px-2">
                 {currentCategory.title}
               </h3>
-              <p className="text-amber-800 max-w-2xl mx-auto">
+              <p className="text-amber-800 max-w-2xl mx-auto text-sm md:text-base px-4">
                 {currentCategory.description}
               </p>
             </div>
 
             {/* Project Slider */}
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="bg-white rounded-xl md:rounded-2xl shadow-xl overflow-hidden">
                 {/* Content Section - Above Image */}
-                <div className="p-8 md:p-10 text-center">
-                  <div className="text-orange-600 text-sm font-semibold mb-2">
+                <div className="p-4 md:p-8 lg:p-10 text-center">
+                  <div className="text-orange-600 text-xs md:text-sm font-semibold mb-2">
                     {currentProject.specs}
                   </div>
-                  <h4 className="text-2xl md:text-3xl font-bold text-amber-900 mb-4 leading-tight">
+                  <h4 className="text-lg md:text-2xl lg:text-3xl font-bold text-amber-900 mb-3 md:mb-4 leading-tight px-2">
                     {currentProject.title}
                   </h4>
-                  <p className="text-amber-800 leading-relaxed mb-4 max-w-3xl mx-auto">
+                  <p className="text-amber-800 leading-relaxed mb-3 md:mb-4 max-w-3xl mx-auto text-sm md:text-base px-2">
                     {currentProject.description}
                   </p>
                   
                   {/* Project Counter */}
-                  <div className="text-sm text-orange-600">
+                  <div className="text-xs md:text-sm text-orange-600">
                     Project {currentSlideIndex + 1} of {currentCategory.projects.length}
                   </div>
                 </div>
 
                 {/* Image Section - Full Width */}
                 <div className="relative">
-                  <div className="relative h-96 md:h-[500px] overflow-hidden group">
+                  <div className="relative h-64 md:h-96 lg:h-[500px] overflow-hidden group">
                     <img
                       src={currentProject.imageSrc}
                       alt={currentProject.title}
@@ -274,27 +277,27 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
                       <>
                         <button
                           onClick={() => prevSlide(currentCategory.id, currentCategory.projects.length)}
-                          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-2 rounded-full shadow-lg transition-all duration-200"
+                          className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-1.5 md:p-2 rounded-full shadow-lg transition-all duration-200"
                         >
-                          <ChevronLeft className="w-6 h-6" />
+                          <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
                         </button>
                         <button
                           onClick={() => nextSlide(currentCategory.id, currentCategory.projects.length)}
-                          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-2 rounded-full shadow-lg transition-all duration-200"
+                          className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-1.5 md:p-2 rounded-full shadow-lg transition-all duration-200"
                         >
-                          <ChevronRight className="w-6 h-6" />
+                          <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
                         </button>
                       </>
                     )}
 
                     {/* Slide Indicators */}
                     {currentCategory.projects.length > 1 && (
-                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                      <div className="absolute bottom-3 md:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1.5 md:space-x-2">
                         {currentCategory.projects.map((_, index) => (
                           <button
                             key={index}
                             onClick={() => setCurrentSlide(prev => ({ ...prev, [currentCategory.id]: index }))}
-                            className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                            className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-200 ${
                               index === currentSlideIndex
                                 ? 'bg-orange-600'
                                 : 'bg-white/50 hover:bg-white/75'
