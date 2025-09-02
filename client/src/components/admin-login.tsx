@@ -1,87 +1,86 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Lock, Eye, EyeOff } from 'lucide-react';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Lock, User } from "lucide-react";
 
 interface AdminLoginProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onLogin: (password: string) => void;
+  onSuccess: () => void;
 }
 
-export function AdminLogin({ isOpen, onClose, onLogin }: AdminLoginProps) {
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
+export default function AdminLogin({ onSuccess }: AdminLoginProps) {
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Simple password check - in production, this should be more secure
-    if (password === 'keystone2025') {
-      onLogin(password);
-      setPassword('');
-      setError('');
-      onClose();
+    setIsLoading(true);
+    setError("");
+
+    // Simple password check - in production this would be a proper auth system
+    if (password === "keystone2025") {
+      setTimeout(() => {
+        onSuccess();
+        setIsLoading(false);
+      }, 500);
     } else {
-      setError('Incorrect password');
-      setPassword('');
+      setTimeout(() => {
+        setError("Invalid password. Please try again.");
+        setIsLoading(false);
+        setPassword("");
+      }, 500);
     }
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <Lock className="w-5 h-5" />
-            Admin Access Required
-          </DialogTitle>
-        </DialogHeader>
-        
+    <Card className="shadow-xl">
+      <CardHeader className="text-center">
+        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Lock className="w-8 h-8 text-blue-600" />
+        </div>
+        <CardTitle className="text-xl">Admin Access</CardTitle>
+      </CardHeader>
+      <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label className="text-sm font-medium">Enter admin password:</label>
+            <label className="text-sm font-medium text-gray-700">Admin Password</label>
             <div className="relative">
+              <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
               <Input
-                type={showPassword ? 'text' : 'password'}
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                className="pr-10"
-                autoFocus
+                placeholder="Enter admin password"
+                className="pl-10"
+                required
+                data-testid="admin-password-input"
               />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-              >
-                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-              </button>
             </div>
-            {error && (
-              <p className="text-red-500 text-sm">{error}</p>
-            )}
           </div>
           
-          <div className="flex gap-3">
-            <Button type="submit" className="flex-1">
-              Access Editor
-            </Button>
-            <Button type="button" variant="outline" onClick={onClose}>
-              Cancel
-            </Button>
-          </div>
+          {error && (
+            <div className="text-red-600 text-sm bg-red-50 p-2 rounded">
+              {error}
+            </div>
+          )}
+          
+          <Button
+            type="submit"
+            disabled={isLoading || !password}
+            className="w-full bg-blue-600 hover:bg-blue-700"
+            data-testid="admin-login-button"
+          >
+            {isLoading ? "Verifying..." : "Access Admin Panel"}
+          </Button>
         </form>
         
-        <div className="text-xs text-gray-500 bg-blue-50 p-3 rounded">
-          <strong>Note:</strong> This editor allows you to modify website content in real-time. 
-          Only authorized administrators should have access.
+        <div className="mt-4 text-center">
+          <p className="text-xs text-gray-500">
+            Authorized personnel only
+          </p>
         </div>
-      </DialogContent>
-    </Dialog>
+      </CardContent>
+    </Card>
   );
 }
-
-export default AdminLogin;
