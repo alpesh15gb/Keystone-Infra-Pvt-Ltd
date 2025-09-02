@@ -11,8 +11,7 @@ import { EsteemedClientsSection } from "@/components/esteemed-clients-section";
 import { CertificationsSection } from "@/components/certifications-section";
 import { CSRSection } from "@/components/csr-section";
 import { VideoShowcaseSection } from "@/components/video-showcase-section";
-
-
+import { BridgeProjectsGallery } from "@/components/bridge-projects-gallery";
 
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
@@ -37,6 +36,7 @@ export default function Home({ isEditMode }: HomeProps) {
       <CertificationsSection />
       <CSRSection />
       <VideoShowcaseSection />
+      <BridgeProjectsGallery isEditMode={isEditMode} />
 
       <ContactSection />
       <Footer />
