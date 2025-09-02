@@ -242,69 +242,67 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
             {/* Project Slider */}
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="md:flex">
-                  {/* Image Section */}
-                  <div className="md:w-2/3 relative">
-                    <div className="relative h-96 md:h-[500px] overflow-hidden group">
-                      <img
-                        src={currentProject.imageSrc}
-                        alt={currentProject.title}
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                      />
-                      
-                      {/* Navigation Arrows */}
-                      {currentCategory.projects.length > 1 && (
-                        <>
-                          <button
-                            onClick={() => prevSlide(currentCategory.id, currentCategory.projects.length)}
-                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-2 rounded-full shadow-lg transition-all duration-200"
-                          >
-                            <ChevronLeft className="w-6 h-6" />
-                          </button>
-                          <button
-                            onClick={() => nextSlide(currentCategory.id, currentCategory.projects.length)}
-                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-2 rounded-full shadow-lg transition-all duration-200"
-                          >
-                            <ChevronRight className="w-6 h-6" />
-                          </button>
-                        </>
-                      )}
-
-                      {/* Slide Indicators */}
-                      {currentCategory.projects.length > 1 && (
-                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                          {currentCategory.projects.map((_, index) => (
-                            <button
-                              key={index}
-                              onClick={() => setCurrentSlide(prev => ({ ...prev, [currentCategory.id]: index }))}
-                              className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                                index === currentSlideIndex
-                                  ? 'bg-orange-600'
-                                  : 'bg-white/50 hover:bg-white/75'
-                              }`}
-                            />
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                {/* Content Section - Above Image */}
+                <div className="p-8 md:p-10 text-center">
+                  <div className="text-orange-600 text-sm font-semibold mb-2">
+                    {currentProject.specs}
                   </div>
+                  <h4 className="text-2xl md:text-3xl font-bold text-amber-900 mb-4 leading-tight">
+                    {currentProject.title}
+                  </h4>
+                  <p className="text-amber-800 leading-relaxed mb-4 max-w-3xl mx-auto">
+                    {currentProject.description}
+                  </p>
+                  
+                  {/* Project Counter */}
+                  <div className="text-sm text-orange-600">
+                    Project {currentSlideIndex + 1} of {currentCategory.projects.length}
+                  </div>
+                </div>
 
-                  {/* Content Section */}
-                  <div className="md:w-1/3 p-8 md:p-10 flex flex-col justify-center">
-                    <div className="text-orange-600 text-sm font-semibold mb-2">
-                      {currentProject.specs}
-                    </div>
-                    <h4 className="text-2xl font-bold text-amber-900 mb-4 leading-tight">
-                      {currentProject.title}
-                    </h4>
-                    <p className="text-amber-800 leading-relaxed mb-6">
-                      {currentProject.description}
-                    </p>
+                {/* Image Section - Full Width */}
+                <div className="relative">
+                  <div className="relative h-96 md:h-[500px] overflow-hidden group">
+                    <img
+                      src={currentProject.imageSrc}
+                      alt={currentProject.title}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
                     
-                    {/* Project Counter */}
-                    <div className="text-sm text-orange-600">
-                      Project {currentSlideIndex + 1} of {currentCategory.projects.length}
-                    </div>
+                    {/* Navigation Arrows */}
+                    {currentCategory.projects.length > 1 && (
+                      <>
+                        <button
+                          onClick={() => prevSlide(currentCategory.id, currentCategory.projects.length)}
+                          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-2 rounded-full shadow-lg transition-all duration-200"
+                        >
+                          <ChevronLeft className="w-6 h-6" />
+                        </button>
+                        <button
+                          onClick={() => nextSlide(currentCategory.id, currentCategory.projects.length)}
+                          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-2 rounded-full shadow-lg transition-all duration-200"
+                        >
+                          <ChevronRight className="w-6 h-6" />
+                        </button>
+                      </>
+                    )}
+
+                    {/* Slide Indicators */}
+                    {currentCategory.projects.length > 1 && (
+                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {currentCategory.projects.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentSlide(prev => ({ ...prev, [currentCategory.id]: index }))}
+                            className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                              index === currentSlideIndex
+                                ? 'bg-orange-600'
+                                : 'bg-white/50 hover:bg-white/75'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
