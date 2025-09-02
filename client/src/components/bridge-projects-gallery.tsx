@@ -91,7 +91,7 @@ export function BridgeProjectsGallery({ isEditMode = false }: BridgeProjectsGall
               {/* Project Card */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 {/* Image Container */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-64 overflow-hidden rounded-t-xl">
                   {isEditMode ? (
                     <EditableImage
                       id={project.id}
@@ -99,13 +99,13 @@ export function BridgeProjectsGallery({ isEditMode = false }: BridgeProjectsGall
                       alt={project.title}
                       isEditMode={isEditMode}
                       onImageChange={handleImageChange}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover transform group-hover:scale-125 transition-transform duration-700 ease-in-out"
                     />
                   ) : (
                     <img
                       src={project.imageSrc}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover transform group-hover:scale-125 transition-transform duration-700 ease-in-out"
                     />
                   )}
                   
