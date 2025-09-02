@@ -14,6 +14,7 @@ import { VideoShowcaseSection } from "@/components/video-showcase-section";
 import { BridgeProjectsGallery } from "@/components/bridge-projects-gallery";
 import { BuildingProjectsGallery } from "@/components/building-projects-gallery";
 import { WaterProjectsGallery } from "@/components/water-projects-gallery";
+import { RoadProjectsGallery } from "@/components/road-projects-gallery";
 
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
@@ -41,6 +42,7 @@ export default function Home({ isEditMode }: HomeProps) {
       <BridgeProjectsGallery isEditMode={isEditMode} />
       <BuildingProjectsGallery isEditMode={isEditMode} />
       <WaterProjectsGallery isEditMode={isEditMode} />
+      <RoadProjectsGallery isEditMode={isEditMode} />
 
       <ContactSection />
       <Footer />
