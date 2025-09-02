@@ -193,12 +193,22 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-600 mb-3 md:mb-4 px-4">
+          <EditableText
+            id="projects-title"
+            isEditMode={isEditMode}
+            element="h2"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-600 mb-3 md:mb-4 px-4"
+          >
             Our Project Portfolio
-          </h2>
-          <p className="text-lg md:text-xl text-amber-800 mb-4 md:mb-6 px-4">
+          </EditableText>
+          <EditableText
+            id="projects-subtitle"
+            isEditMode={isEditMode}
+            element="p"
+            className="text-lg md:text-xl text-amber-800 mb-4 md:mb-6 px-4"
+          >
             Excellence in Infrastructure Development
-          </p>
+          </EditableText>
           <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-600 mx-auto"></div>
         </div>
 
@@ -234,12 +244,22 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
           >
             {/* Category Header */}
             <div className="text-center mb-6 md:mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-orange-600 mb-2 md:mb-3 px-2">
+              <EditableText
+                id={`category-title-${currentCategory.id}`}
+                isEditMode={isEditMode}
+                element="h3"
+                className="text-2xl md:text-3xl font-bold text-orange-600 mb-2 md:mb-3 px-2"
+              >
                 {currentCategory.title}
-              </h3>
-              <p className="text-amber-800 max-w-2xl mx-auto text-sm md:text-base px-4">
+              </EditableText>
+              <EditableText
+                id={`category-description-${currentCategory.id}`}
+                isEditMode={isEditMode}
+                element="p"
+                className="text-amber-800 max-w-2xl mx-auto text-sm md:text-base px-4"
+              >
                 {currentCategory.description}
-              </p>
+              </EditableText>
             </div>
 
             {/* Project Slider */}

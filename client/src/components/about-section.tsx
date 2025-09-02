@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building, Users, Award, MapPin } from "lucide-react";
+import EditableText from '@/components/editable-text';
 
 const stats = [
   {
@@ -41,7 +42,11 @@ const stats = [
   },
 ];
 
-export function AboutSection() {
+interface AboutSectionProps {
+  isEditMode?: boolean;
+}
+
+export function AboutSection({ isEditMode = false }: AboutSectionProps) {
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-orange-50/50 to-amber-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,24 +57,39 @@ export function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.h2 
-            className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            KeystoneInfra
-          </motion.h2>
+            <EditableText
+              id="about-company-name"
+              isEditMode={isEditMode}
+              element="h2"
+              className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
+            >
+              KeystoneInfra
+            </EditableText>
+          </motion.div>
           <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-amber-900 leading-relaxed mb-6 text-justify">
-              Keystone Infra Pvt Ltd, founded by <span className="font-semibold text-orange-600">D.M. Ramesh in 2005</span>, is an established civil engineering 
-              and infrastructure development company with over <span className="font-semibold text-orange-600">20 years of experience</span>.
-            </p>
-            <p className="text-lg text-amber-800 leading-relaxed text-justify">
-              An <span className="font-semibold text-orange-600">ISO 9001:2015 certified</span> infrastructure company focusing on improving efficiency, promoting economic growth and reducing 
-              environmental impact. We strive to provide exceptional service and build long-term relationships 
-              with our clients, partners and communities.
-            </p>
+            <EditableText
+              id="about-description-1"
+              isEditMode={isEditMode}
+              element="p"
+              multiline={true}
+              className="text-xl text-amber-900 leading-relaxed mb-6 text-justify"
+            >
+              Keystone Infra Pvt Ltd, founded by D.M. Ramesh in 2005, is an established civil engineering and infrastructure development company with over 20 years of experience.
+            </EditableText>
+            <EditableText
+              id="about-description-2"
+              isEditMode={isEditMode}
+              element="p"
+              multiline={true}
+              className="text-lg text-amber-800 leading-relaxed text-justify"
+            >
+              An ISO 9001:2015 certified infrastructure company focusing on improving efficiency, promoting economic growth and reducing environmental impact. We strive to provide exceptional service and build long-term relationships with our clients, partners and communities.
+            </EditableText>
           </div>
         </motion.div>
 
@@ -85,9 +105,14 @@ export function AboutSection() {
           <div className="max-w-4xl mx-auto">
 
             <div>
-              <h3 className="text-3xl font-bold text-orange-600 mb-8">
+              <EditableText
+                id="about-mission-title"
+                isEditMode={isEditMode}
+                element="h3"
+                className="text-3xl font-bold text-orange-600 mb-8"
+              >
                 Our Mission
-              </h3>
+              </EditableText>
               <ul className="space-y-4">
                 <motion.li 
                   className="flex items-start p-3 rounded-lg hover:bg-orange-50/50 transition-colors duration-300"

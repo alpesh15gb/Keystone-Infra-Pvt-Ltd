@@ -1,10 +1,15 @@
 import { motion } from "framer-motion";
 import { Target, Eye, Heart, ArrowRight } from "lucide-react";
+import EditableText from '@/components/editable-text';
 import missionImage from "@assets/generated_images/Infrastructure_construction_mission_scene_c7a51f3c.png";
 import visionImage from "@assets/generated_images/Future_smart_city_vision_290da73b.png";
 import valuesImage from "@assets/generated_images/Team_values_and_collaboration_01fa5a58.png";
 
-export function MissionVisionSection() {
+interface MissionVisionSectionProps {
+  isEditMode?: boolean;
+}
+
+export function MissionVisionSection({ isEditMode = false }: MissionVisionSectionProps) {
   const content = [
     {
       icon: Target,
@@ -63,12 +68,23 @@ export function MissionVisionSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-orange-600 mb-6">
+          <EditableText
+            id="mission-vision-title"
+            isEditMode={isEditMode}
+            element="h2"
+            className="text-5xl font-bold text-orange-600 mb-6"
+          >
             What Drives Us
-          </h2>
-          <p className="text-xl text-amber-800 max-w-4xl mx-auto">
+          </EditableText>
+          <EditableText
+            id="mission-vision-subtitle"
+            isEditMode={isEditMode}
+            element="p"
+            multiline={true}
+            className="text-xl text-amber-800 max-w-4xl mx-auto"
+          >
             Our mission, vision, and values are more than words – they're the foundation of every project we deliver and every relationship we build.
-          </p>
+          </EditableText>
         </motion.div>
 
         <div className="space-y-20">

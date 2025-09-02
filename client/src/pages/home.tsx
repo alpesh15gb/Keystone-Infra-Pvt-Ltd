@@ -25,8 +25,8 @@ export default function Home({ isEditMode }: HomeProps) {
     <div className="min-h-screen">
       <Navigation />
       <HeroSection isEditMode={isEditMode} />
-      <AboutSection />
-      <MissionVisionSection />
+      <AboutSection isEditMode={isEditMode} />
+      <MissionVisionSection isEditMode={isEditMode} />
       <ProductsSection />
       <FeaturesSection />
 
@@ -38,8 +38,8 @@ export default function Home({ isEditMode }: HomeProps) {
       <VideoShowcaseSection />
       <ProjectsShowcase isEditMode={isEditMode} />
 
-      <ContactSection />
-      <Footer />
+      <ContactSection isEditMode={isEditMode} />
+      <Footer isEditMode={isEditMode} />
     </div>
   );
 }

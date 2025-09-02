@@ -12,6 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import EditableText from '@/components/editable-text';
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -31,7 +32,11 @@ const helpTypes = [
   "General Inquiry",
 ];
 
-export function ContactSection() {
+interface ContactSectionProps {
+  isEditMode?: boolean;
+}
+
+export function ContactSection({ isEditMode = false }: ContactSectionProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -85,10 +90,22 @@ export function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-orange-600 mb-4">Get in Touch</h2>
-          <p className="text-xl text-amber-800">
+          <EditableText
+            id="contact-title"
+            isEditMode={isEditMode}
+            element="h2"
+            className="text-4xl font-bold text-orange-600 mb-4"
+          >
+            Get in Touch
+          </EditableText>
+          <EditableText
+            id="contact-subtitle"
+            isEditMode={isEditMode}
+            element="p"
+            className="text-xl text-amber-800"
+          >
             Ready to transform your infrastructure? Let's talk.
-          </p>
+          </EditableText>
         </motion.div>
 
         <motion.div

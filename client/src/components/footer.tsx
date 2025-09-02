@@ -1,7 +1,12 @@
 import { Twitter, Linkedin, Phone, Facebook } from "lucide-react";
 import logoPath from "@/assets/logo.png";
+import EditableText from '@/components/editable-text';
 
-export function Footer() {
+interface FooterProps {
+  isEditMode?: boolean;
+}
+
+export function Footer({ isEditMode = false }: FooterProps) {
   return (
     <footer className="bg-stripe-dark text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,10 +15,15 @@ export function Footer() {
             <div className="mb-4">
               <img src={logoPath} alt="Keystone Infra" className="h-12" />
             </div>
-            <p className="text-gray-400 mb-6 max-w-md">
-              Established civil engineering and infrastructure development company. 
-              ISO certified, 20+ years experience, building India's infrastructure future.
-            </p>
+            <EditableText
+              id="footer-description"
+              isEditMode={isEditMode}
+              element="p"
+              multiline={true}
+              className="text-gray-400 mb-6 max-w-md"
+            >
+              Established civil engineering and infrastructure development company. ISO certified, 20+ years experience, building India's infrastructure future.
+            </EditableText>
             <div className="flex space-x-4">
               <a 
                 href="https://in.linkedin.com/company/keystone-infra-private-limited" 
@@ -41,7 +51,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <EditableText
+              id="footer-services-title"
+              isEditMode={isEditMode}
+              element="h3"
+              className="font-semibold mb-4"
+            >
+              Services
+            </EditableText>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
@@ -67,7 +84,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
+            <EditableText
+              id="footer-company-title"
+              isEditMode={isEditMode}
+              element="h3"
+              className="font-semibold mb-4"
+            >
+              Company
+            </EditableText>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
@@ -94,7 +118,14 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2024 Keystone Infra Pvt. Ltd. All rights reserved.</p>
+          <EditableText
+            id="footer-copyright"
+            isEditMode={isEditMode}
+            element="p"
+            className="text-gray-400 text-sm"
+          >
+            © 2024 Keystone Infra Pvt. Ltd. All rights reserved.
+          </EditableText>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
               Privacy Policy
