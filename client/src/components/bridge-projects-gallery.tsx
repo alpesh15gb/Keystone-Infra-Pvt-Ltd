@@ -76,28 +76,6 @@ export function BridgeProjectsGallery({ isEditMode = false }: BridgeProjectsGall
   return (
     <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <EditableText
-            id="bridge-gallery-title"
-            initialText="Bridge Engineering Excellence"
-            className="text-4xl md:text-5xl font-bold text-orange-600 mb-4"
-            isEditMode={isEditMode}
-          />
-          <EditableText
-            id="bridge-gallery-subtitle"
-            initialText="RCC Girder Bridge Projects Across India"
-            className="text-xl text-amber-800 mb-6"
-            isEditMode={isEditMode}
-          />
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-600 mx-auto mb-6"></div>
-          <EditableText
-            id="bridge-gallery-description"
-            initialText="Showcasing our expertise in constructing robust RCC girder bridges with varying lengths and span configurations, connecting communities across diverse terrains."
-            className="text-lg text-amber-700 max-w-3xl mx-auto leading-relaxed"
-            isEditMode={isEditMode}
-          />
-        </div>
 
         {/* Bridge Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -168,12 +146,6 @@ export function BridgeProjectsGallery({ isEditMode = false }: BridgeProjectsGall
                     </span>
                   </div>
 
-                  {/* Filename Display */}
-                  <div className="mt-4 pt-4 border-t border-amber-200">
-                    <p className="text-sm text-amber-600 font-mono bg-amber-50 px-3 py-2 rounded">
-                      📁 {project.title.replace(' - ', '_').replace(' ', '_').toLowerCase()}.jpg
-                    </p>
-                  </div>
                 </div>
               </div>
             </motion.div>
