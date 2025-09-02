@@ -11,10 +11,7 @@ import { EsteemedClientsSection } from "@/components/esteemed-clients-section";
 import { CertificationsSection } from "@/components/certifications-section";
 import { CSRSection } from "@/components/csr-section";
 import { VideoShowcaseSection } from "@/components/video-showcase-section";
-import { BridgeProjectsGallery } from "@/components/bridge-projects-gallery";
-import { BuildingProjectsGallery } from "@/components/building-projects-gallery";
-import { WaterProjectsGallery } from "@/components/water-projects-gallery";
-import { RoadProjectsGallery } from "@/components/road-projects-gallery";
+import { ProjectsShowcase } from "@/components/projects-showcase";
 
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
@@ -39,10 +36,7 @@ export default function Home({ isEditMode }: HomeProps) {
       <CertificationsSection />
       <CSRSection />
       <VideoShowcaseSection />
-      <BridgeProjectsGallery isEditMode={isEditMode} />
-      <BuildingProjectsGallery isEditMode={isEditMode} />
-      <WaterProjectsGallery isEditMode={isEditMode} />
-      <RoadProjectsGallery isEditMode={isEditMode} />
+      <ProjectsShowcase isEditMode={isEditMode} />
 
       <ContactSection />
       <Footer />
