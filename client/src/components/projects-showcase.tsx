@@ -38,8 +38,8 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
       id: 'bridges',
       title: 'Bridge Engineering',
       description: 'RCC Girder Bridges connecting communities across diverse terrains',
-      color: 'orange-600',
-      bgColor: 'from-orange-50 to-amber-50',
+      color: 'amber-700',
+      bgColor: 'from-amber-50 to-orange-50',
       projects: [
         {
           id: 'bridge-1',
@@ -89,8 +89,8 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
       id: 'buildings',
       title: 'Building Construction',
       description: 'Educational, government, and commercial building projects',
-      color: 'blue-600',
-      bgColor: 'from-blue-50 to-indigo-50',
+      color: 'amber-800',
+      bgColor: 'from-orange-50 to-amber-100',
       projects: [
         {
           id: 'building-1',
@@ -133,8 +133,8 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
       id: 'water',
       title: 'Water Infrastructure',
       description: 'Advanced water treatment and distribution systems',
-      color: 'cyan-600',
-      bgColor: 'from-cyan-50 to-blue-50',
+      color: 'orange-700',
+      bgColor: 'from-amber-50 to-orange-100',
       projects: [
         {
           id: 'water-1',
@@ -149,8 +149,8 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
       id: 'roads',
       title: 'Highway Construction',
       description: 'National highways and road infrastructure projects',
-      color: 'gray-600',
-      bgColor: 'from-gray-50 to-slate-100',
+      color: 'amber-900',
+      bgColor: 'from-orange-50 to-amber-50',
       projects: [
         {
           id: 'road-1',
@@ -210,8 +210,8 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
               onClick={() => setActiveCategory(index)}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeCategory === index
-                  ? `bg-${category.color} text-white shadow-lg transform scale-105`
-                  : 'bg-white text-gray-600 hover:bg-gray-50 shadow-md'
+                  ? 'bg-orange-600 text-white shadow-lg transform scale-105'
+                  : 'bg-white text-amber-800 hover:bg-orange-50 shadow-md border-2 border-orange-200'
               }`}
             >
               {category.title}
@@ -231,10 +231,10 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
           >
             {/* Category Header */}
             <div className="text-center mb-8">
-              <h3 className={`text-3xl font-bold text-${currentCategory.color} mb-3`}>
+              <h3 className="text-3xl font-bold text-orange-600 mb-3">
                 {currentCategory.title}
               </h3>
-              <p className="text-gray-700 max-w-2xl mx-auto">
+              <p className="text-amber-800 max-w-2xl mx-auto">
                 {currentCategory.description}
               </p>
             </div>
@@ -257,13 +257,13 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
                         <>
                           <button
                             onClick={() => prevSlide(currentCategory.id, currentCategory.projects.length)}
-                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-200"
+                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-2 rounded-full shadow-lg transition-all duration-200"
                           >
                             <ChevronLeft className="w-6 h-6" />
                           </button>
                           <button
                             onClick={() => nextSlide(currentCategory.id, currentCategory.projects.length)}
-                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-200"
+                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-orange-600/90 hover:bg-orange-600 text-white p-2 rounded-full shadow-lg transition-all duration-200"
                           >
                             <ChevronRight className="w-6 h-6" />
                           </button>
@@ -279,7 +279,7 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
                               onClick={() => setCurrentSlide(prev => ({ ...prev, [currentCategory.id]: index }))}
                               className={`w-3 h-3 rounded-full transition-all duration-200 ${
                                 index === currentSlideIndex
-                                  ? `bg-${currentCategory.color}`
+                                  ? 'bg-orange-600'
                                   : 'bg-white/50 hover:bg-white/75'
                               }`}
                             />
@@ -291,18 +291,18 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
 
                   {/* Content Section */}
                   <div className="md:w-1/3 p-8 md:p-10 flex flex-col justify-center">
-                    <div className={`text-${currentCategory.color} text-sm font-semibold mb-2`}>
+                    <div className="text-orange-600 text-sm font-semibold mb-2">
                       {currentProject.specs}
                     </div>
-                    <h4 className="text-2xl font-bold text-gray-800 mb-4 leading-tight">
+                    <h4 className="text-2xl font-bold text-amber-900 mb-4 leading-tight">
                       {currentProject.title}
                     </h4>
-                    <p className="text-gray-600 leading-relaxed mb-6">
+                    <p className="text-amber-800 leading-relaxed mb-6">
                       {currentProject.description}
                     </p>
                     
                     {/* Project Counter */}
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-orange-600">
                       Project {currentSlideIndex + 1} of {currentCategory.projects.length}
                     </div>
                   </div>
