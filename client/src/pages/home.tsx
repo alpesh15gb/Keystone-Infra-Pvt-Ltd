@@ -35,8 +35,8 @@ export default function Home({ isEditMode }: HomeProps) {
       <EsteemedClientsSection />
       <CertificationsSection />
       <CSRSection />
-      <VideoShowcaseSection />
       <ProjectsShowcase isEditMode={isEditMode} />
+      <VideoShowcaseSection />
 
       <ContactSection isEditMode={isEditMode} />
       <Footer isEditMode={isEditMode} />
