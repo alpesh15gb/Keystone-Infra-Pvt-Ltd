@@ -29,6 +29,7 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
   const [currentSlide, setCurrentSlide] = useState<Record<string, number>>({
     bridges: 0,
     buildings: 0,
+    interiors: 0,
     water: 0,
     roads: 0
   });
@@ -126,6 +127,50 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
           title: 'Manipur State Guest House',
           description: 'Government hospitality facility with premium accommodation',
           specs: 'Hospitality • Government'
+        }
+      ]
+    },
+    {
+      id: 'interiors',
+      title: 'Interior Design',
+      description: 'Premium interior spaces and architectural finishing',
+      color: 'orange-600',
+      bgColor: 'from-orange-50 to-amber-50',
+      projects: [
+        {
+          id: 'interior-1',
+          imageSrc: '/images/building-interior-1.jpg',
+          title: 'Modern Interior Design',
+          description: 'Contemporary interior spaces with elegant finishes and lighting',
+          specs: 'Interior • Modern Design'
+        },
+        {
+          id: 'interior-2',
+          imageSrc: '/images/building-interior-2.jpg',
+          title: 'Premium Interior Finishing',
+          description: 'High-end interior design with luxury amenities and furnishing',
+          specs: 'Interior • Premium Finishing'
+        },
+        {
+          id: 'interior-3',
+          imageSrc: '/images/building-atrium.jpg',
+          title: 'Atrium Interior Design',
+          description: 'Spacious atrium with modern architectural elements',
+          specs: 'Atrium • Architectural'
+        },
+        {
+          id: 'interior-4',
+          imageSrc: '/images/building-lobby.jpg',
+          title: 'Executive Lobby Design',
+          description: 'Professional lobby space with contemporary design elements',
+          specs: 'Lobby • Executive'
+        },
+        {
+          id: 'interior-5',
+          imageSrc: '/images/building-guest-room.jpg',
+          title: 'Guest Room Interior',
+          description: 'Comfortable guest accommodation with modern amenities',
+          specs: 'Guest Room • Hospitality'
         }
       ]
     },
