@@ -29,9 +29,9 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
   const [currentSlide, setCurrentSlide] = useState<Record<string, number>>({
     bridges: 0,
     buildings: 0,
-    interiors: 0,
     water: 0,
-    roads: 0
+    roads: 0,
+    interiors: 0
   });
 
   const categories: ProjectCategory[] = [
@@ -131,6 +131,45 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
       ]
     },
     {
+      id: 'water',
+      title: 'Water Infrastructure',
+      description: 'Advanced water treatment and distribution systems',
+      color: 'orange-700',
+      bgColor: 'from-amber-50 to-orange-100',
+      projects: [
+        {
+          id: 'water-1',
+          imageSrc: '/images/water-treatment-plant-45mld.jpg',
+          title: '45 MLD Water Treatment Plant',
+          description: 'State-of-the-art facility with dual circular clarifiers',
+          specs: '45 Million Litres/Day • Advanced Treatment'
+        }
+      ]
+    },
+    {
+      id: 'roads',
+      title: 'Highway Construction',
+      description: 'National highways and road infrastructure projects',
+      color: 'amber-900',
+      bgColor: 'from-orange-50 to-amber-50',
+      projects: [
+        {
+          id: 'road-1',
+          imageSrc: '/images/road-nh63-straight.jpg',
+          title: 'NH 63 Highway Construction',
+          description: 'National highway through forested terrain',
+          specs: 'National Highway 63 • Precision Engineering'
+        },
+        {
+          id: 'road-2',
+          imageSrc: '/images/road-nh63-curved.jpg',
+          title: 'NH-63 Curved Section Engineering',
+          description: 'Advanced curved alignment through challenging topography',
+          specs: 'National Highway 63 • Curved Alignment'
+        }
+      ]
+    },
+    {
       id: 'interiors',
       title: 'Interior Design',
       description: 'Premium interior spaces and architectural finishing',
@@ -171,45 +210,6 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
           title: 'Guest Room Interior',
           description: 'Comfortable guest accommodation with modern amenities',
           specs: 'Guest Room • Hospitality'
-        }
-      ]
-    },
-    {
-      id: 'water',
-      title: 'Water Infrastructure',
-      description: 'Advanced water treatment and distribution systems',
-      color: 'orange-700',
-      bgColor: 'from-amber-50 to-orange-100',
-      projects: [
-        {
-          id: 'water-1',
-          imageSrc: '/images/water-treatment-plant-45mld.jpg',
-          title: '45 MLD Water Treatment Plant',
-          description: 'State-of-the-art facility with dual circular clarifiers',
-          specs: '45 Million Litres/Day • Advanced Treatment'
-        }
-      ]
-    },
-    {
-      id: 'roads',
-      title: 'Highway Construction',
-      description: 'National highways and road infrastructure projects',
-      color: 'amber-900',
-      bgColor: 'from-orange-50 to-amber-50',
-      projects: [
-        {
-          id: 'road-1',
-          imageSrc: '/images/road-nh63-straight.jpg',
-          title: 'NH 63 Highway Construction',
-          description: 'National highway through forested terrain',
-          specs: 'National Highway 63 • Precision Engineering'
-        },
-        {
-          id: 'road-2',
-          imageSrc: '/images/road-nh63-curved.jpg',
-          title: 'NH-63 Curved Section Engineering',
-          description: 'Advanced curved alignment through challenging topography',
-          specs: 'National Highway 63 • Curved Alignment'
         }
       ]
     }
