@@ -148,28 +148,28 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
           id: 'water-2',
           imageSrc: '/images/water-project-1.jpg',
           title: 'Overhead Water Tank Construction',
-          description: 'Large capacity overhead tank for water storage and distribution',
+          description: '',
           specs: 'Overhead Tank • Water Storage'
         },
         {
           id: 'water-3',
           imageSrc: '/images/water-project-2.jpg',
           title: 'Overhead Tank Infrastructure',
-          description: 'Modern overhead water tank with distribution network',
+          description: '',
           specs: 'Overhead Tank • Distribution'
         },
         {
           id: 'water-4',
           imageSrc: '/images/water-project-3.jpg',
           title: 'Overhead Water Storage System',
-          description: 'High-capacity overhead tank for municipal water supply',
+          description: '',
           specs: 'Overhead Tank • Municipal Supply'
         },
         {
           id: 'water-5',
           imageSrc: '/images/water-project-4.jpg',
           title: 'Overhead Tank Complex',
-          description: 'Multi-level overhead water tank system for urban distribution',
+          description: '',
           specs: 'Overhead Tank • Urban Supply'
         }
       ]
