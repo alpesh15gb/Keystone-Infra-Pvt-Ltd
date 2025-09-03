@@ -147,30 +147,30 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
         {
           id: 'water-2',
           imageSrc: '/images/water-project-1.jpg',
-          title: 'Water Infrastructure Project',
-          description: 'Advanced water management and distribution system',
-          specs: 'Water Management • Infrastructure'
+          title: 'Overhead Water Tank Construction',
+          description: 'Large capacity overhead tank for water storage and distribution',
+          specs: 'Overhead Tank • Water Storage'
         },
         {
           id: 'water-3',
           imageSrc: '/images/water-project-2.jpg',
-          title: 'Water Supply Infrastructure',
-          description: 'Modern water supply network and treatment facilities',
-          specs: 'Water Supply • Treatment'
+          title: 'Overhead Tank Infrastructure',
+          description: 'Modern overhead water tank with distribution network',
+          specs: 'Overhead Tank • Distribution'
         },
         {
           id: 'water-4',
           imageSrc: '/images/water-project-3.jpg',
-          title: 'Water Distribution System',
-          description: 'Comprehensive water distribution and pipeline network',
-          specs: 'Distribution • Pipeline Network'
+          title: 'Overhead Water Storage System',
+          description: 'High-capacity overhead tank for municipal water supply',
+          specs: 'Overhead Tank • Municipal Supply'
         },
         {
           id: 'water-5',
           imageSrc: '/images/water-project-4.jpg',
-          title: 'Water Treatment Facility',
-          description: 'Modern water treatment and purification infrastructure',
-          specs: 'Treatment • Purification'
+          title: 'Overhead Tank Complex',
+          description: 'Multi-level overhead water tank system for urban distribution',
+          specs: 'Overhead Tank • Urban Supply'
         }
       ]
     },
