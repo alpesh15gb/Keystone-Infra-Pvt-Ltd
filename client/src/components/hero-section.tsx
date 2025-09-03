@@ -85,7 +85,7 @@ export function HeroSection({ isEditMode = false }: HeroSectionProps) {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-left"
+              className="text-center"
             >
               {/* Main Heading */}
               <EditableText
@@ -112,7 +112,7 @@ export function HeroSection({ isEditMode = false }: HeroSectionProps) {
                   isEditMode={isEditMode}
                   element="p"
                   multiline={true}
-                  className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl px-4"
+                  className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto px-4"
                 >
                   Building tomorrow's infrastructure today. Over 20 years of engineering excellence 
                   across India, delivering innovative solutions for complex construction challenges.
@@ -126,7 +126,7 @@ export function HeroSection({ isEditMode = false }: HeroSectionProps) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-wrap justify-start gap-3 md:gap-6 text-white/90 px-4"
+                className="flex flex-wrap justify-center gap-3 md:gap-6 text-white/90 px-4"
               >
                 <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3">
                   <CheckCircle className="text-green-400 mr-2" size={16} />
