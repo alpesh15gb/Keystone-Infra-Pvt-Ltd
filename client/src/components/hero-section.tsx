@@ -43,9 +43,9 @@ export function HeroSection({ isEditMode = false }: HeroSectionProps) {
   }, [backgroundImages.length]);
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden">
+    <section id="home" className="relative w-full h-screen overflow-hidden pt-24">
       {/* Multiple Background Images with Transitions */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full top-24">
         {backgroundImages.map((image, index) => (
           <motion.div
             key={index}
@@ -78,7 +78,7 @@ export function HeroSection({ isEditMode = false }: HeroSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full h-full flex items-center">
+      <div className="relative z-10 w-full h-full flex items-center pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-4xl">
             <motion.div
