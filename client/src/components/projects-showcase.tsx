@@ -143,6 +143,34 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
           title: '45 MLD Water Treatment Plant',
           description: 'State-of-the-art facility with dual circular clarifiers',
           specs: '45 Million Litres/Day • Advanced Treatment'
+        },
+        {
+          id: 'water-2',
+          imageSrc: '/images/water-project-1.jpg',
+          title: 'Water Infrastructure Project',
+          description: 'Advanced water management and distribution system',
+          specs: 'Water Management • Infrastructure'
+        },
+        {
+          id: 'water-3',
+          imageSrc: '/images/water-project-2.jpg',
+          title: 'Water Supply Infrastructure',
+          description: 'Modern water supply network and treatment facilities',
+          specs: 'Water Supply • Treatment'
+        },
+        {
+          id: 'water-4',
+          imageSrc: '/images/water-project-3.jpg',
+          title: 'Water Distribution System',
+          description: 'Comprehensive water distribution and pipeline network',
+          specs: 'Distribution • Pipeline Network'
+        },
+        {
+          id: 'water-5',
+          imageSrc: '/images/water-project-4.jpg',
+          title: 'Water Treatment Facility',
+          description: 'Modern water treatment and purification infrastructure',
+          specs: 'Treatment • Purification'
         }
       ]
     },
