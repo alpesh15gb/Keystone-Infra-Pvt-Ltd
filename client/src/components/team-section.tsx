@@ -5,7 +5,7 @@ export function TeamSection() {
   const teamMembers = [
     {
       name: "D.M. RAMESH",
-      position: "Managing Director & Founder",
+      position: "Managing Director",
       experience: "30+ years",
       description: "Founder and Managing Director with over 30 years in infrastructure and civil construction. Well respected for timely delivery and creative ideas, with expertise in every aspect of construction and development business.",
       achievements: ["Founded company in 2005", "Led numerous prestigious projects", "Industry leader in innovation"]
