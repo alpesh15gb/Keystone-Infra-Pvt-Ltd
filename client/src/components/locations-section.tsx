@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Building2, Globe, Trophy, Zap } from "lucide-react";
 
-import indiaMap from "@assets/MAP EDITED_1755555415200.jpg";
+import indiaMap from "/images/india-map-keystone.png";
 
 
 export function LocationsSection() {
