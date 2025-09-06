@@ -31,7 +31,8 @@ export function VideoShowcaseSection() {
     },
     {
       id: "ALZtqkYNqg4",
-      title: "Chintavaghu Bridge"
+      title: "RCC GIRDER 210 METRES",
+      subtitle: "(2 SPANS OF 23.275 EACH) (7 SPANS OF 23.35 EACH)"
     },
     {
       id: "oO1yDu8tuH0",
