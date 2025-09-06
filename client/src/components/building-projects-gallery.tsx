@@ -47,7 +47,7 @@ export function BuildingProjectsGallery({ isEditMode = false }: BuildingProjects
     {
       id: 'building-5',
       imageSrc: '/images/building-state-guest-house.jpg',
-      title: 'Manipur State Guest House',
+      title: 'State Guest House',
       description: 'Government hospitality facility with premium accommodation and conference facilities',
       category: 'Hospitality'
     },

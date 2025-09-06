@@ -124,7 +124,7 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
         {
           id: 'building-5',
           imageSrc: '/images/building-state-guest-house.jpg',
-          title: 'Manipur State Guest House',
+          title: 'State Guest House',
           description: 'Government hospitality facility with premium accommodation',
           specs: 'Hospitality • Government'
         }
