@@ -36,7 +36,8 @@ export function VideoShowcaseSection() {
     },
     {
       id: "PddAAZX3aTM",
-      title: "Chhindanar Bridge 1"
+      title: "RCC GIRDER 689 METRES",
+      subtitle: "(26 SPANS OF 26.5 METRES EACH)"
     },
     {
       id: "2NpgvLuMN5M",
