@@ -35,10 +35,6 @@ export function VideoShowcaseSection() {
       subtitle: "(2 SPANS OF 23.275 EACH) (7 SPANS OF 23.35 EACH)"
     },
     {
-      id: "oO1yDu8tuH0",
-      title: "Chhindanar Bridge 2"
-    },
-    {
       id: "PddAAZX3aTM",
       title: "Chhindanar Bridge 1"
     },
