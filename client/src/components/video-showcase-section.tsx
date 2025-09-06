@@ -7,7 +7,8 @@ export function VideoShowcaseSection() {
   const videos = [
     {
       id: "wvoxdF185yo",
-      title: "RCC GIRDER 180 METRES (9 SPANS OF 20 METRES EACH)"
+      title: "RCC GIRDER 180 METRES",
+      subtitle: "(9 SPANS OF 20 METRES EACH)"
     },
     {
       id: "US6l4c8uSLE", 
@@ -101,6 +102,11 @@ export function VideoShowcaseSection() {
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-orange-600 mb-4 group-hover:text-orange-700 transition-colors">
                     {video.title}
+                    {video.subtitle && (
+                      <div className="text-sm font-medium text-amber-700 mt-1">
+                        {video.subtitle}
+                      </div>
+                    )}
                   </h3>
                   <button
                     onClick={() => openVideo(video.id)}
