@@ -12,7 +12,8 @@ export function VideoShowcaseSection() {
     },
     {
       id: "US6l4c8uSLE", 
-      title: "Paspul Vaghu Bridge"
+      title: "RCC GIRDER 60 METRES",
+      subtitle: "(35 SPANS OF 60 METRES)"
     },
     {
       id: "dPn3aRBkfrA",
