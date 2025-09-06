@@ -32,7 +32,7 @@ export function VideoShowcaseSection() {
     {
       id: "ALZtqkYNqg4",
       title: "RCC GIRDER 210 METRES",
-      subtitle: "(2 SPANS OF 23.275 EACH) (7 SPANS OF 23.35 EACH)"
+      subtitles: ["(2 SPANS OF 23.275 EACH)", "(7 SPANS OF 23.35 EACH)"]
     },
     {
       id: "PddAAZX3aTM",
@@ -108,6 +108,11 @@ export function VideoShowcaseSection() {
                         {video.subtitle}
                       </div>
                     )}
+                    {video.subtitles && video.subtitles.map((subtitle, index) => (
+                      <div key={index} className="text-sm font-medium text-amber-700 mt-1">
+                        {subtitle}
+                      </div>
+                    ))}
                   </h3>
                   <button
                     onClick={() => openVideo(video.id)}
