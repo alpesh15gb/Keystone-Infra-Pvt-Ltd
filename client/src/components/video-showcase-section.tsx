@@ -7,7 +7,7 @@ export function VideoShowcaseSection() {
   const videos = [
     {
       id: "wvoxdF185yo",
-      title: "Tarud River Bridge"
+      title: "RCC GIRDER 180 METRES (9 SPANS OF 20 METRES EACH)"
     },
     {
       id: "US6l4c8uSLE", 
