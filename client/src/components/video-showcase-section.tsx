@@ -26,7 +26,8 @@ export function VideoShowcaseSection() {
     },
     {
       id: "5XUwqNICWTA",
-      title: "Giligicha Bridge"
+      title: "RCC GIRDER 105 METRES",
+      subtitle: "(5 SPANS OF 21 METRES EACH)"
     },
     {
       id: "ALZtqkYNqg4",
