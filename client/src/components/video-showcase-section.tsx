@@ -21,7 +21,8 @@ export function VideoShowcaseSection() {
     },
     {
       id: "p62cJAu31_M",
-      title: "Mingachal Bridge"
+      title: "RCC GIRDER 240 METRES",
+      subtitle: "(12 SPANS OF 20 METRES EACH)"
     },
     {
       id: "5XUwqNICWTA",
