@@ -9,7 +9,7 @@ interface BridgeProject {
   title: string;
   description: string;
   length: string;
-  spans: string;
+  structure: string;
 }
 
 interface BridgeProjectsGalleryProps {
@@ -20,11 +20,11 @@ export function BridgeProjectsGallery({ isEditMode = false }: BridgeProjectsGall
   const bridgeProjects: BridgeProject[] = [
     {
       id: 'bridge-1',
-      imageSrc: '/images/bridge-105m-5spans.jpg',
+      imageSrc: '/images/bridge-105m.jpg',
       title: 'RCC Girder Bridge - 105 mts Length',
-      description: '5 spans of 21 mtr each',
+      description: 'Engineered RCC girder bridge delivering reliable connectivity',
       length: '105 meters',
-      spans: '5 spans'
+      structure: 'RCC Girder Design'
     },
     {
       id: 'bridge-2',
@@ -32,39 +32,39 @@ export function BridgeProjectsGallery({ isEditMode = false }: BridgeProjectsGall
       title: 'RCC Girder Bridge - 210 mtr Length',
       description: 'Major river crossing infrastructure',
       length: '210 meters',
-      spans: 'Multi-span'
+      structure: 'River Crossing Structure'
     },
     {
       id: 'bridge-3',
-      imageSrc: '/images/bridge-240m-12spans.jpg',
+      imageSrc: '/images/bridge-240m.jpg',
       title: 'RCC Girder Bridge - 240 mtr Length',
-      description: '12 spans of 20 mtr each',
+      description: 'River bridge engineered for consistent load distribution',
       length: '240 meters',
-      spans: '12 spans'
+      structure: 'RCC Girder Configuration'
     },
     {
       id: 'bridge-4',
-      imageSrc: '/images/bridge-480m-16spans.jpg',
+      imageSrc: '/images/bridge-480m.jpg',
       title: 'RCC Girder Bridge - 480 mtr Length',
-      description: '16 spans of 30 mtr each',
+      description: 'High-capacity RCC bridge supporting regional transport',
       length: '480 meters',
-      spans: '16 spans'
+      structure: 'Highway Connector'
     },
     {
       id: 'bridge-5',
-      imageSrc: '/images/bridge-636m-24spans.jpg',
+      imageSrc: '/images/bridge-636m.jpg',
       title: 'RCC Girder Bridge - 636 mtr Length',
-      description: '24 spans of 26.5 mtr each',
+      description: 'Extensive RCC bridge enabling resilient connectivity',
       length: '636 meters',
-      spans: '24 spans'
+      structure: 'Regional Connectivity Link'
     },
     {
       id: 'bridge-6',
-      imageSrc: '/images/bridge-689m-26spans.jpg',
+      imageSrc: '/images/bridge-689m.jpg',
       title: 'RCC Girder Bridge - 689 mtr Length',
-      description: '26 spans of 26.5 mtr each',
+      description: 'Signature bridge enhancing regional mobility',
       length: '689 meters',
-      spans: '26 spans'
+      structure: 'Major Transportation Corridor'
     }
   ];
 
@@ -117,7 +117,7 @@ export function BridgeProjectsGallery({ isEditMode = false }: BridgeProjectsGall
                           {project.length}
                         </span>
                         <span className="bg-amber-600 px-3 py-1 rounded-full font-medium">
-                          {project.spans}
+                          {project.structure}
                         </span>
                       </div>
                     </div>
@@ -142,7 +142,7 @@ export function BridgeProjectsGallery({ isEditMode = false }: BridgeProjectsGall
                       Length: {project.length}
                     </span>
                     <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
-                      {project.spans}
+                      Structure: {project.structure}
                     </span>
                   </div>
 

@@ -191,7 +191,7 @@ export function ProjectSlider() {
     {
       src: slider1,
       title: "Indrawathi-Pahurnar Bridge",
-      description: "712m length bridge with 26 spans connecting 500 villages",
+      description: "712m length bridge connecting 500 villages",
       location: "Chhattisgarh"
     },
     {
@@ -245,13 +245,13 @@ export function ProjectSlider() {
     {
       src: slider10,
       title: "Arch Bridge Construction",
-      description: "Modern arch bridge spanning natural water body",
+      description: "Modern arch bridge over natural water body",
       location: "Transportation infrastructure"
     },
     {
       src: slider11,
       title: "Major Bridge Project",
-      description: "Long span bridge construction over river with multiple supports",
+      description: "Large-scale bridge construction over river with engineered supports",
       location: "Major transportation corridor"
     },
     {

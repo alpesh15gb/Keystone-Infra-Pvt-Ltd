@@ -33,7 +33,7 @@ export function BuildingProjectsGallery({ isEditMode = false }: BuildingProjects
     {
       id: 'building-3',
       imageSrc: '/images/building-school.jpg',
-      title: 'School Building in Education City',
+      title: 'School Building',
       description: 'Educational institution building with modern classroom facilities and learning spaces',
       category: 'Educational'
     },

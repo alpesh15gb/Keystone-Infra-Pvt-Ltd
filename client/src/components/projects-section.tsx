@@ -26,7 +26,7 @@ const iconicProjects = [
     bgColor: "bg-orange-100",
     title: "Indrawathi - Pahurnar Bridge",
     location: "Chhattisgarh",
-    details: "712 Mts length • 26 Spans • 26.5 Mts span length",
+    details: "712 Mts length • RCC Girder Engineering • Regional connectivity",
     description: "Major bridge facilitating connection to 500 villages, appreciated by Hon'ble Chief Minister",
     client: "PWD",
     status: "Completed",

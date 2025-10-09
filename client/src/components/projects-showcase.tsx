@@ -44,45 +44,45 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
       projects: [
         {
           id: 'bridge-1',
-          imageSrc: '/images/bridge-105m-5spans.jpg',
+          imageSrc: '/images/bridge-105m.jpg',
           title: 'RCC Girder Bridge - 105 mts Length',
-          description: '5 spans of 21 mtr each',
-          specs: '105 meters • 5 spans'
+          description: 'Engineered RCC girder bridge delivering reliable connectivity',
+          specs: '105 meters • RCC Girder Design'
         },
         {
           id: 'bridge-2',
           imageSrc: '/images/bridge-210m.jpg',
           title: 'RCC Girder Bridge - 210 mtr Length',
           description: 'Major river crossing infrastructure',
-          specs: '210 meters • Multi-span'
+          specs: '210 meters • River Crossing'
         },
         {
           id: 'bridge-3',
-          imageSrc: '/images/bridge-240m-12spans.jpg',
+          imageSrc: '/images/bridge-240m.jpg',
           title: 'RCC Girder Bridge - 240 mtr Length',
-          description: '12 spans of 20 mtr each',
-          specs: '240 meters • 12 spans'
+          description: 'River bridge engineered for consistent load distribution',
+          specs: '240 meters • RCC Girder'
         },
         {
           id: 'bridge-4',
-          imageSrc: '/images/bridge-480m-16spans.jpg',
+          imageSrc: '/images/bridge-480m.jpg',
           title: 'RCC Girder Bridge - 480 mtr Length',
-          description: '16 spans of 30 mtr each',
-          specs: '480 meters • 16 spans'
+          description: 'High-capacity RCC bridge supporting regional transport',
+          specs: '480 meters • Highway Connector'
         },
         {
           id: 'bridge-5',
-          imageSrc: '/images/bridge-636m-24spans.jpg',
+          imageSrc: '/images/bridge-636m.jpg',
           title: 'RCC Girder Bridge - 636 mtr Length',
-          description: '24 spans of 26.5 mtr each',
-          specs: '636 meters • 24 spans'
+          description: 'Extensive RCC bridge enabling resilient connectivity',
+          specs: '636 meters • Infrastructure Link'
         },
         {
           id: 'bridge-6',
-          imageSrc: '/images/bridge-689m-26spans.jpg',
+          imageSrc: '/images/bridge-689m.jpg',
           title: 'RCC Girder Bridge - 689 mtr Length',
-          description: '26 spans of 26.5 mtr each',
-          specs: '689 meters • 26 spans'
+          description: 'Signature bridge enhancing regional mobility',
+          specs: '689 meters • Transportation Corridor'
         }
       ]
     },
@@ -110,7 +110,7 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
         {
           id: 'building-3',
           imageSrc: '/images/building-school.jpg',
-          title: 'School Building in Education City',
+          title: 'School Building',
           description: 'Educational institution with modern classroom facilities',
           specs: 'Educational • Academic'
         },
