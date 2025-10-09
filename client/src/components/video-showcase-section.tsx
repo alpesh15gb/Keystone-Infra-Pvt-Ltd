@@ -8,7 +8,7 @@ export function VideoShowcaseSection() {
     {
       id: "wvoxdF185yo",
       title: "RCC GIRDER 180 METRES",
-      subtitle: "(9 SPANS OF 20 METRES EACH)"
+  
     },
     {
       id: "US6l4c8uSLE", 
