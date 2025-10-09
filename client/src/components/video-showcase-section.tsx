@@ -13,7 +13,7 @@ export function VideoShowcaseSection() {
     {
       id: "US6l4c8uSLE", 
       title: "RCC GIRDER 60 METRES",
-      subtitle: "(35 SPANS OF 60 METRES)"
+     
     },
     {
       id: "dPn3aRBkfrA",
@@ -22,26 +22,26 @@ export function VideoShowcaseSection() {
     {
       id: "p62cJAu31_M",
       title: "RCC GIRDER 240 METRES",
-      subtitle: "(12 SPANS OF 20 METRES EACH)"
+   
     },
     {
       id: "5XUwqNICWTA",
       title: "RCC GIRDER 105 METRES",
-      subtitle: "(5 SPANS OF 21 METRES EACH)"
+      
     },
     {
       id: "ALZtqkYNqg4",
       title: "RCC GIRDER 210 METRES",
-      subtitles: ["(2 SPANS OF 23.275 EACH)", "(7 SPANS OF 23.35 EACH)"]
+      
     },
     {
       id: "PddAAZX3aTM",
       title: "RCC GIRDER 689 METRES",
-      subtitle: "(26 SPANS OF 26.5 METRES EACH)"
+    
     },
     {
       id: "2NpgvLuMN5M",
-      title: "Bijapur School Building"
+      title: "School Building"
     }
   ];
 
