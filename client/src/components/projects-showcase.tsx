@@ -24,6 +24,8 @@ interface ProjectsShowcaseProps {
   isEditMode?: boolean;
 }
 
+type ImageFit = 'cover' | 'contain';
+
 export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) {
   const [activeCategory, setActiveCategory] = useState(0);
   const [currentSlide, setCurrentSlide] = useState<Record<string, number>>({
@@ -33,6 +35,31 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
     roads: 0,
     interiors: 0
   });
+  const [imageFits, setImageFits] = useState<Record<string, ImageFit>>({});
+
+  const handleImageLoad = (
+    event: React.SyntheticEvent<HTMLImageElement>,
+    projectId: string
+  ) => {
+    const { naturalWidth, naturalHeight } = event.currentTarget;
+
+    if (!naturalWidth || !naturalHeight) {
+      return;
+    }
+
+    const fit: ImageFit = naturalWidth >= naturalHeight ? 'cover' : 'contain';
+
+    setImageFits(prev => {
+      if (prev[projectId] === fit) {
+        return prev;
+      }
+
+      return {
+        ...prev,
+        [projectId]: fit
+      };
+    });
+  };
 
   const getImageSource = (path: string) => {
     if (/^https?:\/\//.test(path) || path.startsWith('data:')) {
@@ -378,7 +405,12 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
                     <img
                       src={getImageSource(currentProject.imageSrc)}
                       alt={currentProject.title}
-                      className="w-full h-full object-contain md:object-cover md:transform md:group-hover:scale-105 transition-transform duration-700 bg-black/5"
+                      onLoad={event => handleImageLoad(event, currentProject.id)}
+                      className={`w-full h-full transition-transform duration-700 ${
+                        (imageFits[currentProject.id] ?? 'cover') === 'contain'
+                          ? 'object-contain bg-black/5'
+                          : 'object-cover transform group-hover:scale-105'
+                      }`}
                     />
                     
                     {/* Navigation Arrows */}
