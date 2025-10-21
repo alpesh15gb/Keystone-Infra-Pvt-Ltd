@@ -34,6 +34,22 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
     interiors: 0
   });
 
+  const getImageSource = (path: string) => {
+    if (/^https?:\/\//.test(path) || path.startsWith('data:')) {
+      return path;
+    }
+
+    const baseUrl = (import.meta as ImportMeta | undefined)?.env?.BASE_URL ?? '/';
+
+    const basePath = baseUrl === '/'
+      ? ''
+      : baseUrl.replace(/\/+$/, '');
+
+    const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+
+    return `${basePath}${normalizedPath}`;
+  };
+
   const categories: ProjectCategory[] = [
     {
       id: 'bridges',
@@ -360,9 +376,9 @@ export function ProjectsShowcase({ isEditMode = false }: ProjectsShowcaseProps) 
                 <div className="relative">
                   <div className="relative h-64 md:h-96 lg:h-[500px] overflow-hidden group">
                     <img
-                      src={currentProject.imageSrc}
+                      src={getImageSource(currentProject.imageSrc)}
                       alt={currentProject.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-contain md:object-cover md:transform md:group-hover:scale-105 transition-transform duration-700 bg-black/5"
                     />
                     
                     {/* Navigation Arrows */}
