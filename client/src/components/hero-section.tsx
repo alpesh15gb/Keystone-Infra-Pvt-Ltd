@@ -35,7 +35,7 @@ export function HeroSection({ isEditMode = false }: HeroSectionProps) {
     // Initialize player when API is ready
     window.onYouTubeIframeAPIReady = () => {
       new window.YT.Player('hero-player', {
-        videoId: 'k-UTyiKzcQU',
+        videoId: 'ImUatDHiank',
         playerVars: {
           autoplay: 1,
           controls: 0, // Disable native controls to remove clutter
@@ -47,7 +47,7 @@ export function HeroSection({ isEditMode = false }: HeroSectionProps) {
           rel: 0,
           showinfo: 0,
           mute: 1,
-          playlist: 'k-UTyiKzcQU'
+          playlist: 'ImUatDHiank'
         },
         events: {
           onReady: (event: any) => {
