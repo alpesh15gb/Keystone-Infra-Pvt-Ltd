@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/navigation";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
-import { MissionVisionSection } from "@/components/mission-vision-section";
+
 import { ProductsSection } from "@/components/products-section";
 import { FeaturesSection } from "@/components/features-section";
 
@@ -25,7 +25,7 @@ export default function Home({ isEditMode }: HomeProps) {
       <Navigation />
       <HeroSection isEditMode={isEditMode} />
       <AboutSection isEditMode={isEditMode} />
-      <MissionVisionSection isEditMode={isEditMode} />
+
       <TeamSection isEditMode={isEditMode} />
       <ProductsSection isEditMode={isEditMode} />
       <FeaturesSection isEditMode={isEditMode} />

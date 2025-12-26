@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+
 import adbLogo from "@assets/Asian_Development_Bank_logo.svg_1754946187555.png";
 import biharLogo from "@assets/bihar_1754946187557.png";
 import chhattisgarhLogo from "@assets/chattisgarh_1754946187558.png";
@@ -16,13 +16,16 @@ import ongcLogo from "@assets/ongc_1754946187559.png";
 import phedLogo from "@assets/phed-manipur_1754946187559.png";
 import pwdLogo from "@assets/pwd_1754946187559.png";
 import worldBankLogo from "@assets/the world bank_1754946187559.png";
+import aiibLogo from "@/assets/aiib-logo.png";
+import goaLogo from "@/assets/goa-govt-logo.jpg";
+import phedRajLogo from "@/assets/phed-rajasthan-logo.jpg";
+import saiLogo from "@/assets/sai-logo.jpg";
 
 interface EsteemedClientsSectionProps {
   isEditMode?: boolean;
 }
 
 export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSectionProps) {
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Client logos and information with actual logo images
   const clients = [
@@ -41,47 +44,14 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
     { name: "KRDCL", fullName: "Karnataka Rural Development Corporation", sector: "Development", logo: krdclLogo },
     { name: "PHED Manipur", fullName: "Public Health Engineering Department, Manipur", sector: "Government", logo: phedLogo },
     { name: "Manipur Police", fullName: "Manipur Police Department", sector: "Government", logo: manipurPoliceLogo },
-    { name: "NDB Bank", fullName: "New Development Bank", sector: "Finance", logo: ndbBankLogo }
+    { name: "NDB Bank", fullName: "New Development Bank", sector: "Finance", logo: ndbBankLogo },
+    { name: "AIIB", fullName: "Asian Infrastructure Investment Bank", sector: "International", logo: aiibLogo },
+    { name: "Government of Goa", fullName: "Government of Goa", sector: "Government", logo: goaLogo },
+    { name: "PHED Rajasthan", fullName: "Public Health Engineering Department, Rajasthan", sector: "Government", logo: phedRajLogo },
+    { name: "SAI", fullName: "Sports Authority of India", sector: "Government", logo: saiLogo }
   ];
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
 
-    let scrollAmount = 0;
-    const scrollStep = 1;
-    const scrollDelay = 30;
-
-    const autoScroll = () => {
-      if (scrollContainer) {
-        scrollAmount += scrollStep;
-        if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-          scrollAmount = 0;
-        }
-        scrollContainer.scrollLeft = scrollAmount;
-      }
-    };
-
-    const scrollInterval = setInterval(autoScroll, scrollDelay);
-
-    // Pause on hover
-    const handleMouseEnter = () => clearInterval(scrollInterval);
-    const handleMouseLeave = () => {
-      const newInterval = setInterval(autoScroll, scrollDelay);
-      return newInterval;
-    };
-
-    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
-    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      clearInterval(scrollInterval);
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
-        scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
-      }
-    };
-  }, []);
 
   return (
     <section className="py-20 bg-gradient-to-br from-amber-50/30 to-orange-50/20">
@@ -107,12 +77,8 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative overflow-hidden bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-orange-100 p-8"
         >
-          <div 
-            ref={scrollRef}
-            className="flex space-x-8 overflow-hidden animate-scroll"
-            style={{ 
-              width: '200%'
-            }}
+          <div
+            className="flex space-x-8 animate-scroll"
           >
             {/* First set of clients */}
             {clients.map((client, index) => (
@@ -121,8 +87,8 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
                 className="flex-shrink-0 w-72 bg-white/90 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-orange-200 hover:border-orange-300 group"
               >
                 <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                  <img 
-                    src={client.logo} 
+                  <img
+                    src={client.logo}
                     alt={client.name}
                     className="w-16 h-16 object-contain"
                   />
@@ -138,7 +104,7 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
                 </span>
               </div>
             ))}
-            
+
             {/* Duplicate set for seamless loop */}
             {clients.map((client, index) => (
               <div
@@ -146,8 +112,8 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
                 className="flex-shrink-0 w-72 bg-white/90 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-orange-200 hover:border-orange-300 group"
               >
                 <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                  <img 
-                    src={client.logo} 
+                  <img
+                    src={client.logo}
                     alt={client.name}
                     className="w-16 h-16 object-contain"
                   />

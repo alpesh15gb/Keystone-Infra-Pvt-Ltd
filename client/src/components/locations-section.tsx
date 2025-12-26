@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Building2, Globe, Trophy, Zap } from "lucide-react";
 
-import indiaMap from "@/assets/nationwide-coverage-map.jpg";
+import indiaMap from "@/assets/india-map-locations.jpg";
 
 
 interface LocationsSectionProps {

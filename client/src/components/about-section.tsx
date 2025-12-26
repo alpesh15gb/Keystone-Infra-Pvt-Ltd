@@ -73,9 +73,9 @@ export function AboutSection({ isEditMode = false }: AboutSectionProps) {
               isEditMode={isEditMode}
               element="p"
               multiline={true}
-              className="text-xl text-amber-900 leading-relaxed mb-6 text-justify"
+              className="text-lg text-amber-900 leading-relaxed mb-6 text-justify"
             >
-              Keystone Infra Pvt Ltd, founded by D.M.Ramesh in 2005, is an established civil engineering and infrastructure development company that has successfully completed numerous projects.
+              Established in 2005 by D. M. Ramesh, Keystone Infra Pvt. Ltd. is a trusted civil engineering and infrastructure development company with extensive project execution experience.
             </EditableText>
             <EditableText
               id="about-description-2"
@@ -84,7 +84,16 @@ export function AboutSection({ isEditMode = false }: AboutSectionProps) {
               multiline={true}
               className="text-lg text-amber-800 leading-relaxed text-justify"
             >
-              An ISO 9001 : 2008 certified infrastructure company focusing on improving efficiency, promoting economic growth and reducing environmental impact. We strive to provide exceptional service and build long-term relationships with our clients, partners and communities.
+              As an ISO 9001:2008 certified organization, we focus on efficiency-driven construction, sustainable development, and value creation for all stakeholders.
+            </EditableText>
+            <EditableText
+              id="about-description-3"
+              isEditMode={isEditMode}
+              element="p"
+              multiline={true}
+              className="text-lg text-amber-800 leading-relaxed text-justify mt-6"
+            >
+              Our approach emphasizes quality, reliability, and enduring relationships with clients, partners, and communities.
             </EditableText>
           </div>
         </motion.div>

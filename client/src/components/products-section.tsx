@@ -6,7 +6,7 @@ import EditableText from "@/components/editable-text";
 import EditableImage from "@/components/editable-image";
 import transportationExpertiseImage from "@/assets/transportation-expertise.jpg";
 import waterManagementImage from "@/assets/water-management.jpg";
-import buildingConstructionImage from "@/assets/building-construction.jpg";
+import buildingConstructionImage from "@/assets/manipur-police-hq.jpg";
 
 const products = [
   {

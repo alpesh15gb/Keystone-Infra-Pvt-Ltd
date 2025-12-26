@@ -14,7 +14,7 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
   const allVideos = {
     "Bridges": [
       { id: "p62cJAu31_M", title: "RCC GIRDER 240 METRES" },
-      { id: "PddAAZX3aTM", title: "RCC GIRDER 689 METRES" }
+      { id: "ALZtqkYNqg4", title: "RCC GIRDER 210 METRES" }
     ],
     "National Highway": [
       { id: "be6xI7063w8", title: "Transportation" },
@@ -49,14 +49,15 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-            Video Showcase
-          </h2>
-          <p className="text-xl text-amber-900 max-w-3xl mx-auto leading-relaxed">
-            Explore our infrastructure projects and engineering excellence through video demonstrations
-          </p>
+          <div className="bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-2xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold mb-4">Experience Our Expertise</h3>
+            <p className="text-lg text-orange-100 max-w-3xl mx-auto leading-relaxed">
+              These videos showcase our commitment to quality, integrity, and sustainable infrastructure development.
+              See how we bring vision to life through engineering excellence.
+            </p>
+          </div>
         </motion.div>
 
         <div className="space-y-20">
@@ -141,21 +142,7 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
           })}
         </div>
 
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold mb-4">Experience Our Expertise</h3>
-            <p className="text-lg text-orange-100 max-w-3xl mx-auto leading-relaxed">
-              These videos showcase our commitment to quality, integrity, and sustainable infrastructure development.
-              See how we bring vision to life through engineering excellence.
-            </p>
-          </div>
-        </motion.div>
+
 
         {/* Video Modal */}
         {selectedVideo && (
