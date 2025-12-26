@@ -79,7 +79,7 @@ export function ContactSection({ isEditMode = false }: ContactSectionProps) {
   };
 
   return (
-    <section id="contact" className="py-20 bg-stripe-light">
+    <section id="contact" className="py-20 bg-black/80 backdrop-blur-sm">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -105,7 +105,7 @@ export function ContactSection({ isEditMode = false }: ContactSectionProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Card className="bg-white shadow-xl border-0">
+          <Card className="bg-white/10 backdrop-blur-md shadow-xl border-white/10">
             <CardContent className="p-8">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -115,12 +115,12 @@ export function ContactSection({ isEditMode = false }: ContactSectionProps) {
                       name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-orange-600">First Name</FormLabel>
+                          <FormLabel className="text-sm font-medium text-orange-400">First Name</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="John"
                               {...field}
-                              className="border-gray-300 focus:ring-2 focus:ring-stripe-purple focus:border-transparent transition-all duration-300"
+                              className="bg-black/20 border-white/10 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                             />
                           </FormControl>
                           <FormMessage />
@@ -132,12 +132,12 @@ export function ContactSection({ isEditMode = false }: ContactSectionProps) {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-orange-600">Last Name</FormLabel>
+                          <FormLabel className="text-sm font-medium text-orange-400">Last Name</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="Doe"
                               {...field}
-                              className="border-gray-300 focus:ring-2 focus:ring-stripe-purple focus:border-transparent transition-all duration-300"
+                              className="bg-black/20 border-white/10 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                             />
                           </FormControl>
                           <FormMessage />
@@ -151,13 +151,13 @@ export function ContactSection({ isEditMode = false }: ContactSectionProps) {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-orange-600">Email</FormLabel>
+                        <FormLabel className="text-sm font-medium text-orange-400">Email</FormLabel>
                         <FormControl>
                           <Input
                             type="email"
                             placeholder="john@company.com"
                             {...field}
-                            className="border-gray-300 focus:ring-2 focus:ring-stripe-purple focus:border-transparent transition-all duration-300"
+                            className="bg-black/20 border-white/10 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                           />
                         </FormControl>
                         <FormMessage />
@@ -170,12 +170,12 @@ export function ContactSection({ isEditMode = false }: ContactSectionProps) {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-orange-600">Company</FormLabel>
+                        <FormLabel className="text-sm font-medium text-orange-400">Company</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your Company"
                             {...field}
-                            className="border-gray-300 focus:ring-2 focus:ring-stripe-purple focus:border-transparent transition-all duration-300"
+                            className="bg-black/20 border-white/10 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                           />
                         </FormControl>
                         <FormMessage />
@@ -190,13 +190,13 @@ export function ContactSection({ isEditMode = false }: ContactSectionProps) {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-orange-600">Message</FormLabel>
+                        <FormLabel className="text-sm font-medium text-orange-400">Message</FormLabel>
                         <FormControl>
                           <Textarea
                             rows={4}
                             placeholder="Tell us about your infrastructure needs..."
                             {...field}
-                            className="border-gray-300 focus:ring-2 focus:ring-stripe-purple focus:border-transparent transition-all duration-300"
+                            className="bg-black/20 border-white/10 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                           />
                         </FormControl>
                         <FormMessage />

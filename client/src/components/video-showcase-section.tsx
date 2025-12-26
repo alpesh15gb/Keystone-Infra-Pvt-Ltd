@@ -25,7 +25,8 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
       { id: "EKYB8EGORr0", title: "Singda Dam" }
     ],
     "Buildings": [
-      { id: "56zuyooXq7s", title: "PHQ", thumbnailQuality: "hqdefault" }
+      { id: "56zuyooXq7s", title: "PHQ", thumbnailQuality: "hqdefault" },
+      { id: "S1HfsmMTRDc", title: "State Guest House", thumbnailQuality: "hqdefault" }
     ]
   };
 
@@ -42,7 +43,7 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-50/30 to-orange-50/20">
+    <section className="py-20 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -68,7 +69,7 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
                 {/* Category Header */}
                 <div className="flex items-center gap-4 mb-8">
                   <div className="h-1 flex-1 bg-gradient-to-r from-transparent to-orange-200"></div>
-                  <h3 className="text-3xl font-bold text-orange-600 bg-white/50 backdrop-blur-sm px-6 py-2 rounded-full border border-orange-100 shadow-sm">
+                  <h3 className="text-3xl font-bold text-orange-400 bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full border border-white/10 shadow-sm">
                     {category}
                   </h3>
                   <div className="h-1 flex-1 bg-gradient-to-l from-transparent to-orange-200"></div>
@@ -86,7 +87,7 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                         className="group"
                       >
-                        <div className="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-100 hover:-translate-y-2 h-full flex flex-col">
+                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 hover:-translate-y-2 h-full flex flex-col">
                           <div className="relative overflow-hidden aspect-video">
                             <img
                               src={`https://img.youtube.com/vi/${video.id}/${(video as any).thumbnailQuality || 'maxresdefault'}.jpg`}
@@ -109,13 +110,13 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
                             </button>
                           </div>
                           <div className="p-6 flex flex-col flex-grow">
-                            <h3 className="text-lg font-bold text-orange-600 mb-4 group-hover:text-orange-700 transition-colors line-clamp-2">
+                            <h3 className="text-lg font-bold text-white mb-4 group-hover:text-orange-400 transition-colors line-clamp-2">
                               {video.title}
                             </h3>
                             <div className="mt-auto">
                               <button
                                 onClick={() => openVideo(video.id)}
-                                className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium text-sm transition-colors"
+                                className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-medium text-sm transition-colors"
                               >
                                 Watch Video
                                 <Play className="w-4 h-4" />
@@ -131,13 +132,13 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="flex flex-col items-center justify-center text-center py-12 bg-white/30 backdrop-blur-sm rounded-3xl border border-dashed border-orange-200"
+                    className="flex flex-col items-center justify-center text-center py-12 bg-white/10 backdrop-blur-sm rounded-3xl border border-dashed border-gray-700"
                   >
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-3">
-                      <Play className="w-6 h-6 text-orange-400 opacity-50" />
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-3">
+                      <Play className="w-6 h-6 text-gray-400 opacity-50" />
                     </div>
-                    <p className="text-lg text-amber-800 font-medium">Coming Soon</p>
-                    <p className="text-sm text-amber-600">Video demonstrations for {category} will be available shortly.</p>
+                    <p className="text-lg text-gray-300 font-medium">Coming Soon</p>
+                    <p className="text-sm text-gray-400">Video demonstrations for {category} will be available shortly.</p>
                   </motion.div>
                 )}
               </div>

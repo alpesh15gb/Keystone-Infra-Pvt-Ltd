@@ -53,7 +53,7 @@ export function CSRSection({ isEditMode = false }: CSRSectionProps) {
   ];
 
   return (
-    <section id="csr" className="py-20 bg-gradient-to-br from-amber-50/30 to-orange-50/20">
+    <section id="csr" className="py-20 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -64,7 +64,7 @@ export function CSRSection({ isEditMode = false }: CSRSectionProps) {
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
             Corporate Social Responsibility
           </h2>
-          <p className="text-xl text-amber-900 max-w-4xl mx-auto text-justify leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-4xl mx-auto text-justify leading-relaxed">
             As an infrastructure company, we prioritize giving back to society and making a positive impact in the communities we serve. Building lasting relationships with stakeholders for a sustainable future.
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ export function CSRSection({ isEditMode = false }: CSRSectionProps) {
           {csrInitiatives.map((initiative, index) => (
             <div
               key={index}
-              className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-100 group hover:-translate-y-1"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 group hover:-translate-y-1"
             >
               <div className="flex items-center mb-4">
                 <div className={`p-3 bg-gradient-to-r ${initiative.color} rounded-full mr-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -89,7 +89,7 @@ export function CSRSection({ isEditMode = false }: CSRSectionProps) {
                   {initiative.title}
                 </h3>
               </div>
-              <p className="text-amber-800 text-sm leading-relaxed text-center">
+              <p className="text-gray-300 text-sm leading-relaxed text-center">
                 {initiative.description}
               </p>
             </div>
@@ -106,7 +106,7 @@ export function CSRSection({ isEditMode = false }: CSRSectionProps) {
           {highlights.map((highlight, index) => (
             <div
               key={index}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-orange-100 group hover:-translate-y-2"
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/10 group hover:-translate-y-2"
             >
               <div className="text-center mb-6">
                 <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">{highlight.image}</div>
@@ -114,7 +114,7 @@ export function CSRSection({ isEditMode = false }: CSRSectionProps) {
                   {highlight.title}
                 </h3>
               </div>
-              <p className="text-amber-800 leading-relaxed text-justify">
+              <p className="text-gray-300 leading-relaxed text-justify">
                 {highlight.description}
               </p>
             </div>

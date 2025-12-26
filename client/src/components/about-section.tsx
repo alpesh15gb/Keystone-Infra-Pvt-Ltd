@@ -48,7 +48,7 @@ interface AboutSectionProps {
 
 export function AboutSection({ isEditMode = false }: AboutSectionProps) {
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-orange-50/50 to-amber-50/30">
+    <section id="about" className="py-20 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -73,7 +73,7 @@ export function AboutSection({ isEditMode = false }: AboutSectionProps) {
               isEditMode={isEditMode}
               element="p"
               multiline={true}
-              className="text-lg text-amber-900 leading-relaxed mb-6 text-justify"
+              className="text-lg text-gray-200 leading-relaxed mb-6 text-justify"
             >
               Established in 2005 by D. M. Ramesh, Keystone Infra Pvt. Ltd. is a trusted civil engineering and infrastructure development company with extensive project execution experience.
             </EditableText>
@@ -82,7 +82,7 @@ export function AboutSection({ isEditMode = false }: AboutSectionProps) {
               isEditMode={isEditMode}
               element="p"
               multiline={true}
-              className="text-lg text-amber-800 leading-relaxed text-justify"
+              className="text-lg text-gray-300 leading-relaxed text-justify"
             >
               As an ISO 9001:2008 certified organization, we focus on efficiency-driven construction, sustainable development, and value creation for all stakeholders.
             </EditableText>
@@ -91,7 +91,7 @@ export function AboutSection({ isEditMode = false }: AboutSectionProps) {
               isEditMode={isEditMode}
               element="p"
               multiline={true}
-              className="text-lg text-amber-800 leading-relaxed text-justify mt-6"
+              className="text-lg text-gray-300 leading-relaxed text-justify mt-6"
             >
               Our approach emphasizes quality, reliability, and enduring relationships with clients, partners, and communities.
             </EditableText>

@@ -19,9 +19,20 @@ interface HomeProps {
   isEditMode: boolean;
 }
 
+import { PageBackground } from "@/components/page-background";
+
+const bgImages = [
+  "/bg/bg-1.jpg",
+  "/bg/bg-2.jpg",
+  "/bg/bg-3.jpg",
+  "/bg/bg-4.jpg",
+  "/bg/bg-5.jpg",
+];
+
 export default function Home({ isEditMode }: HomeProps) {
   return (
     <div className="min-h-screen">
+      <PageBackground images={bgImages} />
       <Navigation />
       <HeroSection isEditMode={isEditMode} />
       <AboutSection isEditMode={isEditMode} />

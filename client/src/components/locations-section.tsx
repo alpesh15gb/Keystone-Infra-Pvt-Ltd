@@ -16,9 +16,8 @@ export function LocationsSection({ isEditMode = false }: LocationsSectionProps) 
   ];
 
   return (
-    <section id="locations" className="py-20 bg-gradient-to-br from-amber-50/30 to-orange-50/20 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
+    <section id="locations" className="py-20 bg-black/80 backdrop-blur-sm relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="absolute top-20 left-10 w-2 h-2 bg-orange-500 rounded-full animate-pulse opacity-70"></div>
         <div className="absolute top-40 right-20 w-3 h-3 bg-amber-400 rounded-full animate-pulse opacity-60 delay-1000"></div>
         <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-pulse opacity-80 delay-2000"></div>
@@ -26,7 +25,6 @@ export function LocationsSection({ isEditMode = false }: LocationsSectionProps) 
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +35,7 @@ export function LocationsSection({ isEditMode = false }: LocationsSectionProps) 
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
             Completed Projects
           </h2>
-          <p className="text-xl text-amber-900 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             Spanning across India with 20+ years of infrastructure excellence,
             delivering transformational projects that connect communities and drive progress.
           </p>
@@ -49,13 +47,13 @@ export function LocationsSection({ isEditMode = false }: LocationsSectionProps) 
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-orange-100 shadow-xl mb-16"
+          className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10 shadow-xl mb-16"
         >
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-orange-600 mb-4">
               Our Nationwide Coverage
             </h3>
-            <p className="text-amber-800 text-lg">
+            <p className="text-gray-300 text-lg">
               Strategic presence across India delivering infrastructure excellence
             </p>
           </div>

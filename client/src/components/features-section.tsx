@@ -39,7 +39,7 @@ interface FeaturesSectionProps {
 
 export function FeaturesSection({ isEditMode = false }: FeaturesSectionProps) {
   return (
-    <section id="features" className="py-20">
+    <section id="features" className="py-20 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -60,7 +60,7 @@ export function FeaturesSection({ isEditMode = false }: FeaturesSectionProps) {
             id="features-subtitle"
             isEditMode={isEditMode}
             element="p"
-            className="text-xl text-amber-800 max-w-3xl mx-auto"
+            className="text-xl text-gray-200 max-w-3xl mx-auto"
           >
             Where Quality Meets Integrity Vision Builds Sustainablility
           </EditableText>
@@ -83,7 +83,7 @@ export function FeaturesSection({ isEditMode = false }: FeaturesSectionProps) {
                 id={`feature-title-${index}`}
                 isEditMode={isEditMode}
                 element="h3"
-                className="text-xl font-bold text-orange-600 mb-3"
+                className="text-xl font-bold text-orange-400 mb-3"
               >
                 {feature.title}
               </EditableText>
@@ -92,7 +92,7 @@ export function FeaturesSection({ isEditMode = false }: FeaturesSectionProps) {
                 isEditMode={isEditMode}
                 element="p"
                 multiline
-                className="text-amber-800"
+                className="text-gray-300"
               >
                 {feature.description}
               </EditableText>

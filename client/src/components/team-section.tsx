@@ -34,7 +34,7 @@ export function TeamSection({ isEditMode = false }: TeamSectionProps) {
 
 
   return (
-    <section id="team" className="py-20 bg-gradient-to-br from-amber-50/30 to-orange-50/20">
+    <section id="team" className="py-20 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -54,7 +54,7 @@ export function TeamSection({ isEditMode = false }: TeamSectionProps) {
             id="team-subtitle"
             isEditMode={isEditMode}
             element="p"
-            className="text-xl text-amber-900 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
           >
             Experienced professionals driving excellence in infrastructure development across India
           </EditableText>
@@ -70,7 +70,7 @@ export function TeamSection({ isEditMode = false }: TeamSectionProps) {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-orange-100 group hover:-translate-y-2"
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-white/10 group hover:-translate-y-2"
             >
               <div className="text-center mb-6">
                 <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -80,7 +80,7 @@ export function TeamSection({ isEditMode = false }: TeamSectionProps) {
                   id={`team-name-${index}`}
                   isEditMode={isEditMode}
                   element="h3"
-                  className="text-2xl font-bold text-orange-600 mb-2"
+                  className="text-2xl font-bold text-orange-400 mb-2"
                 >
                   {member.name}
                 </EditableText>
@@ -88,11 +88,11 @@ export function TeamSection({ isEditMode = false }: TeamSectionProps) {
                   id={`team-position-${index}`}
                   isEditMode={isEditMode}
                   element="p"
-                  className="text-orange-700 font-semibold mb-1 text-lg"
+                  className="text-orange-500 font-semibold mb-1 text-lg"
                 >
                   {member.position}
                 </EditableText>
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 text-sm font-medium">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/10 text-gray-300 text-sm font-medium">
                   <Award className="w-4 h-4 mr-1" />
                   {member.experience} Experience
                 </div>
@@ -103,17 +103,17 @@ export function TeamSection({ isEditMode = false }: TeamSectionProps) {
                 isEditMode={isEditMode}
                 element="p"
                 multiline
-                className="text-amber-800 leading-relaxed mb-6 text-justify"
+                className="text-gray-300 leading-relaxed mb-6 text-justify"
               >
                 {member.description}
               </EditableText>
 
               <div className="space-y-3">
-                <h4 className="font-bold text-orange-600 text-center mb-4 text-lg">
+                <h4 className="font-bold text-orange-400 text-center mb-4 text-lg">
                   Key Achievements
                 </h4>
                 {member.achievements.map((achievement, i) => (
-                  <div key={i} className="flex items-start text-amber-800">
+                  <div key={i} className="flex items-start text-gray-300">
                     <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mr-3 flex-shrink-0 mt-2"></div>
                     <span className="font-medium">{achievement}</span>
                   </div>

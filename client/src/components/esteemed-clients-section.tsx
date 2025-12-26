@@ -54,7 +54,7 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
 
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-50/30 to-orange-50/20">
+    <section className="py-20 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
             Our Esteemed Clients
           </h2>
-          <p className="text-xl text-amber-900 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             Trusted by government agencies and institutions across India for infrastructure development
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative overflow-hidden bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-orange-100 p-8"
+          className="relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-2xl shadow-xl border border-white/10 p-8"
         >
           <div
             className="flex space-x-8 animate-scroll"
@@ -84,7 +84,7 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
             {clients.map((client, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 w-72 bg-white/90 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-orange-200 hover:border-orange-300 group"
+                className="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-white/10 hover:border-orange-300 group"
               >
                 <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
                   <img
@@ -96,7 +96,7 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
                 <h3 className="font-bold text-orange-600 text-sm mb-2">
                   {client.name}
                 </h3>
-                <p className="text-xs text-amber-800 mb-3 leading-relaxed">
+                <p className="text-xs text-gray-300 mb-3 leading-relaxed">
                   {client.fullName}
                 </p>
                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-orange-100 to-amber-100 text-orange-700 text-xs rounded-full font-medium">
@@ -109,7 +109,7 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
             {clients.map((client, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 w-72 bg-white/90 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-orange-200 hover:border-orange-300 group"
+                className="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-white/10 hover:border-orange-300 group"
               >
                 <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
                   <img
@@ -121,7 +121,7 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
                 <h3 className="font-bold text-orange-600 text-sm mb-2">
                   {client.name}
                 </h3>
-                <p className="text-xs text-amber-800 mb-3 leading-relaxed">
+                <p className="text-xs text-gray-300 mb-3 leading-relaxed">
                   {client.fullName}
                 </p>
                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-orange-100 to-amber-100 text-orange-700 text-xs rounded-full font-medium">

@@ -44,7 +44,7 @@ interface ProductsSectionProps {
 
 export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
   return (
-    <section id="products" className="py-20 bg-stripe-light">
+    <section id="products" className="py-20 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -57,7 +57,7 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
             id="products-title"
             isEditMode={isEditMode}
             element="h2"
-            className="text-4xl font-bold text-orange-600 mb-4"
+            className="text-4xl font-bold text-orange-400 mb-4"
           >
             Our Infrastructure Expertise
           </EditableText>
@@ -65,7 +65,7 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
             id="products-subtitle"
             isEditMode={isEditMode}
             element="p"
-            className="text-xl text-amber-800 max-w-3xl mx-auto"
+            className="text-xl text-gray-200 max-w-3xl mx-auto"
           >
             Diversified excellence across transportation, water management, and construction projects
           </EditableText>
@@ -83,7 +83,7 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full card-hover bg-white shadow-lg border-0 overflow-hidden">
+                <Card className="h-full card-hover bg-white/10 backdrop-blur-sm shadow-lg border-white/10 overflow-hidden group">
                   <CardContent className="p-0">
                     <div className="relative h-48">
                       <EditableImage
@@ -104,7 +104,7 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                         id={`product-title-${slug}`}
                         isEditMode={isEditMode}
                         element="h3"
-                        className="text-2xl font-bold text-orange-600 mb-4"
+                        className="text-2xl font-bold text-orange-400 mb-4"
                       >
                         {product.title}
                       </EditableText>
@@ -113,13 +113,13 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                         isEditMode={isEditMode}
                         element="p"
                         multiline
-                        className="text-amber-800 mb-6"
+                        className="text-gray-300 mb-6"
                       >
                         {product.description}
                       </EditableText>
                       <ul className="space-y-2 mb-6">
                         {product.features.map((feature) => (
-                          <li key={feature} className="flex items-center text-sm text-amber-800">
+                          <li key={feature} className="flex items-center text-sm text-gray-300">
                             <CheckCircle className="text-green-500 mr-2" size={16} />
                             {feature}
                           </li>
