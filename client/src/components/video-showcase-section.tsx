@@ -17,7 +17,7 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
       { id: "ALZtqkYNqg4", title: "RCC GIRDER 210 METRES" }
     ],
     "National Highway": [
-      { id: "be6xI7063w8", title: "Transportation" },
+      { id: "be6xI7063w8", title: "Transportation", thumbnailQuality: "hqdefault" },
       { id: "dPn3aRBkfrA", title: "NATIONAL HIGHWAY 63 CONSTRUCTION" }
     ],
     "Water and Irrigation Projects": [
@@ -25,13 +25,12 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
       { id: "EKYB8EGORr0", title: "Singda Dam" }
     ],
     "Buildings": [
-      { id: "2NpgvLuMN5M", title: "School Building" }
+      { id: "56zuyooXq7s", title: "PHQ", thumbnailQuality: "hqdefault" }
     ]
   };
 
 
 
-  const getThumbnailUrl = (videoId: string) => `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
   const getEmbedUrl = (videoId: string) => `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
 
   const openVideo = (videoId: string) => {
@@ -90,7 +89,11 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
                         <div className="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-100 hover:-translate-y-2 h-full flex flex-col">
                           <div className="relative overflow-hidden aspect-video">
                             <img
-                              src={getThumbnailUrl(video.id)}
+                              src={`https://img.youtube.com/vi/${video.id}/${(video as any).thumbnailQuality || 'maxresdefault'}.jpg`}
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+                              }}
                               alt={video.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                               loading="lazy"
