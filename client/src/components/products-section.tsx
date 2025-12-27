@@ -14,7 +14,7 @@ import EditableImage from "@/components/editable-image";
 import transportationExpertiseImage from "@/assets/transportation-expertise.jpg";
 import waterManagementImage from "@/assets/water-management.jpg";
 import buildingConstructionImage from "@/assets/manipur-police-hq.jpg";
-import othersExpertiseImage from "@/assets/others-expertise.jpg";
+import othersExpertiseImage from "@/assets/others-expertise-new.png";
 
 const products = [
   {
@@ -74,6 +74,7 @@ const products = [
       { name: "Dredging", icon: Anchor }
     ],
     image: othersExpertiseImage,
+    imageClassName: "object-bottom",
   },
 ];
 
@@ -132,7 +133,7 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                         src={product.image}
                         alt={product.title}
                         isEditMode={isEditMode}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-cover ${(product as any).imageClassName || ""}`}
                       />
                       <div className="absolute top-4 left-4">
                         <div className={`w-12 h-12 ${product.bgColor} rounded-lg flex items-center justify-center backdrop-blur-md`}>
