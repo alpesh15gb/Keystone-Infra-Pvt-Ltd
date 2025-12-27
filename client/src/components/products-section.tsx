@@ -124,9 +124,9 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                 className="h-full"
               >
                 <Card className="h-full card-hover bg-white/10 backdrop-blur-sm shadow-lg border-white/10 overflow-hidden group">
-                  <div className="flex flex-col md:flex-row h-full">
-                    {/* Image Side */}
-                    <div className="md:w-3/5 relative h-48 md:h-auto">
+                  <div className="flex flex-col h-full">
+                    {/* Image Side - Top */}
+                    <div className="w-full relative aspect-video">
                       <EditableImage
                         id={`product-image-${slug}`}
                         src={product.image}
@@ -141,8 +141,8 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                       </div>
                     </div>
 
-                    {/* Content Side */}
-                    <div className="md:w-2/5 p-8 flex flex-col justify-center">
+                    {/* Content Side - Bottom */}
+                    <div className="w-full p-8 flex flex-col flex-grow">
                       <EditableText
                         id={`product-title-${slug}`}
                         isEditMode={isEditMode}
@@ -162,7 +162,7 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                       </EditableText>
 
                       {/* Features Grid */}
-                      <div className="grid grid-cols-3 gap-4">
+                      <div className="grid grid-cols-3 gap-4 mt-auto">
                         {product.features.map((feature) => (
                           <div key={feature.name} className="flex flex-col items-center text-center">
                             <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-2 group-hover:bg-white/10 transition-colors">
