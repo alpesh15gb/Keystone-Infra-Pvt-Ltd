@@ -16,7 +16,7 @@ const certifications = [
   {
     icon: Users,
     iconColor: "text-accent-orange",
-    bgColor: "bg-accent-orange-light",
+    bgColor: "bg-transparent",
     title: "Health & Safety",
     standard: "ISO 45001:2018",
     description: "Health and Safety Management systems in compliance with international standards.",

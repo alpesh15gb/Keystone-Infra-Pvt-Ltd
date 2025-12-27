@@ -20,7 +20,7 @@ const features = [
   {
     icon: TrendingUp,
     iconColor: "text-accent-orange",
-    bgColor: "bg-accent-orange-light",
+    bgColor: "bg-transparent",
     title: "Sustainable Development",
     description: "Focus on sustainable development and expansion with environmental responsibility.",
   },

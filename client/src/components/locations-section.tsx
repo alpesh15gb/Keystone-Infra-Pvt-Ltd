@@ -49,14 +49,7 @@ export function LocationsSection({ isEditMode = false }: LocationsSectionProps) 
           viewport={{ once: true }}
           className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10 shadow-xl mb-16"
         >
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-orange-600 mb-4">
-              Our Nationwide Coverage
-            </h3>
-            <p className="text-gray-300 text-lg">
-              Strategic presence across India delivering infrastructure excellence
-            </p>
-          </div>
+
 
           <div className="max-w-4xl mx-auto">
             <img

@@ -9,7 +9,7 @@ interface VideoShowcaseSectionProps {
 export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectionProps) {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
-  const categories = ["Bridges", "National Highway", "Water and Irrigation Projects", "Buildings"];
+  const categories = ["National Highway", "Bridges", "Water and Irrigation Projects", "Buildings"];
 
   const allVideos = {
     "Bridges": [

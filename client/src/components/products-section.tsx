@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Cloud, Database, Network, CheckCircle } from "lucide-react";
+import {
+  Cloud, Database, Network,
+  Map, Waypoints, Truck, Navigation, // For Transportation
+  Droplets, Waves, Recycle, Sprout, Zap, // For Water
+  Building, Building2, Landmark, Stethoscope, Home, // For Buildings
+  Factory, LayoutGrid, Cylinder, Anchor, // For Others
+  Layers
+} from "lucide-react";
 import EditableText from "@/components/editable-text";
 import EditableImage from "@/components/editable-image";
 import transportationExpertiseImage from "@/assets/transportation-expertise.jpg";
 import waterManagementImage from "@/assets/water-management.jpg";
 import buildingConstructionImage from "@/assets/manipur-police-hq.jpg";
+import othersExpertiseImage from "@/assets/others-expertise.jpg";
 
 const products = [
   {
@@ -15,7 +23,12 @@ const products = [
     bgColor: "bg-amber-700/10",
     title: "Transportation Infrastructure",
     description: "Complete road construction including national highways, state highways, and bridges.",
-    features: ["National & State Highways", "Bridge Construction", "CC Roads & Major District Roads", "Rigid and Flexible Major District Roads"],
+    features: [
+      { name: "National Highway", icon: Map },
+      { name: "State Highway", icon: Waypoints },
+      { name: "Nagar Nigam Roads", icon: Truck },
+      { name: "Bridges", icon: Navigation } // Used Navigation as a placeholder for Bridge
+    ],
     image: transportationExpertiseImage,
   },
   {
@@ -24,7 +37,13 @@ const products = [
     bgColor: "bg-amber-600/10",
     title: "Water Management",
     description: "Comprehensive water supply, treatment plants, and irrigation systems.",
-    features: ["Water Treatment Plants", "Pipeline Distribution", "Sewerage Treatment"],
+    features: [
+      { name: "Water Treatment Plant", icon: Factory },
+      { name: "Water Supply", icon: Droplets },
+      { name: "Sewerage Treatment", icon: Recycle },
+      { name: "Irrigation", icon: Sprout },
+      { name: "HydroPower", icon: Zap }
+    ],
     image: waterManagementImage,
   },
   {
@@ -33,8 +52,28 @@ const products = [
     bgColor: "bg-amber-800/10",
     title: "Building Construction",
     description: "Government commercial buildings, medical facilities, educational institutions, and specialized infrastructure development.",
-    features: ["Govt Commercial Buildings", "Govt Medical Facilities", "Educational Institutions", "Non Residential Buildings"],
+    features: [
+      { name: "Hospitality", icon: Building },
+      { name: "Commercial", icon: Building2 },
+      { name: "Institutional", icon: Landmark },
+      { name: "Medical", icon: Stethoscope },
+      { name: "Pre-fab Structure", icon: Home }
+    ],
     image: buildingConstructionImage,
+  },
+  {
+    icon: Layers,
+    iconColor: "text-slate-600",
+    bgColor: "bg-slate-600/10",
+    title: "Others",
+    description: "Miscellaneous civil engineering and infrastructure support services tailored to specific project requirements.",
+    features: [
+      { name: "Canal", icon: Waves },
+      { name: "Border Fencing Work", icon: LayoutGrid },
+      { name: "Dams", icon: Cylinder },
+      { name: "Dredging", icon: Anchor }
+    ],
+    image: othersExpertiseImage,
   },
 ];
 
@@ -72,7 +111,7 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
         </motion.div>
 
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"> {/* Changed to 2 columns to give more space */}
           {products.map((product, index) => {
             const slug = product.title.toLowerCase().replace(/\s+/g, '-');
             return (
@@ -82,10 +121,12 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="h-full"
               >
                 <Card className="h-full card-hover bg-white/10 backdrop-blur-sm shadow-lg border-white/10 overflow-hidden group">
-                  <CardContent className="p-0">
-                    <div className="relative h-48">
+                  <div className="flex flex-col md:flex-row h-full">
+                    {/* Image Side */}
+                    <div className="md:w-3/5 relative h-48 md:h-auto">
                       <EditableImage
                         id={`product-image-${slug}`}
                         src={product.image}
@@ -99,7 +140,9 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                         </div>
                       </div>
                     </div>
-                    <div className="p-8">
+
+                    {/* Content Side */}
+                    <div className="md:w-2/5 p-8 flex flex-col justify-center">
                       <EditableText
                         id={`product-title-${slug}`}
                         isEditMode={isEditMode}
@@ -113,21 +156,25 @@ export function ProductsSection({ isEditMode = false }: ProductsSectionProps) {
                         isEditMode={isEditMode}
                         element="p"
                         multiline
-                        className="text-gray-300 mb-6"
+                        className="text-gray-300 mb-6 text-sm"
                       >
                         {product.description}
                       </EditableText>
-                      <ul className="space-y-2 mb-6">
+
+                      {/* Features Grid */}
+                      <div className="grid grid-cols-3 gap-4">
                         {product.features.map((feature) => (
-                          <li key={feature} className="flex items-center text-sm text-gray-300">
-                            <CheckCircle className="text-green-500 mr-2" size={16} />
-                            {feature}
-                          </li>
+                          <div key={feature.name} className="flex flex-col items-center text-center">
+                            <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-2 group-hover:bg-white/10 transition-colors">
+                              <feature.icon className="text-orange-500" size={20} />
+                            </div>
+                            <span className="text-xs text-gray-300 leading-tight">{feature.name}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
 
                     </div>
-                  </CardContent>
+                  </div>
                 </Card>
               </motion.div>
             );

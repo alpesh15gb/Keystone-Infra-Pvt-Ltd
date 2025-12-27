@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Phone, Facebook } from "lucide-react";
+import { Twitter, Linkedin, Phone, Facebook, Instagram } from "lucide-react";
 import logoPath from "@/assets/logo.png";
 import EditableText from '@/components/editable-text';
 
@@ -40,6 +40,14 @@ export function Footer({ isEditMode = false }: FooterProps) {
                 className="text-gray-400 hover:text-white transition-colors duration-300"
               >
                 <Facebook size={20} />
+              </a>
+              <a
+                href="https://www.instagram.com/keystone_infra/?igsh=MjZuOHYxODV0bzBq#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <Instagram size={20} />
               </a>
               <a
                 href="tel:+919393645644"

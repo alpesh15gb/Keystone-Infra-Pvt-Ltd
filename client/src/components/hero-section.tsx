@@ -7,118 +7,50 @@ interface HeroSectionProps {
   isEditMode?: boolean;
 }
 
-declare global {
-  interface Window {
-    YT: any;
-    onYouTubeIframeAPIReady: () => void;
-  }
-}
-
 export function HeroSection({ isEditMode = false }: HeroSectionProps) {
-  const [player, setPlayer] = useState<any>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const playerRef = useRef<HTMLDivElement>(null);
-  const progressInterval = useRef<NodeJS.Timeout | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Load YouTube IFrame API
-    if (!window.YT) {
-      const tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-    }
-
-    // Initialize player when API is ready
-    window.onYouTubeIframeAPIReady = () => {
-      new window.YT.Player('hero-player', {
-        videoId: 'ImUatDHiank',
-        playerVars: {
-          autoplay: 1,
-          controls: 0, // Disable native controls to remove clutter
-          disablekb: 1,
-          fs: 0,
-          loop: 1,
-          modestbranding: 1,
-          playsinline: 1,
-          rel: 0,
-          showinfo: 0,
-          mute: 1,
-          playlist: 'ImUatDHiank'
-        },
-        events: {
-          onReady: (event: any) => {
-            setPlayer(event.target);
-            setDuration(event.target.getDuration());
-            event.target.playVideo();
-          },
-          onStateChange: (event: any) => {
-            // Update play state based on actual player state
-            if (event.data === window.YT.PlayerState.PLAYING) {
-              setIsPlaying(true);
-              startProgressTracking(event.target);
-            } else {
-              setIsPlaying(false);
-              stopProgressTracking();
-            }
-          }
-        }
-      });
-    };
-
-    return () => {
-      stopProgressTracking();
-    };
-  }, []);
-
-  const startProgressTracking = (playerInstance: any) => {
-    stopProgressTracking();
-    progressInterval.current = setInterval(() => {
-      if (playerInstance && playerInstance.getCurrentTime) {
-        const currentTime = playerInstance.getCurrentTime();
-        const totalDuration = playerInstance.getDuration();
-        if (totalDuration) {
-          setProgress((currentTime / totalDuration) * 100);
-        }
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.play().catch((e) => console.log("Autoplay prevented:", e));
+      } else {
+        videoRef.current.pause();
       }
-    }, 1000);
-  };
+    }
+  }, [isPlaying]);
 
-  const stopProgressTracking = () => {
-    if (progressInterval.current) {
-      clearInterval(progressInterval.current);
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current) {
+      const current = videoRef.current.currentTime;
+      const total = videoRef.current.duration;
+      if (total) {
+        setProgress((current / total) * 100);
+      }
     }
   };
 
   const togglePlay = () => {
-    if (player) {
-      if (isPlaying) {
-        player.pauseVideo();
-      } else {
-        player.playVideo();
-      }
-      setIsPlaying(!isPlaying);
-    }
+    setIsPlaying(!isPlaying);
   };
 
   const toggleMute = () => {
-    if (player) {
-      if (isMuted) {
-        player.unMute();
-      } else {
-        player.mute();
-      }
-      setIsMuted(!isMuted);
-    }
+    setIsMuted(!isMuted);
   };
 
   const handleSeek = (value: number[]) => {
-    if (player) {
-      const seekTime = (value[0] / 100) * duration;
-      player.seekTo(seekTime, true);
+    if (videoRef.current && videoRef.current.duration) {
+      const seekTime = (value[0] / 100) * videoRef.current.duration;
+      videoRef.current.currentTime = seekTime;
       setProgress(value[0]);
     }
   };
@@ -127,7 +59,16 @@ export function HeroSection({ isEditMode = false }: HeroSectionProps) {
     <section id="home" className="relative w-full h-[70vh] md:h-screen overflow-hidden pt-16 md:pt-24 bg-black group">
       <div className="absolute left-0 right-0 bottom-0 top-16 md:top-24 z-0">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <div id="hero-player" className="absolute inset-0 w-full h-full" />
+          <video
+            ref={videoRef}
+            className="absolute inset-0 w-full h-full object-cover"
+            src="/videos/hero-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            onTimeUpdate={handleTimeUpdate}
+          />
         </div>
         {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />

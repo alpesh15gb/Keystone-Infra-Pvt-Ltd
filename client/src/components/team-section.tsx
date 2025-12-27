@@ -12,21 +12,21 @@ export function TeamSection({ isEditMode = false }: TeamSectionProps) {
       name: "D.M. RAMESH",
       position: "Managing Director",
       experience: "30+ years",
-      description: "Founder and Managing Director with over 30 years in infrastructure and civil construction. Well respected for timely delivery and creative ideas, with expertise in every aspect of construction and development business.",
+      description: "Mr. D. M. Ramesh is the Founder and Managing Director of the organization with more than three decades of experience in the infrastructure and civil construction sector. He has played a key role in executing several renowned projects across India and is highly regarded for his timely execution, creative problem-solving, and deep operational knowledge of the industry.",
       achievements: ["Founded company in 2005", "Led numerous prestigious projects", "Industry leader in innovation"]
     },
     {
       name: "D. LAKSHMI CHOWDARY",
       position: "Director",
       experience: "15+ years",
-      description: "Important asset performing full-time director role. With rationale and leadership skills, has brought significant profit and ambitious projects to Keystone Infra Pvt Ltd.",
+      description: "Mrs. Lakshmi Chowdary is a key asset to Keystone Infra Pvt. Ltd., serving as a Full-Time Director overseeing Finance and Head Office Operations. With over 18 years of association with the company, she has played a vital role in strengthening financial performance, profitability, and execution of ambitious projects, supported by strong leadership and sound decision-making.",
       achievements: ["15+ years with company", "Strategic leadership", "Business growth expert"]
     },
     {
       name: "D. KARTHIK AMAR",
       position: "Director",
       experience: "3+ years",
-      description: "Young entrepreneur bringing fresh perspective to decision making. Passionate about company mission and dedicated to advancing organizational goals. Currently leading housing projects across 4 states.",
+      description: "Mr. Karthik Amar is a young entrepreneur with more than three years of experience in civil construction. Known for his energy and motivation, he contributes a modern and forward-looking approach to organizational decision-making. He plays a key role in advancing the company’s objectives.",
       achievements: ["Leading housing projects", "Multi-state operations", "Fresh industry perspective"]
     }
   ];
@@ -34,7 +34,7 @@ export function TeamSection({ isEditMode = false }: TeamSectionProps) {
 
 
   return (
-    <section id="team" className="py-20 bg-black/80 backdrop-blur-sm">
+    <section id="team" className="pt-4 pb-20 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

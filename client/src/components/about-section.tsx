@@ -48,7 +48,7 @@ interface AboutSectionProps {
 
 export function AboutSection({ isEditMode = false }: AboutSectionProps) {
   return (
-    <section id="about" className="py-20 bg-black/80 backdrop-blur-sm">
+    <section id="about" className="pt-20 pb-4 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"

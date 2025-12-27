@@ -75,41 +75,16 @@ export function EsteemedClientsSection({ isEditMode = false }: EsteemedClientsSe
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-2xl shadow-xl border border-white/10 p-8"
+          className="relative overflow-x-auto bg-white/5 backdrop-blur-sm rounded-2xl shadow-xl border border-white/10 p-8 scrollbar-hide"
         >
           <div
-            className="flex space-x-8 animate-scroll"
+            className="flex"
           >
-            {/* First set of clients */}
+            {/* Clients List */}
             {clients.map((client, index) => (
               <div
-                key={`first-${index}`}
-                className="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-white/10 hover:border-orange-300 group"
-              >
-                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="w-16 h-16 object-contain"
-                  />
-                </div>
-                <h3 className="font-bold text-orange-600 text-sm mb-2">
-                  {client.name}
-                </h3>
-                <p className="text-xs text-gray-300 mb-3 leading-relaxed">
-                  {client.fullName}
-                </p>
-                <span className="inline-block px-3 py-1 bg-gradient-to-r from-orange-100 to-amber-100 text-orange-700 text-xs rounded-full font-medium">
-                  {client.sector}
-                </span>
-              </div>
-            ))}
-
-            {/* Duplicate set for seamless loop */}
-            {clients.map((client, index) => (
-              <div
-                key={`second-${index}`}
-                className="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-white/10 hover:border-orange-300 group"
+                key={index}
+                className="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center border border-white/10 hover:border-orange-300 group mr-8 last:mr-0"
               >
                 <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
                   <img
