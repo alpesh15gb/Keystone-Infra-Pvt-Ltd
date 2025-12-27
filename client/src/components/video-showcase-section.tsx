@@ -1,6 +1,35 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Play, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
+
+interface VimeoPlayerProps {
+  id: string;
+  title: string;
+}
+
+function VimeoPlayer({ id, title }: VimeoPlayerProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "200px" });
+
+  return (
+    <div ref={ref} className="w-full h-full bg-black/20">
+      {isInView ? (
+        <iframe
+          src={`https://player.vimeo.com/video/${id}?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&loop=1&muted=1&background=1`}
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          className="w-full h-full object-cover"
+          title={title}
+          style={{ pointerEvents: 'none' }}
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-orange-500 border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+    </div>
+  );
+}
 
 interface VideoShowcaseSectionProps {
   isEditMode?: boolean;
@@ -90,14 +119,7 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 hover:-translate-y-2 h-full flex flex-col">
                           <div className="relative overflow-hidden aspect-video">
                             {video.type === "vimeo" ? (
-                              <iframe
-                                src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&loop=1&muted=1&background=1`}
-                                frameBorder="0"
-                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                                className="w-full h-full object-cover"
-                                title={video.title}
-                                style={{ pointerEvents: 'none' }}
-                              ></iframe>
+                              <VimeoPlayer id={video.id} title={video.title} />
                             ) : (
                               <>
                                 <img
