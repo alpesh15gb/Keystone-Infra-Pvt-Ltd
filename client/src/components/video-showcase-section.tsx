@@ -13,20 +13,20 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
 
   const allVideos = {
     "Bridges": [
-      { id: "p62cJAu31_M", title: "RCC GIRDER 240 METRES" },
-      { id: "ALZtqkYNqg4", title: "RCC GIRDER 210 METRES" }
+      { id: "1149733960", title: "RCC GIRDER 240 METRES", type: "vimeo" },
+      { id: "1149733949", title: "RCC GIRDER 210 METRES", type: "vimeo" }
     ],
     "National Highway": [
-      { id: "be6xI7063w8", title: "Transportation", thumbnailQuality: "hqdefault" },
-      { id: "dPn3aRBkfrA", title: "NATIONAL HIGHWAY 63 CONSTRUCTION" }
+      { id: "1149733920", title: "Transportation", type: "vimeo" },
+      { id: "1149733976", title: "NATIONAL HIGHWAY 63 CONSTRUCTION", type: "vimeo" }
     ],
     "Water and Irrigation Projects": [
-      { id: "buaAEmTJs-w", title: "Water and Irrigation Projects" },
-      { id: "EKYB8EGORr0", title: "Singda Dam" }
+      { id: "1149733933", title: "Water and Irrigation Projects", type: "vimeo" },
+      { id: "1149733910", title: "Singda Dam", type: "vimeo" }
     ],
     "Buildings": [
-      { id: "56zuyooXq7s", title: "PHQ", thumbnailQuality: "hqdefault" },
-      { id: "S1HfsmMTRDc", title: "State Guest House", thumbnailQuality: "hqdefault" }
+      { id: "1149733885", title: "PHQ", type: "vimeo" },
+      { id: "1149733865", title: "State Guest House", type: "vimeo" }
     ]
   };
 
@@ -78,7 +78,7 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
                 {/* Videos Grid */}
                 {videos.length > 0 ? (
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {videos.map((video, index) => (
+                    {videos.map((video: any, index) => (
                       <motion.div
                         key={video.id}
                         initial={{ opacity: 0, y: 30 }}
@@ -89,39 +89,54 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
                       >
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 hover:-translate-y-2 h-full flex flex-col">
                           <div className="relative overflow-hidden aspect-video">
-                            <img
-                              src={`https://img.youtube.com/vi/${video.id}/${(video as any).thumbnailQuality || 'maxresdefault'}.jpg`}
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-                              }}
-                              alt={video.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                              loading="lazy"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <button
-                              onClick={() => openVideo(video.id)}
-                              className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            >
-                              <div className="bg-orange-500 text-white rounded-full p-4 group-hover:scale-110 transition-transform duration-300">
-                                <Play className="w-8 h-8" fill="currentColor" />
-                              </div>
-                            </button>
+                            {video.type === "vimeo" ? (
+                              <iframe
+                                src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&loop=1&muted=1&background=1`}
+                                frameBorder="0"
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                                className="w-full h-full object-cover"
+                                title={video.title}
+                                style={{ pointerEvents: 'none' }}
+                              ></iframe>
+                            ) : (
+                              <>
+                                <img
+                                  src={`https://img.youtube.com/vi/${video.id}/${(video as any).thumbnailQuality || 'maxresdefault'}.jpg`}
+                                  onError={(e) => {
+                                    const target = e.target as HTMLImageElement;
+                                    target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+                                  }}
+                                  alt={video.title}
+                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                  loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <button
+                                  onClick={() => openVideo(video.id)}
+                                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                >
+                                  <div className="bg-orange-500 text-white rounded-full p-4 group-hover:scale-110 transition-transform duration-300">
+                                    <Play className="w-8 h-8" fill="currentColor" />
+                                  </div>
+                                </button>
+                              </>
+                            )}
                           </div>
                           <div className="p-6 flex flex-col flex-grow">
                             <h3 className="text-lg font-bold text-white mb-4 group-hover:text-orange-400 transition-colors line-clamp-2">
                               {video.title}
                             </h3>
-                            <div className="mt-auto">
-                              <button
-                                onClick={() => openVideo(video.id)}
-                                className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-medium text-sm transition-colors"
-                              >
-                                Watch Video
-                                <Play className="w-4 h-4" />
-                              </button>
-                            </div>
+                            {video.type !== "vimeo" && (
+                              <div className="mt-auto">
+                                <button
+                                  onClick={() => openVideo(video.id)}
+                                  className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-medium text-sm transition-colors"
+                                >
+                                  Watch Video
+                                  <Play className="w-4 h-4" />
+                                </button>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </motion.div>

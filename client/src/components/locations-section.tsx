@@ -18,13 +18,6 @@ export function LocationsSection({ isEditMode = false }: LocationsSectionProps) 
   return (
     <section id="locations" className="py-20 bg-black/80 backdrop-blur-sm relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-orange-500 rounded-full animate-pulse opacity-70"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-amber-400 rounded-full animate-pulse opacity-60 delay-1000"></div>
-        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-pulse opacity-80 delay-2000"></div>
-        <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-amber-300 rounded-full animate-pulse opacity-50 delay-3000"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
