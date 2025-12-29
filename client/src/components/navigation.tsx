@@ -17,9 +17,10 @@ export function Navigation() {
 
   const navItems = [
     { label: "Home", href: "home" },
-    { label: "About", href: "about" },
     { label: "Management", href: "team" },
     { label: "Services", href: "products" },
+    { label: "Gallery", href: "gallery" },
+    { label: "CSR", href: "csr" },
     { label: "Locations", href: "locations" },
   ];
 
