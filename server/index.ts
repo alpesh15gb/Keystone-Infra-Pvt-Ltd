@@ -1,6 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { serveStatic, log } from "./utils";
 
 const app = express();
 app.use(express.json());
@@ -51,6 +51,10 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    // Dynamic import to avoid bundling "vite" and its dependencies in production
+    // We construct the path string to prevent esbuild from analyzing it
+    const vitePath = "./vite";
+    const { setupVite } = await import(vitePath);
     await setupVite(app, server);
   } else {
     serveStatic(app);
