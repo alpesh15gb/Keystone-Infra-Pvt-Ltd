@@ -25,7 +25,7 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-amber-100">
+    <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-amber-100" role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-24">
           <div className="flex items-center">

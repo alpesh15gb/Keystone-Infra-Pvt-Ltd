@@ -24,12 +24,13 @@ export function Footer({ isEditMode = false }: FooterProps) {
             >
               Established civil engineering and infrastructure development company. ISO certified, 20+ years experience, building India's infrastructure future.
             </EditableText>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4" role="navigation" aria-label="Social media links">
               <a
                 href="https://in.linkedin.com/company/keystone-infra-private-limited"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
+                aria-label="Follow Keystone Infra on LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
@@ -38,6 +39,7 @@ export function Footer({ isEditMode = false }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
+                aria-label="Follow Keystone Infra on Facebook"
               >
                 <Facebook size={20} />
               </a>
@@ -46,12 +48,14 @@ export function Footer({ isEditMode = false }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
+                aria-label="Follow Keystone Infra on Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a
                 href="tel:+919393645644"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
+                aria-label="Call Keystone Infra at +91 9393645644"
               >
                 <Phone size={20} />
               </a>
