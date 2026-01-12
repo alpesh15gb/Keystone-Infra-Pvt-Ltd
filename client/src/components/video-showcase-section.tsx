@@ -94,7 +94,7 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
       { src: "/videos/singda-dam.mp4", title: "Singda Dam", poster: "/videos/singda-dam-thumb.jpg" }
     ],
     "Buildings": [
-      { src: "/videos/phq.mp4", title: "PHQ", poster: "/videos/phq-thumb.jpg" },
+
       { src: "/videos/guest-house.mp4", title: "State Guest House", poster: "/videos/guest-house-thumb.jpg" }
     ]
   };
