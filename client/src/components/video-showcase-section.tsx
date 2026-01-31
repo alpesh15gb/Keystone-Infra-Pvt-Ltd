@@ -91,11 +91,12 @@ export function VideoShowcaseSection({ isEditMode = false }: VideoShowcaseSectio
     ],
     "Water and Irrigation Projects": [
       { src: "/videos/water-irrigation.mp4", title: "Water and Irrigation Projects", poster: "/videos/water-irrigation-thumb.jpg" },
-      { src: "/videos/singda-dam.mp4", title: "Singda Dam", poster: "/videos/singda-dam-thumb.jpg" }
+      { src: "/videos/singda-dam.mp4", title: "Singda Dam", poster: "/videos/singda-dam-thumb.jpg" },
+      { src: "/videos/nambul-river.mp4", title: "NAMBUL RIVER REJUVENATION PROJECT" }
     ],
     "Buildings": [
-
-      { src: "/videos/guest-house.mp4", title: "State Guest House", poster: "/videos/guest-house-thumb.jpg" }
+      { src: "/videos/guest-house.mp4", title: "State Guest House", poster: "/videos/guest-house-thumb.jpg" },
+      { src: "/videos/IIIT.mp4", title: "IIIT MANIPUR CAMPUS DEVELOPMENT" }
     ]
   };
 
